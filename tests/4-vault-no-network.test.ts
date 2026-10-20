@@ -5,7 +5,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { ESLint } from "eslint";
 
-const VAULT = "src/vault";
+const VAULT_DIRS = ["src/vault", "src/worksheets", "app/workbook"];
 const BANNED = [/\bfetch\s*\(/, /XMLHttpRequest/, /WebSocket/, /EventSource/, /sendBeacon/, /from\s+["'](node:)?https?["']/, /from\s+["'](axios|ky|undici|resend|postgres)["']/, /@\/lib\/db/];
 
 function files(dir: string): string[] {
@@ -17,7 +17,7 @@ function files(dir: string): string[] {
 
 describe("guard 4: vault has no network path", () => {
   it("source scan is clean", () => {
-    const hits = files(VAULT).flatMap((f) => {
+    const hits = VAULT_DIRS.flatMap(files).flatMap((f) => {
       const src = readFileSync(f, "utf8");
       return BANNED.filter((re) => re.test(src)).map((re) => `${f}: ${re}`);
     });

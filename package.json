@@ -12,12 +12,15 @@
     "test": "vitest run",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "check": "npm run typecheck && npm run lint && npm run test"
+    "check": "npm run typecheck && npm run lint && npm run test",
+    "worksheets": "tsx scripts/build-worksheets.ts",
+    "import:workbook": "tsx scripts/import-workbook.ts"
   },
   "dependencies": {
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "drizzle-orm": "^0.45.4",
+    "fflate": "^0.8.3",
     "next": "^16.4.2",
     "postgres": "^3.4.9",
     "react": "^19.3.1",
@@ -27,11 +30,16 @@
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.10",
     "@eslint/js": "^10.0.1",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "drizzle-kit": "^0.31.11",
     "eslint": "^10.13.0",
+    "fake-indexeddb": "^6.2.6",
+    "marked": "^18.1.1",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.0",
     "vitest": "^5.0.5"

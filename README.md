@@ -2,7 +2,7 @@
 
 A private ledger for people who lead their AI. The record is ours. The work is yours.
 
-This is week 1 of the eight-week MVP in `stack.md`: an empty app with sign-in, the data model,
+This is weeks 1 and 2 of the eight-week MVP in `stack.md`: an empty app with sign-in, the data model,
 the scorecard submit route, and the five privacy guards running in CI. Product docs live in the
 claude.ai Project "Human Led Web Service".
 
@@ -44,6 +44,39 @@ The build fails if any of these break.
 - `app/api/scorecards/route.ts`: the only way into the ledger.
 - `src/vault/`: browser-only storage for worksheet answers (week 2).
 
-## Next: week 2
+## The workbook (week 2)
 
-The worksheet engine and Part 0: worksheets defined as data, local save, "Save to my folder", "Open from my folder".
+- **The workbook skill is the master; this site reads from it.** When a worksheet is revised, the handoff
+  is the `compounding-ai-workbook` `.skill` file, and it's expected to change often:
+
+  ```
+  npm run import:workbook -- path/to/compounding-ai-workbook.skill
+  npm run check
+  git add -A && git commit
+  ```
+
+  The importer copies `references/drafts/*.md` unchanged into `content/workbook/<part>/` (the skill's set
+  is the whole set: drafts it no longer has are removed), records the file's sha256 and every draft's hash
+  in `content/workbook/SOURCE.json`, regenerates the pages' data, and prints what changed. It refuses a
+  file that isn't this skill, and writes nothing unless every draft parses. Never edit `content/` by hand:
+  `tests/8-workbook-source.test.ts` fails if a draft differs from what the last import recorded.
+- **Answer keys follow the question, not its position** (`which-plan-are-you-on`, `setting.memory`).
+  Inserting or reordering questions never attaches a reader's saved answer to the wrong question.
+  Rewording a bold question changes its key; the importer lists those, because readers' saved answers to
+  the old wording won't carry over (they stay in the reader's own folder files).
+- `npm run worksheets` parses the drafts into `src/worksheets/generated/worksheets.json`. Every `_____` line,
+  bullet blank, `( )` box, and table cell becomes a field; a numbered question with no blank gets a
+  Done checkbox; underscores inside a sentence stay part of the question. The dated "How to" sidebar
+  renders as its own box. `[MARK: ...]` brackets show in the flag color.
+- `tests/6-worksheets.test.ts` fails if the generated file is stale, if any blank in a draft didn't
+  become a field, or if any numbered question is missing or out of order.
+- `src/vault/`: answers autosave to this browser (IndexedDB). "Save to my folder" writes one Markdown
+  file per worksheet plus `.workbook/answers.json` into a folder the person picks (Chrome, Edge), or
+  downloads a zip elsewhere. "Open from my folder" reads it back, strictly: unknown worksheets,
+  fields, and non-text values are dropped.
+- Guard 4 covers `src/vault`, `src/worksheets`, and `app/workbook`: none of it may reach the network.
+
+
+## Next: week 3
+
+Part A (A1 to A5), drafted with the workbook skill.
