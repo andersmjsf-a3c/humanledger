@@ -18,7 +18,7 @@ export default tseslint.config(
   },
   // Only the logger and the dev-mode email fallback may print.
   { files: ["src/lib/log.ts", "src/lib/auth/email.ts"], rules: { "no-console": "off" } },
-  { files: ["tests/**"], rules: { "no-console": "off" } },
+  { files: ["tests/**", "scripts/**"], rules: { "no-console": "off" } },
   // Privacy guard 4: the vault can't make network calls.
   {
     files: ["src/vault/**", "src/worksheets/**", "app/workbook/**"],

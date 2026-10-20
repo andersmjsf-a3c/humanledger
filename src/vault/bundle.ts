@@ -2,6 +2,7 @@
 // answers file the app can reopen. Pure functions, so they're tested without a browser.
 
 import { WORKSHEETS, worksheetById } from "@/worksheets";
+import { fieldsOf } from "@/worksheets/types";
 import { fileNameFor, renderMarkdown } from "@/worksheets/render";
 import type { StoredWorksheet } from "./storage";
 
@@ -29,13 +30,7 @@ export function buildBundle(records: StoredWorksheet[], now = new Date()): FileM
 }
 
 function promptKeys(id: string): Set<string> {
-  const ws = worksheetById(id)!;
-  const keys = new Set<string>();
-  for (const p of ws.prompts) {
-    if (p.kind === "table") p.rows!.forEach((_, r) => p.columns!.forEach((_, c) => keys.add(`${p.id}.${r}.${c}`)));
-    else keys.add(p.id);
-  }
-  return keys;
+  return new Set(fieldsOf(worksheetById(id)!).map((f) => f.key));
 }
 
 // Reads an answers file back in. Strict: unknown worksheets, unknown prompts, or non-text

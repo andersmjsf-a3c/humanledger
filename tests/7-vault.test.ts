@@ -25,13 +25,13 @@ describe("answers saved on the device", () => {
 
 describe("the folder bundle", () => {
   const records: StoredWorksheet[] = [
-    { id: "0.1", answers: { plan: "Pro", plan_why: "I use projects" }, updatedAt: t("10:00").toISOString() },
-    { id: "0.6", answers: { checked_on: "2026-10-20", "settings.1.0": "On" }, updatedAt: t("10:05").toISOString() },
+    { id: "0.1", answers: { q1: "Pro", q2: "Projects, Opus, longer tools" }, updatedAt: t("10:00").toISOString() },
+    { id: "0.6", answers: { "t1.1": "On", q2: "Web search" }, updatedAt: t("10:05").toISOString() },
   ];
 
   it("writes one Markdown file per worksheet plus the answers file", () => {
     const files = buildBundle(records, t("11:00"));
-    expect(Object.keys(files).sort()).toEqual([ANSWERS_PATH, "worksheets/0.1-your-account.md", "worksheets/0.6-five-settings.md"]);
+    expect(Object.keys(files).sort()).toEqual([ANSWERS_PATH, "worksheets/0.1-your-account-and-the-window.md", "worksheets/0.6-five-settings-worth-knowing.md"]);
   });
 
   it("round-trips through the answers file and a zip", () => {
@@ -50,13 +50,13 @@ describe("the folder bundle", () => {
       format: "workbook-answers",
       version: 1,
       worksheets: {
-        "0.1": { answers: { plan: "Pro", sneaky: "x", plan_why: 42, panels: "y".repeat(20_001) }, updatedAt: "2026-10-20T10:00:00Z" },
+        "0.1": { answers: { q1: "Pro", sneaky: "x", q2: 42, q4: "y".repeat(20_001) }, updatedAt: "2026-10-20T10:00:00Z" },
         "9.9": { answers: { a: "b" } },
       },
     });
     const { records, skipped } = parseBundle(text);
     expect(records).toHaveLength(1);
-    expect(records[0].answers).toEqual({ plan: "Pro" });
+    expect(records[0].answers).toEqual({ q1: "Pro" });
     expect(skipped).toBe(4);
   });
 });

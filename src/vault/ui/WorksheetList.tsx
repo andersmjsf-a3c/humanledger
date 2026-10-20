@@ -21,7 +21,7 @@ export function WorksheetList() {
               <span className="wsid">{w.id}</span> <span className="wstitle">{w.title}</span>
             </a>
             <span className="meta">
-              {w.minutes} min{started.has(w.id) ? " · started" : ""}
+              {w.minutes ? `${w.minutes} min` : ""}{started.has(w.id) ? " · started" : ""}
               {vault.unsaved.includes(w.id) ? " · not in your folder yet" : ""}
             </span>
           </li>

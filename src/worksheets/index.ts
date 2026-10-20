@@ -1,7 +1,7 @@
-import { PART_0 } from "./part0";
+import data from "./generated/worksheets.json";
 import type { Worksheet } from "./types";
 
-export const WORKSHEETS: Worksheet[] = [...PART_0];
+export const WORKSHEETS = data as unknown as Worksheet[];
 
 export function worksheetById(id: string): Worksheet | undefined {
   return WORKSHEETS.find((w) => w.id === id);

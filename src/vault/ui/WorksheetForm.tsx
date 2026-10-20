@@ -1,16 +1,20 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import type { Answers, Worksheet } from "@/worksheets/types";
+import type { Answers, Field, Worksheet } from "@/worksheets/types";
 import { getStore, useVault } from "./useVault";
 import { FolderBar } from "./FolderBar";
 
-const isBracket = (s: string) => /^\[MARK:/.test(s);
+// HTML here is generated at build time from the workbook's own draft files in this repo,
+// never from anything a visitor typed, so rendering it directly is safe.
+const Html = ({ html, className }: { html: string; className?: string }) => (
+  <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
+);
 
 export function WorksheetForm({ ws }: { ws: Worksheet }) {
   const vault = useVault();
   const [answers, setAnswers] = useState<Answers>({});
   const [loaded, setLoaded] = useState(false);
-  const [savedAt, setSavedAt] = useState<string>("");
+  const [savedAt, setSavedAt] = useState("");
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
@@ -32,6 +36,18 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
     }, 600);
   }
 
+  const input = (f: Field, ariaLabel: string) => {
+    const v = answers[f.key] ?? "";
+    if (f.kind === "check")
+      return (
+        <label className="check">
+          <input type="checkbox" checked={!!v} onChange={(e) => update(f.key, e.target.checked ? "done" : "")} /> Done
+        </label>
+      );
+    if (f.kind === "long") return <textarea aria-label={ariaLabel} rows={3} value={v} onChange={(e) => update(f.key, e.target.value)} />;
+    return <input aria-label={ariaLabel} value={v} onChange={(e) => update(f.key, e.target.value)} />;
+  };
+
   return (
     <article className="worksheet">
       <p className="crumb">
@@ -40,62 +56,68 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
       <h1>
         {ws.id}. {ws.title}
       </h1>
-      <p className="promise">{ws.promise}</p>
-      {ws.draft && <p className="draftnote">Draft worksheet. Final wording comes with the workbook.</p>}
+      <Html className="promise" html={ws.promiseHtml} />
+      {ws.draft && <p className="draftnote">Draft: a few lines are still marked for Mark to fill in.</p>}
 
       <h2>Why this matters</h2>
-      <p className={isBracket(ws.why) ? "bracket" : ""}>{ws.why}</p>
+      <Html html={ws.whyHtml} />
 
       <h2>Mark's example</h2>
-      <p className={isBracket(ws.example) ? "bracket" : ""}>{ws.example}</p>
+      <Html html={ws.exampleHtml} />
 
       <h2>Your turn</h2>
       {!loaded ? (
         <p>Loading your answers from this device…</p>
       ) : (
-        <ol className="prompts">
-          {ws.prompts.map((p) => (
-            <li key={p.id}>
-              <label htmlFor={p.id}>{p.label}</label>
-              {p.expected && <span className="expected">({p.expected})</span>}
-              {p.kind === "short" && <input id={p.id} value={answers[p.id] ?? ""} onChange={(e) => update(p.id, e.target.value)} />}
-              {p.kind === "date" && <input id={p.id} type="date" value={answers[p.id] ?? ""} onChange={(e) => update(p.id, e.target.value)} />}
-              {p.kind === "long" && <textarea id={p.id} rows={4} value={answers[p.id] ?? ""} onChange={(e) => update(p.id, e.target.value)} />}
-              {p.kind === "table" && (
-                <table>
+        <div className="yourturn">
+          {ws.yourTurn.map((s, i) => {
+            if (s.type === "md") return <Html key={i} html={s.html} />;
+            if (s.type === "table")
+              return (
+                <table key={i} className="filltable">
                   <thead>
-                    <tr>
-                      <th />
-                      {p.columns!.map((c) => (
-                        <th key={c}>{c}</th>
-                      ))}
-                    </tr>
+                    <tr>{s.header.map((h) => <th key={h}>{h}</th>)}</tr>
                   </thead>
                   <tbody>
-                    {p.rows!.map((row, r) => (
-                      <tr key={row}>
-                        <th scope="row">{row}</th>
-                        {p.columns!.map((c, ci) => {
-                          const key = `${p.id}.${r}.${ci}`;
-                          return (
-                            <td key={c}>
-                              <input aria-label={`${row}: ${c}`} value={answers[key] ?? ""} onChange={(e) => update(key, e.target.value)} />
-                            </td>
-                          );
-                        })}
+                    {s.rows.map((r, ri) => (
+                      <tr key={ri}>
+                        {r.cells.map((c, ci) =>
+                          ci === s.blankCol && r.field ? (
+                            <td key={ci}>{input(r.field, `${r.field.label}: ${s.header[ci]}`)}</td>
+                          ) : (
+                            <td key={ci} dangerouslySetInnerHTML={{ __html: c }} />
+                          ),
+                        )}
                       </tr>
                     ))}
                   </tbody>
                 </table>
-              )}
-            </li>
-          ))}
-        </ol>
+              );
+            return (
+              <section key={i} className="item">
+                <span className="num">{s.n}</span>
+                <div>
+                  <Html html={s.html} />
+                  <div className="fields">
+                    {s.fields.map((f) => (
+                      <div key={f.key} className={f.label && f.kind !== "check" ? "labeled" : ""}>
+                        {f.label && f.kind !== "check" && <span className="flabel">{f.label}</span>}
+                        {input(f, f.label ? `${s.question}: ${f.label}` : s.question)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            );
+          })}
+        </div>
       )}
       {savedAt && <p className="saved">Saved on this device at {savedAt}.</p>}
 
+      {ws.howToHtml && <Html className="howto" html={ws.howToHtml} />}
+
       <h2>Why this compounds</h2>
-      <p>{ws.compounds}</p>
+      <Html html={ws.compoundsHtml} />
 
       <FolderBar vault={vault} />
     </article>

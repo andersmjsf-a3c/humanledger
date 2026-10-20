@@ -1,30 +1,40 @@
-// A worksheet is data, not code: adding one is content work. The engine renders the form,
-// saves answers on the person's device, and writes a Markdown file they keep.
+// Worksheets come from the workbook's own draft files (content/workbook/**), parsed at build
+// time into this shape. The drafts are the source; pages never carry their own copy of the text.
 
-export type PromptKind = "short" | "long" | "date" | "table";
+export type FieldKind = "short" | "long" | "check";
 
-export interface Prompt {
-  id: string;
-  label: string;
-  help?: string;
-  kind: PromptKind;
-  expected?: string; // "two sentences", "five rules"
-  rows?: string[]; // table prompts: fixed row labels
-  columns?: string[]; // table prompts: column headers after the row label
+export interface Field {
+  key: string; // stable answer key, e.g. "q3", "q3.2", "t1.4"
+  label?: string; // shown beside the input when a question has several fields
+  kind: FieldKind;
 }
 
+export type Segment =
+  | { type: "md"; html: string } // prose between questions (e.g. "Then two questions:")
+  | { type: "item"; n: number; question: string; html: string; expected?: string; fields: Field[] }
+  | { type: "table"; id: string; html: string; header: string[]; rows: { cells: string[]; field?: Field }[]; blankCol: number };
+
 export interface Worksheet {
-  id: string; // must match the worksheet_id category in scorecard.schema.json
+  id: string; // matches the worksheet_id category in scorecard.schema.json
   part: "0" | "A" | "B" | "C";
   slug: string;
   title: string;
-  promise: string; // one line: what you'll have and how long it takes
-  minutes: number;
-  why: string; // Mark's voice; may hold [MARK: ...] until drafted
-  example: string; // Mark's real example, or a [MARK: ...] bracket; never invented
-  prompts: Prompt[];
-  compounds: string;
-  draft: boolean; // true until the workbook skill has drafted and Mark has approved the text
+  promiseHtml: string;
+  promiseText: string;
+  minutes?: number;
+  whyHtml: string;
+  exampleHtml: string;
+  yourTurn: Segment[];
+  howToHtml?: string; // the dated sidebar of product facts
+  compoundsHtml: string;
+  draft: boolean; // true while any [MARK: ...] bracket remains
+  source: string; // the draft file it came from
 }
 
-export type Answers = Record<string, string>; // prompt id (or "promptId.row.col" for tables) -> text
+export type Answers = Record<string, string>;
+
+export function fieldsOf(ws: Worksheet): Field[] {
+  return ws.yourTurn.flatMap((s) =>
+    s.type === "item" ? s.fields : s.type === "table" ? s.rows.flatMap((r) => (r.field ? [r.field] : [])) : [],
+  );
+}

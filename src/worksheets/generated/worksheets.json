@@ -1,0 +1,742 @@
+[
+  {
+    "id": "0.1",
+    "part": "0",
+    "slug": "your-account-and-the-window",
+    "title": "Your account and the window",
+    "promiseText": "Know what plan you're on and why, what the parts of the screen are, and where a conversation goes when you close it. Twenty minutes, once.",
+    "promiseHtml": "<p>Know what plan you&#39;re on and why, what the parts of the screen are, and where a conversation goes when you close it. Twenty minutes, once.</p>\n",
+    "minutes": 20,
+    "whyHtml": "<p>The book said the setup lives here, so here it is. I kept it out of the chapters because this page goes stale faster than any other page in either book: plans change, buttons move, names change. Everything below is dated, and if the date is more than six months old, assume something has moved and look.</p>\n<p>The reason to spend twenty minutes on this before Part A is simple. Every habit in the book assumes you know three things: which version of the tool you&#39;re paying for and what that buys you, where your conversations live, and what the panels on the screen are for. People who skip this spend their first month confused about why something they did yesterday isn&#39;t there today, and they blame themselves. Usually it&#39;s a setting.</p>\n<p>Nothing here is a recommendation to pay. The free plan runs everything in Part A and most of Part B. Pay when you&#39;ve hit a limit twice in a week and it cost you something; before that, the habits matter more than the tier.</p>\n",
+    "exampleHtml": "<p>I&#39;m on a paid plan, because I use the tool for hours a day and I run the strongest model for most of it. <span class=\"bracket\">[MARK: which plan, and the one reason you&#39;d give a beginner for why.]</span> I started on the free plan for the first few months, and that was the right call. The thing that pushed me up wasn&#39;t a feature. It was hitting the usage limit in the middle of a deck at 11 in the morning, twice in one week. I upgraded that afternoon.</p>\n<p>My conversations live in two kinds of places. Most of them are inside projects (the book has one, the company has one), so they start already knowing what the work is. The rest are one-off rooms in the main list, and I treat those as disposable: if something in one turns out to matter, I move it into a project or write it into a file the same day. A conversation I can&#39;t find in a week is a conversation I should have filed.</p>\n",
+    "yourTurn": [
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Which plan are you on?",
+        "html": "<p><strong>Which plan are you on?</strong> Write it down, and write the one limit you&#39;ve hit so far, if any. (Two lines.)</p>\n",
+        "expected": "Two lines",
+        "fields": [
+          {
+            "key": "q1",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "What does your plan give you?",
+        "html": "<p><strong>What does your plan give you?</strong> From the table in the sidebar below, copy the three things that matter for how you&#39;ll use the tool this month. (Three lines.)</p>\n",
+        "expected": "Three lines",
+        "fields": [
+          {
+            "key": "q2",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Find the four parts of the window",
+        "html": "<p><strong>Find the four parts of the window</strong> and write one phrase for what each is for, in your words:</p>\n",
+        "fields": [
+          {
+            "key": "q3.1",
+            "label": "The conversation list (left)",
+            "kind": "short"
+          },
+          {
+            "key": "q3.2",
+            "label": "The chat itself (middle)",
+            "kind": "short"
+          },
+          {
+            "key": "q3.3",
+            "label": "The panel that opens beside the chat when it makes something",
+            "kind": "short"
+          },
+          {
+            "key": "q3.4",
+            "label": "The settings menu",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Start a conversation and close it",
+        "html": "<p><strong>Start a conversation and close it.</strong> Then find it again in the list. Write where it went. (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q4",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "Decide your rule",
+        "html": "<p><strong>Decide your rule</strong> for one-off conversations: when something in one matters, where will you put it? (One sentence. Mine is above.)</p>\n",
+        "expected": "One sentence. Mine is above",
+        "fields": [
+          {
+            "key": "q5",
+            "kind": "short"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: plans and the window, as of October 20, 2026, from claude.com/pricing and the Claude help center. Free: $0, Sonnet and Haiku models, web search, memory, connectors, file creation, up to five projects. Pro: $20 a month, or $17 on an annual plan; adds unlimited projects, the Opus model, the Fable model through usage credits, and the longer-running tools. Max: from $100 a month, five to twenty times Pro&#39;s usage. Team and Enterprise are priced per seat and add sharing and admin controls. Every plan has usage limits that reset on a rolling five-hour window; paid plans add weekly limits; there is no fixed message count, and Anthropic says plans and prices can change at its discretion. The window: your conversations and projects are in a sidebar on the left; the chat is in the middle; anything the tool builds (a document, a page, a deck) opens in a panel beside the chat and is also saved to an Artifacts tab in the sidebar; Settings is under your account name. Check the pricing page before relying on any number here.</em></p>\n",
+    "compoundsHtml": "<p>You&#39;ll never think about the plan or the window again, which is the point. The twenty minutes here is spent once, and every page after it assumes you know where you are. The rule you wrote in question 5 is the first of the habits that keep your work from evaporating, and Worksheet 0.4 builds on it.</p>\n",
+    "draft": true,
+    "source": "content/workbook/part0/ws01-your-account-and-the-window.md"
+  },
+  {
+    "id": "0.2",
+    "part": "0",
+    "slug": "files-in-files-out",
+    "title": "Files in, files out",
+    "promiseText": "Attach a document, paste a passage, and download a result, so you know what the tool can read and what it can hand back. Fifteen minutes.",
+    "promiseHtml": "<p>Attach a document, paste a passage, and download a result, so you know what the tool can read and what it can hand back. Fifteen minutes.</p>\n",
+    "minutes": 15,
+    "whyHtml": "<p>Most of the useful work in the book starts with the tool reading something you already have: a report, a deck, a spreadsheet, a photo of a whiteboard. And most of it ends with the tool handing you something you can open somewhere else. If you&#39;ve only ever typed into the box and read what came back, you&#39;ve used about a third of what&#39;s there.</p>\n<p>The habit is small: attach the thing instead of describing it. People describe a spreadsheet in three paragraphs when they could attach it in one click, and the description is always worse than the file. The tool reads PDFs, Word documents, spreadsheets, plain text, and images, and it reads them well enough to quote a page number back to you.</p>\n<p>The other half is getting things out. A draft that lives only in the chat is a draft you&#39;ll lose. A draft downloaded as a file is yours.</p>\n",
+    "exampleHtml": "<p>The investor deck morning in Chapter 10 started with four files attached: our full company overview, a shorter deck from the week before, an advisor deck, and a PDF of an older investor deck. The tool read all four and built from them. It also read the speaker notes inside one of them, which is how it caught a slide that should never have gone outside the company. I&#39;d have missed that. The notes were in the file; I&#39;d attached the file; it read the whole file.</p>\n<p>Going out, the deck came back as both a PowerPoint and a PDF, and I checked the rendered PDF before anything went anywhere, because the rendered file is what the reader sees and the chat&#39;s description of it is not.</p>\n<p>The thing I didn&#39;t know in my first year: it reads images. A photo of a whiteboard after a meeting, attached, comes back as a typed list of what was on the board. I use that most weeks now.</p>\n",
+    "yourTurn": [
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Attach a document you already have",
+        "html": "<p><strong>Attach a document you already have.</strong> A PDF or a Word file, anything real. Ask: &quot;Summarize this in five lines and tell me the page number of the most important sentence.&quot; Did it get the page right? (Yes or no, and the page.)</p>\n",
+        "expected": "Yes or no, and the page",
+        "fields": [
+          {
+            "key": "q1",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Paste a passage",
+        "html": "<p><strong>Paste a passage.</strong> Copy three paragraphs from anything and paste them into the chat with: &quot;What&#39;s the weakest claim in this, and why?&quot; Note whether the answer surprised you. (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q2",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Attach a spreadsheet or a photo",
+        "html": "<p><strong>Attach a spreadsheet or a photo.</strong> A spreadsheet: ask for the three largest numbers in one column. A photo of handwriting or a whiteboard: ask for it typed out. Write what it got wrong, if anything. (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q3",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Get something out",
+        "html": "<p><strong>Get something out.</strong> Ask for a one-page summary of the document from question 1 as a file. Download it. Open it outside the chat. Write where it landed on your computer. (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q4",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "Your rule for files",
+        "html": "<p><strong>Your rule for files.</strong> Finish this sentence: &quot;When I have the document, I will ______ instead of describing it.&quot; (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q5",
+            "kind": "short"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: attaching and downloading, as of October 20, 2026. In the chat box there&#39;s a &quot;+&quot; (or a paperclip) for attaching files; you can also drag a file onto the chat or paste text directly. The tool reads PDFs, Word documents, spreadsheets, plain text, code, and images, within size limits that change; if a file is refused, split it or paste the part you need. Anything it builds opens in a panel beside the chat; documents and decks there have an Export control, and legacy outputs have a download control at the top of the panel; both are also saved to the Artifacts tab in the sidebar. Creating files requires &quot;Code execution and file creation&quot; to be on under Settings &gt; Capabilities. All plans can attach files and create them.</em></p>\n",
+    "compoundsHtml": "<p>Every worksheet in Part B starts by attaching something real: last week&#39;s report, your brand guide, a draft. Once attaching is a reflex, the tool is working on your actual material instead of your description of it, and every skill you build in Part B is tested on real files from day one.</p>\n",
+    "draft": false,
+    "source": "content/workbook/part0/ws02-files-in-files-out.md"
+  },
+  {
+    "id": "0.3",
+    "part": "0",
+    "slug": "what-an-md-file-is",
+    "title": "What an .md file is",
+    "promiseText": "Read and write one plain-text file with a few symbols for headings and lists, and understand why every skill, rule, and draft in this workbook lives in that format. Fifteen minutes.",
+    "promiseHtml": "<p>Read and write one plain-text file with a few symbols for headings and lists, and understand why every skill, rule, and draft in this workbook lives in that format. Fifteen minutes.</p>\n",
+    "minutes": 15,
+    "whyHtml": "<p>Every chapter of the two books was drafted as an .md file. Every skill I&#39;ve built is one. The voice rules, the brand page, the corrections log, the agent job descriptions: .md files, all of them. If there&#39;s one piece of technical knowledge the book asks of you, it&#39;s this one, and it&#39;s about ten lines of symbols.</p>\n<p>An .md file (the letters stand for Markdown) is plain text. You can open it in any program that opens text, on any computer, forever. It has no hidden formatting, no fonts, nothing that depends on one company&#39;s software staying in business. The few symbols it uses tell a reader, human or machine, where the headings are and what&#39;s a list. That&#39;s it.</p>\n<p>The reason it matters for this work: the tool reads .md perfectly, writes it by default, and treats the structure as meaning. A heading called &quot;Rules&quot; is a section the tool knows to obey. A list under &quot;Never&quot; is a list it knows not to do. Chapter 11 said to keep what you&#39;ve learned somewhere that survives the platform. This is the somewhere.</p>\n",
+    "exampleHtml": "<p>Here is the top of one of my skill files, exactly as it&#39;s written. The symbols are the whole lesson.</p>\n<pre><code># Skill: Growth Brief post\n\nThis skill serves Mark. Use it when I say &quot;write the brief.&quot;\n</code></pre>\n",
+    "yourTurn": [
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Open a plain-text editor",
+        "html": "<p><strong>Open a plain-text editor.</strong> On a Mac, TextEdit (set to plain text), or any code editor. On Windows, Notepad. Write the name of the one you&#39;ll use. (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q1",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Write your first .md file",
+        "html": "<p><strong>Write your first .md file.</strong> Type this, with your own words in place of mine, and save it as <code>about-me.md</code>:</p>\n<pre><code># About me\n\n## Who I am\nOne or two sentences.\n\n## What I&#39;m working on\n- First thing\n- Second thing\n\n## How I like work done\n- One rule\n</code></pre>\n",
+        "fields": [
+          {
+            "key": "q2",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Attach it to a conversation",
+        "html": "<p><strong>Attach it to a conversation</strong> (Worksheet 0.2) and ask: &quot;Read this and tell me the three section headings.&quot; If it names them, you&#39;ve written a file the tool can navigate. (Yes or no.)</p>\n",
+        "expected": "Yes or no",
+        "fields": [
+          {
+            "key": "q3",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Make your folder",
+        "html": "<p><strong>Make your folder.</strong> One folder for everything from this workbook, with subfolders: <code>skills</code>, <code>notes</code>, <code>logs</code>. Write the path. (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q4",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "The ten lines",
+        "html": "<p><strong>The ten lines.</strong> Copy this table somewhere you&#39;ll see it until you don&#39;t need it:</p>\n<table>\n<thead>\n<tr>\n<th>Symbol</th>\n<th>Means</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code># Title</code></td>\n<td>The title, once at the top</td>\n</tr>\n<tr>\n<td><code>## Heading</code></td>\n<td>A section</td>\n</tr>\n<tr>\n<td><code>### Smaller heading</code></td>\n<td>A subsection</td>\n</tr>\n<tr>\n<td><code>- item</code></td>\n<td>A list item</td>\n</tr>\n<tr>\n<td><code>1. item</code></td>\n<td>A numbered list item</td>\n</tr>\n<tr>\n<td>blank line</td>\n<td>New paragraph</td>\n</tr>\n<tr>\n<td><code>**bold**</code></td>\n<td>Bold</td>\n</tr>\n<tr>\n<td><code>`code`</code></td>\n<td>Code or a filename</td>\n</tr>\n<tr>\n<td><code>&gt; quote</code></td>\n<td>A quoted block</td>\n</tr>\n<tr>\n<td><code>[text](link)</code></td>\n<td>A link</td>\n</tr>\n</tbody></table>\n",
+        "fields": [
+          {
+            "key": "q5",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: .md files, as of October 20, 2026. Any text editor writes them; save with the <code>.md</code> extension. The tool accepts them as attachments on every plan and writes them when you ask for &quot;a markdown file.&quot; Skills on Claude.ai are a folder containing a file named <code>SKILL.md</code>, zipped and uploaded under Customize &gt; Skills (Worksheet 0.5 has the steps). You don&#39;t need a special program to read one; the symbols are readable as-is.</em></p>\n",
+    "compoundsHtml": "<p>Every file from here on is one of these, and every one of them outlives the conversation it was made in. The <code>about-me.md</code> you just wrote is the first draft of Worksheet A1, and the folder you made is where your skills (Part B) and your agent job descriptions (Part C) will live.</p>\n",
+    "draft": false,
+    "source": "content/workbook/part0/ws03-what-an-md-file-is.md"
+  },
+  {
+    "id": "0.4",
+    "part": "0",
+    "slug": "organizing-conversations-projects-memory",
+    "title": "Organizing conversations, projects, and memory",
+    "promiseText": "Start a conversation on purpose, make one project, and see what memory carries between rooms, so you know where everything you tell the tool ends up. Thirty minutes.",
+    "promiseHtml": "<p>Start a conversation on purpose, make one project, and see what memory carries between rooms, so you know where everything you tell the tool ends up. Thirty minutes.</p>\n",
+    "minutes": 30,
+    "whyHtml": "<p>Chapters 11 and 12 made the argument: a conversation is a room, and nothing follows you out unless you&#39;ve set up something to carry it. Three things can. Memory carries what&#39;s true about you. A project carries what&#39;s true about one body of work. A skill carries how to do one kind of task. This page sets up the first two. Part B sets up the third.</p>\n<p>The three sorting questions from Chapter 12 are the whole method, so here they are again. Is this true about me regardless of what I&#39;m working on? Memory. Is this about one body of work, and only that? The project. Is this about how to do one kind of task, wherever it comes up? A skill. If you ask those three questions every time you&#39;re about to tell the tool something you&#39;ll want it to keep, you&#39;ll never explain yourself from scratch again.</p>\n<p>The trap is treating them as the same thing. Project facts in memory means every conversation about dinner knows about your Q3 pipeline. Personal preferences in a project means you repeat them in the next project. Sort first.</p>\n",
+    "exampleHtml": "<p>My memory holds who I am and how I like work done: my career with dates, which email to use for which business, the &quot;hundreds of partnerships&quot; wording, the em-dash ban, the rule that anything in my voice gets the humanize pass. Every one of those started as a correction in a conversation and crossed over when I&#39;d said it more than once in more than one room.</p>\n<p>I keep two kinds of things out. Anything a stranger shouldn&#39;t see on a screen, and anything about other people that&#39;s theirs. Memory is for durable, shareable facts about how I work. It isn&#39;t a diary.</p>\n<p>My projects are rooms with furniture. The book project&#39;s instructions say what the book is for and who it&#39;s for; its files are the outline, my notes on my own history, the glossary, and the skills that draft the chapters. Open a conversation inside it and the tool already knows all of that. The company has a different project with different furniture. When something from one belongs in the other, I carry it across on purpose, as a file. The web service I&#39;m building got its own project the day it stopped being a book idea, and the handoff was three files and four minutes.</p>\n",
+    "yourTurn": [
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Check memory",
+        "html": "<p><strong>Check memory.</strong> Open Settings &gt; Memory. Is &quot;Generate memory from chats&quot; on? Read what it holds under Topics. Write down one thing it has right and one thing it has wrong or missing. (Two lines.)</p>\n",
+        "expected": "Two lines",
+        "fields": [
+          {
+            "key": "q1",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Give it one durable fact",
+        "html": "<p><strong>Give it one durable fact.</strong> In a new conversation, type: &quot;Remember this about me:&quot; followed by one sentence that&#39;s true regardless of what you&#39;re working on (what you do, or one rule for how you like work done). Then open a second new conversation and ask it what it knows about you. Did the fact carry? (Yes or no.)</p>\n",
+        "expected": "Yes or no",
+        "fields": [
+          {
+            "key": "q2",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Sort five things",
+        "html": "<p><strong>Sort five things.</strong> Write five things you&#39;ve told the tool more than once. Beside each, write M (memory), P (project), or S (skill).</p>\n",
+        "fields": [
+          {
+            "key": "q3.1",
+            "label": "Item 1",
+            "kind": "short"
+          },
+          {
+            "key": "q3.2",
+            "label": "Item 1, mark",
+            "kind": "short"
+          },
+          {
+            "key": "q3.3",
+            "label": "Item 2",
+            "kind": "short"
+          },
+          {
+            "key": "q3.4",
+            "label": "Item 2, mark",
+            "kind": "short"
+          },
+          {
+            "key": "q3.5",
+            "label": "Item 3",
+            "kind": "short"
+          },
+          {
+            "key": "q3.6",
+            "label": "Item 3, mark",
+            "kind": "short"
+          },
+          {
+            "key": "q3.7",
+            "label": "Item 4",
+            "kind": "short"
+          },
+          {
+            "key": "q3.8",
+            "label": "Item 4, mark",
+            "kind": "short"
+          },
+          {
+            "key": "q3.9",
+            "label": "Item 5",
+            "kind": "short"
+          },
+          {
+            "key": "q3.10",
+            "label": "Item 5, mark",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Make one project",
+        "html": "<p><strong>Make one project.</strong> Pick one body of work you&#39;re in the middle of. Create a project for it. Write two or three sentences of instructions (what it is, who it&#39;s for, how you want the tool to behave in it). Add the two files you keep re-attaching. Write the project&#39;s name. (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q4",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "Test the room",
+        "html": "<p><strong>Test the room.</strong> Open a new conversation inside the project and ask for something you&#39;d normally have to explain first. Write what you didn&#39;t have to say. (Two lines.)</p>\n",
+        "expected": "Two lines",
+        "fields": [
+          {
+            "key": "q5",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "Your rule for one-off conversations",
+        "html": "<p><strong>Your rule for one-off conversations.</strong> From Worksheet 0.1: when something in a one-off conversation matters, where does it go, and by when? (One sentence.)</p>\n",
+        "expected": "One sentence",
+        "fields": [
+          {
+            "key": "q6",
+            "kind": "short"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: memory and projects, as of October 20, 2026, from the Claude help center. Memory: Settings &gt; Memory, toggle &quot;Generate memory from chats.&quot; Everything it remembers is listed under Topics; select one to read, edit, or delete it, or tell the tool in a chat to remember, change, or forget something and it applies from the next conversation. Sensitive topics (health, politics) are excluded unless you turn on &quot;Include sensitive topics in memory.&quot; To keep one chat out of memory, click &quot;+&quot; in a new chat and turn off Memory before the first message, or use the ghost icon for an incognito chat. Turning memory off offers &quot;Pause memory&quot; (keeps what&#39;s saved, stops using it) or &quot;Reset memory&quot; (deletes everything, including project memories, permanently). Memory is on by default for Free, Pro, and Max; on Team and Enterprise an owner must enable it first. Each project has its own memory plus your account memory; &quot;Use account memory&quot; on the project page turns the account part off for that project. Projects: Projects in the left sidebar, &quot;+ New Project,&quot; name and describe it, then &quot;Set project instructions&quot; and the &quot;+&quot; under project knowledge to add files; any chat started inside the project uses both. Free accounts get five projects; paid plans, unlimited. Past-chat search (&quot;Search and reference chats&quot; under Settings &gt; Memory) is on paid plans only.</em></p>\n",
+    "compoundsHtml": "<p>The fact you gave memory in question 2 is the first line of Worksheet A1, and the project you made in question 4 is where every Part B skill gets tested. From here on, each conversation starts closer to where the last one ended, and the explaining you did this week is explaining you won&#39;t do next week.</p>\n",
+    "draft": false,
+    "source": "content/workbook/part0/ws04-organizing-conversations-projects-memory.md"
+  },
+  {
+    "id": "0.5",
+    "part": "0",
+    "slug": "artifacts-and-outputs",
+    "title": "Artifacts and outputs",
+    "promiseText": "Edit, save, and share one thing the tool built for you, and know where a skill lives once you've written one, with the no-setup fallback that works everywhere. Twenty minutes.",
+    "promiseHtml": "<p>Edit, save, and share one thing the tool built for you, and know where a skill lives once you&#39;ve written one, with the no-setup fallback that works everywhere. Twenty minutes.</p>\n",
+    "minutes": 20,
+    "whyHtml": "<p>When the tool makes something substantial (a document, a page, a deck, a small tool), it doesn&#39;t put it in the chat. It opens it in a panel beside the chat, saves it, and lets you come back to it, change it, and share it. The help pages call these artifacts. The book mostly calls them &quot;the thing it built,&quot; because that&#39;s what they are.</p>\n<p>Two habits here. First: anything you&#39;ll keep, you edit in the panel and export, because the rendered file is what a reader sees and the chat&#39;s description of it is not (Chapter 10 learned this the hard way). Second: a skill you&#39;ve written (Part B) has to live somewhere the tool will load it. There&#39;s a proper place, and there&#39;s a fallback that works on every plan with no setup, and you should know both, because the proper place has moved more than once and will again.</p>\n",
+    "exampleHtml": "<p>The investor deck came back as an artifact: fourteen slides in a panel beside the chat, rebuilt twenty-three times, each version rendered so I could read it as the investor would. I exported the PDF to send and kept the PowerPoint as the source. Both are in the Artifacts tab if I need them again, and I&#39;ve gone back to that tab for a deck more than once.</p>\n<p>My skills live in two places. The saved version is uploaded under Customize &gt; Skills, where the tool loads it whenever I name the task. The source is the .md file in my skills folder on my own computer, and that&#39;s the one I edit, because the file is mine and the upload is a copy. When a skill changes, I upload the new version and the old one is gone. Before I had saved skills, I pasted the instructions at the top of every conversation, which is slower and works exactly as well. If the upload button moves tomorrow, pasting still works.</p>\n",
+    "yourTurn": [
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Build one thing",
+        "html": "<p><strong>Build one thing.</strong> Ask for a one-page document on anything you know well: &quot;Write a one-page explainer on [topic] as a document.&quot; Watch where it opens. (Write the panel&#39;s position: beside the chat, or somewhere else.)</p>\n",
+        "expected": "Write the panel's position: beside the chat, or somewhere else",
+        "fields": [
+          {
+            "key": "q1",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Edit it two ways",
+        "html": "<p><strong>Edit it two ways.</strong> First, ask the chat for one change. Then make one change directly in the panel. Which felt more natural? (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q2",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Export it",
+        "html": "<p><strong>Export it.</strong> Use the Export control to download it as a Word file or PDF. Open the download. Write the filename. (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q3",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Find it again tomorrow",
+        "html": "<p><strong>Find it again tomorrow.</strong> Open the Artifacts tab in the sidebar and confirm it&#39;s there. (Yes or no.)</p>\n",
+        "expected": "Yes or no",
+        "fields": [
+          {
+            "key": "q4",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "Place your first skill, two ways",
+        "html": "<p><strong>Place your first skill, two ways.</strong> Take the <code>about-me.md</code> from Worksheet 0.3 (or any instructions you&#39;d give the tool every time).</p>\n<ul>\n<li>Fallback, works everywhere: start a new conversation, paste the whole file at the top, then ask for the task. Write whether it followed the rules. (One line.)</li>\n<li>Saved skill: follow the sidebar below to upload it. Then start a fresh conversation, don&#39;t paste anything, and ask for the task. Did it load? (Yes or no.)</li>\n</ul>\n",
+        "expected": "Yes or no",
+        "fields": [
+          {
+            "key": "q5",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "Your rule",
+        "html": "<p><strong>Your rule.</strong> Finish: &quot;Anything I&#39;ll keep, I ______ before I send it.&quot; (The answer is in Chapter 10.)</p>\n",
+        "expected": "The answer is in Chapter 10",
+        "fields": [
+          {
+            "key": "q6",
+            "kind": "short"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: artifacts and skills, as of October 20, 2026, from the Claude help center. Artifacts open beside the chat and are saved to the Artifacts tab in the sidebar; they start private. Document, deck, and design artifacts have an Export control (documents to Word, PDF, Markdown, or Google Docs; decks to PowerPoint or PDF; designs to zip, PDF, PowerPoint, or HTML); older-style artifacts have view, copy, and download controls at the top of the panel. In a document, highlight text and choose &quot;Edit with Claude&quot; to change a passage. Creating artifacts requires &quot;Code execution and file creation&quot; on under Settings &gt; Capabilities; it&#39;s available on every plan, with the template kinds (Docs, Slides, Design) on paid plans. Skills: put your <code>SKILL.md</code> in a folder named for the skill, zip the folder, go to Customize &gt; Skills, click &quot;+&quot;, then &quot;+ Create skill,&quot; then &quot;Upload a skill.&quot; Each skill has an on/off toggle there. Skills are available on every plan and need code execution turned on. If an upload fails, the usual reasons are a folder name that doesn&#39;t match the skill name, a missing <code>SKILL.md</code>, or an odd character in the name. The fallback, pasting the file at the top of a conversation, needs nothing.</em></p>\n",
+    "compoundsHtml": "<p>You now have the two moves every later worksheet assumes: get the rendered thing out before you ship it, and put a skill where the tool loads it without being asked. Part B&#39;s first worksheet ends with you uploading a real skill using exactly step 5, and Chapter 11&#39;s re-test routine assumes you know where your skills live.</p>\n",
+    "draft": false,
+    "source": "content/workbook/part0/ws05-artifacts-and-outputs.md"
+  },
+  {
+    "id": "0.6",
+    "part": "0",
+    "slug": "five-settings-worth-knowing",
+    "title": "Five settings worth knowing",
+    "promiseText": "A dated table of the five settings that change what the tool does for you, checked once so you stop wondering why it behaved differently today. Ten minutes.",
+    "promiseHtml": "<p>A dated table of the five settings that change what the tool does for you, checked once so you stop wondering why it behaved differently today. Ten minutes.</p>\n",
+    "minutes": 10,
+    "whyHtml": "<p>Most of what people blame on the tool is a setting. It didn&#39;t search the web because search was off for that chat. It didn&#39;t remember because memory was paused. It gave a shallower answer because a faster model was selected. It couldn&#39;t make a file because file creation wasn&#39;t turned on. None of those is the tool being bad at the job. All of them are a toggle.</p>\n<p>Five settings account for nearly every &quot;it worked yesterday&quot; I&#39;ve heard, so this page is a table and a check. Go through it once. Then, when something behaves oddly, come back here before you blame yourself or the machine.</p>\n<p>Chapter 11 warned that these move. The table has a date on it. If the date is old, the names may have changed; the setting itself almost certainly still exists, so ask the tool where it is now.</p>\n",
+    "exampleHtml": "<p>The setting that cost me the most was web search, early on. I&#39;d ask for a figure, get a confident number, and only later work out that search had been off and the number came from the model&#39;s memory of the world, with the world itself never consulted. Now I check the slider when a fact matters, and Chapter 6&#39;s pass assumes search is on.</p>\n<p>The one I changed most recently was model choice. For a year I ran the strongest model for everything. I still do for judgment work: drafting, arguing, anything with a reader who matters. For routine summaries I&#39;ve moved down a tier, because the wait and the usage limit started to cost me more than the difference in quality. The right setting changes with the job in front of you.</p>\n",
+    "yourTurn": [
+      {
+        "type": "md",
+        "html": "<p>Go through the table. For each row, find the setting, note where it is today, and set it the way you want it. Write a word in the last column.</p>\n"
+      },
+      {
+        "type": "table",
+        "id": "t1",
+        "html": "",
+        "header": [
+          "Setting",
+          "What it changes",
+          "Where it was on October 20, 2026",
+          "My choice"
+        ],
+        "blankCol": 3,
+        "rows": [
+          {
+            "cells": [
+              "Web search",
+              "Whether it looks things up live, with citations, or answers from what it learned in training. On when facts matter.",
+              "The slider icon in the chat box, &quot;Web search&quot; toggle; per chat",
+              ""
+            ],
+            "field": {
+              "key": "t1.1",
+              "label": "Web search",
+              "kind": "short"
+            }
+          },
+          {
+            "cells": [
+              "Memory",
+              "Whether it keeps and uses what it knows about you between conversations",
+              "Settings &gt; Memory, &quot;Generate memory from chats&quot;; pause or reset from the same toggle",
+              ""
+            ],
+            "field": {
+              "key": "t1.2",
+              "label": "Memory",
+              "kind": "short"
+            }
+          },
+          {
+            "cells": [
+              "Past-chat search",
+              "Whether it can look back through your earlier conversations when you ask",
+              "Settings &gt; Memory, &quot;Search and reference chats&quot; (paid plans)",
+              ""
+            ],
+            "field": {
+              "key": "t1.3",
+              "label": "Past-chat search",
+              "kind": "short"
+            }
+          },
+          {
+            "cells": [
+              "Model",
+              "Which model answers: the strongest for judgment, a faster one for routine work",
+              "The model picker in the chat box; which models you see depends on plan",
+              ""
+            ],
+            "field": {
+              "key": "t1.4",
+              "label": "Model",
+              "kind": "short"
+            }
+          },
+          {
+            "cells": [
+              "File creation",
+              "Whether it can build documents, decks, pages, and run code",
+              "Settings &gt; Capabilities, &quot;Code execution and file creation&quot;",
+              ""
+            ],
+            "field": {
+              "key": "t1.5",
+              "label": "File creation",
+              "kind": "short"
+            }
+          }
+        ]
+      },
+      {
+        "type": "md",
+        "html": "<p>Then two questions:</p>\n"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Which of the five was set differently from how you expected?",
+        "html": "<p><strong>Which of the five was set differently from how you expected?</strong> (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q1",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Your check",
+        "html": "<p><strong>Your check.</strong> When an answer surprises you, which row will you look at first? (One line. Mine is web search.)</p>\n",
+        "expected": "One line. Mine is web search",
+        "fields": [
+          {
+            "key": "q2",
+            "kind": "short"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: settings, as of October 20, 2026, from the Claude help center and claude.com. Web search is per chat and counts against usage on free accounts. Memory is on by default on Free, Pro, and Max and must be enabled by an owner on Team and Enterprise. Past-chat search is on paid plans. Models by plan, per claude.com/pricing: Free has Sonnet and Haiku; Pro adds Opus and the Fable model through usage credits; Max and Team premium seats include Fable at a share of weekly limits. Where preferences live: Settings &gt; Memory for what it remembers about you; a project&#39;s instructions for how it behaves in that project; your skills for how it does a task. All three are the places Worksheet 0.4 sorted things into.</em></p>\n",
+    "compoundsHtml": "<p>You&#39;ve turned five mysteries into five known switches. From now on, a strange answer costs you thirty seconds of checking instead of an afternoon of doubt, and when Chapter 11&#39;s next change arrives, you&#39;ll know which switch to look for instead of relearning the tool.</p>\n",
+    "draft": false,
+    "source": "content/workbook/part0/ws06-five-settings-worth-knowing.md"
+  },
+  {
+    "id": "0.7",
+    "part": "0",
+    "slug": "models-and-platform-changes",
+    "title": "Models and platform changes",
+    "promiseText": "A dated table of the current models and which to use for what, a one-page change log you'll keep, and the hour-long re-test routine for the day a new model lands. Thirty minutes to set up; an hour each time it's needed.",
+    "promiseHtml": "<p>A dated table of the current models and which to use for what, a one-page change log you&#39;ll keep, and the hour-long re-test routine for the day a new model lands. Thirty minutes to set up; an hour each time it&#39;s needed.</p>\n",
+    "minutes": 30,
+    "whyHtml": "<p>Chapter 11 said the platform moves. This is the page that keeps you standing when it does.</p>\n<p>Three things on it. A table of today&#39;s models, dated, so you know what you&#39;re choosing between and which to pick for which work. A change log, which is a half-page file you add a line to whenever the tool changes under you. And the re-test routine: the hour you spend after a release running your most-used skills against a real task and comparing to the last thing you approved, so drift gets caught by you, on purpose, instead of by a reader, by accident.</p>\n<p>None of this is technical. The hardest part is remembering to do it, which is why the log has a date column and the first line in it is today.</p>\n",
+    "exampleHtml": "<p>My log started after the first time a release broke a skill without telling me. My column skill, tuned over months, started producing longer paragraphs and a phrase I&#39;d never had to ban before. It took me a day to work out that the model had changed and my file hadn&#39;t. The log is three lines per release now: date, model, what I changed. I&#39;ve been glad of it every time.</p>\n<p>The re-test is an hour. Three skills (column, voice pass, deck), one real task each, compare to the last version I approved. If something drifted, fix the file, not the draft. Read the release notes for anything about writing style or tools. Log it. Since the Logitech years, when every operating-system release meant re-testing every product, I haven&#39;t found a better routine than test before, test after, write down what moved.</p>\n<p>Which model for what, as I do it today: the strongest for anything with a reader who matters or a judgment call in it; a faster tier for summaries, sorting, and first passes I&#39;ll check anyway. A good brief outranks the tier. The weak model with four hundred words of context beats the strong one with four.</p>\n",
+    "yourTurn": [
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Copy the model table",
+        "html": "<p><strong>Copy the model table</strong> into your notes folder as <code>models.md</code>, with today&#39;s date at the top. Cross out rows as they retire; add rows as they arrive.</p>\n<table>\n<thead>\n<tr>\n<th>Model (as of October 20, 2026)</th>\n<th>What Anthropic calls it</th>\n<th>What I use it for</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Fable 5.1</td>\n<td>&quot;Next generation intelligence for long-running agents&quot;</td>\n<td>Judgment work, long documents, hard arguments</td>\n</tr>\n<tr>\n<td>Opus 5.5</td>\n<td>&quot;Daily driver for agentic coding and enterprise work&quot;</td>\n<td>Drafting and building; the default on paid plans</td>\n</tr>\n<tr>\n<td>Sonnet 5.5</td>\n<td>&quot;High-performance model for coding and agents&quot;</td>\n<td>Routine drafts, summaries, sorting</td>\n</tr>\n<tr>\n<td>Haiku 5.5</td>\n<td>&quot;Fastest, most cost-efficient model&quot;</td>\n<td>Quick questions, bulk work I&#39;ll check</td>\n</tr>\n</tbody></table>\n<p>Write your own third column. (Four lines.)</p>\n",
+        "expected": "Four lines",
+        "fields": [
+          {
+            "key": "q1",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Start your change log",
+        "html": "<p><strong>Start your change log.</strong> Create <code>logs/platform-changes.md</code> in your folder with this header and one line for today:</p>\n<pre><code># Platform changes\n| Date | What changed | What I did about it |\n|---|---|---|\n| 2026-10-20 | Started this log; models as of today in models.md | Nothing yet |\n</code></pre>\n",
+        "fields": [
+          {
+            "key": "q2",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Pick your three",
+        "html": "<p><strong>Pick your three.</strong> Which three skills or routines would you re-test after a release? If you don&#39;t have skills yet, which three tasks do you ask for most? (Three lines.)</p>\n",
+        "expected": "Three lines",
+        "fields": [
+          {
+            "key": "q3.1",
+            "label": "Item 1",
+            "kind": "short"
+          },
+          {
+            "key": "q3.2",
+            "label": "Item 2",
+            "kind": "short"
+          },
+          {
+            "key": "q3.3",
+            "label": "Item 3",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Write the routine",
+        "html": "<p><strong>Write the routine</strong> as you&#39;ll run it, in your words, under an hour:</p>\n",
+        "fields": [
+          {
+            "key": "q4.1",
+            "label": "Run each of the three on a real task",
+            "kind": "short"
+          },
+          {
+            "key": "q4.2",
+            "label": "Compare to the last result I approved",
+            "kind": "short"
+          },
+          {
+            "key": "q4.3",
+            "label": "If something drifted, fix the file, not the draft",
+            "kind": "short"
+          },
+          {
+            "key": "q4.4",
+            "label": "Read the release notes for",
+            "kind": "short"
+          },
+          {
+            "key": "q4.5",
+            "label": "Log it",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "Set a trigger",
+        "html": "<p><strong>Set a trigger.</strong> How will you find out a new model has landed? (The model picker changes; the tool often announces it; a colleague mentions it.) Write the one you&#39;ll rely on. (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "q5",
+            "kind": "short"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: models and releases, as of October 20, 2026, from claude.com/pricing. Four current models are offered: Fable 5.1, Opus 5.5, Sonnet 5.5, and Haiku 5.5; older versions remain listed as legacy for a time. Free accounts use Sonnet and Haiku; Pro adds Opus and Fable through usage credits; Max and Team premium seats include Fable at a share of weekly limits. A new release usually appears in the model picker in the chat box and in Anthropic&#39;s announcements; the previous model stays available for a while and then retires. A separate Mythos tier exists and is not generally available. Treat every name in this sidebar as provisional; the table in question 1 is yours to keep current.</em></p>\n",
+    "compoundsHtml": "<p>Every release after this one costs you an hour instead of a lost week, and the log turns each change into a line you can read back when a draft feels off. Your skills (Part B) survive because you re-test them; your voice (Part A) stays yours because drift gets caught the week it happens, not the month after.</p>\n",
+    "draft": false,
+    "source": "content/workbook/part0/ws07-models-and-platform-changes.md"
+  }
+]

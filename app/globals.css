@@ -79,3 +79,19 @@ button.quiet { border-color: var(--rule); color: var(--muted); }
 .filebutton input { display: none; }
 .message { color: var(--ink); }
 .fineprint { color: var(--muted); font-size: 0.85rem; margin-bottom: 0; }
+
+/* Drafted worksheet content */
+.worksheet pre { background: var(--field); border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; overflow-x: auto; font-size: 0.85rem; }
+.worksheet code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+.item { display: grid; grid-template-columns: 2em 1fr; gap: 4px; margin: 1.6em 0; }
+.item .num { font: 600 1rem ui-sans-serif, system-ui, sans-serif; color: var(--muted); padding-top: 0.15em; }
+.item ul { padding-left: 1.2em; }
+.fields { display: grid; gap: 8px; margin-top: 6px; }
+.labeled { display: grid; gap: 2px; }
+.flabel { font: 0.85rem ui-sans-serif, system-ui, sans-serif; color: var(--muted); }
+.check { font: 0.95rem ui-sans-serif, system-ui, sans-serif; display: inline-flex; gap: 6px; align-items: center; }
+.check input { width: auto; margin: 0; }
+.filltable td, .filltable th { font-size: 0.9rem; }
+.filltable td:last-child { min-width: 9em; }
+.howto { margin: 2em 0; padding: 12px 14px; border-left: 3px solid var(--rule); color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 560px) { .filltable thead { display: none; } .filltable tr { display: grid; padding: 8px 0; border-bottom: 1px solid var(--rule); } .filltable td { border: 0; } }

@@ -46,13 +46,21 @@ The build fails if any of these break.
 
 ## The workbook (week 2)
 
-- `src/worksheets/`: worksheets defined as data. Part 0 (0.1 to 0.7) is in with draft prompts; the
-  "why" and "Mark's example" text are `[MARK: ...]` brackets until the workbook skill drafts them.
+- `content/workbook/part0/`: the drafted worksheets, copied unchanged from the compounding-ai-workbook
+  skill's `references/drafts/`. **They are the source.** Pages never carry their own copy of the text.
+- `npm run worksheets` parses them into `src/worksheets/generated/worksheets.json`. Every `_____` line,
+  bullet blank, `( )` box, and table cell becomes a field; a numbered question with no blank gets a
+  Done checkbox; underscores inside a sentence stay part of the question. The dated "How to" sidebar
+  renders as its own box. `[MARK: ...]` brackets show in the flag color.
+- `tests/6-worksheets.test.ts` fails if the generated file is stale, if any blank in a draft didn't
+  become a field, or if any numbered question is missing or out of order.
 - `src/vault/`: answers autosave to this browser (IndexedDB). "Save to my folder" writes one Markdown
   file per worksheet plus `.workbook/answers.json` into a folder the person picks (Chrome, Edge), or
   downloads a zip elsewhere. "Open from my folder" reads it back, strictly: unknown worksheets,
-  prompts, and non-text values are dropped.
-- Guard 4 now covers `src/vault`, `src/worksheets`, and `app/workbook`: none of it may reach the network.
+  fields, and non-text values are dropped.
+- Guard 4 covers `src/vault`, `src/worksheets`, and `app/workbook`: none of it may reach the network.
+
+To update a worksheet: copy the new draft into `content/workbook/<part>/`, run `npm run worksheets`, commit both.
 
 ## Next: week 3
 
