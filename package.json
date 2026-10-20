@@ -13,7 +13,8 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "check": "npm run typecheck && npm run lint && npm run test",
-    "worksheets": "tsx scripts/build-worksheets.ts"
+    "worksheets": "tsx scripts/build-worksheets.ts",
+    "import:workbook": "tsx scripts/import-workbook.ts"
   },
   "dependencies": {
     "ajv": "^8.20.0",

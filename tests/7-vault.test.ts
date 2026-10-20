@@ -25,8 +25,8 @@ describe("answers saved on the device", () => {
 
 describe("the folder bundle", () => {
   const records: StoredWorksheet[] = [
-    { id: "0.1", answers: { q1: "Pro", q2: "Projects, Opus, longer tools" }, updatedAt: t("10:00").toISOString() },
-    { id: "0.6", answers: { "t1.1": "On", q2: "Web search" }, updatedAt: t("10:05").toISOString() },
+    { id: "0.1", answers: { "which-plan-are-you-on": "Pro", "what-does-your-plan-give-you": "Projects, Opus, longer tools" }, updatedAt: t("10:00").toISOString() },
+    { id: "0.6", answers: { "setting.memory": "On", "your-check": "Web search" }, updatedAt: t("10:05").toISOString() },
   ];
 
   it("writes one Markdown file per worksheet plus the answers file", () => {
@@ -50,13 +50,13 @@ describe("the folder bundle", () => {
       format: "workbook-answers",
       version: 1,
       worksheets: {
-        "0.1": { answers: { q1: "Pro", sneaky: "x", q2: 42, q4: "y".repeat(20_001) }, updatedAt: "2026-10-20T10:00:00Z" },
+        "0.1": { answers: { "which-plan-are-you-on": "Pro", sneaky: "x", "what-does-your-plan-give-you": 42, "decide-your-rule": "y".repeat(20_001) }, updatedAt: "2026-10-20T10:00:00Z" },
         "9.9": { answers: { a: "b" } },
       },
     });
     const { records, skipped } = parseBundle(text);
     expect(records).toHaveLength(1);
-    expect(records[0].answers).toEqual({ q1: "Pro" });
+    expect(records[0].answers).toEqual({ "which-plan-are-you-on": "Pro" });
     expect(skipped).toBe(4);
   });
 });

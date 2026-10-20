@@ -1,0 +1,14 @@
+{
+  "skill": "compounding-ai-workbook",
+  "skillSha256": "8a780033ad637e7a72134380127fa66130ddfc47ff9965dcccf52ea54cdb7385",
+  "importedAt": "2026-10-20T23:33:54.728Z",
+  "files": {
+    "part0/ws01-your-account-and-the-window.md": "44a27ac20dda625959fdade124d5b774a99c40c71855644842061f0b03b0d2d6",
+    "part0/ws02-files-in-files-out.md": "020e5216956e3a28db286726ec61e36451cd26ef586beab8a5563ae0a493fb80",
+    "part0/ws03-what-an-md-file-is.md": "622d7601aef326198b5f125e6a90d42d5b5ac012e3a8c1452c3bc62bfd9e91c5",
+    "part0/ws04-organizing-conversations-projects-memory.md": "00adad7b56f646e36e67652282feac957884cb92fa03946ec667ffcaa32eb76e",
+    "part0/ws05-artifacts-and-outputs.md": "f6702acce89fadaa8fe84bc16fe0aed034c32994ca5e6794c9447290cfdc0a65",
+    "part0/ws06-five-settings-worth-knowing.md": "71622ec07094b486bf97318781fd450cb944592110adf4b2e330d50055073423",
+    "part0/ws07-models-and-platform-changes.md": "f1053e71bde301b669e3fbee5ba28118fb0d8d950d6010bdfd8f8b78208e5e92"
+  }
+}

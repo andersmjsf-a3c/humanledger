@@ -62,7 +62,7 @@ describe("worksheets come from the drafts, unchanged", () => {
 
 describe("the Markdown file the person keeps", () => {
   const ws06 = WORKSHEETS.find((w) => w.id === "0.6")!;
-  const md = renderMarkdown(ws06, { "t1.1": "On | every chat", q1: "Memory" }, "2026-10-20");
+  const md = renderMarkdown(ws06, { "setting.web-search": "On | every chat", "which-of-the-five-was-set-differently-from-how-y": "Memory" }, "2026-10-20");
 
   it("has the title, the fill-in table with escaped answers, and the questions", () => {
     expect(md).toContain("# 0.6. Five settings worth knowing");

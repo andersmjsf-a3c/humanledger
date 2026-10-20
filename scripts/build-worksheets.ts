@@ -6,7 +6,7 @@ import { parseWorksheet } from "../src/worksheets/parse";
 
 export function buildAll(root = "content/workbook") {
   const out = [];
-  for (const part of readdirSync(root).sort()) {
+  for (const part of readdirSync(root, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort()) {
     for (const f of readdirSync(join(root, part)).filter((f) => f.endsWith(".md")).sort()) {
       const source = `${root}/${part}/${f}`;
       out.push(parseWorksheet(readFileSync(source, "utf8"), source));

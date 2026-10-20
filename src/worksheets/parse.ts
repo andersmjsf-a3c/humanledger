@@ -16,6 +16,9 @@ const NUMBER_WORDS: Record<string, number> = {
   five: 5, ten: 10, fifteen: 15, twenty: 20, "twenty-five": 25, thirty: 30, forty: 40, "forty-five": 45, sixty: 60,
 };
 
+export const slug = (s: string) =>
+  s.toLowerCase().replace(/<[^>]+>/g, "").replace(/[`*_]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48).replace(/-$/, "") || "x";
+
 const md = (s: string) => marked.parse(s.trim(), { async: false, gfm: true }) as string;
 
 // [MARK: ...] brackets show in the brand's flag color so nobody mistakes them for finished text.
@@ -59,14 +62,15 @@ function parseTable(lines: string[], id: string): Segment | null {
     html: "",
     header,
     blankCol,
-    rows: body.map((cells, r) => ({
+    rows: body.map((cells) => ({
       cells: cells.map((c) => (BLANK_LINE.test(c) ? "" : (md(c).replace(/^<p>|<\/p>\s*$/g, "")))),
-      field: BLANK_LINE.test(cells[blankCol] ?? "") ? { key: `${id}.${r + 1}`, label: cells[0], kind: "short" as FieldKind } : undefined,
+      field: BLANK_LINE.test(cells[blankCol] ?? "") ? { key: `${slug(header[0])}.${slug(cells[0])}`, label: cells[0], kind: "short" as FieldKind } : undefined,
     })),
   };
 }
 
 function parseItem(n: number, lines: string[]): Segment {
+  const raw: { label?: string; kind: FieldKind }[] = [];
   const fields: Field[] = [];
   const body: string[] = [];
   let bulletFields = 0;
@@ -82,10 +86,8 @@ function parseItem(n: number, lines: string[]): Segment {
       bulletFields++;
       const label = t.replace(/^- /, "").split("_____")[0].replace(/[:\s]+$/, "").trim();
       const blanks = (t.match(BLANK) ?? []).length;
-      for (let b = 0; b < blanks; b++) {
-        fields.push({ key: `q${n}.${fields.length + 1}`, label: label || `Item ${bulletFields}`, kind: "short" });
-      }
-      if (t.includes("( )")) fields.push({ key: `q${n}.${fields.length + 1}`, label: `Item ${bulletFields}, mark`, kind: "short" });
+      for (let b = 0; b < blanks; b++) raw.push({ label: label || `Item ${bulletFields}`, kind: "short" });
+      if (t.includes("( )")) raw.push({ label: `Item ${bulletFields}, mark`, kind: "short" });
       continue;
     }
     body.push(line);
@@ -97,11 +99,19 @@ function parseItem(n: number, lines: string[]): Segment {
   const lastPara = text.split(/\n\s*\n/).at(-1)!.replace(/\n/g, " ");
   const expected = (lastPara.match(/\(([^()]+)\)\s*$/) ?? firstPara.match(/\(([^()]+)\)\s*$/))?.[1]?.replace(/\.$/, "");
 
-  for (let i = 0; i < plainBlanks; i++) {
-    const key = plainBlanks === 1 && !fields.length ? `q${n}` : `q${n}.${fields.length + 1}`;
-    fields.push({ key, kind: kindFor(expected) });
+  // Answer keys follow the question, not its position, so inserting or reordering questions in
+  // the workbook never attaches a saved answer to the wrong question. Rewording the bold question
+  // changes its key; the importer reports that, because readers' saved answers won't carry over.
+  const base = slug(question);
+  for (let i = 0; i < plainBlanks; i++) raw.push({ kind: kindFor(expected) });
+  if (!raw.length) raw.push({ kind: "check", label: "Done" });
+  const used = new Set<string>();
+  for (const [i, r] of raw.entries()) {
+    let key = raw.length === 1 ? base : `${base}.${r.label ? slug(r.label) : i + 1}`;
+    while (used.has(key)) key += "-2";
+    used.add(key);
+    fields.push({ key, kind: r.kind, ...(r.label ? { label: r.label } : {}) });
   }
-  if (!fields.length) fields.push({ key: `q${n}`, kind: "check", label: "Done" });
 
   return { type: "item", n, question, html: html(text), expected, fields };
 }

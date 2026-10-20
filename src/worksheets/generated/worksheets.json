@@ -18,7 +18,7 @@
         "expected": "Two lines",
         "fields": [
           {
-            "key": "q1",
+            "key": "which-plan-are-you-on",
             "kind": "long"
           }
         ]
@@ -31,7 +31,7 @@
         "expected": "Three lines",
         "fields": [
           {
-            "key": "q2",
+            "key": "what-does-your-plan-give-you",
             "kind": "long"
           }
         ]
@@ -43,24 +43,24 @@
         "html": "<p><strong>Find the four parts of the window</strong> and write one phrase for what each is for, in your words:</p>\n",
         "fields": [
           {
-            "key": "q3.1",
-            "label": "The conversation list (left)",
-            "kind": "short"
+            "key": "find-the-four-parts-of-the-window.the-conversation-list-left",
+            "kind": "short",
+            "label": "The conversation list (left)"
           },
           {
-            "key": "q3.2",
-            "label": "The chat itself (middle)",
-            "kind": "short"
+            "key": "find-the-four-parts-of-the-window.the-chat-itself-middle",
+            "kind": "short",
+            "label": "The chat itself (middle)"
           },
           {
-            "key": "q3.3",
-            "label": "The panel that opens beside the chat when it makes something",
-            "kind": "short"
+            "key": "find-the-four-parts-of-the-window.the-panel-that-opens-beside-the-chat-when-it-mak",
+            "kind": "short",
+            "label": "The panel that opens beside the chat when it makes something"
           },
           {
-            "key": "q3.4",
-            "label": "The settings menu",
-            "kind": "short"
+            "key": "find-the-four-parts-of-the-window.the-settings-menu",
+            "kind": "short",
+            "label": "The settings menu"
           }
         ]
       },
@@ -72,7 +72,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q4",
+            "key": "start-a-conversation-and-close-it",
             "kind": "short"
           }
         ]
@@ -85,7 +85,7 @@
         "expected": "One sentence. Mine is above",
         "fields": [
           {
-            "key": "q5",
+            "key": "decide-your-rule",
             "kind": "short"
           }
         ]
@@ -115,7 +115,7 @@
         "expected": "Yes or no, and the page",
         "fields": [
           {
-            "key": "q1",
+            "key": "attach-a-document-you-already-have",
             "kind": "short"
           }
         ]
@@ -128,7 +128,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q2",
+            "key": "paste-a-passage",
             "kind": "short"
           }
         ]
@@ -141,7 +141,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q3",
+            "key": "attach-a-spreadsheet-or-a-photo",
             "kind": "short"
           }
         ]
@@ -154,7 +154,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q4",
+            "key": "get-something-out",
             "kind": "short"
           }
         ]
@@ -167,7 +167,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q5",
+            "key": "your-rule-for-files",
             "kind": "short"
           }
         ]
@@ -197,7 +197,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q1",
+            "key": "open-a-plain-text-editor",
             "kind": "short"
           }
         ]
@@ -209,7 +209,7 @@
         "html": "<p><strong>Write your first .md file.</strong> Type this, with your own words in place of mine, and save it as <code>about-me.md</code>:</p>\n<pre><code># About me\n\n## Who I am\nOne or two sentences.\n\n## What I&#39;m working on\n- First thing\n- Second thing\n\n## How I like work done\n- One rule\n</code></pre>\n",
         "fields": [
           {
-            "key": "q2",
+            "key": "write-your-first-md-file",
             "kind": "check",
             "label": "Done"
           }
@@ -223,7 +223,7 @@
         "expected": "Yes or no",
         "fields": [
           {
-            "key": "q3",
+            "key": "attach-it-to-a-conversation",
             "kind": "short"
           }
         ]
@@ -236,7 +236,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q4",
+            "key": "make-your-folder",
             "kind": "short"
           }
         ]
@@ -248,7 +248,7 @@
         "html": "<p><strong>The ten lines.</strong> Copy this table somewhere you&#39;ll see it until you don&#39;t need it:</p>\n<table>\n<thead>\n<tr>\n<th>Symbol</th>\n<th>Means</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code># Title</code></td>\n<td>The title, once at the top</td>\n</tr>\n<tr>\n<td><code>## Heading</code></td>\n<td>A section</td>\n</tr>\n<tr>\n<td><code>### Smaller heading</code></td>\n<td>A subsection</td>\n</tr>\n<tr>\n<td><code>- item</code></td>\n<td>A list item</td>\n</tr>\n<tr>\n<td><code>1. item</code></td>\n<td>A numbered list item</td>\n</tr>\n<tr>\n<td>blank line</td>\n<td>New paragraph</td>\n</tr>\n<tr>\n<td><code>**bold**</code></td>\n<td>Bold</td>\n</tr>\n<tr>\n<td><code>`code`</code></td>\n<td>Code or a filename</td>\n</tr>\n<tr>\n<td><code>&gt; quote</code></td>\n<td>A quoted block</td>\n</tr>\n<tr>\n<td><code>[text](link)</code></td>\n<td>A link</td>\n</tr>\n</tbody></table>\n",
         "fields": [
           {
-            "key": "q5",
+            "key": "the-ten-lines",
             "kind": "check",
             "label": "Done"
           }
@@ -279,7 +279,7 @@
         "expected": "Two lines",
         "fields": [
           {
-            "key": "q1",
+            "key": "check-memory",
             "kind": "long"
           }
         ]
@@ -292,7 +292,7 @@
         "expected": "Yes or no",
         "fields": [
           {
-            "key": "q2",
+            "key": "give-it-one-durable-fact",
             "kind": "short"
           }
         ]
@@ -304,54 +304,54 @@
         "html": "<p><strong>Sort five things.</strong> Write five things you&#39;ve told the tool more than once. Beside each, write M (memory), P (project), or S (skill).</p>\n",
         "fields": [
           {
-            "key": "q3.1",
-            "label": "Item 1",
-            "kind": "short"
+            "key": "sort-five-things.item-1",
+            "kind": "short",
+            "label": "Item 1"
           },
           {
-            "key": "q3.2",
-            "label": "Item 1, mark",
-            "kind": "short"
+            "key": "sort-five-things.item-1-mark",
+            "kind": "short",
+            "label": "Item 1, mark"
           },
           {
-            "key": "q3.3",
-            "label": "Item 2",
-            "kind": "short"
+            "key": "sort-five-things.item-2",
+            "kind": "short",
+            "label": "Item 2"
           },
           {
-            "key": "q3.4",
-            "label": "Item 2, mark",
-            "kind": "short"
+            "key": "sort-five-things.item-2-mark",
+            "kind": "short",
+            "label": "Item 2, mark"
           },
           {
-            "key": "q3.5",
-            "label": "Item 3",
-            "kind": "short"
+            "key": "sort-five-things.item-3",
+            "kind": "short",
+            "label": "Item 3"
           },
           {
-            "key": "q3.6",
-            "label": "Item 3, mark",
-            "kind": "short"
+            "key": "sort-five-things.item-3-mark",
+            "kind": "short",
+            "label": "Item 3, mark"
           },
           {
-            "key": "q3.7",
-            "label": "Item 4",
-            "kind": "short"
+            "key": "sort-five-things.item-4",
+            "kind": "short",
+            "label": "Item 4"
           },
           {
-            "key": "q3.8",
-            "label": "Item 4, mark",
-            "kind": "short"
+            "key": "sort-five-things.item-4-mark",
+            "kind": "short",
+            "label": "Item 4, mark"
           },
           {
-            "key": "q3.9",
-            "label": "Item 5",
-            "kind": "short"
+            "key": "sort-five-things.item-5",
+            "kind": "short",
+            "label": "Item 5"
           },
           {
-            "key": "q3.10",
-            "label": "Item 5, mark",
-            "kind": "short"
+            "key": "sort-five-things.item-5-mark",
+            "kind": "short",
+            "label": "Item 5, mark"
           }
         ]
       },
@@ -363,7 +363,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q4",
+            "key": "make-one-project",
             "kind": "short"
           }
         ]
@@ -376,7 +376,7 @@
         "expected": "Two lines",
         "fields": [
           {
-            "key": "q5",
+            "key": "test-the-room",
             "kind": "long"
           }
         ]
@@ -389,7 +389,7 @@
         "expected": "One sentence",
         "fields": [
           {
-            "key": "q6",
+            "key": "your-rule-for-one-off-conversations",
             "kind": "short"
           }
         ]
@@ -419,7 +419,7 @@
         "expected": "Write the panel's position: beside the chat, or somewhere else",
         "fields": [
           {
-            "key": "q1",
+            "key": "build-one-thing",
             "kind": "short"
           }
         ]
@@ -432,7 +432,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q2",
+            "key": "edit-it-two-ways",
             "kind": "short"
           }
         ]
@@ -445,7 +445,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q3",
+            "key": "export-it",
             "kind": "short"
           }
         ]
@@ -458,7 +458,7 @@
         "expected": "Yes or no",
         "fields": [
           {
-            "key": "q4",
+            "key": "find-it-again-tomorrow",
             "kind": "short"
           }
         ]
@@ -471,7 +471,7 @@
         "expected": "Yes or no",
         "fields": [
           {
-            "key": "q5",
+            "key": "place-your-first-skill-two-ways",
             "kind": "short"
           }
         ]
@@ -484,7 +484,7 @@
         "expected": "The answer is in Chapter 10",
         "fields": [
           {
-            "key": "q6",
+            "key": "your-rule",
             "kind": "short"
           }
         ]
@@ -530,7 +530,7 @@
               ""
             ],
             "field": {
-              "key": "t1.1",
+              "key": "setting.web-search",
               "label": "Web search",
               "kind": "short"
             }
@@ -543,7 +543,7 @@
               ""
             ],
             "field": {
-              "key": "t1.2",
+              "key": "setting.memory",
               "label": "Memory",
               "kind": "short"
             }
@@ -556,7 +556,7 @@
               ""
             ],
             "field": {
-              "key": "t1.3",
+              "key": "setting.past-chat-search",
               "label": "Past-chat search",
               "kind": "short"
             }
@@ -569,7 +569,7 @@
               ""
             ],
             "field": {
-              "key": "t1.4",
+              "key": "setting.model",
               "label": "Model",
               "kind": "short"
             }
@@ -582,7 +582,7 @@
               ""
             ],
             "field": {
-              "key": "t1.5",
+              "key": "setting.file-creation",
               "label": "File creation",
               "kind": "short"
             }
@@ -601,7 +601,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q1",
+            "key": "which-of-the-five-was-set-differently-from-how-y",
             "kind": "short"
           }
         ]
@@ -614,7 +614,7 @@
         "expected": "One line. Mine is web search",
         "fields": [
           {
-            "key": "q2",
+            "key": "your-check",
             "kind": "short"
           }
         ]
@@ -644,7 +644,7 @@
         "expected": "Four lines",
         "fields": [
           {
-            "key": "q1",
+            "key": "copy-the-model-table",
             "kind": "check",
             "label": "Done"
           }
@@ -657,7 +657,7 @@
         "html": "<p><strong>Start your change log.</strong> Create <code>logs/platform-changes.md</code> in your folder with this header and one line for today:</p>\n<pre><code># Platform changes\n| Date | What changed | What I did about it |\n|---|---|---|\n| 2026-10-20 | Started this log; models as of today in models.md | Nothing yet |\n</code></pre>\n",
         "fields": [
           {
-            "key": "q2",
+            "key": "start-your-change-log",
             "kind": "check",
             "label": "Done"
           }
@@ -671,19 +671,19 @@
         "expected": "Three lines",
         "fields": [
           {
-            "key": "q3.1",
-            "label": "Item 1",
-            "kind": "short"
+            "key": "pick-your-three.item-1",
+            "kind": "short",
+            "label": "Item 1"
           },
           {
-            "key": "q3.2",
-            "label": "Item 2",
-            "kind": "short"
+            "key": "pick-your-three.item-2",
+            "kind": "short",
+            "label": "Item 2"
           },
           {
-            "key": "q3.3",
-            "label": "Item 3",
-            "kind": "short"
+            "key": "pick-your-three.item-3",
+            "kind": "short",
+            "label": "Item 3"
           }
         ]
       },
@@ -694,29 +694,29 @@
         "html": "<p><strong>Write the routine</strong> as you&#39;ll run it, in your words, under an hour:</p>\n",
         "fields": [
           {
-            "key": "q4.1",
-            "label": "Run each of the three on a real task",
-            "kind": "short"
+            "key": "write-the-routine.run-each-of-the-three-on-a-real-task",
+            "kind": "short",
+            "label": "Run each of the three on a real task"
           },
           {
-            "key": "q4.2",
-            "label": "Compare to the last result I approved",
-            "kind": "short"
+            "key": "write-the-routine.compare-to-the-last-result-i-approved",
+            "kind": "short",
+            "label": "Compare to the last result I approved"
           },
           {
-            "key": "q4.3",
-            "label": "If something drifted, fix the file, not the draft",
-            "kind": "short"
+            "key": "write-the-routine.if-something-drifted-fix-the-file-not-the-draft",
+            "kind": "short",
+            "label": "If something drifted, fix the file, not the draft"
           },
           {
-            "key": "q4.4",
-            "label": "Read the release notes for",
-            "kind": "short"
+            "key": "write-the-routine.read-the-release-notes-for",
+            "kind": "short",
+            "label": "Read the release notes for"
           },
           {
-            "key": "q4.5",
-            "label": "Log it",
-            "kind": "short"
+            "key": "write-the-routine.log-it",
+            "kind": "short",
+            "label": "Log it"
           }
         ]
       },
@@ -728,7 +728,7 @@
         "expected": "One line",
         "fields": [
           {
-            "key": "q5",
+            "key": "set-a-trigger",
             "kind": "short"
           }
         ]

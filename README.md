@@ -46,9 +46,25 @@ The build fails if any of these break.
 
 ## The workbook (week 2)
 
-- `content/workbook/part0/`: the drafted worksheets, copied unchanged from the compounding-ai-workbook
-  skill's `references/drafts/`. **They are the source.** Pages never carry their own copy of the text.
-- `npm run worksheets` parses them into `src/worksheets/generated/worksheets.json`. Every `_____` line,
+- **The workbook skill is the master; this site reads from it.** When a worksheet is revised, the handoff
+  is the `compounding-ai-workbook` `.skill` file, and it's expected to change often:
+
+  ```
+  npm run import:workbook -- path/to/compounding-ai-workbook.skill
+  npm run check
+  git add -A && git commit
+  ```
+
+  The importer copies `references/drafts/*.md` unchanged into `content/workbook/<part>/` (the skill's set
+  is the whole set: drafts it no longer has are removed), records the file's sha256 and every draft's hash
+  in `content/workbook/SOURCE.json`, regenerates the pages' data, and prints what changed. It refuses a
+  file that isn't this skill, and writes nothing unless every draft parses. Never edit `content/` by hand:
+  `tests/8-workbook-source.test.ts` fails if a draft differs from what the last import recorded.
+- **Answer keys follow the question, not its position** (`which-plan-are-you-on`, `setting.memory`).
+  Inserting or reordering questions never attaches a reader's saved answer to the wrong question.
+  Rewording a bold question changes its key; the importer lists those, because readers' saved answers to
+  the old wording won't carry over (they stay in the reader's own folder files).
+- `npm run worksheets` parses the drafts into `src/worksheets/generated/worksheets.json`. Every `_____` line,
   bullet blank, `( )` box, and table cell becomes a field; a numbered question with no blank gets a
   Done checkbox; underscores inside a sentence stay part of the question. The dated "How to" sidebar
   renders as its own box. `[MARK: ...]` brackets show in the flag color.
@@ -60,7 +76,6 @@ The build fails if any of these break.
   fields, and non-text values are dropped.
 - Guard 4 covers `src/vault`, `src/worksheets`, and `app/workbook`: none of it may reach the network.
 
-To update a worksheet: copy the new draft into `content/workbook/<part>/`, run `npm run worksheets`, commit both.
 
 ## Next: week 3
 
