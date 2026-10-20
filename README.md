@@ -2,7 +2,7 @@
 
 A private ledger for people who lead their AI. The record is ours. The work is yours.
 
-This is weeks 1 to 3 of the eight-week MVP in `stack.md`: an empty app with sign-in, the data model,
+This is weeks 1 to 4 of the eight-week MVP in `stack.md`: an empty app with sign-in, the data model,
 the scorecard submit route, and the five privacy guards running in CI. Product docs live in the
 claude.ai Project "Human Led Web Service".
 
@@ -50,8 +50,9 @@ The build fails if any of these break.
   is the `compounding-ai-workbook` `.skill` file, and it's expected to change often:
 
   ```
-  npm run import:workbook -- path/to/compounding-ai-workbook.skill   # the whole set
+  npm run import:workbook -- path/to/compounding-ai-workbook.skill   # worksheets + skill templates
   npm run import:workbook -- path/to/partA-drafts.zip                 # only the worksheets inside
+  npm run import:workbook -- <file>.skill --only=templates            # just the templates
   npm run check
   git add -A && git commit
   ```
@@ -78,6 +79,21 @@ The build fails if any of these break.
 - Guard 4 covers `src/vault`, `src/worksheets`, and `app/workbook`: none of it may reach the network.
 
 
-## Next: week 4
+## Skills (week 4)
 
-The five starter skills generated from answers, downloadable as files.
+- `content/workbook/templates/`: the starter-skill templates, copied unchanged from the workbook skill's
+  `assets/`. Every `[bracket]` is a field; "your name" is one shared field across all of them.
+- `/skills` and `/skills/<id>`: the template as written, with boxes where the brackets were, and a live
+  preview of the file. Blank fields keep their brackets. Downloads: a zip with `<name>/SKILL.md`, ready to
+  upload as a skill (valid `name` and `description` frontmatter), or the bare `SKILL.md`. The agent job
+  description downloads as plain Markdown.
+- "Save to my folder" also writes `skills/<name>/SKILL.md` for every started skill. The local version
+  number goes up each time a changed skill is saved or downloaded.
+- Buttons offer to copy a worksheet answer into a skill (A1's paragraph, A3's "never say"). Nothing is
+  filled automatically.
+- A `.skill` import that would remove worksheets the site has stops and lists them (`--allow-remove` to
+  proceed). This catches a `.skill` file older than a drafts zip imported since.
+
+## Next: week 5
+
+The voice linter and the AI-tell linter, running in the browser on pasted text.

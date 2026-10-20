@@ -12,8 +12,13 @@ const sha = (s: string) => createHash("sha256").update(s).digest("hex");
 const draft = (file: string) => readFileSync(`content/workbook/part0/${file}`, "utf8");
 const SKILL_MD = '---\nname: "compounding-ai-workbook"\ndescription: "x"\n---\n';
 
+const TEMPLATE = readFileSync("content/workbook/templates/5-fact-check-pass.md", "utf8");
+
 function skillZip(drafts: Record<string, string>, skillMd = SKILL_MD) {
-  const files: Record<string, Uint8Array> = { "compounding-ai-workbook/SKILL.md": strToU8(skillMd) };
+  const files: Record<string, Uint8Array> = {
+    "compounding-ai-workbook/SKILL.md": strToU8(skillMd),
+    "compounding-ai-workbook/assets/5-fact-check-pass.md": strToU8(TEMPLATE),
+  };
   for (const [f, t] of Object.entries(drafts)) files[`compounding-ai-workbook/references/drafts/${f}`] = strToU8(t);
   return zipSync(files);
 }
@@ -32,36 +37,49 @@ describe("content matches the last imported skill file", () => {
 });
 
 describe("importing a new skill file", () => {
-  let root: string, gen: string;
+  let root: string, gen: string, tpl: string;
   const ws01 = "ws01-your-account-and-the-window.md";
   const ws02 = "ws02-files-in-files-out.md";
   beforeEach(() => {
     const dir = mkdtempSync(join(tmpdir(), "wb-"));
     root = join(dir, "content");
     gen = join(dir, "worksheets.json");
-    importSkill(skillZip({ [ws01]: draft(ws01), [ws02]: draft(ws02) }), { contentRoot: root, generatedPath: gen });
+    tpl = join(dir, "templates.json");
+    importSkill(skillZip({ [ws01]: draft(ws01), [ws02]: draft(ws02) }), { contentRoot: root, generatedPath: gen, templatesPath: tpl });
   });
 
   it("a re-import of the same file changes nothing", () => {
-    const r = importSkill(skillZip({ [ws01]: draft(ws01), [ws02]: draft(ws02) }), { contentRoot: root, generatedPath: gen });
+    const r = importSkill(skillZip({ [ws01]: draft(ws01), [ws02]: draft(ws02) }), { contentRoot: root, generatedPath: gen, templatesPath: tpl });
     expect(r.unchanged.sort()).toEqual(["0.1", "0.2"]);
     expect(r.changed).toEqual([]);
   });
 
   it("inserting a question never moves anyone's saved answers", () => {
     const inserted = draft(ws02).replace("1. **Attach a document", "1. **A brand-new first step.** Try it. (One line.)\n   _____\n\n2. **Attach a document");
-    const r = importSkill(skillZip({ [ws01]: draft(ws01), [ws02]: inserted }), { contentRoot: root, generatedPath: gen });
+    const r = importSkill(skillZip({ [ws01]: draft(ws01), [ws02]: inserted }), { contentRoot: root, generatedPath: gen, templatesPath: tpl });
     expect(r.changed).toEqual([{ id: "0.2", keysRemoved: [], keysAdded: ["a-brand-new-first-step"] }]);
   });
 
   it("rewording a question is reported, because those saved answers won't carry over", () => {
     const reworded = draft(ws02).replace("**Paste a passage.**", "**Paste three paragraphs.**");
-    const r = importSkill(skillZip({ [ws01]: draft(ws01), [ws02]: reworded }), { contentRoot: root, generatedPath: gen });
+    const r = importSkill(skillZip({ [ws01]: draft(ws01), [ws02]: reworded }), { contentRoot: root, generatedPath: gen, templatesPath: tpl });
     expect(r.changed).toEqual([{ id: "0.2", keysRemoved: ["paste-a-passage"], keysAdded: ["paste-three-paragraphs"] }]);
   });
 
-  it("a worksheet dropped from the skill is removed from the site", () => {
-    const r = importSkill(skillZip({ [ws01]: draft(ws01) }), { contentRoot: root, generatedPath: gen });
+  it("a .skill file missing a worksheet the site has stops, unless removal is allowed", () => {
+    expect(() => importSkill(skillZip({ [ws01]: draft(ws01) }), { contentRoot: root, generatedPath: gen, templatesPath: tpl })).toThrow(/doesn't have 0.2/);
+    expect(existsSync(join(root, "part0", ws02))).toBe(true);
+  });
+
+  it("templates come in from the .skill file, and --only=templates leaves worksheets alone", () => {
+    expect(existsSync(join(root, "templates", "5-fact-check-pass.md"))).toBe(true);
+    const r = importSkill(skillZip({ [ws01]: draft(ws01) }), { contentRoot: root, generatedPath: gen, templatesPath: tpl, only: "templates" });
+    expect(r.templates.unchanged).toEqual(["5-fact-check-pass.md"]);
+    expect(existsSync(join(root, "part0", ws02))).toBe(true);
+  });
+
+  it("a worksheet dropped from the skill is removed from the site when allowed", () => {
+    const r = importSkill(skillZip({ [ws01]: draft(ws01) }), { contentRoot: root, generatedPath: gen, templatesPath: tpl, allowRemove: true });
     expect(r.removed).toEqual(["0.2"]);
     expect(existsSync(join(root, "part0", ws02))).toBe(false);
   });
@@ -69,7 +87,7 @@ describe("importing a new skill file", () => {
   it("a zip of drafts adds or replaces only its own worksheets", () => {
     const a1 = readFileSync("content/workbook/partA/wsA1-the-paragraph-about-you.md", "utf8");
     const files = { [`drafts/wsA1-the-paragraph-about-you.md`]: strToU8(a1) };
-    const r = importSkill(zipSync(files), { contentRoot: root, generatedPath: gen });
+    const r = importSkill(zipSync(files), { contentRoot: root, generatedPath: gen, templatesPath: tpl });
     expect(r.source).toBe("drafts");
     expect(r.added).toEqual(["A1"]);
     expect(r.removed).toEqual([]);
@@ -81,8 +99,8 @@ describe("importing a new skill file", () => {
 
   it("refuses a different skill, and a broken draft, without touching anything", () => {
     const before = readFileSync(gen, "utf8");
-    expect(() => importSkill(skillZip({ [ws01]: draft(ws01) }, SKILL_MD.replace("compounding-ai-workbook", "builders-book")), { contentRoot: root, generatedPath: gen })).toThrow();
-    expect(() => importSkill(skillZip({ [ws01]: "# not a worksheet\n" }), { contentRoot: root, generatedPath: gen })).toThrow();
+    expect(() => importSkill(skillZip({ [ws01]: draft(ws01) }, SKILL_MD.replace("compounding-ai-workbook", "builders-book")), { contentRoot: root, generatedPath: gen, templatesPath: tpl })).toThrow();
+    expect(() => importSkill(skillZip({ [ws01]: "# not a worksheet\n" }), { contentRoot: root, generatedPath: gen, templatesPath: tpl })).toThrow();
     expect(readFileSync(gen, "utf8")).toBe(before);
     expect(existsSync(join(root, "part0", ws02))).toBe(true);
   });

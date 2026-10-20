@@ -5,7 +5,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { ESLint } from "eslint";
 
-const VAULT_DIRS = ["src/vault", "src/worksheets", "app/workbook"];
+const VAULT_DIRS = ["src/vault", "src/worksheets", "src/skills", "app/workbook", "app/skills"];
 const BANNED = [/\bfetch\s*\(/, /XMLHttpRequest/, /WebSocket/, /EventSource/, /sendBeacon/, /from\s+["'](node:)?https?["']/, /from\s+["'](axios|ky|undici|resend|postgres)["']/, /@\/lib\/db/];
 
 function files(dir: string): string[] {

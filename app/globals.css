@@ -95,3 +95,17 @@ button.quiet { border-color: var(--rule); color: var(--muted); }
 .filltable td:last-child { min-width: 9em; }
 .howto { margin: 2em 0; padding: 12px 14px; border-left: 3px solid var(--rule); color: var(--muted); font-size: 0.9rem; }
 @media (max-width: 560px) { .filltable thead { display: none; } .filltable tr { display: grid; padding: 8px 0; border-bottom: 1px solid var(--rule); } .filltable td { border: 0; } }
+
+/* Skill builder: the template as written, with boxes where the brackets were */
+.template { border: 1px solid var(--rule); border-radius: 6px; padding: 16px 18px; background: var(--field); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9rem; line-height: 1.7; }
+.template h1 { font: 600 1.15rem ui-monospace, SFMono-Regular, Menlo, monospace; margin: 0 0 4px; }
+.template h3 { font: 600 0.95rem ui-monospace, SFMono-Regular, Menlo, monospace; margin: 14px 0 2px; }
+.template .tline.item { display: grid; grid-template-columns: 1.6em 1fr; }
+.template .marker { color: var(--muted); }
+.template .gap { height: 6px; }
+.template input, .template textarea { font: inherit; margin: 2px 0; background: var(--paper); }
+.template input.inline { width: auto; display: inline-block; padding: 1px 6px; }
+.preview { white-space: pre-wrap; font-size: 0.8rem; max-height: 420px; overflow: auto; }
+.prefills { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0; }
+.prefills .message { width: 100%; margin: 0; font: 0.85rem ui-sans-serif, system-ui, sans-serif; }
+.skillbuilder .actions { margin: 10px 0; }

@@ -3,10 +3,11 @@
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { parseWorksheet } from "../src/worksheets/parse";
+import { parseTemplate } from "../src/skills/parse";
 
 export function buildAll(root = "content/workbook") {
   const out = [];
-  for (const part of readdirSync(root, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort()) {
+  for (const part of readdirSync(root, { withFileTypes: true }).filter((d) => d.isDirectory() && /^part/.test(d.name)).map((d) => d.name).sort()) {
     for (const f of readdirSync(join(root, part)).filter((f) => f.endsWith(".md")).sort()) {
       const source = `${root}/${part}/${f}`;
       out.push(parseWorksheet(readFileSync(source, "utf8"), source));
@@ -15,7 +16,17 @@ export function buildAll(root = "content/workbook") {
   return out;
 }
 
+export function buildTemplates(root = "content/workbook") {
+  const dir = join(root, "templates");
+  try {
+    return readdirSync(dir).filter((f) => f.endsWith(".md")).sort().map((f) => parseTemplate(readFileSync(join(dir, f), "utf8"), `${root}/templates/${f}`));
+  } catch {
+    return [];
+  }
+}
+
 if (process.argv[1]?.endsWith("build-worksheets.ts")) {
+  writeFileSync("src/skills/generated/templates.json", JSON.stringify(buildTemplates(), null, 2) + "\n");
   const all = buildAll();
   writeFileSync("src/worksheets/generated/worksheets.json", JSON.stringify(all, null, 2) + "\n");
   console.log(`wrote ${all.length} worksheets`);

@@ -9,8 +9,8 @@ export function FolderBar({ vault }: { vault: ReturnType<typeof useVault> }) {
       <p className="status">
         {unsaved.length ? (
           <>
-            <span className="dot" aria-hidden /> {unsaved.length} worksheet{unsaved.length === 1 ? "" : "s"} saved on this
-            device only, not yet in your folder.
+            <span className="dot" aria-hidden /> {unsaved.length} item{unsaved.length === 1 ? "" : "s"} saved on this device
+            only, not yet in your folder.
           </>
         ) : (
           <>Everything is saved on this device and in your folder.</>
