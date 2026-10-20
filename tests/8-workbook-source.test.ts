@@ -66,6 +66,19 @@ describe("importing a new skill file", () => {
     expect(existsSync(join(root, "part0", ws02))).toBe(false);
   });
 
+  it("a zip of drafts adds or replaces only its own worksheets", () => {
+    const a1 = readFileSync("content/workbook/partA/wsA1-the-paragraph-about-you.md", "utf8");
+    const files = { [`drafts/wsA1-the-paragraph-about-you.md`]: strToU8(a1) };
+    const r = importSkill(zipSync(files), { contentRoot: root, generatedPath: gen });
+    expect(r.source).toBe("drafts");
+    expect(r.added).toEqual(["A1"]);
+    expect(r.removed).toEqual([]);
+    expect(existsSync(join(root, "part0", ws01))).toBe(true);
+    expect(existsSync(join(root, "partA", "wsA1-the-paragraph-about-you.md"))).toBe(true);
+    const source = JSON.parse(readFileSync(join(root, "SOURCE.json"), "utf8"));
+    expect(source.imports.map((i: any) => i.kind)).toEqual(["skill", "drafts"]);
+  });
+
   it("refuses a different skill, and a broken draft, without touching anything", () => {
     const before = readFileSync(gen, "utf8");
     expect(() => importSkill(skillZip({ [ws01]: draft(ws01) }, SKILL_MD.replace("compounding-ai-workbook", "builders-book")), { contentRoot: root, generatedPath: gen })).toThrow();

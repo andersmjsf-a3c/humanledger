@@ -1,7 +1,5 @@
 {
   "skill": "compounding-ai-workbook",
-  "skillSha256": "8a780033ad637e7a72134380127fa66130ddfc47ff9965dcccf52ea54cdb7385",
-  "importedAt": "2026-10-20T23:33:54.728Z",
   "files": {
     "part0/ws01-your-account-and-the-window.md": "44a27ac20dda625959fdade124d5b774a99c40c71855644842061f0b03b0d2d6",
     "part0/ws02-files-in-files-out.md": "020e5216956e3a28db286726ec61e36451cd26ef586beab8a5563ae0a493fb80",
@@ -9,6 +7,39 @@
     "part0/ws04-organizing-conversations-projects-memory.md": "00adad7b56f646e36e67652282feac957884cb92fa03946ec667ffcaa32eb76e",
     "part0/ws05-artifacts-and-outputs.md": "f6702acce89fadaa8fe84bc16fe0aed034c32994ca5e6794c9447290cfdc0a65",
     "part0/ws06-five-settings-worth-knowing.md": "71622ec07094b486bf97318781fd450cb944592110adf4b2e330d50055073423",
-    "part0/ws07-models-and-platform-changes.md": "f1053e71bde301b669e3fbee5ba28118fb0d8d950d6010bdfd8f8b78208e5e92"
-  }
+    "part0/ws07-models-and-platform-changes.md": "f1053e71bde301b669e3fbee5ba28118fb0d8d950d6010bdfd8f8b78208e5e92",
+    "partA/wsA1-the-paragraph-about-you.md": "a972e318b0dc892c2030661e08b5daecafef2e81e0dcee66e3e175c4285a8c53",
+    "partA/wsA2-your-brief-every-time.md": "bdad2ffee3bbcb5278366dbb39eaf1a051c2a420ec61c93ff518d084171fa6c0",
+    "partA/wsA3-how-you-want-it-to-talk-to-you.md": "4f8cfca424932eaad627e12107ecfb74bbd461cdbae6acd25c842981fbfa6955",
+    "partA/wsA4-your-corrections-log.md": "5d58af5f75bcde49b0bcaf587b10a31c017a77a0a2f5e1d50786e16a6a7212ab",
+    "partA/wsA5-your-trust-rules.md": "6b8ed7ced8f02544b9373d1b8f62ecbdb8f937b2ea0631372233862b9b8b27b7"
+  },
+  "imports": [
+    {
+      "kind": "skill",
+      "sha256": "8a780033ad637e7a72134380127fa66130ddfc47ff9965dcccf52ea54cdb7385",
+      "importedAt": "2026-10-20T23:33:54.728Z",
+      "worksheets": [
+        "0.1",
+        "0.2",
+        "0.3",
+        "0.4",
+        "0.5",
+        "0.6",
+        "0.7"
+      ]
+    },
+    {
+      "kind": "drafts",
+      "sha256": "047afc26232f5856eee01a2cb191391eddd53d6751c59a66c5752b0789ec0a78",
+      "importedAt": "2026-10-20T23:40:35.872Z",
+      "worksheets": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5"
+      ]
+    }
+  ]
 }

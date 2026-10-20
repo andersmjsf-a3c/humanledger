@@ -2,7 +2,7 @@
 
 A private ledger for people who lead their AI. The record is ours. The work is yours.
 
-This is weeks 1 and 2 of the eight-week MVP in `stack.md`: an empty app with sign-in, the data model,
+This is weeks 1 to 3 of the eight-week MVP in `stack.md`: an empty app with sign-in, the data model,
 the scorecard submit route, and the five privacy guards running in CI. Product docs live in the
 claude.ai Project "Human Led Web Service".
 
@@ -50,14 +50,15 @@ The build fails if any of these break.
   is the `compounding-ai-workbook` `.skill` file, and it's expected to change often:
 
   ```
-  npm run import:workbook -- path/to/compounding-ai-workbook.skill
+  npm run import:workbook -- path/to/compounding-ai-workbook.skill   # the whole set
+  npm run import:workbook -- path/to/partA-drafts.zip                 # only the worksheets inside
   npm run check
   git add -A && git commit
   ```
 
-  The importer copies `references/drafts/*.md` unchanged into `content/workbook/<part>/` (the skill's set
-  is the whole set: drafts it no longer has are removed), records the file's sha256 and every draft's hash
-  in `content/workbook/SOURCE.json`, regenerates the pages' data, and prints what changed. It refuses a
+  The importer copies the drafts unchanged into `content/workbook/<part>/`. A `.skill` file is the whole
+  set (drafts it no longer has are removed); a zip of `ws*.md` drafts only adds or replaces the worksheets
+  inside it. It records every draft's hash and the import history in `content/workbook/SOURCE.json`, regenerates the pages' data, and prints what changed. It refuses a
   file that isn't this skill, and writes nothing unless every draft parses. Never edit `content/` by hand:
   `tests/8-workbook-source.test.ts` fails if a draft differs from what the last import recorded.
 - **Answer keys follow the question, not its position** (`which-plan-are-you-on`, `setting.memory`).
@@ -77,6 +78,6 @@ The build fails if any of these break.
 - Guard 4 covers `src/vault`, `src/worksheets`, and `app/workbook`: none of it may reach the network.
 
 
-## Next: week 3
+## Next: week 4
 
-Part A (A1 to A5), drafted with the workbook skill.
+The five starter skills generated from answers, downloadable as files.
