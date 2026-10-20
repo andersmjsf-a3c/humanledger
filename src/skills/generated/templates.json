@@ -1,0 +1,509 @@
+[
+  {
+    "id": "1-weekly-task",
+    "slug": "weekly-task",
+    "order": 1,
+    "kind": "skill",
+    "title": "[name of the task]",
+    "text": "# Skill: [name of the task]\nThis skill serves [your name]. Use it whenever I say \"[the two or three words I'll use to ask for this]\".\n\n## What this task is\n[One paragraph: what the task is, who it's for, and what \"done\" looks like.]\n\n## Inputs I'll give you\n- [What I'll paste or attach every time, e.g., \"last week's numbers\", \"the meeting notes\"]\n\n## Steps\n1. [First thing to do with the inputs]\n2. [Second]\n3. [Third]\n\n## Output\n[Exact format: length, headers, table or prose, what goes first. If there's a file, say the type.]\n\n## Rules\n- [What must always be true]\n- [What must never appear]\n- [What to ask me before guessing]\n",
+    "placeholders": [
+      "title.name-of-the-task",
+      "shared.your-name",
+      "title.the-two-or-three-words-i-ll-use-to-ask-for-this",
+      "what-this-task-is.one-paragraph-what-the-task-is-who-it-s-for-and",
+      "inputs-i-ll-give-you.what-i-ll-paste-or-attach-every-time-e-g-last-we",
+      "steps.first-thing-to-do-with-the-inputs",
+      "steps.second",
+      "steps.third",
+      "output.exact-format-length-headers-table-or-prose-what",
+      "rules.what-must-always-be-true",
+      "rules.what-must-never-appear",
+      "rules.what-to-ask-me-before-guessing"
+    ],
+    "fields": [
+      {
+        "key": "title.name-of-the-task",
+        "hint": "name of the task",
+        "label": "name of the task",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "shared.your-name",
+        "hint": "your name",
+        "label": "Your name",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "title.the-two-or-three-words-i-ll-use-to-ask-for-this",
+        "hint": "the two or three words I'll use to ask for this",
+        "label": "the two or three words I'll use to ask for this",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "what-this-task-is.one-paragraph-what-the-task-is-who-it-s-for-and",
+        "hint": "One paragraph: what the task is, who it's for, and what \"done\" looks like.",
+        "label": "One paragraph: what the task is, who it's for, and what \"done\" looks like.",
+        "kind": "long",
+        "section": "What this task is"
+      },
+      {
+        "key": "inputs-i-ll-give-you.what-i-ll-paste-or-attach-every-time-e-g-last-we",
+        "hint": "What I'll paste or attach every time, e.g., \"last week's numbers\", \"the meeting notes\"",
+        "label": "What I'll paste or attach every time, e.g., \"last week's numbers\", \"the meeting notes\"",
+        "kind": "long",
+        "section": "Inputs I'll give you"
+      },
+      {
+        "key": "steps.first-thing-to-do-with-the-inputs",
+        "hint": "First thing to do with the inputs",
+        "label": "First thing to do with the inputs",
+        "kind": "short",
+        "section": "Steps"
+      },
+      {
+        "key": "steps.second",
+        "hint": "Second",
+        "label": "Second",
+        "kind": "short",
+        "section": "Steps"
+      },
+      {
+        "key": "steps.third",
+        "hint": "Third",
+        "label": "Third",
+        "kind": "short",
+        "section": "Steps"
+      },
+      {
+        "key": "output.exact-format-length-headers-table-or-prose-what",
+        "hint": "Exact format: length, headers, table or prose, what goes first. If there's a file, say the type.",
+        "label": "Exact format: length, headers, table or prose, what goes first. If there's a file, say the type.",
+        "kind": "short",
+        "section": "Output"
+      },
+      {
+        "key": "rules.what-must-always-be-true",
+        "hint": "What must always be true",
+        "label": "What must always be true",
+        "kind": "short",
+        "section": "Rules"
+      },
+      {
+        "key": "rules.what-must-never-appear",
+        "hint": "What must never appear",
+        "label": "What must never appear",
+        "kind": "short",
+        "section": "Rules"
+      },
+      {
+        "key": "rules.what-to-ask-me-before-guessing",
+        "hint": "What to ask me before guessing",
+        "label": "What to ask me before guessing",
+        "kind": "short",
+        "section": "Rules"
+      }
+    ],
+    "source": "content/workbook/templates/1-weekly-task.md"
+  },
+  {
+    "id": "2-writing-voice",
+    "slug": "writing-voice",
+    "order": 2,
+    "kind": "skill",
+    "title": "My writing voice",
+    "text": "# Skill: My writing voice\nThis skill serves [your name]. Use it for anything I'll send or publish as myself.\n\n## Who I am, in one paragraph\n[Role, what you know a lot about, how long you've done it. Two or three sentences.]\n\n## Three samples of how I write\n[Paste three short things you wrote yourself and liked: an email, a note, a post. 100 to 300 words each.]\n\n## What I sound like\n- [Three or four observations about the samples: sentence length, how formal, whether I use contractions, how I open, how I close]\n\n## Words and phrases I never use\n- [List them. Start with any you've caught the AI using that made you wince.]\n\n## Words and phrases I do use\n- [The ones that are yours.]\n\n## Rules\n- Draft, then I edit. Never tell me it's finished.\n- [Punctuation rules, e.g., no em dashes, no exclamation points]\n- When unsure of my view, ask; don't invent it.\n",
+    "placeholders": [
+      "shared.your-name",
+      "who-i-am-in-one-paragraph.role-what-you-know-a-lot-about-how-long-you-ve-d",
+      "three-samples-of-how-i-write.paste-three-short-things-you-wrote-yourself-and",
+      "what-i-sound-like.three-or-four-observations-about-the-samples-sen",
+      "words-and-phrases-i-never-use.list-them-start-with-any-you-ve-caught-the-ai-us",
+      "words-and-phrases-i-do-use.the-ones-that-are-yours",
+      "rules.punctuation-rules-e-g-no-em-dashes-no-exclamatio"
+    ],
+    "fields": [
+      {
+        "key": "shared.your-name",
+        "hint": "your name",
+        "label": "Your name",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "who-i-am-in-one-paragraph.role-what-you-know-a-lot-about-how-long-you-ve-d",
+        "hint": "Role, what you know a lot about, how long you've done it. Two or three sentences.",
+        "label": "Role, what you know a lot about, how long you've done it. Two or three sentences.",
+        "kind": "long",
+        "section": "Who I am, in one paragraph"
+      },
+      {
+        "key": "three-samples-of-how-i-write.paste-three-short-things-you-wrote-yourself-and",
+        "hint": "Paste three short things you wrote yourself and liked: an email, a note, a post. 100 to 300 words each.",
+        "label": "Paste three short things you wrote yourself and liked: an email, a note, a post. 100 to 300 words each.",
+        "kind": "long",
+        "section": "Three samples of how I write"
+      },
+      {
+        "key": "what-i-sound-like.three-or-four-observations-about-the-samples-sen",
+        "hint": "Three or four observations about the samples: sentence length, how formal, whether I use contractions, how I open, how I close",
+        "label": "Three or four observations about the samples: sentence length, how formal, whether I use contractions, how I open, how I close",
+        "kind": "long",
+        "section": "What I sound like"
+      },
+      {
+        "key": "words-and-phrases-i-never-use.list-them-start-with-any-you-ve-caught-the-ai-us",
+        "hint": "List them. Start with any you've caught the AI using that made you wince.",
+        "label": "List them. Start with any you've caught the AI using that made you wince.",
+        "kind": "long",
+        "section": "Words and phrases I never use"
+      },
+      {
+        "key": "words-and-phrases-i-do-use.the-ones-that-are-yours",
+        "hint": "The ones that are yours.",
+        "label": "The ones that are yours.",
+        "kind": "short",
+        "section": "Words and phrases I do use"
+      },
+      {
+        "key": "rules.punctuation-rules-e-g-no-em-dashes-no-exclamatio",
+        "hint": "Punctuation rules, e.g., no em dashes, no exclamation points",
+        "label": "Punctuation rules, e.g., no em dashes, no exclamation points",
+        "kind": "short",
+        "section": "Rules"
+      }
+    ],
+    "source": "content/workbook/templates/2-writing-voice.md"
+  },
+  {
+    "id": "3-brand-rules",
+    "slug": "brand-rules",
+    "order": 3,
+    "kind": "skill",
+    "title": "Brand rules for [business or project name]",
+    "text": "# Skill: Brand rules for [business or project name]\nThis skill serves [your name]. Check every document, slide, page, and post against these before showing it to me.\n\n## Colors\n- Main: [name and hex code if you have it]\n- Accent: [one accent, name and hex]\n- Never: [colors that must not appear]\n\n## Type\n- Documents: [font]\n- Headlines or marketing: [font]\n\n## Logo and name\n- The company is written as [exact spelling and capitalization].\n- [Rule about the logo: never stretched, never recreated as text, which file to use]\n\n## Voice on the page\n- [Two or three rules: e.g., headlines are plain claims, no exclamation points, no jargon the customer wouldn't use]\n\n## File naming\n- [Convention, e.g., YYYYMMDD_ProjectName_Document.pdf]\n\n## Rules\n- If something I ask for breaks a rule above, say so before making it.\n- When a rule is missing, ask; don't guess.\n",
+    "placeholders": [
+      "title.business-or-project-name",
+      "shared.your-name",
+      "colors.name-and-hex-code-if-you-have-it",
+      "colors.one-accent-name-and-hex",
+      "colors.colors-that-must-not-appear",
+      "type.font",
+      "type.font-2",
+      "logo-and-name.exact-spelling-and-capitalization",
+      "logo-and-name.rule-about-the-logo-never-stretched-never-recrea",
+      "voice-on-the-page.two-or-three-rules-e-g-headlines-are-plain-claim",
+      "file-naming.convention-e-g-yyyymmddprojectnamedocument-pdf"
+    ],
+    "fields": [
+      {
+        "key": "title.business-or-project-name",
+        "hint": "business or project name",
+        "label": "business or project name",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "shared.your-name",
+        "hint": "your name",
+        "label": "Your name",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "colors.name-and-hex-code-if-you-have-it",
+        "hint": "name and hex code if you have it",
+        "label": "Main",
+        "kind": "inline",
+        "section": "Colors"
+      },
+      {
+        "key": "colors.one-accent-name-and-hex",
+        "hint": "one accent, name and hex",
+        "label": "Accent",
+        "kind": "inline",
+        "section": "Colors"
+      },
+      {
+        "key": "colors.colors-that-must-not-appear",
+        "hint": "colors that must not appear",
+        "label": "Never",
+        "kind": "inline",
+        "section": "Colors"
+      },
+      {
+        "key": "type.font",
+        "hint": "font",
+        "label": "Documents",
+        "kind": "inline",
+        "section": "Type"
+      },
+      {
+        "key": "type.font-2",
+        "hint": "font",
+        "label": "Headlines or marketing",
+        "kind": "inline",
+        "section": "Type"
+      },
+      {
+        "key": "logo-and-name.exact-spelling-and-capitalization",
+        "hint": "exact spelling and capitalization",
+        "label": "exact spelling and capitalization",
+        "kind": "inline",
+        "section": "Logo and name"
+      },
+      {
+        "key": "logo-and-name.rule-about-the-logo-never-stretched-never-recrea",
+        "hint": "Rule about the logo: never stretched, never recreated as text, which file to use",
+        "label": "Rule about the logo: never stretched, never recreated as text, which file to use",
+        "kind": "short",
+        "section": "Logo and name"
+      },
+      {
+        "key": "voice-on-the-page.two-or-three-rules-e-g-headlines-are-plain-claim",
+        "hint": "Two or three rules: e.g., headlines are plain claims, no exclamation points, no jargon the customer wouldn't use",
+        "label": "Two or three rules: e.g., headlines are plain claims, no exclamation points, no jargon the customer wouldn't use",
+        "kind": "short",
+        "section": "Voice on the page"
+      },
+      {
+        "key": "file-naming.convention-e-g-yyyymmddprojectnamedocument-pdf",
+        "hint": "Convention, e.g., YYYYMMDD_ProjectName_Document.pdf",
+        "label": "Convention, e.g., YYYYMMDD_ProjectName_Document.pdf",
+        "kind": "short",
+        "section": "File naming"
+      }
+    ],
+    "source": "content/workbook/templates/3-brand-rules.md"
+  },
+  {
+    "id": "4-research-and-cite",
+    "slug": "research-and-cite",
+    "order": 4,
+    "kind": "skill",
+    "title": "Research I can trust",
+    "text": "# Skill: Research I can trust\nThis skill serves [your name]. Use it whenever I ask you to research, look up, compare, or find out.\n\n## Before searching\n- Ask me what decision this research serves if I haven't said.\n\n## While searching\n- Prefer primary sources: the company's own statement, the filing, the original study, the government page.\n- Note the date of every fact. If it's older than [six months], say so.\n- Two sources that disagree: show me both; don't pick one silently.\n\n## Output\n1. The answer in [three sentences / one paragraph].\n2. The facts, each with its source and date.\n3. A line that begins \"What I couldn't verify:\" and lists anything I should treat as unconfirmed.\n4. Links.\n\n## Rules\n- Never attach a claim to a source that didn't make it.\n- No \"experts say\" or \"studies show\" without a name.\n- If you can't find it, say you can't find it.\n",
+    "placeholders": [
+      "shared.your-name",
+      "while-searching.six-months",
+      "output.three-sentences-one-paragraph"
+    ],
+    "fields": [
+      {
+        "key": "shared.your-name",
+        "hint": "your name",
+        "label": "Your name",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "while-searching.six-months",
+        "hint": "six months",
+        "label": "six months",
+        "kind": "inline",
+        "section": "While searching"
+      },
+      {
+        "key": "output.three-sentences-one-paragraph",
+        "hint": "three sentences / one paragraph",
+        "label": "The answer in",
+        "kind": "inline",
+        "section": "Output"
+      }
+    ],
+    "source": "content/workbook/templates/4-research-and-cite.md"
+  },
+  {
+    "id": "5-fact-check-pass",
+    "slug": "fact-check-pass",
+    "order": 5,
+    "kind": "skill",
+    "title": "Fact-check pass",
+    "text": "# Skill: Fact-check pass\nThis skill serves [your name]. Run it on any draft that contains a number, a name, a date, or a quote, before I send or publish it.\n\n## Check every one of these\n1. Numbers: each has a source and a date in the text or in a note. Flag any that don't.\n2. Names and titles: current, spelled right. Flag any you can't confirm.\n3. Dates: correct, and consistent with each other.\n4. Quotes: real, attributed, under [15] words, one per source.\n5. Claims about what someone \"said\" or \"reported\": the source actually says that.\n\n## Output\nA short list: [item], [status: confirmed / can't confirm / wrong], [what to change].\nThen the draft with changes marked.\n\n## Rules\n- \"Can't confirm\" is a valid answer. Never upgrade it to \"confirmed\" to be helpful.\n- Don't rewrite anything except the flagged items.\n",
+    "placeholders": [
+      "shared.your-name",
+      "check-every-one-of-these.15",
+      "output.item",
+      "output.status-confirmed-can-t-confirm-wrong",
+      "output.what-to-change"
+    ],
+    "fields": [
+      {
+        "key": "shared.your-name",
+        "hint": "your name",
+        "label": "Your name",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "check-every-one-of-these.15",
+        "hint": "15",
+        "label": "15",
+        "kind": "inline",
+        "section": "Check every one of these"
+      },
+      {
+        "key": "output.item",
+        "hint": "item",
+        "label": "item",
+        "kind": "inline",
+        "section": "Output"
+      },
+      {
+        "key": "output.status-confirmed-can-t-confirm-wrong",
+        "hint": "status: confirmed / can't confirm / wrong",
+        "label": "status: confirmed / can't confirm / wrong",
+        "kind": "inline",
+        "section": "Output"
+      },
+      {
+        "key": "output.what-to-change",
+        "hint": "what to change",
+        "label": "what to change",
+        "kind": "inline",
+        "section": "Output"
+      }
+    ],
+    "source": "content/workbook/templates/5-fact-check-pass.md"
+  },
+  {
+    "id": "6-post-skill",
+    "slug": "post-skill",
+    "order": 6,
+    "kind": "skill",
+    "title": "My posts",
+    "text": "# Skill: My posts\nThis skill serves [your name]. Use it when I ask for a post for [LinkedIn / wherever].\n\n## What a post of mine is\n- Opens on a specific fact, moment, or number, never on a question or a hook formula.\n- Holds one opinion I'd defend in the comments.\n- [Length: e.g., 120 to 200 words.] Uneven line lengths. Not one sentence per line for the whole post.\n- Ends on the point, not on \"Thoughts?\"\n\n## Never\n- Hashtag walls. Emoji. Exclamation points.\n- \"I'm excited to announce.\" \"Humbled.\" \"Game-changer.\"\n- [Anything I've caught it doing before]\n\n## Always\n- Draft, then I edit.\n- If it's about my company, check it against my brand rules skill first.\n",
+    "placeholders": [
+      "shared.your-name",
+      "title.linkedin-wherever",
+      "what-a-post-of-mine-is.length-e-g-120-to-200-words",
+      "never.anything-i-ve-caught-it-doing-before"
+    ],
+    "fields": [
+      {
+        "key": "shared.your-name",
+        "hint": "your name",
+        "label": "Your name",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "title.linkedin-wherever",
+        "hint": "LinkedIn / wherever",
+        "label": "LinkedIn / wherever",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "what-a-post-of-mine-is.length-e-g-120-to-200-words",
+        "hint": "Length: e.g., 120 to 200 words.",
+        "label": "Length: e.g., 120 to 200 words.",
+        "kind": "inline",
+        "section": "What a post of mine is"
+      },
+      {
+        "key": "never.anything-i-ve-caught-it-doing-before",
+        "hint": "Anything I've caught it doing before",
+        "label": "Anything I've caught it doing before",
+        "kind": "short",
+        "section": "Never"
+      }
+    ],
+    "source": "content/workbook/templates/6-post-skill.md"
+  },
+  {
+    "id": "7-agent-job-description",
+    "slug": "agent-job-description",
+    "order": 7,
+    "kind": "agent",
+    "title": "[a name you'll actually use]",
+    "text": "# Agent: [a name you'll actually use]\nThis agent serves [your name].\n\n## Job\n[One paragraph: what it does, how often, for whom.]\n\n## It is allowed to\n- [Read these things]\n- [Produce these things]\n- [Use these tools, if any]\n\n## It is never allowed to\n- Send anything to anyone outside [me / my team]. It drafts; I send.\n- [Spend money, delete things, change settings, contact customers, whatever applies]\n\n## What it hands me, and when\n- [e.g., \"A five-line summary every Monday at 8\"]\n\n## How I'll know it's working\n- [One measurable thing]\n",
+    "placeholders": [
+      "title.a-name-you-ll-actually-use",
+      "shared.your-name",
+      "job.one-paragraph-what-it-does-how-often-for-whom",
+      "it-is-allowed-to.read-these-things",
+      "it-is-allowed-to.produce-these-things",
+      "it-is-allowed-to.use-these-tools-if-any",
+      "it-is-never-allowed-to.me-my-team",
+      "it-is-never-allowed-to.spend-money-delete-things-change-settings-contac",
+      "what-it-hands-me-and-when.e-g-a-five-line-summary-every-monday-at-8",
+      "how-i-ll-know-it-s-working.one-measurable-thing"
+    ],
+    "fields": [
+      {
+        "key": "title.a-name-you-ll-actually-use",
+        "hint": "a name you'll actually use",
+        "label": "a name you'll actually use",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "shared.your-name",
+        "hint": "your name",
+        "label": "Your name",
+        "kind": "inline",
+        "section": "title"
+      },
+      {
+        "key": "job.one-paragraph-what-it-does-how-often-for-whom",
+        "hint": "One paragraph: what it does, how often, for whom.",
+        "label": "One paragraph: what it does, how often, for whom.",
+        "kind": "long",
+        "section": "Job"
+      },
+      {
+        "key": "it-is-allowed-to.read-these-things",
+        "hint": "Read these things",
+        "label": "Read these things",
+        "kind": "short",
+        "section": "It is allowed to"
+      },
+      {
+        "key": "it-is-allowed-to.produce-these-things",
+        "hint": "Produce these things",
+        "label": "Produce these things",
+        "kind": "short",
+        "section": "It is allowed to"
+      },
+      {
+        "key": "it-is-allowed-to.use-these-tools-if-any",
+        "hint": "Use these tools, if any",
+        "label": "Use these tools, if any",
+        "kind": "short",
+        "section": "It is allowed to"
+      },
+      {
+        "key": "it-is-never-allowed-to.me-my-team",
+        "hint": "me / my team",
+        "label": "me / my team",
+        "kind": "inline",
+        "section": "It is never allowed to"
+      },
+      {
+        "key": "it-is-never-allowed-to.spend-money-delete-things-change-settings-contac",
+        "hint": "Spend money, delete things, change settings, contact customers, whatever applies",
+        "label": "Spend money, delete things, change settings, contact customers, whatever applies",
+        "kind": "short",
+        "section": "It is never allowed to"
+      },
+      {
+        "key": "what-it-hands-me-and-when.e-g-a-five-line-summary-every-monday-at-8",
+        "hint": "e.g., \"A five-line summary every Monday at 8\"",
+        "label": "e.g., \"A five-line summary every Monday at 8\"",
+        "kind": "short",
+        "section": "What it hands me, and when"
+      },
+      {
+        "key": "how-i-ll-know-it-s-working.one-measurable-thing",
+        "hint": "One measurable thing",
+        "label": "One measurable thing",
+        "kind": "short",
+        "section": "How I'll know it's working"
+      }
+    ],
+    "source": "content/workbook/templates/7-agent-job-description.md"
+  }
+]

@@ -12,7 +12,14 @@
     "partA/wsA2-your-brief-every-time.md": "bdad2ffee3bbcb5278366dbb39eaf1a051c2a420ec61c93ff518d084171fa6c0",
     "partA/wsA3-how-you-want-it-to-talk-to-you.md": "4f8cfca424932eaad627e12107ecfb74bbd461cdbae6acd25c842981fbfa6955",
     "partA/wsA4-your-corrections-log.md": "5d58af5f75bcde49b0bcaf587b10a31c017a77a0a2f5e1d50786e16a6a7212ab",
-    "partA/wsA5-your-trust-rules.md": "6b8ed7ced8f02544b9373d1b8f62ecbdb8f937b2ea0631372233862b9b8b27b7"
+    "partA/wsA5-your-trust-rules.md": "6b8ed7ced8f02544b9373d1b8f62ecbdb8f937b2ea0631372233862b9b8b27b7",
+    "templates/1-weekly-task.md": "b25852219878ba6cf02fdd600005871d516b24822c0955e3ead9d834b61d76a3",
+    "templates/2-writing-voice.md": "5758dc7f679c1fbb2f8c43c03f7142a317f71a40ae86f3291bd142b0a617a623",
+    "templates/3-brand-rules.md": "b528712694c7fab626941e623da9aeabaae5f0d21fe12a5b3a4437e015b272f5",
+    "templates/4-research-and-cite.md": "0d3dcb89f2006a23544858b6dd980852d08dbac9ee8dc64b9e440de5e2846007",
+    "templates/5-fact-check-pass.md": "a043073aa8bfa3093083e067b0dd0ac349639c57dab02a0cc74365a49033e7e0",
+    "templates/6-post-skill.md": "77c89d17bcf87bb7a6f1279288ee968baa0a953d673026066fba27c1a93ea2db",
+    "templates/7-agent-job-description.md": "624b15e8e2478112f417703febc59392efe4a699ed80d319bbf2e72196f38500"
   },
   "imports": [
     {
@@ -39,6 +46,21 @@
         "A3",
         "A4",
         "A5"
+      ]
+    },
+    {
+      "kind": "skill",
+      "sha256": "8a780033ad637e7a72134380127fa66130ddfc47ff9965dcccf52ea54cdb7385",
+      "importedAt": "2026-10-20T23:51:37.640Z",
+      "worksheets": [],
+      "templates": [
+        "1-weekly-task.md",
+        "2-writing-voice.md",
+        "3-brand-rules.md",
+        "4-research-and-cite.md",
+        "5-fact-check-pass.md",
+        "6-post-skill.md",
+        "7-agent-job-description.md"
       ]
     }
   ]

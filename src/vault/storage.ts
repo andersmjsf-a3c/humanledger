@@ -8,7 +8,14 @@ export interface StoredWorksheet {
   answers: Answers;
   updatedAt: string; // ISO time of the last edit
   savedToFolderAt?: string; // ISO time of the last "Save to my folder"
+  version?: number; // skills: counted up each time a changed skill is saved or downloaded
+  exportedHash?: string; // skills: fingerprint of the last saved or downloaded file
 }
+
+// Worksheet answers use the worksheet id; skill answers use "skill:<template id>"; the name the
+// reader gives once for every skill lives in "skill:shared".
+export const SKILL_PREFIX = "skill:";
+export const SHARED_ID = "skill:shared";
 
 const DB_NAME = "workbook-vault";
 const STORE = "worksheets";

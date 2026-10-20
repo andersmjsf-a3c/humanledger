@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import { AnswerStore } from "../storage";
-import { buildBundle, parseBundle } from "../bundle";
+import { buildBundle, bumpVersions, parseBundle } from "../bundle";
 import { answersFromZip, canWriteFolders, downloadBytes, pickFolder, readAnswersFromFolder, writeToFolder, zipBundle } from "../folder";
 
 let store: AnswerStore | undefined;
@@ -31,8 +31,13 @@ export function useVault() {
 
   const saveToFolder = useCallback(async () => {
     const s = getStore();
-    const records = await s.all();
+    let records = await s.all();
     if (!records.length) return setMessage("Nothing to save yet.");
+    const bumped = bumpVersions(records);
+    if (bumped.length) {
+      await s.replaceAll(bumped);
+      records = await s.all();
+    }
     const files = buildBundle(records);
     try {
       if (canWriteFolders()) {
