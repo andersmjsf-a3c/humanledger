@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* Quiet, ruled, closer to a well-kept logbook than a dashboard (who-we-are page).
+   One accent. Palette and type are placeholders until the brand work is done. */
+:root {
+  --paper: #fbfaf7;
+  --ink: #1b2433;
+  --muted: #5d6675;
+  --rule: #dcd9d1;
+  --accent: #1b3765;
+  --flag: #a15c07;
+  --field: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14171c;
+    --ink: #e8e6e1;
+    --muted: #a3a9b3;
+    --rule: #2c313a;
+    --accent: #8fb0e6;
+    --flag: #e0a458;
+    --field: #1b1f26;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  line-height: 1.55;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 16px 80px;
+}
+h1 { font-size: 1.9rem; line-height: 1.2; margin: 0.4em 0; }
+h2 { font-size: 1.1rem; margin: 2em 0 0.4em; padding-top: 0.6em; border-top: 1px solid var(--rule); font-family: ui-sans-serif, system-ui, sans-serif; }
+p { margin: 0.6em 0; }
+a { color: var(--accent); }
+.lede, .promise { color: var(--muted); }
+.crumb { font: 0.85rem ui-sans-serif, system-ui, sans-serif; color: var(--muted); }
+.bracket { color: var(--flag); font-style: italic; }
+.draftnote { font: 0.85rem ui-sans-serif, system-ui, sans-serif; color: var(--flag); }
+
+input, textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: var(--field);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin-top: 6px;
+}
+input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.prompts { padding-left: 1.2em; }
+.prompts li { margin: 1.4em 0; }
+.prompts label { font-weight: 600; }
+.expected { color: var(--muted); margin-left: 0.4em; font-size: 0.9em; }
+table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.95rem; }
+th, td { border-bottom: 1px solid var(--rule); padding: 4px; text-align: left; vertical-align: top; }
+td input { margin: 0; }
+.saved { font: 0.85rem ui-sans-serif, system-ui, sans-serif; color: var(--muted); }
+
+.worksheets { list-style: none; padding: 0; }
+.worksheets li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.wsid { font-family: ui-sans-serif, system-ui, sans-serif; color: var(--muted); margin-right: 6px; }
+.meta { font: 0.85rem ui-sans-serif, system-ui, sans-serif; color: var(--muted); }
+
+.folderbar { margin: 24px 0; padding: 16px; border: 1px solid var(--rule); border-radius: 6px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.95rem; }
+.folderbar .status { margin-top: 0; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--flag); margin-right: 4px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+button, .filebutton {
+  font: inherit; cursor: pointer; padding: 8px 14px; border-radius: 4px;
+  border: 1px solid var(--accent); background: transparent; color: var(--accent);
+}
+button.primary { background: var(--accent); color: var(--paper); }
+button.quiet { border-color: var(--rule); color: var(--muted); }
+.filebutton input { display: none; }
+.message { color: var(--ink); }
+.fineprint { color: var(--muted); font-size: 0.85rem; margin-bottom: 0; }

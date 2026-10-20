@@ -2,7 +2,7 @@
 
 A private ledger for people who lead their AI. The record is ours. The work is yours.
 
-This is week 1 of the eight-week MVP in `stack.md`: an empty app with sign-in, the data model,
+This is weeks 1 and 2 of the eight-week MVP in `stack.md`: an empty app with sign-in, the data model,
 the scorecard submit route, and the five privacy guards running in CI. Product docs live in the
 claude.ai Project "Human Led Web Service".
 
@@ -44,6 +44,16 @@ The build fails if any of these break.
 - `app/api/scorecards/route.ts`: the only way into the ledger.
 - `src/vault/`: browser-only storage for worksheet answers (week 2).
 
-## Next: week 2
+## The workbook (week 2)
 
-The worksheet engine and Part 0: worksheets defined as data, local save, "Save to my folder", "Open from my folder".
+- `src/worksheets/`: worksheets defined as data. Part 0 (0.1 to 0.7) is in with draft prompts; the
+  "why" and "Mark's example" text are `[MARK: ...]` brackets until the workbook skill drafts them.
+- `src/vault/`: answers autosave to this browser (IndexedDB). "Save to my folder" writes one Markdown
+  file per worksheet plus `.workbook/answers.json` into a folder the person picks (Chrome, Edge), or
+  downloads a zip elsewhere. "Open from my folder" reads it back, strictly: unknown worksheets,
+  prompts, and non-text values are dropped.
+- Guard 4 now covers `src/vault`, `src/worksheets`, and `app/workbook`: none of it may reach the network.
+
+## Next: week 3
+
+Part A (A1 to A5), drafted with the workbook skill.
