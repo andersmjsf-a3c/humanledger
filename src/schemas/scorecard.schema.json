@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scorecard/1.1",
+  "title": "Scorecard v1.1",
+  "description": "The only thing that leaves the vault. Every value is a number, a date, a category from a closed list, or a boolean. No free text anywhere. Unknown fields are rejected.",
+  "oneOf": [
+    { "$ref": "#/$defs/deliverable" },
+    { "$ref": "#/$defs/skill_retest" },
+    { "$ref": "#/$defs/worksheet" }
+  ],
+
+  "$defs": {
+
+    "date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^20[2-9][0-9]-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+    },
+
+    "count": { "type": "integer", "minimum": 0, "maximum": 1000 },
+    "small_count": { "type": "integer", "minimum": 0, "maximum": 100 },
+
+    "grading_skill_version": { "enum": ["g1.0", "g1.1"] },
+
+    "model_vendor": { "enum": ["anthropic", "openai", "google", "meta", "mistral", "xai", "other", "unknown"] },
+
+    "model_release": {
+      "description": "Service-maintained release registry. A new release adds a value and bumps the schema minor version.",
+      "enum": [
+        "anthropic.claude-fable-5-1",
+        "anthropic.claude-opus-5-5",
+        "anthropic.claude-sonnet-5-5",
+        "anthropic.claude-haiku-5-5",
+        "anthropic.other",
+        "openai.other",
+        "google.other",
+        "meta.other",
+        "mistral.other",
+        "xai.other",
+        "other",
+        "unknown"
+      ]
+    },
+
+    "skill_slot": {
+      "description": "Which skill, by slot. Never by name: a skill's name can carry content ('pitch-to-acme').",
+      "enum": [
+        "profile", "brief_frame", "preferences", "corrections_log", "trust_rules",
+        "first_skill", "voice", "brand", "research", "fact_check", "post",
+        "business_brief", "agent_job", "what_stays_human",
+        "custom_01", "custom_02", "custom_03", "custom_04", "custom_05",
+        "custom_06", "custom_07", "custom_08", "custom_09", "custom_10",
+        "custom_11", "custom_12", "custom_13", "custom_14", "custom_15",
+        "custom_16", "custom_17", "custom_18", "custom_19", "custom_20"
+      ]
+    },
+
+    "check_result": { "enum": ["pass", "fail", "not_run", "not_applicable"] },
+
+    "voice_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "em_dash":        { "$ref": "#/$defs/count" },
+        "banned_word":    { "$ref": "#/$defs/count" },
+        "hedge":          { "$ref": "#/$defs/count" },
+        "passive_frame":  { "$ref": "#/$defs/count" },
+        "honesty_theater":{ "$ref": "#/$defs/count" },
+        "off_voice_other":{ "$ref": "#/$defs/count" }
+      }
+    },
+
+    "ai_tell_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stock_phrase":        { "$ref": "#/$defs/count" },
+        "inflated_word":       { "$ref": "#/$defs/count" },
+        "rule_of_three":       { "$ref": "#/$defs/count" },
+        "negative_parallelism":{ "$ref": "#/$defs/count" },
+        "uniform_rhythm":      { "$ref": "#/$defs/count" },
+        "generic_closer":      { "$ref": "#/$defs/count" },
+        "tell_other":          { "$ref": "#/$defs/count" }
+      }
+    },
+
+    "receipt": {
+      "description": "Typed summary of what the agent that made this card touched. The full receipt, with file names, stays in the vault.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "agent":               { "enum": ["grader", "drift_watcher"] },
+        "files_read":          { "$ref": "#/$defs/count" },
+        "files_written":       { "$ref": "#/$defs/small_count" },
+        "network_attempts":    { "$ref": "#/$defs/small_count" },
+        "content_transmitted": { "type": "boolean" },
+        "boundary_events":     { "$ref": "#/$defs/small_count" }
+      }
+    },
+
+    "deliverable": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "schema_version", "grading_skill_version", "graded_on"],
+      "properties": {
+        "kind":                  { "const": "deliverable" },
+        "schema_version":        { "enum": ["1.0", "1.1"] },
+        "grading_skill_version": { "$ref": "#/$defs/grading_skill_version" },
+        "graded_on":             { "$ref": "#/$defs/date" },
+        "model_vendor":          { "$ref": "#/$defs/model_vendor" },
+        "model_release":         { "$ref": "#/$defs/model_release" },
+
+        "deliverable_type": { "enum": ["email", "message", "post", "deck", "document", "report", "proposal", "spreadsheet", "code", "design", "other"] },
+        "audience":         { "enum": ["self", "internal", "customer", "investor", "partner", "public", "other"] },
+        "length_band":      { "enum": ["under_300_words", "300_to_1000", "1000_to_3000", "over_3000", "not_text"] },
+
+        "brief_used":       { "type": "boolean" },
+        "skills_used": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/skill_slot" },
+          "uniqueItems": true,
+          "maxItems": 20
+        },
+
+        "pass_count":       { "type": "integer", "minimum": 0, "maximum": 500 },
+        "catches_me":       { "$ref": "#/$defs/count" },
+        "catches_tool":     { "$ref": "#/$defs/count" },
+        "catches_standard": { "$ref": "#/$defs/count" },
+        "standard_kind":    { "enum": ["published_guide", "company_standard", "checklist", "none"] },
+
+        "voice_flags_found":       { "$ref": "#/$defs/voice_flags" },
+        "voice_flags_remaining":   { "$ref": "#/$defs/voice_flags" },
+        "ai_tell_flags_found":     { "$ref": "#/$defs/ai_tell_flags" },
+        "ai_tell_flags_remaining": { "$ref": "#/$defs/ai_tell_flags" },
+
+        "fact_pass":         { "$ref": "#/$defs/check_result" },
+        "facts_checked":     { "$ref": "#/$defs/count" },
+        "facts_corrected":   { "$ref": "#/$defs/count" },
+        "sources_opened":    { "$ref": "#/$defs/count" },
+
+        "three_minute_test": { "enum": ["passed", "failed", "skipped", "not_applicable"] },
+
+        "brand_check": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "claims":  { "$ref": "#/$defs/check_result" },
+            "names":   { "$ref": "#/$defs/check_result" },
+            "voice":   { "$ref": "#/$defs/check_result" },
+            "visuals": { "$ref": "#/$defs/check_result" }
+          }
+        },
+
+        "released_after_check": { "type": "boolean" },
+
+        "receipt": { "$ref": "#/$defs/receipt" }
+      }
+    },
+
+    "skill_retest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "schema_version", "grading_skill_version", "graded_on", "skill_slot", "skill_version"],
+      "properties": {
+        "kind":                  { "const": "skill_retest" },
+        "schema_version":        { "enum": ["1.0", "1.1"] },
+        "grading_skill_version": { "$ref": "#/$defs/grading_skill_version" },
+        "graded_on":             { "$ref": "#/$defs/date" },
+        "model_vendor":          { "$ref": "#/$defs/model_vendor" },
+        "model_release":         { "$ref": "#/$defs/model_release" },
+
+        "skill_slot":            { "$ref": "#/$defs/skill_slot" },
+        "skill_version":         { "type": "integer", "minimum": 1, "maximum": 9999 },
+        "last_edited_on":        { "$ref": "#/$defs/date" },
+        "trigger":               { "enum": ["model_release", "scheduled", "output_felt_off", "other"] },
+        "test_cases_run":        { "$ref": "#/$defs/small_count" },
+        "test_cases_passed":     { "$ref": "#/$defs/small_count" },
+        "drift_result":          { "enum": ["no_drift", "minor_drift", "major_drift"] },
+        "edited_after_retest":   { "type": "boolean" },
+        "run_by":                { "enum": ["person", "drift_watcher"] },
+
+        "receipt": { "$ref": "#/$defs/receipt" }
+      }
+    },
+
+    "worksheet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "schema_version", "grading_skill_version", "graded_on", "worksheet_id", "status"],
+      "properties": {
+        "kind":                  { "const": "worksheet" },
+        "schema_version":        { "enum": ["1.0", "1.1"] },
+        "grading_skill_version": { "$ref": "#/$defs/grading_skill_version" },
+        "graded_on":             { "$ref": "#/$defs/date" },
+
+        "worksheet_id": {
+          "enum": ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7",
+                   "A1", "A2", "A3", "A4", "A5",
+                   "B1", "B2", "B3", "B4", "B5", "B6",
+                   "C1", "C2", "C3", "C4", "C5"]
+        },
+        "status":        { "enum": ["started", "completed", "revisited_v2"] },
+        "skill_version": { "type": "integer", "minimum": 1, "maximum": 9999 },
+        "check_step_done": { "type": "boolean" }
+      }
+    }
+  }
+}

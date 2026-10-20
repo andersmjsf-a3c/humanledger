@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "coach-recommendation/1.0",
+  "title": "Coach recommendation v1.0",
+  "description": "The only thing the coach can say. Typed like a scorecard: numbers, dates, categories, booleans. The words the person reads come from service-owned templates keyed by kind and reason, so the coach can't ask for content and can't offer to do the work. action_owner is always the person.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "issued_on", "kind", "reason", "action_owner"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "issued_on": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^20[2-9][0-9]-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+    },
+
+    "kind": {
+      "enum": ["retest_skill", "revisit_worksheet", "run_fact_pass", "run_three_minute_test",
+               "write_brief", "run_brand_check", "add_test_cases", "review_pending_cards"]
+    },
+    "reason": {
+      "enum": ["stale_since_release", "not_retested_in_window", "catch_rate_down", "flags_up",
+               "passes_up", "check_skipped_streak", "objective_off_track", "pending_cards_waiting"]
+    },
+    "action_owner": { "const": "person" },
+
+    "skill_slot": {
+      "enum": [
+        "profile", "brief_frame", "preferences", "corrections_log", "trust_rules",
+        "first_skill", "voice", "brand", "research", "fact_check", "post",
+        "business_brief", "agent_job", "what_stays_human",
+        "custom_01", "custom_02", "custom_03", "custom_04", "custom_05",
+        "custom_06", "custom_07", "custom_08", "custom_09", "custom_10",
+        "custom_11", "custom_12", "custom_13", "custom_14", "custom_15",
+        "custom_16", "custom_17", "custom_18", "custom_19", "custom_20"
+      ]
+    },
+    "worksheet_id": {
+      "enum": ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7",
+               "A1", "A2", "A3", "A4", "A5",
+               "B1", "B2", "B3", "B4", "B5", "B6",
+               "C1", "C2", "C3", "C4", "C5"]
+    },
+    "objective": {
+      "enum": ["fewer_passes_per_deliverable", "voice_flags_under_target", "retest_within_7_days",
+               "fact_pass_every_external", "three_minute_test_every_external"]
+    },
+
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "metric": {
+          "enum": ["pass_count", "catches_me", "voice_flags", "ai_tell_flags", "facts_corrected",
+                   "three_minute_pass_rate_pct", "days_since_retest", "pending_cards"]
+        },
+        "then_value": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "now_value":  { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "since": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^20[2-9][0-9]-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+        }
+      }
+    }
+  }
+}
