@@ -24,11 +24,21 @@ describe("worksheets come from the drafts, unchanged", () => {
     for (const w of WORKSHEETS) expect(schemaIds).toContain(w.id);
   });
 
+  it("Part A has all five worksheets, in order", () => {
+    expect(WORKSHEETS.filter((w) => w.part === "A").map((w) => w.id)).toEqual(["A1", "A2", "A3", "A4", "A5"]);
+  });
+
+  it("a numbered list of blanks inside a question becomes one field per line (A5's five rules)", () => {
+    const a5 = WORKSHEETS.find((w) => w.id === "A5")!;
+    const q2 = a5.yourTurn.find((s) => s.type === "item" && s.n === 2);
+    expect(q2 && q2.type === "item" && q2.fields.length).toBe(5);
+  });
+
   it("every blank in every draft becomes exactly one field", () => {
     for (const w of WORKSHEETS) {
       const src = yourTurn(w.source);
       const standalone = (src.match(/^\s*_{3,}\s*$/gm) ?? []).length;
-      const bullets = src.split("\n").filter((l) => /^\s*- /.test(l));
+      const bullets = src.split("\n").filter((l) => /^\s*- /.test(l) || /^\s+\d+\.\s/.test(l));
       const bulletBlanks = bullets.reduce((n, l) => n + (l.match(/_{5}/g) ?? []).length + (l.includes("( )") ? 1 : 0), 0);
       const tableBlanks = (src.match(/\|\s*_{3,}\s*\|/g) ?? []).length;
       const fields = fieldsOf(w).filter((f) => f.kind !== "check").length;

@@ -82,9 +82,9 @@ function parseItem(n: number, lines: string[]): Segment {
       plainBlanks++;
       continue;
     }
-    if (/^- /.test(t) && (t.includes("_____") || t.includes("( )"))) {
+    if (/^(-|\d+\.)\s/.test(t) && (t.includes("_____") || t.includes("( )"))) {
       bulletFields++;
-      const label = t.replace(/^- /, "").split("_____")[0].replace(/[:\s]+$/, "").trim();
+      const label = t.replace(/^(-|\d+\.)\s+/, "").split("_____")[0].replace(/[:\s]+$/, "").trim();
       const blanks = (t.match(BLANK) ?? []).length;
       for (let b = 0; b < blanks; b++) raw.push({ label: label || `Item ${bulletFields}`, kind: "short" });
       if (t.includes("( )")) raw.push({ label: `Item ${bulletFields}, mark`, kind: "short" });
@@ -97,13 +97,16 @@ function parseItem(n: number, lines: string[]): Segment {
   const question = (text.match(/^\*\*(.+?)\*\*/)?.[1] ?? text.split("\n")[0]).replace(/[.:]$/, "");
   const firstPara = text.split(/\n\s*\n/)[0].replace(/\n/g, " ");
   const lastPara = text.split(/\n\s*\n/).at(-1)!.replace(/\n/g, " ");
-  const expected = (lastPara.match(/\(([^()]+)\)\s*$/) ?? firstPara.match(/\(([^()]+)\)\s*$/))?.[1]?.replace(/\.$/, "");
+  const lengthHint = [...firstPara.matchAll(/\(([^()]*\b(?:lines?|sentences?|words?)\b[^()]*)\)/gi)].at(-1)?.[1];
+  const expected = ((lastPara.match(/\(([^()]+)\)\s*$/) ?? firstPara.match(/\(([^()]+)\)\s*$/))?.[1] ?? lengthHint)?.replace(/\.$/, "");
+  // With no stated length, a paragraph-sized ask still gets a big box.
+  const sizeHint = expected ?? (/\b(paragraph|\d+ to \d+ words|one or two lines|two or three|a sentence each)\b/i.test(firstPara) ? "two lines" : undefined);
 
   // Answer keys follow the question, not its position, so inserting or reordering questions in
   // the workbook never attaches a saved answer to the wrong question. Rewording the bold question
   // changes its key; the importer reports that, because readers' saved answers won't carry over.
   const base = slug(question);
-  for (let i = 0; i < plainBlanks; i++) raw.push({ kind: kindFor(expected) });
+  for (let i = 0; i < plainBlanks; i++) raw.push({ kind: kindFor(sizeHint) });
   if (!raw.length) raw.push({ kind: "check", label: "Done" });
   const used = new Set<string>();
   for (const [i, r] of raw.entries()) {
@@ -178,7 +181,7 @@ export function parseWorksheet(text: string, source: string): Worksheet {
   const minutesWord = promiseText.match(/\b([A-Za-z-]+|\d+) minutes\b/i)?.[1]?.toLowerCase();
   const minutes = minutesWord ? (Number(minutesWord) || NUMBER_WORDS[minutesWord]) : undefined;
   const { segments, howTo } = parseYourTurn(s["Your turn"]);
-  const slug = source.replace(/^.*\//, "").replace(/^ws\d+-/, "").replace(/\.md$/, "");
+  const slug = source.replace(/^.*\//, "").replace(/^ws[A-C]?\d+-/, "").replace(/\.md$/, "");
 
   return {
     id,

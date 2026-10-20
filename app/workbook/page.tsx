@@ -6,7 +6,7 @@ export default function Workbook() {
   return (
     <main>
       <h1>Workbook</h1>
-      <p className="lede">Part 0: set up. Do these once, before Part A.</p>
+      <p className="lede">Do Part 0 once, then work through Part A. Everything you write stays on this device until you save it to your own folder.</p>
       <WorksheetList />
     </main>
   );

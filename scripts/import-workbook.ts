@@ -1,11 +1,13 @@
 // The workbook skill is the master; this site reads from it (Mark, Oct 20 2026).
-// When a worksheet is revised, the handoff is the compounding-ai-workbook .skill file:
 //
-//   npm run import:workbook -- path/to/compounding-ai-workbook.skill
+//   npm run import:workbook -- path/to/compounding-ai-workbook.skill   (the whole set)
+//   npm run import:workbook -- path/to/partA-drafts.zip                 (just those worksheets)
 //
-// It copies references/drafts/*.md into content/workbook/<part>/ unchanged, records where they
-// came from in content/workbook/SOURCE.json, regenerates the pages' data, and reports what
-// changed, including any answer keys that moved (readers' saved answers to those won't carry over).
+// A .skill file is the complete set: its references/drafts/ replace everything, and a worksheet it
+// no longer has is removed. A zip of drafts only adds or replaces the worksheets inside it.
+// Either way the drafts are copied unchanged into content/workbook/<part>/, hashes are recorded in
+// content/workbook/SOURCE.json, the pages' data is regenerated, and changes are reported, including
+// answer keys that moved (readers' saved answers to those won't carry over).
 // Nothing is written unless every draft in the file parses.
 
 import { createHash } from "node:crypto";
@@ -20,6 +22,7 @@ const sha = (b: Uint8Array | string) => createHash("sha256").update(b).digest("h
 const partDir = (id: string) => `part${/^[ABC]/.test(id) ? id[0] : "0"}`;
 
 export interface ImportReport {
+  source: "skill" | "drafts";
   skillSha256: string;
   added: string[];
   changed: { id: string; keysRemoved: string[]; keysAdded: string[] }[];
@@ -36,15 +39,18 @@ export function importSkill(
   const entries = unzipSync(bytes);
 
   const skillMd = Object.entries(entries).find(([p]) => /(^|\/)SKILL\.md$/.test(p));
-  if (!skillMd || !/^name:\s*"?compounding-ai-workbook"?\s*$/m.test(strFromU8(skillMd[1]))) {
+  const isSkill = !!skillMd;
+  if (skillMd && !/^name:\s*"?compounding-ai-workbook"?\s*$/m.test(strFromU8(skillMd[1]))) {
     throw new Error("This isn't the compounding-ai-workbook skill (SKILL.md name doesn't match).");
   }
 
+  const pattern = isSkill ? /(?:^|\/)references\/drafts\/(ws[^/]+\.md)$/ : /(?:^|\/)(ws[^/]+\.md)$/;
   const drafts = Object.entries(entries)
-    .map(([p, b]) => ({ m: p.match(/(?:^|\/)references\/drafts\/(ws[^/]+\.md)$/), b }))
+    .filter(([p]) => !p.startsWith("__MACOSX/"))
+    .map(([p, b]) => ({ m: p.match(pattern), b }))
     .filter((d) => d.m)
     .map((d) => ({ file: d.m![1], text: strFromU8(d.b) }));
-  if (!drafts.length) throw new Error("No worksheet drafts found under references/drafts/.");
+  if (!drafts.length) throw new Error(isSkill ? "No worksheet drafts found under references/drafts/." : "No worksheet drafts (ws*.md) found in this zip.");
 
   // Parse everything first; a broken draft stops the import before any file is touched.
   const incoming = drafts.map((d) => {
@@ -58,10 +64,14 @@ export function importSkill(
     existsSync(generatedPath) ? (JSON.parse(readFileSync(generatedPath, "utf8")) as Worksheet[]).map((w) => [w.id, w]) : [],
   );
 
-  // Replace the drafts: the skill's set is the whole set.
+  // A .skill replaces the whole set. A drafts zip replaces only the worksheets it carries.
+  const replacing = new Set(incoming.map((i) => i.ws.id));
   if (existsSync(root)) {
     for (const part of readdirSync(root, { withFileTypes: true }).filter((d) => d.isDirectory())) {
-      for (const f of readdirSync(join(root, part.name)).filter((f) => /^ws.*\.md$/.test(f))) rmSync(join(root, part.name, f));
+      for (const f of readdirSync(join(root, part.name)).filter((f) => /^ws.*\.md$/.test(f))) {
+        const id = parseWorksheet(readFileSync(join(root, part.name, f), "utf8"), f).id;
+        if (isSkill || replacing.has(id)) rmSync(join(root, part.name, f));
+      }
     }
   }
   for (const i of incoming) {
@@ -70,14 +80,24 @@ export function importSkill(
   }
 
   const skillSha256 = sha(bytes);
+  const sourcePath = join(root, "SOURCE.json");
+  const prev = existsSync(sourcePath) ? JSON.parse(readFileSync(sourcePath, "utf8")) : {};
+  const files: Record<string, string> = {};
+  for (const part of readdirSync(root, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort()) {
+    for (const f of readdirSync(join(root, part)).filter((f) => f.endsWith(".md")).sort()) {
+      files[`${part}/${f}`] = sha(readFileSync(join(root, part, f), "utf8"));
+    }
+  }
   writeFileSync(
-    join(root, "SOURCE.json"),
+    sourcePath,
     JSON.stringify(
       {
         skill: "compounding-ai-workbook",
-        skillSha256,
-        importedAt: (opts.now ?? new Date()).toISOString(),
-        files: Object.fromEntries(incoming.map((i) => [i.path.slice(root.length + 1), sha(i.text)]).sort()),
+        files,
+        imports: [
+          ...(prev.imports ?? []),
+          { kind: isSkill ? "skill" : "drafts", sha256: skillSha256, importedAt: (opts.now ?? new Date()).toISOString(), worksheets: [...replacing].sort() },
+        ],
       },
       null,
       2,
@@ -87,8 +107,9 @@ export function importSkill(
   const after = buildAll(root);
   writeFileSync(generatedPath, JSON.stringify(after, null, 2) + "\n");
 
-  const report: ImportReport = { skillSha256, added: [], changed: [], removed: [], unchanged: [] };
+  const report: ImportReport = { source: isSkill ? "skill" : "drafts", skillSha256, added: [], changed: [], removed: [], unchanged: [] };
   for (const w of after) {
+    if (!isSkill && !replacing.has(w.id)) continue;
     const old = before.get(w.id);
     if (!old) report.added.push(w.id);
     else if (JSON.stringify(old) === JSON.stringify(w)) report.unchanged.push(w.id);
@@ -105,11 +126,11 @@ export function importSkill(
 if (process.argv[1]?.endsWith("import-workbook.ts")) {
   const file = process.argv[2];
   if (!file) {
-    console.error("Usage: npm run import:workbook -- path/to/compounding-ai-workbook.skill");
+    console.error("Usage: npm run import:workbook -- path/to/compounding-ai-workbook.skill (or a zip of ws*.md drafts)");
     process.exit(2);
   }
   const r = importSkill(new Uint8Array(readFileSync(file)));
-  console.log(`Imported compounding-ai-workbook (sha256 ${r.skillSha256.slice(0, 12)})`);
+  console.log(`Imported ${r.source === "skill" ? "the compounding-ai-workbook skill (whole set)" : "a drafts zip (only the worksheets inside it)"}, sha256 ${r.skillSha256.slice(0, 12)}`);
   console.log(`  unchanged: ${r.unchanged.join(", ") || "none"}`);
   console.log(`  added:     ${r.added.join(", ") || "none"}`);
   console.log(`  removed:   ${r.removed.join(", ") || "none"}`);

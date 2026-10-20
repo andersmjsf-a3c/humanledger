@@ -738,5 +738,607 @@
     "compoundsHtml": "<p>Every release after this one costs you an hour instead of a lost week, and the log turns each change into a line you can read back when a draft feels off. Your skills (Part B) survive because you re-test them; your voice (Part A) stays yours because drift gets caught the week it happens, not the month after.</p>\n",
     "draft": false,
     "source": "content/workbook/part0/ws07-models-and-platform-changes.md"
+  },
+  {
+    "id": "A1",
+    "part": "A",
+    "slug": "the-paragraph-about-you",
+    "title": "The paragraph about you",
+    "promiseText": "The 150 words you give the AI once, so every conversation starts knowing who you are, what you know, and what you're working on. Thirty minutes.",
+    "promiseHtml": "<p>The 150 words you give the AI once, so every conversation starts knowing who you are, what you know, and what you&#39;re working on. Thirty minutes.</p>\n",
+    "minutes": 30,
+    "whyHtml": "<p>Chapter 1 said the quality of the answer is set by what you give before you ask. The first thing to give is you. Not a résumé. The two or three things about your experience that should change how the tool reasons with you, what you&#39;re trying to do, and what you&#39;d want a smart new colleague to know on day one.</p>\n<p>I spent a year getting generic answers because I never said who I was. The morning that changed, in Chapter 1, I typed four hundred words before asking anything, and the first hundred were about me: a coffee company at 23, hundreds of store openings, what retail labor costs. The tool stopped explaining retail to me and started reasoning with me. That paragraph is the one you&#39;ll write here, and Chapter 12 showed where it lives so you never type it again.</p>\n<p>Keep it to what you&#39;d be comfortable with a colleague reading on a screen. This is the durable, shareable version of you. It isn&#39;t a diary, and it isn&#39;t the place for anything you&#39;d keep out of a work email.</p>\n",
+    "exampleHtml": "<p>Here&#39;s mine, as it stands today. It&#39;s changed a dozen times and it&#39;ll change again.</p>\n<blockquote>\n<p>I&#39;m Mark Anderson. I run revenue at a security company that builds trust infrastructure for AI agents, and I run a small consultancy on the side. I&#39;ve spent thirty years building and growing companies: a coffee company I started at 23, a big coffee chain&#39;s expansion from under 300 stores to over 1,000, an internet bank in 1997, then hardware and software companies where I built hundreds of partnerships, including one with Google that put our touch technology into a product they shipped. I know go-to-market, partnerships, and what it costs to open a location or sign an enterprise deal. I&#39;m working on two books about using AI and on a web service that grows out of them. I think in facts and reasonable conclusions, I&#39;d rather you be direct and let me decide than lay out options and wait, and I&#39;ll tell you when you&#39;re wrong. <span class=\"bracket\">[MARK: tighten this to the version you&#39;d actually hand it.]</span></p>\n</blockquote>\n<p>What&#39;s in it: who I am, in one line; the experience that should change how it reasons (the operator&#39;s view of retail, partnerships, enterprise sales); what I&#39;m working on now; how to work with me. What&#39;s not in it: anything about money, health, family, or other people.</p>\n",
+    "yourTurn": [
+      {
+        "type": "md",
+        "html": "<p>Write each piece, then assemble the paragraph.</p>\n"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Who you are, in one line",
+        "html": "<p><strong>Who you are, in one line.</strong> Role and the kind of work, no company history yet.</p>\n",
+        "fields": [
+          {
+            "key": "who-you-are-in-one-line",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Two or three things you know from experience",
+        "html": "<p><strong>Two or three things you know from experience</strong> that should change how it reasons with you. Not titles. The thing you&#39;d say to stop someone explaining your own field to you.</p>\n",
+        "fields": [
+          {
+            "key": "two-or-three-things-you-know-from-experience.item-1",
+            "kind": "short",
+            "label": "Item 1"
+          },
+          {
+            "key": "two-or-three-things-you-know-from-experience.item-2",
+            "kind": "short",
+            "label": "Item 2"
+          },
+          {
+            "key": "two-or-three-things-you-know-from-experience.item-3",
+            "kind": "short",
+            "label": "Item 3"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "What you're working on now",
+        "html": "<p><strong>What you&#39;re working on now.</strong> One or two things, in a sentence each.</p>\n",
+        "fields": [
+          {
+            "key": "what-you-re-working-on-now",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "How to work with you",
+        "html": "<p><strong>How to work with you.</strong> One or two lines: direct or thorough, options or a recommendation, push back or defer.</p>\n",
+        "fields": [
+          {
+            "key": "how-to-work-with-you",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "Assemble it",
+        "html": "<p><strong>Assemble it.</strong> Put 1 through 4 into one paragraph, 100 to 150 words, in your own voice. Read it aloud. Cut anything you wouldn&#39;t say to a new colleague on day one.</p>\n",
+        "fields": [
+          {
+            "key": "assemble-it",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "Give it to the tool",
+        "html": "<p><strong>Give it to the tool.</strong> In a new conversation: &quot;Remember this about me:&quot; and paste the paragraph. Then open another new conversation and ask what it knows about you. Fix anything it got wrong. Then save the paragraph as <code>about-me.md</code> in your notes folder, because the file is yours and the memory is a copy.</p>\n",
+        "fields": [
+          {
+            "key": "give-it-to-the-tool",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: where the paragraph lives, as of October 20, 2026. Memory (Settings &gt; Memory, &quot;Generate memory from chats&quot;) carries it between conversations on Free, Pro, and Max; on Team and Enterprise an owner enables memory first. You can also paste it at the top of any conversation, which works on every plan with no setup. If you keep the paragraph in a project&#39;s instructions instead, it applies only inside that project; memory is the right home for the parts that are true everywhere. Worksheet 0.4 has the details.</em></p>\n",
+    "compoundsHtml": "<p>This paragraph is the first hundred words of every brief you&#39;ll ever write, and you just wrote it for the last time. Worksheet A2 builds the rest of the brief on top of it, and A3 refines the &quot;how to work with me&quot; line into ten.</p>\n",
+    "draft": true,
+    "source": "content/workbook/partA/wsA1-the-paragraph-about-you.md"
+  },
+  {
+    "id": "A2",
+    "part": "A",
+    "slug": "your-brief-every-time",
+    "title": "Your brief, every time",
+    "promiseText": "A five-part frame you fill in before any real task, with one real brief completed and tested. Forty minutes.",
+    "promiseHtml": "<p>A five-part frame you fill in before any real task, with one real brief completed and tested. Forty minutes.</p>\n",
+    "minutes": 40,
+    "whyHtml": "<p>Four hundred words beats four. Chapter 1 said it and every chapter after it depended on it. The difference between the generic retail report I got in my first year and the business plan I got a year later wasn&#39;t the tool. It was the brief: who I was, who the work was for, what I was actually trying to do, what I&#39;d already tried, and what good looked like. Then the ask, in one sentence.</p>\n<p>The frame is the same every time, which is why it belongs on a page you can copy. After a few weeks you won&#39;t need the page; the shape will be in your hands. Until then, fill it in.</p>\n<p>One thing to expect. The first answer to a good brief is often still the easy answer, the one the tool reaches for by habit. Chapter 1&#39;s second lesson was to stay in the conversation and correct it. The brief gets you a better first draft; the correction gets you the real one.</p>\n",
+    "exampleHtml": "<p>The brief that opened Chapter 1, condensed to its parts. The real one was four hundred words.</p>\n<p><strong>Who I am and what I know.</strong> Ran a coffee company at 23. Helped open hundreds of Starbucks stores. I know what retail labor costs, what a lease does to you, what a slow Tuesday looks like.</p>\n<p><strong>Who the work is for.</strong> Me, first, to decide whether this concept can work. Then a business partner who&#39;ll want the numbers.</p>\n<p><strong>What I&#39;m trying to do.</strong> Not &quot;research this market.&quot; Find out whether a model exists for this concept that doesn&#39;t break on retail&#39;s margins, and if so, what it looks like.</p>\n<p><strong>What I&#39;ve tried and what I don&#39;t want.</strong> I&#39;ve asked this before and got a generic report on why retail is hard. I know why retail is hard. Don&#39;t give me that.</p>\n<p><strong>What good looks like.</strong> A model that works on paper, with the math shown, and a note on every assumption I&#39;d have to prove.</p>\n<p><strong>The ask.</strong> Build me the unit economics for this concept, one location at a time, and show me where it breaks.</p>\n<p>Then, when it came back generic anyway: the capital-and-labor problem isn&#39;t a reason to stop, it&#39;s the thing to design around; assume one central kitchen and partner locations; rebuild the model on that. That correction was the whole morning.</p>\n",
+    "yourTurn": [
+      {
+        "type": "md",
+        "html": "<p>Pick one real task you need done this week. Fill in the frame for it. Then run it.</p>\n"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Who I am and what I know",
+        "html": "<p><strong>Who I am and what I know</strong> (two or three lines; A1&#39;s paragraph does most of this, so add only what matters for this task):</p>\n",
+        "expected": "two or three lines; A1's paragraph does most of this, so add only what matters for this task",
+        "fields": [
+          {
+            "key": "who-i-am-and-what-i-know",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Who the work is for",
+        "html": "<p><strong>Who the work is for</strong> (the reader, the customer, the person in the room; one or two lines):</p>\n",
+        "expected": "the reader, the customer, the person in the room; one or two lines",
+        "fields": [
+          {
+            "key": "who-the-work-is-for",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "What I'm actually trying to do",
+        "html": "<p><strong>What I&#39;m actually trying to do</strong> (the goal, not the task; one or two lines):</p>\n",
+        "expected": "the goal, not the task; one or two lines",
+        "fields": [
+          {
+            "key": "what-i-m-actually-trying-to-do",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "What I've tried, and what I don't want",
+        "html": "<p><strong>What I&#39;ve tried, and what I don&#39;t want</strong> (two or three lines; this is the part people skip):</p>\n",
+        "expected": "two or three lines; this is the part people skip",
+        "fields": [
+          {
+            "key": "what-i-ve-tried-and-what-i-don-t-want",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "What good looks like",
+        "html": "<p><strong>What good looks like</strong> (length, tone, format, the one thing it must get right; two lines):</p>\n",
+        "expected": "length, tone, format, the one thing it must get right; two lines",
+        "fields": [
+          {
+            "key": "what-good-looks-like",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "The ask",
+        "html": "<p><strong>The ask</strong> (one sentence):</p>\n",
+        "expected": "one sentence",
+        "fields": [
+          {
+            "key": "the-ask",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 7,
+        "question": "Run it",
+        "html": "<p><strong>Run it.</strong> Paste 1 through 6 into a new conversation and send. Read the answer. Was it the easy version? Write the one correction you gave it. (One or two lines.)</p>\n",
+        "expected": "One or two lines",
+        "fields": [
+          {
+            "key": "run-it",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 8,
+        "question": "Keep the frame",
+        "html": "<p><strong>Keep the frame.</strong> Save this filled-in brief as <code>briefs/first-brief.md</code>. Save the blank frame as <code>briefs/frame.md</code>. Next time, copy the frame.</p>\n",
+        "fields": [
+          {
+            "key": "keep-the-frame",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: nothing to set up. The brief is text you paste. If you&#39;ve done A1 and Worksheet 0.4, memory already carries part 1, and you can start at part 2. Working inside a project (0.4) carries parts 1 and 2 for everything in that body of work; the task-specific parts (3 through 6) still go in the conversation every time, because they&#39;re true only today.</em></p>\n",
+    "compoundsHtml": "<p>Every brief you write makes the next one faster, because parts 1 and 2 stop changing and parts 4 and 5 turn into rules. When the same &quot;what I don&#39;t want&quot; shows up three briefs in a row, it goes into the corrections log (A4), and when it shows up in every brief for one kind of task, it goes into a skill (Part B).</p>\n",
+    "draft": false,
+    "source": "content/workbook/partA/wsA2-your-brief-every-time.md"
+  },
+  {
+    "id": "A3",
+    "part": "A",
+    "slug": "how-you-want-it-to-talk-to-you",
+    "title": "How you want it to talk to you",
+    "promiseText": "Ten preference lines (length, tone, format, what to skip, what to never say) ready to paste or save, so the tool's default manner becomes yours. Twenty minutes.",
+    "promiseHtml": "<p>Ten preference lines (length, tone, format, what to skip, what to never say) ready to paste or save, so the tool&#39;s default manner becomes yours. Twenty minutes.</p>\n",
+    "minutes": 20,
+    "whyHtml": "<p>Chapter 2 said to talk to it like a colleague, and the colleague should learn how you like to be talked to. Most people never say. They get the tool&#39;s default manner (eager, thorough, balanced, a little too pleased with itself) and either put up with it or quit. Ten lines fix it.</p>\n<p>The lines are about manner, not content. Length: short or complete. Format: prose or lists. Stance: a recommendation or the options. Pushback: argue with me or defer. And the phrases it never uses with you, because you&#39;ve heard them and they cost it your trust.</p>\n<p>Chapter 12 explained why these belong in memory and not in a project: they&#39;re true about you regardless of the work. Write them once, give them once, and every room you walk into already knows.</p>\n",
+    "exampleHtml": "<p>Mine, as they stand. Ten lines, and the first three do most of the work.</p>\n<ol>\n<li>Be direct and let me decide. One recommendation, then the reasoning. Options only if I ask.</li>\n<li>Lead with the deliverable or the answer. No restating my question, no preamble.</li>\n<li>Push back when I&#39;m wrong, with the fact that shows it. Don&#39;t soften it.</li>\n<li>Default to prose. Lists only when I&#39;ll scan or compare.</li>\n<li>Short when the point is short. Don&#39;t pad to look thorough.</li>\n<li>Plain words. &quot;Move money,&quot; not &quot;execute financial transactions.&quot;</li>\n<li>Never write &quot;I want to be honest with you&quot; or any sentence that announces sincerity. Say the thing.</li>\n<li>No em dashes, anywhere. Commas, periods, colons, parentheses.</li>\n<li>Never invent a memory, a quote, a meeting, or a number. Leave a bracket and ask.</li>\n<li>When you don&#39;t know, say so in one line and tell me what you&#39;d check.</li>\n</ol>\n<p>Every one of those started as a correction in a conversation. Number 7 was the first, and the story&#39;s in Chapter 2.</p>\n",
+    "yourTurn": [
+      {
+        "type": "md",
+        "html": "<p>Write your ten. Use mine as a shape, not a script; half of yours should be different from mine.</p>\n"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Stance",
+        "html": "<p><strong>Stance.</strong> A recommendation, or the options? Decide for me, or lay it out?</p>\n",
+        "fields": [
+          {
+            "key": "stance",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Opening",
+        "html": "<p><strong>Opening.</strong> What should the first line of every answer be?</p>\n",
+        "fields": [
+          {
+            "key": "opening",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Pushback",
+        "html": "<p><strong>Pushback.</strong> Argue with me, or defer? How hard?</p>\n",
+        "fields": [
+          {
+            "key": "pushback",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Format",
+        "html": "<p><strong>Format.</strong> Prose or lists? When is each right?</p>\n",
+        "fields": [
+          {
+            "key": "format",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "Length",
+        "html": "<p><strong>Length.</strong> Short by default, or complete by default?</p>\n",
+        "fields": [
+          {
+            "key": "length",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "Words",
+        "html": "<p><strong>Words.</strong> One rule about vocabulary (plain, technical, no jargon, your field&#39;s terms).</p>\n",
+        "fields": [
+          {
+            "key": "words",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 7,
+        "question": "Never say",
+        "html": "<p><strong>Never say.</strong> One phrase or kind of phrase it must never use with you.</p>\n",
+        "fields": [
+          {
+            "key": "never-say",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 8,
+        "question": "Punctuation or style",
+        "html": "<p><strong>Punctuation or style.</strong> One rule, if you have one (mine is em dashes).</p>\n",
+        "fields": [
+          {
+            "key": "punctuation-or-style",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 9,
+        "question": "When it doesn't know",
+        "html": "<p><strong>When it doesn&#39;t know.</strong> What should it do?</p>\n",
+        "fields": [
+          {
+            "key": "when-it-doesn-t-know",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 10,
+        "question": "One more",
+        "html": "<p><strong>One more.</strong> The thing that&#39;s bothered you most so far.</p>\n",
+        "fields": [
+          {
+            "key": "one-more",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "md",
+        "html": "<p>Then: paste all ten into a new conversation after &quot;Remember how I want you to talk to me:&quot; and, in a second new conversation, ask for something you&#39;d normally get a padded answer to. Did the manner change? Save the ten as <code>preferences.md</code> in your notes folder.</p>\n"
+      }
+    ],
+    "howToHtml": "<p><em>How to: as of October 20, 2026, these lines live best in memory (Settings &gt; Memory; Worksheet 0.4), where they apply in every conversation on Free, Pro, and Max. On every plan they also work pasted at the top of a conversation. Put them in a project&#39;s instructions only if you want a different manner for one body of work.</em></p>\n",
+    "compoundsHtml": "<p>Ten lines, given once, change every answer you&#39;ll get from now on. And they&#39;re the seed of your voice skill in Part B: when the tool writes as you, these are the first rules it follows, and the corrections log in A4 is where the next ten come from.</p>\n",
+    "draft": false,
+    "source": "content/workbook/partA/wsA3-how-you-want-it-to-talk-to-you.md"
+  },
+  {
+    "id": "A4",
+    "part": "A",
+    "slug": "your-corrections-log",
+    "title": "Your corrections log",
+    "promiseText": "A running list of the corrections that must stick, with the first five filled in and a rule for when a correction graduates into memory or a skill. Twenty minutes to start; two minutes a week after.",
+    "promiseHtml": "<p>A running list of the corrections that must stick, with the first five filled in and a rule for when a correction graduates into memory or a skill. Twenty minutes to start; two minutes a week after.</p>\n",
+    "minutes": 20,
+    "whyHtml": "<p>Chapter 2&#39;s whole argument fits in one line: every correction you keep is one you never make again. The keeping is the part people skip. They correct the tool in the moment, it holds for the conversation, and the next conversation makes the same mistake (Chapter 11 explained why: a conversation is a room). The log is where the correction goes so it survives the room.</p>\n<p>It&#39;s a file. One line per correction: what it did, what it should do instead, the date. Nothing else. After a month you&#39;ll have twenty lines and you&#39;ll notice three things about them: the same correction appears more than once, some of them are about you regardless of the task, and some are about one kind of work. That&#39;s the sorting from Chapter 12, and the log is where it happens.</p>\n<p>I didn&#39;t set out to build a list. I set out to fix one sentence in one draft. The list is longer now, and every item on it started as a second message.</p>\n",
+    "exampleHtml": "<p>The first entries in mine, from memory, with the dates approximate.</p>\n<table>\n<thead>\n<tr>\n<th>Date</th>\n<th>What it did</th>\n<th>What it should do</th>\n<th>Where it went</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Early 2026</td>\n<td>Wrote &quot;I want to be honest with you&quot; in a column draft</td>\n<td>Never. Say the thing.</td>\n<td>Memory, then the voice skill</td>\n</tr>\n<tr>\n<td>Spring 2026</td>\n<td>Implied I&#39;d worked at Google</td>\n<td>I built a partnership with Google, from RAPT. I never worked there.</td>\n<td>Memory, and every book skill</td>\n</tr>\n<tr>\n<td>Sept 2026</td>\n<td>Wrote &quot;100+ partnerships&quot;</td>\n<td>&quot;Hundreds of partnerships.&quot;</td>\n<td>Memory</td>\n</tr>\n<tr>\n<td>Sept 2026</td>\n<td>Em dashes in everything</td>\n<td>None. Commas, periods, colons, parentheses.</td>\n<td>Memory, voice skill, the linter</td>\n</tr>\n<tr>\n<td>Oct 2026</td>\n<td>&quot;Thirty years using computers&quot;</td>\n<td>&quot;Close to fifty years.&quot;</td>\n<td>The book skills</td>\n</tr>\n<tr>\n<td>Oct 2026</td>\n<td>Named an investor in a chapter</td>\n<td>No names of investors, prospects, customers, or colleagues. Roles only.</td>\n<td>The book skills</td>\n</tr>\n</tbody></table>\n<p>The last column is the point. A correction that&#39;s true about me everywhere went to memory. A correction about one kind of work went to that skill. The ones that cost me most (the em dashes, that first banned line) got a line in the linter, so a machine catches them before I do.</p>\n",
+    "yourTurn": [
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Start the file",
+        "html": "<p><strong>Start the file.</strong> Create <code>logs/corrections.md</code> with this header:</p>\n<pre><code># Corrections\n| Date | What it did | What it should do | Where it went |\n|---|---|---|---|\n</code></pre>\n",
+        "fields": [
+          {
+            "key": "start-the-file",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Fill in the first five",
+        "html": "<p><strong>Fill in the first five.</strong> Think back over your conversations so far. What have you corrected more than once? Write five rows. Leave the last column blank for now.</p>\n",
+        "fields": [
+          {
+            "key": "fill-in-the-first-five.item-1",
+            "kind": "short",
+            "label": "Item 1"
+          },
+          {
+            "key": "fill-in-the-first-five.item-2",
+            "kind": "short",
+            "label": "Item 2"
+          },
+          {
+            "key": "fill-in-the-first-five.item-3",
+            "kind": "short",
+            "label": "Item 3"
+          },
+          {
+            "key": "fill-in-the-first-five.item-4",
+            "kind": "short",
+            "label": "Item 4"
+          },
+          {
+            "key": "fill-in-the-first-five.item-5",
+            "kind": "short",
+            "label": "Item 5"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Sort them",
+        "html": "<p><strong>Sort them.</strong> For each row, ask Chapter 12&#39;s questions: true about me everywhere (memory), about one kind of task (a skill, Part B), or true only in one project (that project&#39;s instructions)? Fill in the last column with where it should go, even if you haven&#39;t put it there yet.</p>\n",
+        "fields": [
+          {
+            "key": "sort-them",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Move the first one",
+        "html": "<p><strong>Move the first one.</strong> Take the correction that&#39;s bitten you most. If it&#39;s a memory item, give it to the tool now (&quot;Remember: never...&quot;). If it&#39;s a skill item, keep it; B1 will have a Rules section waiting for it.</p>\n",
+        "fields": [
+          {
+            "key": "move-the-first-one",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "Set the habit",
+        "html": "<p><strong>Set the habit.</strong> Finish this sentence and put it where you&#39;ll see it: &quot;When I correct the tool and I&#39;ve corrected it before, I ______ within ______.&quot; (Mine: add a row the same day.)</p>\n",
+        "expected": "Mine: add a row the same day",
+        "fields": [
+          {
+            "key": "set-the-habit",
+            "kind": "short"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: nothing to install; the log is an .md file in your folder (Worksheet 0.3). Memory items go in through a conversation (&quot;Remember this:&quot;) or Settings &gt; Memory; skill items go into the Rules section of the skill&#39;s <code>SKILL.md</code>; project items go into the project&#39;s instructions. Worksheet 0.4 has the locations as of October 20, 2026.</em></p>\n",
+    "compoundsHtml": "<p>The log is the raw material for everything in Part B. Every rule in your first skill comes from a row here, and every row you add is a correction you&#39;ll make once instead of forever. After three months, read the log top to bottom: it&#39;s a record of the tool learning you, written by you.</p>\n",
+    "draft": false,
+    "source": "content/workbook/partA/wsA4-your-corrections-log.md"
+  },
+  {
+    "id": "A5",
+    "part": "A",
+    "slug": "your-trust-rules",
+    "title": "Your trust rules",
+    "promiseText": "Your own rules for what you check and how, in five lines, with one real piece of work checked against them. Thirty minutes.",
+    "promiseHtml": "<p>Your own rules for what you check and how, in five lines, with one real piece of work checked against them. Thirty minutes.</p>\n",
+    "minutes": 30,
+    "whyHtml": "<p>Chapter 3 said the tool sounds the same when it&#39;s right and when it&#39;s wrong. Chapter 6 said the biggest mistake people are making with AI right now is passing along output they never checked, and told you about a friend of mine who&#39;s deciding whether to keep people over it. Nothing leaves your hands unchecked. This page turns that from a sentence you agree with into five rules you run.</p>\n<p>The rules are yours because the stakes are yours. A number in a deck to an investor needs a different check from a number in a note to yourself. A quote attributed to a public figure needs a different check from a summary of a document you attached. Write the rules for the work you actually send, and make them short enough to run every time.</p>\n<p>The last rule on your list should be the three-minute test from Chapter 6: can you explain the thing out loud, with no materials, for three minutes? If you can&#39;t, you aren&#39;t done. It&#39;s the check that catches what the other four miss, because it&#39;s a check on you, not on the draft.</p>\n",
+    "exampleHtml": "<p>Mine, in the order I run them on anything with a number, a name, a date, or a quote in it.</p>\n<ol>\n<li>Every number has a named source and a date, in the text or in a note. &quot;According to industry data&quot; doesn&#39;t count.</li>\n<li>Open the source. Read the sentence the number comes from. If I can&#39;t find it, the number comes out or gets marked as unverified.</li>\n<li>Find the one number the argument turns on and check it twice. One wrong number there costs more than ten wrong numbers elsewhere.</li>\n<li>Anything I&#39;ll say to someone who knows the subject better than I do gets the whole pass, not the quick one. The investor who knows the competitor&#39;s real figures exists for every piece of work.</li>\n<li>Before it goes out: three minutes, out loud, no notes. If I can&#39;t, it isn&#39;t finished.</li>\n</ol>\n<p>What I write down at the end of every pass: the line listing what I couldn&#39;t verify. That line is the habit. It&#39;s the one most people never write, and it&#39;s what lets me stand in front of a reader and say &quot;this holds, and here&#39;s the one thing I&#39;m not sure of.&quot;</p>\n",
+    "yourTurn": [
+      {
+        "type": "item",
+        "n": 1,
+        "question": "What do you send that has to be right?",
+        "html": "<p><strong>What do you send that has to be right?</strong> List the three kinds of work where a wrong fact would cost you something real. (Three lines.)</p>\n",
+        "expected": "Three lines",
+        "fields": [
+          {
+            "key": "what-do-you-send-that-has-to-be-right.item-1",
+            "kind": "short",
+            "label": "Item 1"
+          },
+          {
+            "key": "what-do-you-send-that-has-to-be-right.item-2",
+            "kind": "short",
+            "label": "Item 2"
+          },
+          {
+            "key": "what-do-you-send-that-has-to-be-right.item-3",
+            "kind": "short",
+            "label": "Item 3"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Write your five rules",
+        "html": "<p><strong>Write your five rules.</strong> Use mine as a shape. At least two of yours should be specific to the work in question 1.</p>\n",
+        "fields": [
+          {
+            "key": "write-your-five-rules.item-1",
+            "kind": "short",
+            "label": "Item 1"
+          },
+          {
+            "key": "write-your-five-rules.item-2",
+            "kind": "short",
+            "label": "Item 2"
+          },
+          {
+            "key": "write-your-five-rules.item-3",
+            "kind": "short",
+            "label": "Item 3"
+          },
+          {
+            "key": "write-your-five-rules.item-4",
+            "kind": "short",
+            "label": "Item 4"
+          },
+          {
+            "key": "write-your-five-rules.item-5",
+            "kind": "short",
+            "label": "Item 5"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Run them on something real",
+        "html": "<p><strong>Run them on something real.</strong> Take a piece the tool made for you this week with at least three facts in it. Apply all five rules. Mark each fact: confirmed, close but wrong, or couldn&#39;t find it. Write the count. (One line.)</p>\n",
+        "expected": "One line",
+        "fields": [
+          {
+            "key": "run-them-on-something-real",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Write the unverified line",
+        "html": "<p><strong>Write the unverified line.</strong> At the bottom of that piece, one line listing what you couldn&#39;t confirm. Copy it here.</p>\n",
+        "fields": [
+          {
+            "key": "write-the-unverified-line",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "The three-minute test",
+        "html": "<p><strong>The three-minute test.</strong> Stand up and explain the piece out loud, no materials, for three minutes. Did you make it? What did you stumble on? (Two lines.)</p>\n",
+        "expected": "Two lines",
+        "fields": [
+          {
+            "key": "the-three-minute-test",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "Save the rules",
+        "html": "<p><strong>Save the rules</strong> as <code>trust-rules.md</code> in your notes folder, and paste them into memory (&quot;Remember my checking rules:&quot;) so the tool knows what you&#39;ll hold it to.</p>\n",
+        "fields": [
+          {
+            "key": "save-the-rules",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: as of October 20, 2026, checking needs web search on (the slider in the chat box, &quot;Web search&quot;) so the tool can open sources and cite them; ask it for &quot;the source and the sentence the number comes from,&quot; then open the link yourself. Worksheet 0.6 has the setting. The three-minute test needs nothing but a door you can close.</em></p>\n",
+    "compoundsHtml": "<p>Part B&#39;s fact-check skill (B5) is these five rules written so the tool runs them before you do, and your &quot;unverified&quot; line becomes a standard part of everything it hands you. Each time you catch something, add it to the corrections log (A4). The rules get sharper, the catches get rarer, and the person at the center stays the one who decides what&#39;s true.</p>\n",
+    "draft": false,
+    "source": "content/workbook/partA/wsA5-your-trust-rules.md"
   }
 ]
