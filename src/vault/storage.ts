@@ -20,13 +20,26 @@ export const SHARED_ID = "skill:shared";
 const DB_NAME = "workbook-vault";
 const STORE = "worksheets";
 const META = "meta";
+const RUNS = "runs";
+
+// One linter run, as numbers. The text it ran on is never stored.
+export interface LintRun {
+  at: string;
+  words: number;
+  baseline: { hard: number; tells: number };
+  voice: { hard: number; tells: number; rules: number };
+  aiTellFlags: Record<string, number>;
+  voiceFlags: Record<string, number>;
+}
 
 function open(idb: IDBFactory): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
-    const req = idb.open(DB_NAME, 1);
+    const req = idb.open(DB_NAME, 2);
     req.onupgradeneeded = () => {
-      req.result.createObjectStore(STORE, { keyPath: "id" });
-      req.result.createObjectStore(META);
+      const db = req.result;
+      if (!db.objectStoreNames.contains(STORE)) db.createObjectStore(STORE, { keyPath: "id" });
+      if (!db.objectStoreNames.contains(META)) db.createObjectStore(META);
+      if (!db.objectStoreNames.contains(RUNS)) db.createObjectStore(RUNS, { autoIncrement: true });
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error);
@@ -77,6 +90,14 @@ export class AnswerStore {
 
   async replaceAll(records: StoredWorksheet[]): Promise<void> {
     for (const r of records) await done((await this.tx(STORE, "readwrite")).put(r));
+  }
+
+  async addRun(run: LintRun): Promise<void> {
+    await done((await this.tx(RUNS, "readwrite")).add(run));
+  }
+
+  async runs(): Promise<LintRun[]> {
+    return done((await this.tx(RUNS, "readonly")).getAll());
   }
 
   // The folder handle is remembered so "Save to my folder" is one click after the first time.

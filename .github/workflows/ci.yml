@@ -11,5 +11,6 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm test   # includes the five privacy guards; any failure blocks the merge
+      - run: python3 scripts/baseline-parity.py --check   # the TS linter port still matches the original ai_tells.py
       - run: npx next build
         env: { NEXT_TELEMETRY_DISABLED: "1" }
