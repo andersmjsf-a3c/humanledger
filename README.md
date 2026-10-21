@@ -2,7 +2,7 @@
 
 A private ledger for people who lead their AI. The record is ours. The work is yours.
 
-This is weeks 1 to 4 of the eight-week MVP in `stack.md`: an empty app with sign-in, the data model,
+This is weeks 1 to 5 of the eight-week MVP in `stack.md`: an empty app with sign-in, the data model,
 the scorecard submit route, and the five privacy guards running in CI. Product docs live in the
 claude.ai Project "Human Led Web Service".
 
@@ -94,6 +94,26 @@ The build fails if any of these break.
 - A `.skill` import that would remove worksheets the site has stops and lists them (`--allow-remove` to
   proceed). This catches a `.skill` file older than a drafts zip imported since.
 
-## Next: week 5
+## The two linters (week 5)
 
-The voice linter and the AI-tell linter, running in the browser on pasted text.
+`/check`: paste a draft, get two reports. The draft is never saved or sent; each run keeps only counts, on
+the device (IndexedDB `runs`).
+
+- **Signs of AI writing** (`src/linters/baseline.ts`): a port of the generic groups of Mark's `ai_tells.py`
+  (copied to `reference/`): hard zeros, tells, patterns, and the structural checks. The rule lists are
+  generated from the original into `baseline-rules.json`. Mark's house style (hedges, honesty framing,
+  intensifiers, dash rules) is left out. `tests/10-linters.test.ts` checks the port line for line against
+  the original's output on the fixtures; `python3 scripts/baseline-parity.py --check` (in CI) keeps those
+  fixtures current with the original.
+- **Your rules** (`src/linters/voice.ts`): built only from the reader's files: the writing-voice skill
+  (never-use list, Rules), A3 (never say, punctuation or style, format, length, words), and A4's
+  corrections. "Never" lines become phrases or patterns to flag; word limits are checked; anything a
+  program can't test becomes a "check these yourself" list. Each flag names the rule and where it was
+  written. No rules yet: the page says so and points to A3.
+- Flags point at ideas to rewrite, never word swaps. Counts map to the scorecard's `ai_tell_flags_found`
+  and `voice_flags_found` categories (`src/linters/scorecard.ts`); text never does.
+
+## Next: week 6
+
+Scorecards for worksheets, the review page with Send, the history page, and the A5 checks (three-minute test,
+"what I couldn't verify") as boxes the reader ticks before a scorecard is written.

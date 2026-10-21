@@ -109,3 +109,14 @@ button.quiet { border-color: var(--rule); color: var(--muted); }
 .prefills { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0; }
 .prefills .message { width: 100%; margin: 0; font: 0.85rem ui-sans-serif, system-ui, sans-serif; }
 .skillbuilder .actions { margin: 10px 0; }
+
+/* Checker */
+.guidance { border-left: 3px solid var(--accent); padding: 6px 12px; margin: 20px 0; font-size: 0.95rem; }
+.flags { padding-left: 1.1em; }
+.flags li { margin: 6px 0; }
+.fcat { font-weight: 600; }
+.fcount, .fsource { color: var(--muted); font: 0.85rem ui-sans-serif, system-ui, sans-serif; }
+.fitems { color: var(--ink); }
+.clean { color: var(--muted); }
+h3 { font: 600 0.95rem ui-sans-serif, system-ui, sans-serif; margin: 1.2em 0 0.3em; }
+button:disabled { opacity: 0.5; cursor: default; }

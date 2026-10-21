@@ -1,0 +1,69 @@
+{
+ "01-ai-blog.md": {
+  "hard": [],
+  "tells": [
+   "SIGNIFICANCE PUFFERY: 'a testament to' x1, 'serves as' x1, 'marks a' x1, 'shaping the' x1, 'plays a pivotal role' x1, 'watershed' x1, 'evolving landscape' x1",
+   "COPULA AVOIDANCE (SAY IS/HAS): 'boasts' x1",
+   "PROMO PUFFERY: 'vibrant' x1, 'seamless' x1, 'robust' x1, 'holistic' x1",
+   "AI VOCABULARY: 'foster' x1, 'rapidly evolving' x1, 'in today's' x1",
+   "STIFF CONNECTORS: 'moreover' x1",
+   "VAGUE ATTRIBUTION: 'experts say' x1",
+   "CHALLENGES FORMULA: 'despite these challenges' x1, 'only time will tell' x1, 'continues to thrive' x1",
+   "NEGATIVE PARALLELISM (NOT X, IT'S Y) x1",
+   "-ING ANALYSIS TAIL x2",
+   "FALSE RANGE (FROM X TO Y) x1",
+   "EMOJI x1",
+   "EXCLAMATION x1",
+   "TITLE CASE HEADERS x1 (use sentence case): ['The Future Of Work: Why Agents Matter']",
+   "COLON HEADERS x1: ['The Future Of Work: Why Agents Matter']",
+   "RULE OF THREE 1 in 92 words"
+  ]
+ },
+ "02-email.md": {
+  "hard": [
+   "CHATBOT RESIDUE (hard zero): 'i hope this helps' x1, 'hope this helps' x1, 'let me know if you' x1, 'feel free to' x1, 'more detailed breakdown' x1",
+   "PLACEHOLDER x2 (hard zero)",
+   "MARKDOWN IN EMAIL (renders as symbols)"
+  ],
+  "tells": [
+   "STIFF CORRESPONDENCE: 'i hope this email finds' x1, 'i wanted to reach out' x1, 'dear team' x1",
+   "EXCLAMATION x1",
+   "BOLD DENSITY 1 in 53 words"
+  ]
+ },
+ "03-headers.md": {
+  "hard": [],
+  "tells": [
+   "CANNED NOTABILITY: 'featured in' x1, 'trade publications' x1, 'awards and recognition' x1",
+   "VAGUE CONNECTION: 'associated with' x1",
+   "VAGUE ATTRIBUTION: 'according to some' x1",
+   "TITLE CASE HEADERS x3 (use sentence case): ['Early Years Of The Company', 'Growth: The Next Chapter', 'Products And Services Overview Today']",
+   "COLON HEADERS x1: ['Growth: The Next Chapter']",
+   "'X AND Y' HEADERS x2: ['History and Legacy', 'Awards and Recognition']",
+   "HEADING WITH ONLY SUBHEADINGS x2",
+   "THEMATIC BREAK BETWEEN SECTIONS x4 (fine for Growth Brief essay separators)"
+  ]
+ },
+ "04-monotony.md": {
+  "hard": [],
+  "tells": [
+   "'Y RATHER THAN X' x2 (reversed negative parallelism)",
+   "RULE OF THREE 2 in 190 words",
+   "SENTENCE MONOTONY 71% in the 14-24 word band"
+  ]
+ },
+ "05-quotes-leaks.md": {
+  "hard": [
+   "AI MARKUP LEAK x3 (hard zero)",
+   "AI TRACKING LINK x1 (hard zero)"
+  ],
+  "tells": [
+   "MIXED CURLY AND STRAIGHT QUOTES",
+   "RULE OF THREE 4 in 48 words"
+  ]
+ },
+ "06-clean.md": {
+  "hard": [],
+  "tells": []
+ }
+}
