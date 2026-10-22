@@ -99,7 +99,7 @@ describe("only counts leave the page, and they fit the scorecard", () => {
     const base = lintBaseline(text);
     const voice = lintVoice(text, rulesFrom([{ source: "A3 · Never say", text: "robust", neverList: true }]));
     const card = {
-      kind: "deliverable", schema_version: "1.1", grading_skill_version: "g1.1", graded_on: new Date().toISOString().slice(0, 10),
+      kind: "deliverable", schema_version: "1.2", grading_skill_version: "site1.0", graded_on: new Date().toISOString().slice(0, 10),
       ai_tell_flags_found: aiTellCounts(base.flags), voice_flags_found: voiceCounts(voice.flags),
     };
     expect(checkCard(card)).toEqual({ ok: true, card });

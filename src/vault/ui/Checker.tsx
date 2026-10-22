@@ -6,6 +6,10 @@ import { collectSources } from "@/linters/sources";
 import { aiTellCounts, voiceCounts } from "@/linters/scorecard";
 import type { Flag } from "@/linters/types";
 import { getStore } from "./useVault";
+import { checkCard, type ThreeMinute } from "@/cards/build";
+import { encodeCard } from "@/lib/scorecard/encode";
+
+const TYPES: [string, string][] = [["", "Leave out"], ["email", "Email"], ["message", "Message"], ["post", "Post"], ["deck", "Deck"], ["document", "Document"], ["report", "Report"], ["proposal", "Proposal"], ["code", "Code"], ["other", "Other"]];
 
 const sum = (fs: Flag[], g: Flag["group"]) => fs.filter((f) => f.group === g).reduce((n, f) => n + f.count, 0);
 
@@ -32,6 +36,9 @@ export function Checker() {
   const [records, setRecords] = useState<Record<string, Record<string, string>>>({});
   const [ran, setRan] = useState<{ base: Flag[]; voice: Flag[]; words: number; rules: number } | null>(null);
   const [runs, setRuns] = useState(0);
+  const [dtype, setDtype] = useState("");
+  const [three, setThree] = useState<ThreeMinute | "">("");
+  const [unverified, setUnverified] = useState(false);
 
   useEffect(() => {
     const s = getStore();
@@ -106,6 +113,38 @@ export function Checker() {
             itself is never kept.
           </p>
           <pre className="preview">{JSON.stringify({ words: ran.words, ai_tell_flags_found: counts!.ai, voice_flags_found: counts!.voice }, null, 2)}</pre>
+
+          <h2>Make a scorecard from this check</h2>
+          <p className="meta">Before you do, the two A5 checks. Tick only what you actually did.</p>
+          <fieldset className="a5">
+            <legend>The three-minute test: could you explain this out loud, no notes, for three minutes?</legend>
+            {(["passed", "failed", "skipped", "not_applicable"] as const).map((v) => (
+              <label key={v} className="check">
+                <input type="radio" name="three" checked={three === v} onChange={() => setThree(v)} />{" "}
+                {{ passed: "Yes, I made it", failed: "No, I stumbled", skipped: "I didn't do it", not_applicable: "Doesn't apply to this piece" }[v]}
+              </label>
+            ))}
+          </fieldset>
+          <p>
+            <label className="check">
+              <input type="checkbox" checked={unverified} onChange={(e) => setUnverified(e.target.checked)} /> I wrote the line listing what I couldn't verify
+            </label>
+          </p>
+          <p className="labeled">
+            <label className="flabel" htmlFor="dtype">Type of work</label>{" "}
+            <select id="dtype" value={dtype} onChange={(e) => setDtype(e.target.value)}>
+            {TYPES.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
+          </select>
+          </p>
+          <p className="meta">The scorecard records whether you did these two things. It never asks what you couldn't verify.</p>
+          <p>
+            <a
+              className="primarylink"
+              href={`/review#${encodeCard(checkCard({ words: ran.words, aiTellFlags: counts!.ai, voiceFlags: counts!.voice, deliverableType: dtype || undefined, threeMinute: three || undefined, unverifiedLine: unverified }))}`}
+            >
+              Review the scorecard
+            </a>
+          </p>
         </>
       )}
     </>

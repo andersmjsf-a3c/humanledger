@@ -10,6 +10,7 @@ export interface StoredWorksheet {
   savedToFolderAt?: string; // ISO time of the last "Save to my folder"
   version?: number; // skills: counted up each time a changed skill is saved or downloaded
   exportedHash?: string; // skills: fingerprint of the last saved or downloaded file
+  completedAt?: string; // worksheets: when the person last sent a "completed" scorecard for it
 }
 
 // Worksheet answers use the worksheet id; skill answers use "skill:<template id>"; the name the
@@ -74,6 +75,11 @@ export class AnswerStore {
 
   async all(): Promise<StoredWorksheet[]> {
     return done((await this.tx(STORE, "readonly")).getAll());
+  }
+
+  async markCompleted(id: string, at = new Date()): Promise<void> {
+    const rec = (await this.get(id)) ?? { id, answers: {}, updatedAt: at.toISOString() };
+    await done((await this.tx(STORE, "readwrite")).put({ ...rec, completedAt: at.toISOString() }));
   }
 
   async markSavedToFolder(ids: string[], at = new Date()): Promise<void> {

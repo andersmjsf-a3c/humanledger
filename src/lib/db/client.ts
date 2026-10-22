@@ -12,7 +12,7 @@ export function getDb(): Db {
   if (!db) {
     const url = process.env.DATABASE_URL;
     if (!url) throw new Error("DATABASE_URL is not set");
-    db = drizzlePg(postgres(url, { prepare: false }), { schema }) as unknown as Db;
+    db = drizzlePg(postgres(url, { prepare: false, max: Number(process.env.DATABASE_POOL_MAX) || 10 }), { schema }) as unknown as Db;
   }
   return db;
 }
