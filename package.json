@@ -14,7 +14,8 @@
     "db:migrate": "drizzle-kit migrate",
     "check": "npm run typecheck && npm run lint && npm run test",
     "worksheets": "tsx scripts/build-worksheets.ts",
-    "import:workbook": "tsx scripts/import-workbook.ts"
+    "import:workbook": "tsx scripts/import-workbook.ts",
+    "grader": "tsx scripts/build-grader.ts"
   },
   "dependencies": {
     "ajv": "^8.20.0",

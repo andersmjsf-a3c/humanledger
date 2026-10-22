@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { decodeCard, encodeCard } from "@/lib/scorecard/encode";
 import { checkCard } from "@/lib/scorecard/validate";
 import { holdBack, requiredKeys, type Card } from "@/cards/build";
-import { rows } from "@/cards/labels";
+import { receiptWarnings, rows } from "@/cards/labels";
 import { getStore } from "@/vault/ui/useVault";
 import { clearPending, keepPending, peekPending } from "./pending";
 
@@ -108,6 +108,11 @@ export function Review() {
           ))}
         </tbody>
       </table>
+      {receiptWarnings(state.card).map((w) => (
+        <p key={w} className="message">
+          Check before sending: {w}
+        </p>
+      ))}
       <p className="meta">Not in here: any words from your work, file names, or names of people or companies.</p>
       <details>
         <summary>The exact data</summary>

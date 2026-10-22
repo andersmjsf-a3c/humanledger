@@ -133,7 +133,23 @@ Schema 1.2 (`src/schemas/scorecard.schema.json`) adds `unverified_line` (boolean
 - Local e2e against a real Postgres: set `DATABASE_URL`; `DATABASE_POOL_MAX=1` if your local server
   accepts one connection.
 
-## Next: week 7
+## The grading skill (week 7)
 
-The grading skill (g1.1) with the review link, deliverable and re-test cards, and typed receipts. Run end to
-end on Mark's own work first.
+`/grader` builds `grade-my-work.zip` in the browser with the site's address written in, so its review links
+come back to this deployment. Source: `grader/grade-my-work/` (SKILL.md and `scripts/card.py`);
+`npm run grader` packs it, with the site's own `scorecard.schema.json` and `src/cards/labels.json`, into
+`src/grader/generated/grader.json`. A test fails if that file is stale.
+
+- The skill grades in the person's Claude, gives the full report there, asks the two A5 questions, and
+  writes the card. `python3 scripts/card.py preview|link CARD.json [--hold a,b]` checks it, previews it in
+  the site's own words, and prints `/review#v1.<card>`. It never sends.
+- `tests/12-grader.test.ts` runs `card.py` against 30 good and bad cards and requires the same verdict and
+  the same plain-language rows as the site.
+- Receipts ride on the card. The review page and history flag network attempts, content sent, or boundary
+  events; they never block Send.
+- The drift watcher (unattended re-tests) waits until after the beta.
+
+## Next: week 8
+
+The beta: onboard readers and measure, with counts only, who finishes Part A and comes back to check real
+work unprompted.

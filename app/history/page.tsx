@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { SESSION_COOKIE, userIdForSession } from "@/lib/auth/session";
 import { historyFor, worksheetStatus } from "@/lib/history";
-import { cardTitle, rows } from "@/cards/labels";
+import { cardTitle, receiptWarnings, rows } from "@/cards/labels";
 import { WORKSHEETS } from "@/worksheets";
 
 export const dynamic = "force-dynamic";
@@ -66,6 +66,11 @@ export default async function History() {
                     ))}
                   </tbody>
                 </table>
+                {receiptWarnings(r.card).map((w) => (
+                  <p key={w} className="message">
+                    {w}
+                  </p>
+                ))}
               </details>
             ))}
           </section>

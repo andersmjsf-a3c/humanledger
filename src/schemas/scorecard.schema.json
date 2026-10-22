@@ -21,8 +21,8 @@
     "small_count": { "type": "integer", "minimum": 0, "maximum": 100 },
 
     "grading_skill_version": {
-      "description": "What made the card: the grading skill (g1.x) or the site's own pages (site1.0: worksheet completion and the draft checker).",
-      "enum": ["g1.0", "g1.1", "site1.0"]
+      "description": "What made the card: the grading skill (g1.x; g1.2 is the packaged skill the site hands out) or the site's own pages (site1.0: worksheet completion and the draft checker).",
+      "enum": ["g1.0", "g1.1", "g1.2", "site1.0"]
     },
 
     "model_vendor": { "enum": ["anthropic", "openai", "google", "meta", "mistral", "xai", "other", "unknown"] },
