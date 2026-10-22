@@ -113,7 +113,27 @@ the device (IndexedDB `runs`).
 - Flags point at ideas to rewrite, never word swaps. Counts map to the scorecard's `ai_tell_flags_found`
   and `voice_flags_found` categories (`src/linters/scorecard.ts`); text never does.
 
-## Next: week 6
+## Scorecards, review, history (week 6)
 
-Scorecards for worksheets, the review page with Send, the history page, and the A5 checks (three-minute test,
-"what I couldn't verify") as boxes the reader ticks before a scorecard is written.
+Schema 1.2 (`src/schemas/scorecard.schema.json`) adds `unverified_line` (boolean) to deliverable cards and
+`site1.0` as the maker for cards the site writes. Older cards stay valid.
+
+- **Making a card** (`src/cards/build.ts`): "Done with this worksheet" on each worksheet page makes a
+  worksheet card (`completed`, or `revisited_v2` once one was sent), with an optional "I did the check step"
+  box. The draft checker makes a deliverable card from the run's counts plus the A5 checks the reader
+  ticks: the three-minute test (out loud, no notes) and whether they wrote the line listing what they
+  couldn't verify. Neither page sends anything; both link to `/review#v1.<card>`.
+- **`/review`** is the only page that sends. It shows every line in plain words (`src/cards/labels.ts`,
+  tested to cover every schema field), the exact JSON, and a box on each optional line to hold it back.
+  Send fetches a CSRF token and posts to `/api/scorecards`. Signed out, the card waits in this browser's
+  localStorage (an hour at most) while the person signs in; the sign-in link returns to `/after-sign-in`,
+  which reopens it.
+- **`/history`** lists the signed-in person's own cards: each worksheet's latest status, then draft checks
+  and graded work. `/api/me` answers only `{signedIn}`.
+- Local e2e against a real Postgres: set `DATABASE_URL`; `DATABASE_POOL_MAX=1` if your local server
+  accepts one connection.
+
+## Next: week 7
+
+The grading skill (g1.1) with the review link, deliverable and re-test cards, and typed receipts. Run end to
+end on Mark's own work first.

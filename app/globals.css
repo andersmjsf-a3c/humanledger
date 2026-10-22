@@ -120,3 +120,18 @@ button.quiet { border-color: var(--rule); color: var(--muted); }
 .clean { color: var(--muted); }
 h3 { font: 600 0.95rem ui-sans-serif, system-ui, sans-serif; margin: 1.2em 0 0.3em; }
 button:disabled { opacity: 0.5; cursor: default; }
+
+/* Week 6: scorecard review, history, A5 checks */
+.cardtable { width: 100%; border-collapse: collapse; margin: 12px 0; }
+.cardtable th, .cardtable td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 0.95rem; }
+.cardtable th { font-weight: 600; width: 45%; }
+.cardtable td.keep { width: 4.5em; }
+.cardtable tr.held th, .cardtable tr.held td:not(.keep) { color: var(--muted); text-decoration: line-through; }
+.primarylink { display: inline-block; padding: 8px 16px; border-radius: 6px; background: var(--accent); color: var(--paper); text-decoration: none; font-weight: 600; }
+.done { margin-top: 32px; padding-top: 16px; border-top: 2px solid var(--rule); }
+fieldset.a5 { border: 1px solid var(--rule); border-radius: 6px; padding: 8px 12px; margin: 12px 0; }
+fieldset.a5 legend { padding: 0 4px; font-weight: 600; }
+fieldset.a5 .check { display: block; margin: 4px 0; }
+select { font: inherit; padding: 6px; background: var(--field); color: var(--ink); border: 1px solid var(--rule); border-radius: 6px; }
+details summary { cursor: pointer; padding: 6px 0; }
+@media (max-width: 560px) { .cardtable th { width: auto; } }

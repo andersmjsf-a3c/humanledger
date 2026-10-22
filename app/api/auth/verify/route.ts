@@ -8,6 +8,6 @@ export async function GET(req: Request) {
   if (!sessionId) return new Response("That link has expired or was already used.", { status: 400 });
   return new Response(null, {
     status: 303,
-    headers: { location: "/", "set-cookie": sessionCookieHeader(sessionId), "cache-control": "no-store" },
+    headers: { location: "/after-sign-in", "set-cookie": sessionCookieHeader(sessionId), "cache-control": "no-store" },
   });
 }

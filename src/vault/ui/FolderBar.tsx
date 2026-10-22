@@ -1,9 +1,12 @@
 "use client";
+import { useEffect, useState } from "react";
 import { useVault } from "./useVault";
 
 export function FolderBar({ vault }: { vault: ReturnType<typeof useVault> }) {
   const { unsaved, message, saveToFolder, changeFolder, openFromFolder, openFromFile, canWriteFolders } = vault;
-  const folders = canWriteFolders();
+  // Decided after load, so the server-rendered page and the browser agree on the first paint.
+  const [folders, setFolders] = useState(false);
+  useEffect(() => setFolders(canWriteFolders()), [canWriteFolders]);
   return (
     <section className="folderbar" aria-live="polite">
       <p className="status">

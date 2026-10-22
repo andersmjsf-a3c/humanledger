@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "scorecard/1.1",
-  "title": "Scorecard v1.1",
+  "$id": "scorecard/1.2",
+  "title": "Scorecard v1.2",
   "description": "The only thing that leaves the vault. Every value is a number, a date, a category from a closed list, or a boolean. No free text anywhere. Unknown fields are rejected.",
   "oneOf": [
     { "$ref": "#/$defs/deliverable" },
@@ -20,7 +20,10 @@
     "count": { "type": "integer", "minimum": 0, "maximum": 1000 },
     "small_count": { "type": "integer", "minimum": 0, "maximum": 100 },
 
-    "grading_skill_version": { "enum": ["g1.0", "g1.1"] },
+    "grading_skill_version": {
+      "description": "What made the card: the grading skill (g1.x) or the site's own pages (site1.0: worksheet completion and the draft checker).",
+      "enum": ["g1.0", "g1.1", "site1.0"]
+    },
 
     "model_vendor": { "enum": ["anthropic", "openai", "google", "meta", "mistral", "xai", "other", "unknown"] },
 
@@ -104,7 +107,7 @@
       "required": ["kind", "schema_version", "grading_skill_version", "graded_on"],
       "properties": {
         "kind":                  { "const": "deliverable" },
-        "schema_version":        { "enum": ["1.0", "1.1"] },
+        "schema_version":        { "enum": ["1.0", "1.1", "1.2"] },
         "grading_skill_version": { "$ref": "#/$defs/grading_skill_version" },
         "graded_on":             { "$ref": "#/$defs/date" },
         "model_vendor":          { "$ref": "#/$defs/model_vendor" },
@@ -152,6 +155,7 @@
         },
 
         "released_after_check": { "type": "boolean" },
+        "unverified_line":      { "type": "boolean" },
 
         "receipt": { "$ref": "#/$defs/receipt" }
       }
@@ -163,7 +167,7 @@
       "required": ["kind", "schema_version", "grading_skill_version", "graded_on", "skill_slot", "skill_version"],
       "properties": {
         "kind":                  { "const": "skill_retest" },
-        "schema_version":        { "enum": ["1.0", "1.1"] },
+        "schema_version":        { "enum": ["1.0", "1.1", "1.2"] },
         "grading_skill_version": { "$ref": "#/$defs/grading_skill_version" },
         "graded_on":             { "$ref": "#/$defs/date" },
         "model_vendor":          { "$ref": "#/$defs/model_vendor" },
@@ -189,7 +193,7 @@
       "required": ["kind", "schema_version", "grading_skill_version", "graded_on", "worksheet_id", "status"],
       "properties": {
         "kind":                  { "const": "worksheet" },
-        "schema_version":        { "enum": ["1.0", "1.1"] },
+        "schema_version":        { "enum": ["1.0", "1.1", "1.2"] },
         "grading_skill_version": { "$ref": "#/$defs/grading_skill_version" },
         "graded_on":             { "$ref": "#/$defs/date" },
 

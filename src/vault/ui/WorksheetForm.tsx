@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import type { Answers, Field, Worksheet } from "@/worksheets/types";
 import { getStore, useVault } from "./useVault";
 import { FolderBar } from "./FolderBar";
+import { worksheetCard } from "@/cards/build";
+import { encodeCard } from "@/lib/scorecard/encode";
 
 // HTML here is generated at build time from the workbook's own draft files in this repo,
 // never from anything a visitor typed, so rendering it directly is safe.
@@ -15,11 +17,14 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
   const [answers, setAnswers] = useState<Answers>({});
   const [loaded, setLoaded] = useState(false);
   const [savedAt, setSavedAt] = useState("");
+  const [completedAt, setCompletedAt] = useState<string | undefined>();
+  const [checkStep, setCheckStep] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
     getStore().get(ws.id).then((r) => {
       if (r) setAnswers(r.answers);
+      setCompletedAt(r?.completedAt);
       setLoaded(true);
     });
   }, [ws.id]);
@@ -118,6 +123,20 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
 
       <h2>Why this compounds</h2>
       <Html html={ws.compoundsHtml} />
+
+      <section className="done">
+        <h2>Done with this worksheet</h2>
+        {completedAt && <p className="meta">You sent a scorecard for this on {completedAt.slice(0, 10)}. Sending again records a revisit.</p>}
+        <label className="check">
+          <input type="checkbox" checked={checkStep} onChange={(e) => setCheckStep(e.target.checked)} /> I did the check step
+        </label>
+        <p>
+          <a className="primarylink" href={`/review#${encodeCard(worksheetCard({ worksheetId: ws.id, revisited: !!completedAt, checkStepDone: checkStep }))}`}>
+            Review the scorecard
+          </a>
+        </p>
+        <p className="fineprint">The scorecard says which worksheet and that you finished it. None of your answers are on it. You'll see it before anything is sent.</p>
+      </section>
 
       <FolderBar vault={vault} />
     </article>
