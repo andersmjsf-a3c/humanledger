@@ -13,7 +13,6 @@
    "-ING ANALYSIS TAIL x2",
    "FALSE RANGE (FROM X TO Y) x1",
    "EMOJI x1",
-   "EXCLAMATION x1",
    "TITLE CASE HEADERS x1 (use sentence case): ['The Future Of Work: Why Agents Matter']",
    "COLON HEADERS x1: ['The Future Of Work: Why Agents Matter']",
    "RULE OF THREE 1 in 92 words"
@@ -27,7 +26,6 @@
   ],
   "tells": [
    "STIFF CORRESPONDENCE: 'i hope this email finds' x1, 'i wanted to reach out' x1, 'dear team' x1",
-   "EXCLAMATION x1",
    "BOLD DENSITY 1 in 53 words"
   ]
  },

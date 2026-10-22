@@ -1,6 +1,6 @@
 // Linter 1, the baseline: a TypeScript port of the generic parts of ai_tells.py (humanize-mark-voice).
 // Rules come from Wikipedia's "Signs of AI writing" and apply to anyone. Mark's house style (hedges,
-// honesty framing, intensifiers) and his dash rules are deliberately not here; a reader can choose
+// honesty framing, intensifiers), his dash rules, and exclamation points are deliberately not here; a reader can choose
 // rules like those for themselves in the voice linter.
 // tests/10-linters.test.ts checks this port line for line against the original on sample texts.
 // Flags are pointers to rewrite the idea, never word swaps.
