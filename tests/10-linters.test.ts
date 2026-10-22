@@ -17,10 +17,17 @@ describe("baseline linter: a faithful port of the generic parts of ai_tells.py",
     });
   }
 
-  it("leaves Mark's house style out: no hedges, honesty framing, intensifiers, or dash rules", () => {
+  it("leaves Mark's house style out: no hedges, honesty framing, intensifiers, dash rules, or exclamation points", () => {
     expect(Object.keys(rules)).not.toContain("STYLE");
-    const r = lintBaseline("Honestly, this is perhaps truly exciting — and frankly -- it works. To be honest.");
+    expect(Object.keys(rules.PATTERNS)).not.toContain("exclamation");
+    const r = lintBaseline("Honestly, this is perhaps truly exciting — and frankly -- it works! To be honest.");
     expect(r.flags).toEqual([]);
+  });
+
+  it("exclamation points are a rule the reader can choose, not a baseline flag", () => {
+    expect(lintBaseline("We shipped it!").flags).toEqual([]);
+    const mine = lintVoice("We shipped it!", rulesFrom([{ source: "A3 · Punctuation or style", text: "No exclamation points" }]));
+    expect(mine.flags.map((f) => [f.label, f.source])).toEqual([["exclamation points x1 (your rule: No exclamation points)", "A3 · Punctuation or style"]]);
   });
 
   it("flags are pointers, with the phrases that matched, never replacements", () => {

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Runs the original ai_tells.py (reference/) on every fixture and records the generic part of its
-report: the HARD and AI TELLS lines, minus Mark's house style (the STYLE group and the dash rules).
+report: the HARD and AI TELLS lines, minus Mark's house style (the STYLE group, the dash rules, and exclamation points).
 Usage: python3 scripts/baseline-parity.py [--check]
 Writes tests/fixtures/linter-expected.json, or with --check fails if it would change."""
 import json, subprocess, sys, pathlib
@@ -8,7 +8,7 @@ import json, subprocess, sys, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FIX = ROOT / "tests/fixtures/linter"
 OUT = ROOT / "tests/fixtures/linter-expected.json"
-HOUSE = ("EM DASH ", "EN DASH AS DASH ", "DOUBLE HYPHEN ")
+HOUSE = ("EM DASH ", "EN DASH AS DASH ", "DOUBLE HYPHEN ", "EXCLAMATION ")  # Mark's house style; exclamation is a reader rule (Oct 22)
 
 def run(path):
     args = [sys.executable, str(ROOT / "reference/ai_tells.py"), str(path)] + (["--email"] if "email" in path.name else [])

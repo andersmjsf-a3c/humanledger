@@ -1,5 +1,5 @@
 {
- "_source": "Generated from reference/ai_tells.py (humanize-mark-voice skill). Generic groups only: HARD, TELLS, HARD_PATTERNS, PATTERNS, plus the structural checks in src/linters/baseline.ts. STYLE and the dash rules are Mark's house style and are deliberately left out.",
+ "_source": "Generated from reference/ai_tells.py (humanize-mark-voice skill). Generic groups only: HARD, TELLS, HARD_PATTERNS, PATTERNS, plus the structural checks in src/linters/baseline.ts. STYLE, the dash rules, and the exclamation pattern are Mark's house style and are deliberately left out (exclamation moved to the reader's own rules, Mark, Oct 22 2026).",
  "HARD": {
   "chatbot residue": [
    "certainly!",
@@ -295,8 +295,7 @@
   "hedging preamble": "\\b(?:while|although) (?:relatively |somewhat )?(?:minor|small|modest|limited|niche|lesser-known)\\b",
   "false range (from X to Y)": "\\bfrom (?:\\w+ ){1,3}to (?:\\w+ ){0,2}\\w+,? (?:and|to) ",
   "emoji": "[🌀-🫿☀-➿]",
-  "bold inline-header bullet": "^\\s*(?:[-*•]|\\d+\\.)\\s*\\*\\*[^*]{1,40}:?\\*\\*:?",
-  "exclamation": "!(?!\\[)"
+  "bold inline-header bullet": "^\\s*(?:[-*•]|\\d+\\.)\\s*\\*\\*[^*]{1,40}:?\\*\\*:?"
  },
  "CURLY": "[“”‘’]"
 }
