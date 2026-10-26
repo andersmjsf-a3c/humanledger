@@ -156,6 +156,27 @@ script runs `scripts/migrate.ts` (applies `./drizzle` over `DATABASE_URL_UNPOOLE
 The site's address is `APP_URL`, or Vercel's production address when that's unset (`src/config/app-url.ts`).
 The database is connected to Production only; preview deploys show pages but have no database.
 
+## Content first: rings 1 and 2 (Oct 26)
+
+The service is useful before anyone fills in a form (Mark, Oct 26 2026). The homepage is the approved Oct 26
+mockup, rebuilt with the site's styles: "What are you trying to do?" and eight tiles.
+
+- **Source.** `content/service/` holds the eight pages, the homepage copy, the glossary, and the personas,
+  copied unchanged from the human-led-service skill's references. `npm run service` regenerates
+  `src/service/generated/service.json`; a test fails if it's stale.
+- **`/do/[slug]`**: the rule, Try it now (the prompt's [blanks] are fields; Copy it; what's typed stays in
+  the tab's sessionStorage), the labeled illustration, and Keep this.
+- **Keep this** opens the matching form (`FORM_ROUTES` in `src/service/index.ts`: A and 0.x worksheets, B
+  sections as the skill builder's templates) and carries the filled prompt there, shown above the boxes to
+  copy in. C5 isn't built yet and says so. No account needed: forms are local-first.
+- **Ring 1:** `/glossary` (book-only rows left out), `/where-things-live` and `/what-changed`, which list
+  nothing until `content/service/where-things-live.json` and `what-changed.json` are filled and dated, and
+  `/privacy`, written from the code as it stands.
+- **No founder stories:** worksheet pages no longer show the workbook's founder example.
+  `tests/14-service.test.ts` scans service copy for named entities from the book and for em dashes.
+- Look: white ground, accent #1F5F4A, Inter (self-hosted, no font requests to third parties). Placeholder
+  until the brand work.
+
 ## Next: week 8
 
 The beta: onboard readers and measure, with counts only, who finishes Part A and comes back to check real

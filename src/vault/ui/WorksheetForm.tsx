@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Answers, Field, Worksheet } from "@/worksheets/types";
 import { getStore, useVault } from "./useVault";
 import { FolderBar } from "./FolderBar";
+import { KeptPanel } from "@/service/KeptPanel";
 import { worksheetCard } from "@/cards/build";
 import { encodeCard } from "@/lib/scorecard/encode";
 
@@ -62,13 +63,14 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
         {ws.id}. {ws.title}
       </h1>
       <Html className="promise" html={ws.promiseHtml} />
-      {ws.draft && <p className="draftnote">Draft: a few lines are still marked for Mark to fill in.</p>}
+      {ws.draft && <p className="draftnote">Draft: a few lines are still being written.</p>}
+      <p className="fineprint">This stays in your vault: this browser and, if you choose, a folder on your computer. We never see it.</p>
+      <KeptPanel path={`/workbook/${ws.id}`} />
 
       <h2>Why this matters</h2>
       <Html html={ws.whyHtml} />
 
-      <h2>Mark's example</h2>
-      <Html html={ws.exampleHtml} />
+      {/* The workbook's founder example stays in the book edition: no founder stories in the service (Oct 26 2026). */}
 
       <h2>Your turn</h2>
       {!loaded ? (

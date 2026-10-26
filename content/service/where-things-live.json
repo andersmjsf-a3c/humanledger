@@ -1,0 +1,10 @@
+{
+  "lastChecked": null,
+  "rows": [
+    { "label": "Turn memory on or off", "where": null },
+    { "label": "Upload a skill", "where": null },
+    { "label": "Web search toggle", "where": null },
+    { "label": "Which model you're talking to", "where": null },
+    { "label": "Names that no longer appear", "where": null }
+  ]
+}

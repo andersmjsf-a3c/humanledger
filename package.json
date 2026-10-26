@@ -17,9 +17,11 @@
     "import:workbook": "tsx scripts/import-workbook.ts",
     "grader": "tsx scripts/build-grader.ts",
     "db:migrate:deploy": "tsx scripts/migrate.ts",
-    "vercel-build": "tsx scripts/migrate.ts && next build"
+    "vercel-build": "tsx scripts/migrate.ts && next build",
+    "service": "tsx scripts/build-service.ts"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "drizzle-orm": "^0.45.4",

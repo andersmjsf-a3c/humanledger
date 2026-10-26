@@ -1,4 +1,5 @@
 "use client";
+import { KeptPanel } from "@/service/KeptPanel";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { zipSync, strToU8 } from "fflate";
 import type { SkillAnswers, SkillTemplate } from "@/skills/types";
@@ -95,6 +96,7 @@ export function SkillBuilder({ t }: { t: SkillTemplate }) {
         Fill in the boxes. Anything you leave blank keeps its [bracket], so you can see what's left. Everything stays on this
         device until you download it or save it to your folder.
       </p>
+      <KeptPanel path={`/skills/${t.id}`} />
       {prefills.length > 0 && (
         <div className="prefills">
           {prefills.map((x) => (
