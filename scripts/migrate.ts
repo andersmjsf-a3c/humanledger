@@ -5,10 +5,11 @@
 import postgres from "postgres";
 import { drizzle } from "drizzle-orm/postgres-js";
 import { migrate } from "drizzle-orm/postgres-js/migrator";
+import { databaseUrl } from "../src/config/db-url";
 
-const url = process.env.DATABASE_URL_UNPOOLED || process.env.DATABASE_URL;
+const url = databaseUrl(process.env, true);
 if (!url) {
-  console.log("migrate: no DATABASE_URL, skipped");
+  console.log("migrate: no database address, skipped");
 } else {
   const sql = postgres(url, { max: 1, prepare: false });
   await migrate(drizzle(sql), { migrationsFolder: "./drizzle" });

@@ -2,6 +2,7 @@
 import { describe, it, expect, afterEach } from "vitest";
 import { appUrl } from "@/config/app-url";
 import { humanOnlyGuard } from "@/lib/http/guards";
+import { databaseUrl } from "@/config/db-url";
 
 const saved = { APP_URL: process.env.APP_URL, VERCEL: process.env.VERCEL_PROJECT_PRODUCTION_URL };
 afterEach(() => {
@@ -27,5 +28,15 @@ describe("the site's address", () => {
       });
     expect(humanOnlyGuard(req("https://humanledger.vercel.app")).ok).toBe(true);
     expect(humanOnlyGuard(req("https://humanledger-git-week-8-mark.vercel.app")).ok).toBe(false);
+  });
+});
+
+describe("the database address", () => {
+  it("reads DATABASE_URL or Vercel's prefixed STORAGE_DATABASE_URL; migrations prefer the direct connection", () => {
+    expect(databaseUrl({ DATABASE_URL: "pooled" })).toBe("pooled");
+    expect(databaseUrl({ STORAGE_DATABASE_URL: "p", STORAGE_DATABASE_URL_UNPOOLED: "d" })).toBe("p");
+    expect(databaseUrl({ STORAGE_DATABASE_URL: "p", STORAGE_DATABASE_URL_UNPOOLED: "d" }, true)).toBe("d");
+    expect(databaseUrl({ DATABASE_URL: "p" }, true)).toBe("p");
+    expect(databaseUrl({})).toBeUndefined();
   });
 });
