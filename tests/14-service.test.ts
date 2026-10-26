@@ -6,7 +6,7 @@ import { buildService } from "../scripts/build-service";
 import { DO_PAGES, FORM_ROUTES, GLOSSARY, TILES, termBySlug } from "@/service";
 import { fillPrompt } from "@/service/keep";
 import { promptParts } from "@/service/parse";
-import { whereIsChecked } from "@/service/reference";
+import { CHANGES, HOME_ROWS, WHERE, firstSentence, rowById, whereIsChecked } from "@/service/reference";
 import { WORKSHEETS } from "@/worksheets";
 import { TEMPLATES } from "@/skills";
 import data from "@/service/generated/service.json";
@@ -14,7 +14,7 @@ import data from "@/service/generated/service.json";
 // Named entities from the book and Mark's work. Public standards may be named; these may not.
 const BANNED = /\bMark('s| Anderson)\b|Vorixs|CyberProtonics|\bA3C\b|a3c\.one|GrowRight|Growth Brief|Logitech|\bRAPT\b|Afero|Jamboard|HyperKey|Alliance Foundry|\bSidecar\b/;
 const DASHES = /[–—]/;
-const NOT_BUILT_YET = new Set(["C5"]);
+const NOT_BUILT_YET = new Set<string>();
 
 describe("the content comes from the skill, unchanged", () => {
   it("the generated file is current (run `npm run service` after copying in new content)", () => {
@@ -84,15 +84,40 @@ describe("service copy carries no founder stories and no em dashes", () => {
     expect(DASHES.test(text)).toBe(false);
   });
 
-  it("worksheet pages no longer show the founder's example", () => {
-    expect(readFileSync("src/vault/ui/WorksheetForm.tsx", "utf8")).not.toMatch(/exampleHtml|Mark's example/);
+  it("every worksheet is the company-voice version: its example is a labeled illustration, no founder names", () => {
+    for (const w of WORKSHEETS) {
+      expect(w.exampleHeading, w.id).toBe("An example");
+      expect(w.exampleHtml, w.id).toContain("An illustration, not a real person.");
+      const text = readFileSync(w.source, "utf8");
+      expect(text.match(BANNED)?.[0], w.id).toBeUndefined();
+      expect(DASHES.test(text), w.id).toBe(false);
+    }
   });
 });
 
 describe("reference pages show nothing undated", () => {
   it("Where things live counts as checked only with a date and every row filled", () => {
-    expect(whereIsChecked({ lastChecked: null, rows: [{ label: "x", where: "y" }] })).toBe(false);
-    expect(whereIsChecked({ lastChecked: "2026-10-26", rows: [{ label: "x", where: null }] })).toBe(false);
-    expect(whereIsChecked({ lastChecked: "2026-10-26", rows: [{ label: "x", where: "Settings" }] })).toBe(true);
+    expect(whereIsChecked({ lastChecked: null, rows: [{ id: "x", thing: "x", whereToday: "y" }] })).toBe(false);
+    expect(whereIsChecked({ lastChecked: "2026-10-26", rows: [{ id: "x", thing: "x", whereToday: "" }] })).toBe(false);
+    expect(whereIsChecked({ lastChecked: "2026-10-26", rows: [{ id: "x", thing: "x", whereToday: "Settings" }] })).toBe(true);
+  });
+
+  it("the shipped data is dated, sourced, and has every row the homepage panel shows", () => {
+    expect(WHERE.lastChecked).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(whereIsChecked()).toBe(true);
+    for (const h of HOME_ROWS) expect(rowById(h.id), h.id).toBeDefined();
+    for (const r of WHERE.rows) expect(r.source, r.id).toMatch(/^https:\/\//);
+    expect(CHANGES.length).toBeGreaterThanOrEqual(2);
+    for (const c of CHANGES) {
+      expect(c.date, c.id).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(c.reTest, c.id).toBeTruthy();
+    }
+    const text = JSON.stringify([WHERE, CHANGES]);
+    expect(text.match(BANNED)?.[0]).toBeUndefined();
+    expect(DASHES.test(text)).toBe(false);
+  });
+
+  it("the homepage panel shows the short form of each row", () => {
+    expect(firstSentence('Settings > Your Claude. Toggles: memory from chats.')).toBe("Settings > Your Claude");
   });
 });

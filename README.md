@@ -172,8 +172,16 @@ mockup, rebuilt with the site's styles: "What are you trying to do?" and eight t
 - **Ring 1:** `/glossary` (book-only rows left out), `/where-things-live` and `/what-changed`, which list
   nothing until `content/service/where-things-live.json` and `what-changed.json` are filled and dated, and
   `/privacy`, written from the code as it stands.
-- **No founder stories:** worksheet pages no longer show the workbook's founder example.
-  `tests/14-service.test.ts` scans service copy for named entities from the book and for em dashes.
+- **Company-voice worksheets (Oct 26):** all eighteen (0.1 to 0.7, A1 to A5, B1 to B6, C5) now come
+  from the human-led-service skill: second person, "An example" as a labeled illustration on a standing
+  persona. `content/workbook/SOURCE.json` records `worksheetsFrom: human-led-service`, so a
+  compounding-ai-workbook `.skill` import brings only its templates (`--only=templates`); the
+  human-led-service `.skill` imports the worksheets plus the content front end. The parser skips `##`
+  headings inside code fences (example skills carry their own) and shows the "Version 2" box.
+- **Dated reference data:** `content/service/where-things-live.json` (13 rows, each with source and last
+  change) and `what-changed.json` (4 entries), checked Oct 26 against the help center.
+  `tests/14-service.test.ts` scans service copy, worksheets, and data for named entities from the book
+  and for em dashes.
 - Look: white ground, accent #1F5F4A, Inter (self-hosted, no font requests to third parties). Placeholder
   until the brand work.
 

@@ -4,19 +4,19 @@ The 150 words you give the AI once, so every conversation starts knowing who you
 
 ## Why this matters
 
-Chapter 1 said the quality of the answer is set by what you give before you ask. The first thing to give is you. Not a résumé. The two or three things about your experience that should change how the tool reasons with you, what you're trying to do, and what you'd want a smart new colleague to know on day one.
+The quality of the answer is set by what you give before you ask. The first thing to give is you. Not a résumé. The two or three things about your experience that should change how the tool reasons with you, what you're trying to do, and what you'd want a smart new colleague to know on day one.
 
-I spent a year getting generic answers because I never said who I was. The morning that changed, in Chapter 1, I typed four hundred words before asking anything, and the first hundred were about me: a coffee company at 23, hundreds of store openings, what retail labor costs. The tool stopped explaining retail to me and started reasoning with me. That paragraph is the one you'll write here, and Chapter 12 showed where it lives so you never type it again.
+Most people spend their first year getting generic answers because they never say who they are. The tool explains their own field to them, politely, at length. The morning that changes is the morning they type a hundred words about themselves before asking anything, and the tool stops explaining and starts reasoning with them. That paragraph is the one you'll write here, and Worksheet 0.4 showed where it lives so you never type it again.
 
 Keep it to what you'd be comfortable with a colleague reading on a screen. This is the durable, shareable version of you. It isn't a diary, and it isn't the place for anything you'd keep out of a work email.
 
-## Mark's example
+## An example
 
-Here's mine, as it stands today. It's changed a dozen times and it'll change again.
+*An illustration, not a real person.* A solo consultant's paragraph might read like this. It will change a dozen times, and that's fine.
 
-> I'm Mark Anderson. I run revenue at a security company that builds trust infrastructure for AI agents, and I run a small consultancy on the side. I've spent thirty years building and growing companies: a coffee company I started at 23, a big coffee chain's expansion from under 300 stores to over 1,000, an internet bank in 1997, then hardware and software companies where I built hundreds of partnerships, including one with Google that put our touch technology into a product they shipped. I know go-to-market, partnerships, and what it costs to open a location or sign an enterprise deal. I'm working on two books about using AI and on a web service that grows out of them. I think in facts and reasonable conclusions, I'd rather you be direct and let me decide than lay out options and wait, and I'll tell you when you're wrong. `[MARK: tighten this to the version you'd actually hand it.]`
+> I'm an independent consultant. I help mid-sized logistics companies fix their pricing and their sales process, and I've done it for eleven years after a decade running operations inside two of them. I know what a freight contract looks like from both sides, what a bad quote costs, and why most pricing projects fail in month three. I'm working on two client proposals and a short course I teach twice a year. Be direct and let me decide; give me one recommendation and the reasoning, not a menu. Push back when I'm wrong, with the fact that shows it. Never use bullet points in anything I'll send.
 
-What's in it: who I am, in one line; the experience that should change how it reasons (the operator's view of retail, partnerships, enterprise sales); what I'm working on now; how to work with me. What's not in it: anything about money, health, family, or other people.
+What's in it: who they are, in one line; the experience that should change how the tool reasons (both sides of a freight contract, why pricing projects fail); what they're working on now; how to work with them. What's not in it: anything about money, health, family, or other people.
 
 ## Your turn
 
@@ -41,7 +41,7 @@ Write each piece, then assemble the paragraph.
 
 6. **Give it to the tool.** In a new conversation: "Remember this about me:" and paste the paragraph. Then open another new conversation and ask what it knows about you. Fix anything it got wrong. Then save the paragraph as `about-me.md` in your notes folder, because the file is yours and the memory is a copy.
 
-*How to: where the paragraph lives, as of October 20, 2026. Memory (Settings > Memory, "Generate memory from chats") carries it between conversations on Free, Pro, and Max; on Team and Enterprise an owner enables memory first. You can also paste it at the top of any conversation, which works on every plan with no setup. If you keep the paragraph in a project's instructions instead, it applies only inside that project; memory is the right home for the parts that are true everywhere. Worksheet 0.4 has the details.*
+*How to: where the paragraph lives, as of October 26, 2026. Memory (Settings > Your Claude) carries it between conversations on Free, Pro, and Max; on Team and Enterprise an owner enables memory first. You can also paste it at the top of any conversation, which works on every plan with no setup. If you keep the paragraph in a project's instructions instead, it applies only inside that project; memory is the right home for the parts that are true everywhere. Worksheet 0.4 has the details.*
 
 ## Why this compounds
 

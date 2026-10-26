@@ -23,7 +23,10 @@ export interface Worksheet {
   promiseText: string;
   minutes?: number;
   whyHtml: string;
+  exampleHeading: string; // "An example" in the service versions
   exampleHtml: string;
+  version2Heading?: string;
+  version2Html?: string;
   yourTurn: Segment[];
   howToHtml?: string; // the dated sidebar of product facts
   compoundsHtml: string;

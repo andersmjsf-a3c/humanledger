@@ -1,6 +1,6 @@
 import { PRODUCT_NAME } from "@/config/brand";
 import { DO_PAGES, TILES, termBySlug } from "@/service";
-import { CHANGES, WHERE, whereIsChecked } from "@/service/reference";
+import { CHANGES, HOME_ROWS, WHERE, firstSentence, rowById, whereIsChecked } from "@/service/reference";
 
 // The approved Oct 26 homepage, rebuilt with the site's styles. Copy from content/service/do/homepage-copy.md.
 export default function Home() {
@@ -88,12 +88,15 @@ export default function Home() {
               <span>Last checked</span>
               <strong>{checked ? WHERE.lastChecked : "First check in progress"}</strong>
             </div>
-            {WHERE.rows.map((r) => (
-              <div key={r.label} className="row">
-                <span>{r.label}</span>
-                <strong>{checked ? r.where : "Listed once checked"}</strong>
-              </div>
-            ))}
+            {HOME_ROWS.map((h) => {
+              const r = rowById(h.id);
+              return (
+                <div key={h.id} className="row">
+                  <span>{h.label}</span>
+                  <strong>{checked && r ? (r.thing.includes(": ") ? r.thing.split(": ")[1] : firstSentence(r.whereToday)) : "Listed once checked"}</strong>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -110,10 +113,13 @@ export default function Home() {
         <div className="stack">
           {CHANGES.length ? (
             CHANGES.slice(0, 2).map((c) => (
-              <article key={c.date + c.title} className="card">
+              <article key={c.id} className="card">
                 <p className="meta">{c.date}</p>
                 <h3>{c.title}</h3>
-                <p>{c.body}</p>
+                <p>{c.whatChanged}</p>
+                <p>
+                  <a href={`/what-changed#${c.id}`}>What to re-check</a>
+                </p>
               </article>
             ))
           ) : (

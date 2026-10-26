@@ -10,7 +10,8 @@ import scorecardSchema from "@/schemas/scorecard.schema.json";
 const schemaIds: string[] = (scorecardSchema as any).$defs.worksheet.properties.worksheet_id.enum;
 const yourTurn = (src: string) => {
   const t = readFileSync(src, "utf8");
-  const s = t.slice(t.indexOf("## Your turn"), t.indexOf("## Why this compounds"));
+  const from = t.slice(t.indexOf("## Your turn") + 1).replace(/^```[\s\S]*?^```/gm, "");
+  const s = from.slice(0, from.search(/^## /m) >= 0 ? from.search(/^## /m) : undefined);
   return s.slice(0, s.search(/^\*How to:/m) >= 0 ? s.search(/^\*How to:/m) : undefined);
 };
 
@@ -22,6 +23,11 @@ describe("worksheets come from the drafts, unchanged", () => {
   it("Part 0 has all seven worksheets, in order, with ids the scorecard accepts", () => {
     expect(WORKSHEETS.filter((w) => w.part === "0").map((w) => w.id)).toEqual(["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]);
     for (const w of WORKSHEETS) expect(schemaIds).toContain(w.id);
+  });
+
+  it("Part B has all six worksheets and Part C has C5", () => {
+    expect(WORKSHEETS.filter((w) => w.part === "B").map((w) => w.id)).toEqual(["B1", "B2", "B3", "B4", "B5", "B6"]);
+    expect(WORKSHEETS.filter((w) => w.part === "C").map((w) => w.id)).toEqual(["C5"]);
   });
 
   it("Part A has all five worksheets, in order", () => {
