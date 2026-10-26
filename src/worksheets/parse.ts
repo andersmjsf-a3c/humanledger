@@ -29,13 +29,20 @@ function flagBrackets(html: string): string {
 }
 const html = (s: string) => flagBrackets(md(s));
 
+// Split on "## " headings, but not inside ``` fences: example skills carry their own ## headings.
 function sections(text: string): Record<string, string> {
-  const out: Record<string, string> = {};
-  const parts = text.split(/^## /m);
-  out._head = parts[0];
-  for (const p of parts.slice(1)) {
-    const nl = p.indexOf("\n");
-    out[p.slice(0, nl).trim()] = p.slice(nl + 1);
+  const out: Record<string, string> = { _head: "" };
+  let key = "_head";
+  let fenced = false;
+  for (const line of text.split("\n")) {
+    if (/^```/.test(line)) fenced = !fenced;
+    const h = !fenced && line.match(/^## (.+)$/);
+    if (h) {
+      key = h[1].trim();
+      out[key] = "";
+      continue;
+    }
+    out[key] += line + "\n";
   }
   return out;
 }
@@ -149,8 +156,10 @@ function parseYourTurn(text: string): { segments: Segment[]; howTo?: string } {
   };
 
   let i = 0;
+  let fenced = false;
   while (i < lines.length) {
-    const m = lines[i].match(/^(\d+)\.\s+(.*)$/);
+    if (/^```/.test(lines[i])) fenced = !fenced;
+    const m = !fenced && lines[i].match(/^(\d+)\.\s+(.*)$/);
     if (!m) {
       loose.push(lines[i++]);
       continue;
@@ -174,9 +183,13 @@ export function parseWorksheet(text: string, source: string): Worksheet {
   if (!h1) throw new Error(`${source}: first line must be "# WS <id>. <title>"`);
   const [, id, title] = h1;
   const s = sections(text);
-  for (const need of ["Why this matters", "Mark's example", "Your turn", "Why this compounds"]) {
+  // Service versions say "An example" (a labeled illustration); the book's drafts said "Mark's example".
+  const exampleKey = ["An example", "Mark's example"].find((k) => k in s);
+  for (const need of ["Why this matters", "Your turn", "Why this compounds"]) {
     if (!(need in s)) throw new Error(`${source}: missing "## ${need}"`);
   }
+  if (!exampleKey) throw new Error(`${source}: missing "## An example"`);
+  const version2Key = Object.keys(s).find((k) => /^Version 2\b/.test(k));
   const promiseText = s._head.replace(/^# .*$/m, "").trim();
   const minutesWord = promiseText.match(/\b([A-Za-z-]+|\d+) minutes\b/i)?.[1]?.toLowerCase();
   const minutes = minutesWord ? (Number(minutesWord) || NUMBER_WORDS[minutesWord]) : undefined;
@@ -192,9 +205,11 @@ export function parseWorksheet(text: string, source: string): Worksheet {
     promiseHtml: html(promiseText),
     minutes,
     whyHtml: html(s["Why this matters"]),
-    exampleHtml: html(s["Mark's example"]),
+    exampleHeading: exampleKey,
+    exampleHtml: html(s[exampleKey]),
     yourTurn: segments,
     howToHtml: howTo ? html(howTo) : undefined,
+    ...(version2Key ? { version2Heading: version2Key, version2Html: html(s[version2Key]) } : {}),
     compoundsHtml: html(s["Why this compounds"]),
     draft: text.includes("[MARK:"),
     source,

@@ -1,6 +1,7 @@
 // The workbook skill is the master; this site reads from it (Mark, Oct 20 2026).
 //
-//   npm run import:workbook -- path/to/compounding-ai-workbook.skill   (worksheets + skill templates)
+//   npm run import:workbook -- path/to/human-led-service.skill         (the service worksheets + content front end)
+//   npm run import:workbook -- path/to/compounding-ai-workbook.skill --only=templates   (skill templates)
 //   npm run import:workbook -- path/to/partA-drafts.zip                 (just the worksheets inside)
 //
 // Options:
@@ -27,7 +28,24 @@ import { buildAll, buildTemplates } from "./build-worksheets";
 const sha = (b: Uint8Array | string) => createHash("sha256").update(b).digest("hex");
 const partDir = (id: string) => `part${/^[ABC]/.test(id) ? id[0] : "0"}`;
 
+// The human-led-service skill also carries the content front end: the eight pages, the glossary,
+// the personas, and the two dated reference files. They go to content/service unchanged.
+function copyServiceContent(entries: Record<string, Uint8Array>, serviceRoot: string) {
+  const take = (re: RegExp, dir: string) => {
+    for (const [p, b] of Object.entries(entries)) {
+      const m = p.match(re);
+      if (!m) continue;
+      mkdirSync(join(serviceRoot, dir), { recursive: true });
+      writeFileSync(join(serviceRoot, dir, m[1]), b);
+    }
+  };
+  take(/(?:^|\/)references\/content-do-pages\/((?:\d+-[^/]+|README|homepage-copy)\.md)$/, "do");
+  take(/(?:^|\/)references\/(glossary\.md|personas\.md)$/, ".");
+  take(/(?:^|\/)references\/data\/((?:where-things-live|what-changed)\.json)$/, ".");
+}
+
 export interface ImportOptions {
+  serviceRoot?: string | null; // where the content front end goes; null skips it (tests)
   contentRoot?: string;
   generatedPath?: string;
   templatesPath?: string;
@@ -65,15 +83,33 @@ export function importSkill(bytes: Uint8Array, opts: ImportOptions = {}): Import
 
   const skillMd = Object.entries(entries).find(([p]) => /(^|\/)SKILL\.md$/.test(p));
   const isSkill = !!skillMd;
-  if (skillMd && !/^name:\s*"?compounding-ai-workbook"?\s*$/m.test(strFromU8(skillMd[1]))) {
-    throw new Error("This isn't the compounding-ai-workbook skill (SKILL.md name doesn't match).");
+  const skillName = skillMd ? strFromU8(skillMd[1]).match(/^name:\s*"?([\w-]+)"?\s*$/m)?.[1] : undefined;
+  if (skillMd && skillName !== "compounding-ai-workbook" && skillName !== "human-led-service") {
+    throw new Error("This isn't the compounding-ai-workbook or human-led-service skill (SKILL.md name doesn't match).");
   }
-  if (!isSkill && opts.only === "templates") throw new Error("Templates come only from the .skill file.");
+  const isService = skillName === "human-led-service";
+  if ((!isSkill || isService) && opts.only === "templates") throw new Error("Templates come only from the compounding-ai-workbook .skill file.");
+
+  // Since Oct 26 2026 the site's worksheets are the company-voice versions from the human-led-service
+  // skill. The workbook skill's own drafts (first person, the book's examples) feed the book edition,
+  // so a workbook .skill file brings only its templates here.
+  const sourcePathEarly = join(root, "SOURCE.json");
+  const worksheetsFrom = existsSync(sourcePathEarly) ? JSON.parse(readFileSync(sourcePathEarly, "utf8")).worksheetsFrom : undefined;
+  if (isSkill && !isService && worksheetsFrom === "human-led-service" && opts.only !== "templates") {
+    throw new Error(
+      "The site's worksheets now come from the human-led-service skill. Import this workbook .skill with --only=templates, " +
+        "or import the human-led-service .skill for worksheets.",
+    );
+  }
   const takeDrafts = opts.only !== "templates";
-  const takeTemplates = isSkill && opts.only !== "drafts";
+  const takeTemplates = isSkill && !isService && opts.only !== "drafts";
 
   // Worksheets
-  const pattern = isSkill ? /(?:^|\/)references\/drafts\/(ws[^/]+\.md)$/ : /(?:^|\/)(ws[^/]+\.md)$/;
+  const pattern = isService
+    ? /(?:^|\/)references\/worksheets\/(ws[^/]+\.md)$/
+    : isSkill
+      ? /(?:^|\/)references\/drafts\/(ws[^/]+\.md)$/
+      : /(?:^|\/)(ws[^/]+\.md)$/;
   const drafts = takeDrafts
     ? Object.entries(entries)
         .map(([p, b]) => ({ m: p.match(pattern), b }))
@@ -81,7 +117,9 @@ export function importSkill(bytes: Uint8Array, opts: ImportOptions = {}): Import
         .map((d) => ({ file: d.m![1], text: strFromU8(d.b) }))
     : [];
   if (takeDrafts && !drafts.length) {
-    throw new Error(isSkill ? "No worksheet drafts found under references/drafts/." : "No worksheet drafts (ws*.md) found in this zip.");
+    throw new Error(
+      isService ? "No worksheets found under references/worksheets/." : isSkill ? "No worksheet drafts found under references/drafts/." : "No worksheet drafts (ws*.md) found in this zip.",
+    );
   }
 
   // Templates (assets/*.md in the .skill file)
@@ -152,11 +190,12 @@ export function importSkill(bytes: Uint8Array, opts: ImportOptions = {}): Import
     JSON.stringify(
       {
         skill: "compounding-ai-workbook",
+        ...(isService || worksheetsFrom ? { worksheetsFrom: isService ? "human-led-service" : worksheetsFrom } : {}),
         files,
         imports: [
           ...(prev.imports ?? []),
           {
-            kind: isSkill ? "skill" : "drafts",
+            kind: isService ? "human-led-service" : isSkill ? "skill" : "drafts",
             sha256: skillSha256,
             importedAt: (opts.now ?? new Date()).toISOString(),
             worksheets: [...replacing].sort(),
@@ -168,6 +207,8 @@ export function importSkill(bytes: Uint8Array, opts: ImportOptions = {}): Import
       2,
     ) + "\n",
   );
+
+  if (isService && opts.serviceRoot !== null) copyServiceContent(entries, opts.serviceRoot ?? "content/service");
 
   const after = buildAll(root);
   writeFileSync(generatedPath, JSON.stringify(after, null, 2) + "\n");
@@ -214,7 +255,8 @@ if (process.argv[1]?.endsWith("import-workbook.ts")) {
     process.exit(2);
   }
   const r = importSkill(new Uint8Array(readFileSync(file)), { only, allowRemove: args.includes("--allow-remove") });
-  console.log(`Imported ${r.source === "skill" ? "the compounding-ai-workbook skill" : "a drafts zip (only the worksheets inside it)"}, sha256 ${r.skillSha256.slice(0, 12)}`);
+  console.log(`Imported ${r.source === "skill" ? "a skill file" : "a drafts zip (only the worksheets inside it)"}, sha256 ${r.skillSha256.slice(0, 12)}`);
+  console.log("If the content front end changed, run `npm run service` too.");
   if (only !== "templates") {
     console.log(`  worksheets unchanged: ${r.unchanged.join(", ") || "none"}`);
     console.log(`  worksheets added:     ${r.added.join(", ") || "none"}`);

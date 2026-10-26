@@ -4,17 +4,17 @@ Know what plan you're on and why, what the parts of the screen are, and where a 
 
 ## Why this matters
 
-The book said the setup lives here, so here it is. I kept it out of the chapters because this page goes stale faster than any other page in either book: plans change, buttons move, names change. Everything below is dated, and if the date is more than six months old, assume something has moved and look.
+Everything on this site that depends on what the screen looks like today lives in Part 0, and it's dated, because this is the page that goes stale fastest: plans change, buttons move, names change. If the date on the sidebar below is more than a few months old, assume something has moved and check the Where things live page.
 
-The reason to spend twenty minutes on this before Part A is simple. Every habit in the book assumes you know three things: which version of the tool you're paying for and what that buys you, where your conversations live, and what the panels on the screen are for. People who skip this spend their first month confused about why something they did yesterday isn't there today, and they blame themselves. Usually it's a setting.
+The reason to spend twenty minutes here before anything else is simple. Every habit on this site assumes you know three things: which version of the tool you're paying for and what that buys you, where your conversations live, and what the panels on the screen are for. People who skip this spend their first month confused about why something they did yesterday isn't there today, and they blame themselves. Usually it's a setting.
 
 Nothing here is a recommendation to pay. The free plan runs everything in Part A and most of Part B. Pay when you've hit a limit twice in a week and it cost you something; before that, the habits matter more than the tier.
 
-## Mark's example
+## An example
 
-I'm on a paid plan, because I use the tool for hours a day and I run the strongest model for most of it. `[MARK: which plan, and the one reason you'd give a beginner for why.]` I started on the free plan for the first few months, and that was the right call. The thing that pushed me up wasn't a feature. It was hitting the usage limit in the middle of a deck at 11 in the morning, twice in one week. I upgraded that afternoon.
+*An illustration, not a real person.* Say you teach high school and run your department. You started on the free plan in August, used it for lesson plans and parent emails, and never hit a limit until the week before grades were due, when you ran out of usage twice in two days with a stack of comments half-written. That's the signal. You upgraded that weekend, and the one reason you'd give a colleague is the one that happened: the limit landed on the day it cost the most.
 
-My conversations live in two kinds of places. Most of them are inside projects (the book has one, the company has one), so they start already knowing what the work is. The rest are one-off rooms in the main list, and I treat those as disposable: if something in one turns out to matter, I move it into a project or write it into a file the same day. A conversation I can't find in a week is a conversation I should have filed.
+Your conversations live in two kinds of places. The ones about your department are inside a project, so they start already knowing what the work is. The rest are one-off rooms in the main list, and you treat those as disposable: if something in one turns out to matter, you move it into the project or write it into a file the same day. A conversation you can't find in a week is a conversation you should have filed.
 
 ## Your turn
 
@@ -33,10 +33,10 @@ My conversations live in two kinds of places. Most of them are inside projects (
 4. **Start a conversation and close it.** Then find it again in the list. Write where it went. (One line.)
    _____
 
-5. **Decide your rule** for one-off conversations: when something in one matters, where will you put it? (One sentence. Mine is above.)
+5. **Decide your rule** for one-off conversations: when something in one matters, where will you put it? (One sentence.)
    _____
 
-*How to: plans and the window, as of October 20, 2026, from claude.com/pricing and the Claude help center. Free: $0, Sonnet and Haiku models, web search, memory, connectors, file creation, up to five projects. Pro: $20 a month, or $17 on an annual plan; adds unlimited projects, the Opus model, the Fable model through usage credits, and the longer-running tools. Max: from $100 a month, five to twenty times Pro's usage. Team and Enterprise are priced per seat and add sharing and admin controls. Every plan has usage limits that reset on a rolling five-hour window; paid plans add weekly limits; there is no fixed message count, and Anthropic says plans and prices can change at its discretion. The window: your conversations and projects are in a sidebar on the left; the chat is in the middle; anything the tool builds (a document, a page, a deck) opens in a panel beside the chat and is also saved to an Artifacts tab in the sidebar; Settings is under your account name. Check the pricing page before relying on any number here.*
+*How to: plans and the window, as of October 26, 2026, from claude.com/pricing and the Claude help center. Free: $0, Sonnet and Haiku models, web search, memory, connectors, file creation, up to five projects. Pro: $20 a month, or $17 on an annual plan; adds unlimited projects, the Opus model, the Fable model through usage credits, and the longer-running tools. Max: from $100 a month, five to twenty times Pro's usage. Team and Enterprise are priced per seat and add sharing and admin controls. Every plan has usage limits that reset on a rolling five-hour window; paid plans add weekly limits; there is no fixed message count, and Anthropic says plans and prices can change at its discretion. The window: your conversations and projects are in a sidebar on the left; the chat is in the middle; anything the tool builds (a document, a page, a deck) opens in a panel beside the chat and is also saved to an Artifacts tab in the sidebar; Settings is under your account name; the model you're talking to is shown next to the send button. Check the pricing page before relying on any number here.*
 
 ## Why this compounds
 

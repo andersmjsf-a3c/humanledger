@@ -13,6 +13,16 @@ const Html = ({ html, className }: { html: string; className?: string }) => (
   <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
 );
 
+// B worksheets have a form-to-file twin in the skill builder.
+const SKILL_BUILDER: Record<string, string> = {
+  B1: "1-weekly-task",
+  B2: "2-writing-voice",
+  B3: "3-brand-rules",
+  B4: "4-research-and-cite",
+  B5: "5-fact-check-pass",
+  B6: "6-post-skill",
+};
+
 export function WorksheetForm({ ws }: { ws: Worksheet }) {
   const vault = useVault();
   const [answers, setAnswers] = useState<Answers>({});
@@ -70,7 +80,9 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
       <h2>Why this matters</h2>
       <Html html={ws.whyHtml} />
 
-      {/* The workbook's founder example stays in the book edition: no founder stories in the service (Oct 26 2026). */}
+      {/* Service versions only: a labeled illustration on a standing persona, never a founder story (Oct 26 2026). */}
+      <h2>{ws.exampleHeading}</h2>
+      <Html html={ws.exampleHtml} />
 
       <h2>Your turn</h2>
       {!loaded ? (
@@ -122,6 +134,20 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
       {savedAt && <p className="saved">Saved on this device at {savedAt}.</p>}
 
       {ws.howToHtml && <Html className="howto" html={ws.howToHtml} />}
+
+      {SKILL_BUILDER[ws.id] && (
+        <p className="meta">
+          Rather fill boxes and download the file? <a href={`/skills/${SKILL_BUILDER[ws.id]}`}>The skill builder</a> writes the same skill
+          for you.
+        </p>
+      )}
+
+      {ws.version2Html && (
+        <>
+          <h2>{ws.version2Heading}</h2>
+          <Html html={ws.version2Html} />
+        </>
+      )}
 
       <h2>Why this compounds</h2>
       <Html html={ws.compoundsHtml} />

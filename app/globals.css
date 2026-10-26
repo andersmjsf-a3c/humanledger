@@ -243,3 +243,13 @@ h2 { font-weight: 650; }
 .site-footer { max-width: 1180px; border-top: 0; }
 .footer-band { border-top: 1px solid var(--rule); }
 .site-header nav a { white-space: nowrap; }
+.where-row { scroll-margin-top: 16px; }
+.where-row h2 { font-size: 1.05rem; }
+.where-row p { margin: 4px 0; }
+.change p + p { margin-top: 8px; }
+.change { scroll-margin-top: 16px; }
+/* Lists in content (Tailwind's reset removes the markers) */
+main :where(ul, ol):not([class]) { padding-left: 1.4em; }
+main ul:not([class]) { list-style: disc; }
+main ol:not([class]) { list-style: decimal; }
+main :where(ul, ol):not([class]) li { margin: 4px 0; }

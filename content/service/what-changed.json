@@ -1,1 +1,43 @@
-[]
+{
+  "page": "What changed",
+  "lastChecked": "2026-10-26",
+  "intro": "Every release in plain words: what's different, which habits it tends to loosen, and the five-minute re-test to run on anything you rely on.",
+  "entries": [
+    {
+      "id": "2026-10-21-duet",
+      "date": "2026-10-21",
+      "title": "A new app called Duet, in preview, for Pro and Max",
+      "whatChanged": "Anthropic opened a research preview of Claude Duet, a separate app where Claude acts on its own as a proactive agent rather than answering in a chat. It shares your search and memory settings with the main app.",
+      "whatItLoosens": "Nothing in your rules; it's a new surface, not a new model. The risk is scope: an agent that acts on its own is exactly the case where a boundary matters. If you try it, write the boundary first (what it may read, what it may write and to whom, what it may never touch).",
+      "reTest": "Not needed for existing skills. If you use Duet, check that your memory and search settings are what you expect before the first task, since it reads the same ones.",
+      "source": "https://support.claude.com/en/articles/12138966"
+    },
+    {
+      "id": "2026-10-07-haiku-5-5",
+      "date": "2026-10-07",
+      "title": "The 5.5 model family is complete: Haiku 5.5 joins Opus 5.5 and Sonnet 5.5",
+      "whatChanged": "Three new models in three weeks. Opus 5.5 (Sep 22) is the most capable of the three, Sonnet 5.5 (Sep 28) is faster and cheaper, Haiku 5.5 (Oct 7) is the smallest and fastest. Fable 5.1, released Sep 1, remains the top model. The model you're talking to shows next to the send button; if your plan moved you to a new default, that's where you'll see it.",
+      "whatItLoosens": "A new model follows your written rules a little differently. The usual casualties: length limits, banned phrases, formatting rules (bullets where you asked for paragraphs), and the exact shape of a report. Faster, smaller models (Haiku) tend to loosen these more than larger ones.",
+      "reTest": "Take your most-used skill and the task you last ran it on. Run it again, on the model you're on now, and read the two results side by side. Every drift is a line to add or sharpen in the file. Five minutes per skill; do the top three.",
+      "source": "https://support.claude.com/en/articles/12138966"
+    },
+    {
+      "id": "2026-09-16-cowork-folded-in",
+      "date": "2026-09-16",
+      "title": "Cowork is gone as a name; its capabilities work in any conversation",
+      "whatChanged": "Longer multi-step work, file handling, and tasks that keep running while you're away no longer need a separate mode. Design, deck, and document creation work in any conversation, with new Claude Slides and Claude Docs types. Artifacts are now on all plans.",
+      "whatItLoosens": "Nothing in your rules. What it breaks is instructions: any article, note, or skill that says \"open Cowork\" or \"switch to Cowork mode\" is now out of date. Some of your own saved instructions may say it.",
+      "reTest": "Search your skills and notes for the word Cowork and update the line to describe the task instead of the mode. Then run one long task (a multi-file job you used to do in Cowork) in a plain conversation and confirm it behaves the same.",
+      "source": "https://support.claude.com/en/articles/12138966"
+    },
+    {
+      "id": "2026-08-25-memory-everywhere",
+      "date": "2026-08-25",
+      "title": "Memory works everywhere, and you can edit what it holds",
+      "whatChanged": "Memory now works across chat and longer-running work. What it remembers is listed under Topics in Settings > Your Claude, where you can read, edit, or delete each entry. A new setting controls whether sensitive topics are saved (off by default).",
+      "whatItLoosens": "It can tighten things rather than loosen them: context you used to re-brief every time may now be remembered, and context you didn't want remembered may be. Both deserve a look.",
+      "reTest": "Open Settings > Your Claude > Manage and read what it has saved about you. Delete anything you wouldn't want a colleague to read. Then start a fresh conversation and ask it what it knows about how you like work done; compare to the paragraph you wrote (workbook A1).",
+      "source": "https://support.claude.com/en/articles/11817273"
+    }
+  ]
+}

@@ -4,32 +4,32 @@ Ten preference lines (length, tone, format, what to skip, what to never say) rea
 
 ## Why this matters
 
-Chapter 2 said to talk to it like a colleague, and the colleague should learn how you like to be talked to. Most people never say. They get the tool's default manner (eager, thorough, balanced, a little too pleased with itself) and either put up with it or quit. Ten lines fix it.
+Talk to it like a colleague, and the colleague should learn how you like to be talked to. Most people never say. They get the tool's default manner (eager, thorough, balanced, a little too pleased with itself) and either put up with it or quit. Ten lines fix it.
 
 The lines are about manner, not content. Length: short or complete. Format: prose or lists. Stance: a recommendation or the options. Pushback: argue with me or defer. And the phrases it never uses with you, because you've heard them and they cost it your trust.
 
-Chapter 12 explained why these belong in memory and not in a project: they're true about you regardless of the work. Write them once, give them once, and every room you walk into already knows.
+These belong in memory and not in a project, because they're true about you regardless of the work. Write them once, give them once, and every room you walk into already knows.
 
-## Mark's example
+## An example
 
-Mine, as they stand. Ten lines, and the first three do most of the work.
+*An illustration, not a real person.* A sales manager's ten might look like this. The first three do most of the work.
 
 1. Be direct and let me decide. One recommendation, then the reasoning. Options only if I ask.
-2. Lead with the deliverable or the answer. No restating my question, no preamble.
+2. Lead with the number or the answer. No restating my question, no preamble.
 3. Push back when I'm wrong, with the fact that shows it. Don't soften it.
 4. Default to prose. Lists only when I'll scan or compare.
 5. Short when the point is short. Don't pad to look thorough.
-6. Plain words. "Move money," not "execute financial transactions."
-7. Never write "I want to be honest with you" or any sentence that announces sincerity. Say the thing.
-8. No em dashes, anywhere. Commas, periods, colons, parentheses.
-9. Never invent a memory, a quote, a meeting, or a number. Leave a bracket and ask.
+6. Plain words. "Call the customer," not "initiate outreach to the stakeholder."
+7. Never open with "Great question" or any sentence that compliments me or announces sincerity. Say the thing.
+8. No exclamation points, anywhere.
+9. Never invent a deal, a quote, a meeting, or a number. Leave a bracket and ask.
 10. When you don't know, say so in one line and tell me what you'd check.
 
-Every one of those started as a correction in a conversation. Number 7 was the first, and the story's in Chapter 2.
+Every one of those started as a correction in a conversation. Number 7 is usually the first one anybody writes.
 
 ## Your turn
 
-Write your ten. Use mine as a shape, not a script; half of yours should be different from mine.
+Write your ten. Use the example as a shape, not a script; half of yours should be different.
 
 1. **Stance.** A recommendation, or the options? Decide for me, or lay it out?
    _____
@@ -45,7 +45,7 @@ Write your ten. Use mine as a shape, not a script; half of yours should be diffe
    _____
 7. **Never say.** One phrase or kind of phrase it must never use with you.
    _____
-8. **Punctuation or style.** One rule, if you have one (mine is em dashes).
+8. **Punctuation or style.** One rule, if you have one.
    _____
 9. **When it doesn't know.** What should it do?
    _____
@@ -54,7 +54,7 @@ Write your ten. Use mine as a shape, not a script; half of yours should be diffe
 
 Then: paste all ten into a new conversation after "Remember how I want you to talk to me:" and, in a second new conversation, ask for something you'd normally get a padded answer to. Did the manner change? Save the ten as `preferences.md` in your notes folder.
 
-*How to: as of October 20, 2026, these lines live best in memory (Settings > Memory; Worksheet 0.4), where they apply in every conversation on Free, Pro, and Max. On every plan they also work pasted at the top of a conversation. Put them in a project's instructions only if you want a different manner for one body of work.*
+*How to: as of October 26, 2026, these lines live best in memory (Settings > Your Claude; Worksheet 0.4), where they apply in every conversation on Free, Pro, and Max. On every plan they also work pasted at the top of a conversation. Put them in a project's instructions only if you want a different manner for one body of work.*
 
 ## Why this compounds
 

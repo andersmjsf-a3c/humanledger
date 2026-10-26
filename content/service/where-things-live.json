@@ -1,10 +1,125 @@
 {
-  "lastChecked": null,
+  "page": "Where things live",
+  "lastChecked": "2026-10-26",
+  "checkedAgainst": "support.claude.com help center articles and the Claude release notes page, read on 2026-10-26; menu paths quoted as the articles give them",
+  "intro": "As of the date above. The habits don't move. Only the buttons do. If what you see on your screen doesn't match a row, tell us; that's how this page stays current.",
   "rows": [
-    { "label": "Turn memory on or off", "where": null },
-    { "label": "Upload a skill", "where": null },
-    { "label": "Web search toggle", "where": null },
-    { "label": "Which model you're talking to", "where": null },
-    { "label": "Names that no longer appear", "where": null }
+    {
+      "id": "memory-toggle",
+      "thing": "Turn memory on or off",
+      "whereToday": "Settings > Your Claude. Toggles: memory from chats, \"Search and reference chats\", and \"Include sensitive topics in memory\" (off by default). Pausing keeps what's saved and stops new entries; \"Reset memory\" deletes everything and can't be undone.",
+      "wasCalled": "Settings > Memory, with a toggle named \"Generate memory from chats\" (older layout). Some Team and Enterprise organizations still see an older version under Settings > Capabilities.",
+      "plans": "On by default for Free, Pro, and Max. Team and Enterprise owners decide; off for each member until they turn it on.",
+      "source": "https://support.claude.com/en/articles/11817273",
+      "lastChanged": "2026-08-25 (memory works across chat and Cowork; entries editable under Topics; sensitive-topics setting added)"
+    },
+    {
+      "id": "memory-view-edit",
+      "thing": "See, change, or delete what it remembers",
+      "whereToday": "Settings > Your Claude, then \"Manage\" next to \"Your memory\". Entries are listed under Topics; open one to read it, use the edit icon to change it, or Delete. You can also tell it in chat to remember, change, or forget something.",
+      "wasCalled": "A single daily memory summary, not individual entries (before 2026-07-10).",
+      "plans": "Same as memory.",
+      "source": "https://support.claude.com/en/articles/11817273",
+      "lastChanged": "2026-07-10 (individual categorized entries replaced the daily summary)"
+    },
+    {
+      "id": "memory-per-chat",
+      "thing": "Keep one conversation out of memory",
+      "whereToday": "Click \"+\" in the message box and turn off \"Memory\" before sending the first message (on mobile, the switch is in the \"+\" menu). Or start an incognito chat, available on all plans.",
+      "wasCalled": "",
+      "plans": "All plans.",
+      "source": "https://support.claude.com/en/articles/11817273",
+      "lastChanged": ""
+    },
+    {
+      "id": "project-memory",
+      "thing": "Keep a project's memory separate from your account memory",
+      "whereToday": "On the project's page, under \"Memory\", turn off \"Use account memory\".",
+      "wasCalled": "",
+      "plans": "Plans with projects.",
+      "source": "https://support.claude.com/en/articles/11817273",
+      "lastChanged": ""
+    },
+    {
+      "id": "skills-upload",
+      "thing": "Upload, turn on, or remove a skill",
+      "whereToday": "Customize > Skills. To upload: \"+\", then \"+ Create skill\", then \"Upload a skill\". Package the skill folder as a ZIP; the folder must contain a skill.md file and the folder name must match the skill name. Toggle next to a skill turns it on or off; open a skill and use \"...\" to delete it. Code execution must be on (Settings > Capabilities on Free, Pro, and Max).",
+      "wasCalled": "",
+      "plans": "Custom skills upload on Free, Pro, Max, Team, and Enterprise. Team and Enterprise sharing depends on owner settings.",
+      "source": "https://support.claude.com/en/articles/12512180",
+      "lastChanged": "2026-08-06 (skill and plugin security scanning, Enterprise beta)"
+    },
+    {
+      "id": "skills-invoke",
+      "thing": "Make it use a skill",
+      "whereToday": "No command. It uses enabled skills when it judges them relevant, from the skill's description. To make it reliable, name the skill in your request: \"Use my brand guidelines skill to make a one-pager.\"",
+      "wasCalled": "",
+      "plans": "Any plan with skills.",
+      "source": "https://support.claude.com/en/articles/12512180",
+      "lastChanged": ""
+    },
+    {
+      "id": "web-search",
+      "thing": "Web search toggle",
+      "whereToday": "In the current experience there is no toggle; it searches the web when it judges that helpful. Older layout: \"+\" in the lower-left of the chat window, then \"Web search\" (a checkmark shows it's on). Team and Enterprise: an owner must enable web search first under Organization settings > Capabilities.",
+      "wasCalled": "A per-chat toggle under the \"+\" button.",
+      "plans": "Free accounts and paid plans; Team and Enterprise after the owner enables it.",
+      "source": "https://support.claude.com/en/articles/10684626",
+      "lastChanged": ""
+    },
+    {
+      "id": "model-selector",
+      "thing": "Which model you're talking to, and how to change it",
+      "whereToday": "The model name and effort level appear next to the send button. Click the model name to change it; \"More models\" shows the rest. Changes apply from the next response.",
+      "wasCalled": "",
+      "plans": "All plans; Enterprise admins may limit models or set the default for new chats.",
+      "source": "https://support.claude.com/en/articles/8664678",
+      "lastChanged": "2026-10-07 (Haiku 5.5 added; the 5.5 family: Opus 5.5 on 2026-09-22, Sonnet 5.5 on 2026-09-28)"
+    },
+    {
+      "id": "effort-thinking",
+      "thing": "Effort and thinking settings",
+      "whereToday": "Click the model name, then \"Effort\": Low, Medium, High, Extra high, Max. Each model has a recommended level marked \"Default\". Thinking is separate: hover \"Effort\" and toggle \"Thinking\". On Haiku 5.5, Sonnet 5.5, Opus 5.5, Fable 5.1, and Opus 5, thinking can't be turned off.",
+      "wasCalled": "\"Extended thinking\", a single toggle in the model menu (still how it appears for older models).",
+      "plans": "All plans.",
+      "source": "https://support.claude.com/en/articles/8664678",
+      "lastChanged": ""
+    },
+    {
+      "id": "current-models",
+      "thing": "The current models, newest first",
+      "whereToday": "Haiku 5.5 (Oct 7, 2026; smallest and fastest), Sonnet 5.5 (Sep 28), Opus 5.5 (Sep 22), Fable 5.1 and Mythos 5.1 (Sep 1). Older models still listed: Opus 5, Sonnet 5, Fable 5, Opus 4.7, Opus 4.6, Sonnet 4.6.",
+      "wasCalled": "",
+      "plans": "Availability varies by plan; the model menu shows what your plan has.",
+      "source": "https://support.claude.com/en/articles/12138966",
+      "lastChanged": "2026-10-07"
+    },
+    {
+      "id": "artifacts",
+      "thing": "Where the things it makes for you go (artifacts, docs, slides, designs)",
+      "whereToday": "Made in any conversation; no mode to choose. Artifacts are available on all plans. Claude Docs and Claude Slides are their own types.",
+      "wasCalled": "Artifacts were a paid feature; design and deck creation lived in Cowork.",
+      "plans": "All plans for artifacts.",
+      "source": "https://support.claude.com/en/articles/12138966",
+      "lastChanged": "2026-09-16"
+    },
+    {
+      "id": "retired-cowork",
+      "thing": "Names that no longer appear: Cowork",
+      "whereToday": "Cowork's capabilities (longer multi-step work, file handling, tasks that keep running while you're away) work in any conversation without choosing a mode. There is no separate Cowork to open. An article that tells you to open Cowork is from before September 16, 2026.",
+      "wasCalled": "Cowork (a mode, then an app surface on desktop, web, and mobile).",
+      "plans": "Rolled out to Pro and Max first.",
+      "source": "https://support.claude.com/en/articles/12138966",
+      "lastChanged": "2026-09-16"
+    },
+    {
+      "id": "duet",
+      "thing": "A new name you may meet: Duet",
+      "whereToday": "A research preview for Pro and Max: a separate app where Claude works as a proactive agent. It uses the same search and memory settings as the main app. Not needed for anything on this site.",
+      "wasCalled": "",
+      "plans": "Pro and Max, research preview.",
+      "source": "https://support.claude.com/en/articles/12138966",
+      "lastChanged": "2026-10-21"
+    }
   ]
 }

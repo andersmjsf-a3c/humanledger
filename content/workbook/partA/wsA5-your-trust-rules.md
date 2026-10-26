@@ -4,15 +4,15 @@ Your own rules for what you check and how, in five lines, with one real piece of
 
 ## Why this matters
 
-Chapter 3 said the tool sounds the same when it's right and when it's wrong. Chapter 6 said the biggest mistake people are making with AI right now is passing along output they never checked, and told you about a friend of mine who's deciding whether to keep people over it. Nothing leaves your hands unchecked. This page turns that from a sentence you agree with into five rules you run.
+The tool sounds the same when it's right and when it's wrong. The biggest mistake people are making with AI right now is passing along output they never checked, and managers have started deciding whether to keep people over it. Nothing leaves your hands unchecked. This page turns that from a sentence you agree with into five rules you run.
 
 The rules are yours because the stakes are yours. A number in a deck to an investor needs a different check from a number in a note to yourself. A quote attributed to a public figure needs a different check from a summary of a document you attached. Write the rules for the work you actually send, and make them short enough to run every time.
 
-The last rule on your list should be the three-minute test from Chapter 6: can you explain the thing out loud, with no materials, for three minutes? If you can't, you aren't done. It's the check that catches what the other four miss, because it's a check on you, not on the draft.
+The last rule on your list should be the three-minute test: can you explain the thing out loud, with no materials, for three minutes? If you can't, you aren't done. It's the check that catches what the other four miss, because it's a check on you, not on the draft.
 
-## Mark's example
+## An example
 
-Mine, in the order I run them on anything with a number, a name, a date, or a quote in it.
+*An illustration, not a real person.* A first-year founder's five, in the order they'd run them on anything with a number, a name, a date, or a quote in it.
 
 1. Every number has a named source and a date, in the text or in a note. "According to industry data" doesn't count.
 2. Open the source. Read the sentence the number comes from. If I can't find it, the number comes out or gets marked as unverified.
@@ -20,7 +20,7 @@ Mine, in the order I run them on anything with a number, a name, a date, or a qu
 4. Anything I'll say to someone who knows the subject better than I do gets the whole pass, not the quick one. The investor who knows the competitor's real figures exists for every piece of work.
 5. Before it goes out: three minutes, out loud, no notes. If I can't, it isn't finished.
 
-What I write down at the end of every pass: the line listing what I couldn't verify. That line is the habit. It's the one most people never write, and it's what lets me stand in front of a reader and say "this holds, and here's the one thing I'm not sure of."
+What they write at the end of every pass: the line listing what they couldn't verify. That line is the habit. It's the one most people never write, and it's what lets you stand in front of a reader and say "this holds, and here's the one thing I'm not sure of."
 
 ## Your turn
 
@@ -29,7 +29,7 @@ What I write down at the end of every pass: the line listing what I couldn't ver
    - _____
    - _____
 
-2. **Write your five rules.** Use mine as a shape. At least two of yours should be specific to the work in question 1.
+2. **Write your five rules.** Use the example as a shape. At least two of yours should be specific to the work in question 1.
    1. _____
    2. _____
    3. _____
@@ -47,7 +47,7 @@ What I write down at the end of every pass: the line listing what I couldn't ver
 
 6. **Save the rules** as `trust-rules.md` in your notes folder, and paste them into memory ("Remember my checking rules:") so the tool knows what you'll hold it to.
 
-*How to: as of October 20, 2026, checking needs web search on (the slider in the chat box, "Web search") so the tool can open sources and cite them; ask it for "the source and the sentence the number comes from," then open the link yourself. Worksheet 0.6 has the setting. The three-minute test needs nothing but a door you can close.*
+*How to: as of October 26, 2026, checking works best when the tool searches the web so it can open sources and cite them; in the current layout it decides when to search, so say "search the web and cite" when a fact matters, and ask for "the source and the sentence the number comes from," then open the link yourself. Worksheet 0.6 has the setting. The three-minute test needs nothing but a door you can close.*
 
 ## Why this compounds
 

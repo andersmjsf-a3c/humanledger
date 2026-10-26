@@ -7,8 +7,9 @@
     "promiseText": "Know what plan you're on and why, what the parts of the screen are, and where a conversation goes when you close it. Twenty minutes, once.",
     "promiseHtml": "<p>Know what plan you&#39;re on and why, what the parts of the screen are, and where a conversation goes when you close it. Twenty minutes, once.</p>\n",
     "minutes": 20,
-    "whyHtml": "<p>The book said the setup lives here, so here it is. I kept it out of the chapters because this page goes stale faster than any other page in either book: plans change, buttons move, names change. Everything below is dated, and if the date is more than six months old, assume something has moved and look.</p>\n<p>The reason to spend twenty minutes on this before Part A is simple. Every habit in the book assumes you know three things: which version of the tool you&#39;re paying for and what that buys you, where your conversations live, and what the panels on the screen are for. People who skip this spend their first month confused about why something they did yesterday isn&#39;t there today, and they blame themselves. Usually it&#39;s a setting.</p>\n<p>Nothing here is a recommendation to pay. The free plan runs everything in Part A and most of Part B. Pay when you&#39;ve hit a limit twice in a week and it cost you something; before that, the habits matter more than the tier.</p>\n",
-    "exampleHtml": "<p>I&#39;m on a paid plan, because I use the tool for hours a day and I run the strongest model for most of it. <span class=\"bracket\">[MARK: which plan, and the one reason you&#39;d give a beginner for why.]</span> I started on the free plan for the first few months, and that was the right call. The thing that pushed me up wasn&#39;t a feature. It was hitting the usage limit in the middle of a deck at 11 in the morning, twice in one week. I upgraded that afternoon.</p>\n<p>My conversations live in two kinds of places. Most of them are inside projects (the book has one, the company has one), so they start already knowing what the work is. The rest are one-off rooms in the main list, and I treat those as disposable: if something in one turns out to matter, I move it into a project or write it into a file the same day. A conversation I can&#39;t find in a week is a conversation I should have filed.</p>\n",
+    "whyHtml": "<p>Everything on this site that depends on what the screen looks like today lives in Part 0, and it&#39;s dated, because this is the page that goes stale fastest: plans change, buttons move, names change. If the date on the sidebar below is more than a few months old, assume something has moved and check the Where things live page.</p>\n<p>The reason to spend twenty minutes here before anything else is simple. Every habit on this site assumes you know three things: which version of the tool you&#39;re paying for and what that buys you, where your conversations live, and what the panels on the screen are for. People who skip this spend their first month confused about why something they did yesterday isn&#39;t there today, and they blame themselves. Usually it&#39;s a setting.</p>\n<p>Nothing here is a recommendation to pay. The free plan runs everything in Part A and most of Part B. Pay when you&#39;ve hit a limit twice in a week and it cost you something; before that, the habits matter more than the tier.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> Say you teach high school and run your department. You started on the free plan in August, used it for lesson plans and parent emails, and never hit a limit until the week before grades were due, when you ran out of usage twice in two days with a stack of comments half-written. That&#39;s the signal. You upgraded that weekend, and the one reason you&#39;d give a colleague is the one that happened: the limit landed on the day it cost the most.</p>\n<p>Your conversations live in two kinds of places. The ones about your department are inside a project, so they start already knowing what the work is. The rest are one-off rooms in the main list, and you treat those as disposable: if something in one turns out to matter, you move it into the project or write it into a file the same day. A conversation you can&#39;t find in a week is a conversation you should have filed.</p>\n",
     "yourTurn": [
       {
         "type": "item",
@@ -81,8 +82,8 @@
         "type": "item",
         "n": 5,
         "question": "Decide your rule",
-        "html": "<p><strong>Decide your rule</strong> for one-off conversations: when something in one matters, where will you put it? (One sentence. Mine is above.)</p>\n",
-        "expected": "One sentence. Mine is above",
+        "html": "<p><strong>Decide your rule</strong> for one-off conversations: when something in one matters, where will you put it? (One sentence.)</p>\n",
+        "expected": "One sentence",
         "fields": [
           {
             "key": "decide-your-rule",
@@ -91,9 +92,9 @@
         ]
       }
     ],
-    "howToHtml": "<p><em>How to: plans and the window, as of October 20, 2026, from claude.com/pricing and the Claude help center. Free: $0, Sonnet and Haiku models, web search, memory, connectors, file creation, up to five projects. Pro: $20 a month, or $17 on an annual plan; adds unlimited projects, the Opus model, the Fable model through usage credits, and the longer-running tools. Max: from $100 a month, five to twenty times Pro&#39;s usage. Team and Enterprise are priced per seat and add sharing and admin controls. Every plan has usage limits that reset on a rolling five-hour window; paid plans add weekly limits; there is no fixed message count, and Anthropic says plans and prices can change at its discretion. The window: your conversations and projects are in a sidebar on the left; the chat is in the middle; anything the tool builds (a document, a page, a deck) opens in a panel beside the chat and is also saved to an Artifacts tab in the sidebar; Settings is under your account name. Check the pricing page before relying on any number here.</em></p>\n",
+    "howToHtml": "<p><em>How to: plans and the window, as of October 26, 2026, from claude.com/pricing and the Claude help center. Free: $0, Sonnet and Haiku models, web search, memory, connectors, file creation, up to five projects. Pro: $20 a month, or $17 on an annual plan; adds unlimited projects, the Opus model, the Fable model through usage credits, and the longer-running tools. Max: from $100 a month, five to twenty times Pro&#39;s usage. Team and Enterprise are priced per seat and add sharing and admin controls. Every plan has usage limits that reset on a rolling five-hour window; paid plans add weekly limits; there is no fixed message count, and Anthropic says plans and prices can change at its discretion. The window: your conversations and projects are in a sidebar on the left; the chat is in the middle; anything the tool builds (a document, a page, a deck) opens in a panel beside the chat and is also saved to an Artifacts tab in the sidebar; Settings is under your account name; the model you&#39;re talking to is shown next to the send button. Check the pricing page before relying on any number here.</em></p>\n",
     "compoundsHtml": "<p>You&#39;ll never think about the plan or the window again, which is the point. The twenty minutes here is spent once, and every page after it assumes you know where you are. The rule you wrote in question 5 is the first of the habits that keep your work from evaporating, and Worksheet 0.4 builds on it.</p>\n",
-    "draft": true,
+    "draft": false,
     "source": "content/workbook/part0/ws01-your-account-and-the-window.md"
   },
   {
@@ -104,8 +105,9 @@
     "promiseText": "Attach a document, paste a passage, and download a result, so you know what the tool can read and what it can hand back. Fifteen minutes.",
     "promiseHtml": "<p>Attach a document, paste a passage, and download a result, so you know what the tool can read and what it can hand back. Fifteen minutes.</p>\n",
     "minutes": 15,
-    "whyHtml": "<p>Most of the useful work in the book starts with the tool reading something you already have: a report, a deck, a spreadsheet, a photo of a whiteboard. And most of it ends with the tool handing you something you can open somewhere else. If you&#39;ve only ever typed into the box and read what came back, you&#39;ve used about a third of what&#39;s there.</p>\n<p>The habit is small: attach the thing instead of describing it. People describe a spreadsheet in three paragraphs when they could attach it in one click, and the description is always worse than the file. The tool reads PDFs, Word documents, spreadsheets, plain text, and images, and it reads them well enough to quote a page number back to you.</p>\n<p>The other half is getting things out. A draft that lives only in the chat is a draft you&#39;ll lose. A draft downloaded as a file is yours.</p>\n",
-    "exampleHtml": "<p>The investor deck morning in Chapter 10 started with four files attached: our full company overview, a shorter deck from the week before, an advisor deck, and a PDF of an older investor deck. The tool read all four and built from them. It also read the speaker notes inside one of them, which is how it caught a slide that should never have gone outside the company. I&#39;d have missed that. The notes were in the file; I&#39;d attached the file; it read the whole file.</p>\n<p>Going out, the deck came back as both a PowerPoint and a PDF, and I checked the rendered PDF before anything went anywhere, because the rendered file is what the reader sees and the chat&#39;s description of it is not.</p>\n<p>The thing I didn&#39;t know in my first year: it reads images. A photo of a whiteboard after a meeting, attached, comes back as a typed list of what was on the board. I use that most weeks now.</p>\n",
+    "whyHtml": "<p>Most useful work starts with the tool reading something you already have: a report, a deck, a spreadsheet, a photo of a whiteboard. And most of it ends with the tool handing you something you can open somewhere else. If you&#39;ve only ever typed into the box and read what came back, you&#39;ve used about a third of what&#39;s there.</p>\n<p>The habit is small: attach the thing instead of describing it. People describe a spreadsheet in three paragraphs when they could attach it in one click, and the description is always worse than the file. The tool reads PDFs, Word documents, spreadsheets, plain text, and images, and it reads them well enough to quote a page number back to you.</p>\n<p>The other half is getting things out. A draft that lives only in the chat is a draft you&#39;ll lose. A draft downloaded as a file is yours.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> Say you direct a small nonprofit and you&#39;re rebuilding the board deck from last year&#39;s. You attach four files: last year&#39;s deck, the annual report, a grant narrative, and a PDF of the budget. The tool reads all four and builds from them. It also reads the speaker notes inside last year&#39;s deck, which is how it flags a slide that mentioned a donor who asked not to be named. You&#39;d have missed that; the notes were in the file, you&#39;d attached the file, it read the whole file.</p>\n<p>Going out, the new deck comes back as both a PowerPoint and a PDF. You open the rendered PDF before it goes to anyone, because the rendered file is what the board sees and the chat&#39;s description of it is not.</p>\n<p>The thing most people don&#39;t know in their first month: it reads images. A photo of the whiteboard after the planning meeting, attached, comes back as a typed list of what was on the board.</p>\n",
     "yourTurn": [
       {
         "type": "item",
@@ -173,7 +175,7 @@
         ]
       }
     ],
-    "howToHtml": "<p><em>How to: attaching and downloading, as of October 20, 2026. In the chat box there&#39;s a &quot;+&quot; (or a paperclip) for attaching files; you can also drag a file onto the chat or paste text directly. The tool reads PDFs, Word documents, spreadsheets, plain text, code, and images, within size limits that change; if a file is refused, split it or paste the part you need. Anything it builds opens in a panel beside the chat; documents and decks there have an Export control, and legacy outputs have a download control at the top of the panel; both are also saved to the Artifacts tab in the sidebar. Creating files requires &quot;Code execution and file creation&quot; to be on under Settings &gt; Capabilities. All plans can attach files and create them.</em></p>\n",
+    "howToHtml": "<p><em>How to: attaching and downloading, as of October 26, 2026. In the chat box there&#39;s a &quot;+&quot; (or a paperclip) for attaching files; you can also drag a file onto the chat or paste text directly. The tool reads PDFs, Word documents, spreadsheets, plain text, code, and images, within size limits that change; if a file is refused, split it or paste the part you need. Anything it builds opens in a panel beside the chat; documents and decks there have an Export control; everything it builds is also saved to the Artifacts tab in the sidebar. Creating files requires &quot;Code execution and file creation&quot; to be on under Settings &gt; Capabilities. All plans can attach files and create them.</em></p>\n",
     "compoundsHtml": "<p>Every worksheet in Part B starts by attaching something real: last week&#39;s report, your brand guide, a draft. Once attaching is a reflex, the tool is working on your actual material instead of your description of it, and every skill you build in Part B is tested on real files from day one.</p>\n",
     "draft": false,
     "source": "content/workbook/part0/ws02-files-in-files-out.md"
@@ -183,11 +185,12 @@
     "part": "0",
     "slug": "what-an-md-file-is",
     "title": "What an .md file is",
-    "promiseText": "Read and write one plain-text file with a few symbols for headings and lists, and understand why every skill, rule, and draft in this workbook lives in that format. Fifteen minutes.",
-    "promiseHtml": "<p>Read and write one plain-text file with a few symbols for headings and lists, and understand why every skill, rule, and draft in this workbook lives in that format. Fifteen minutes.</p>\n",
+    "promiseText": "Read and write one plain-text file with a few symbols for headings and lists, and understand why every skill, rule, and draft on this site lives in that format. Fifteen minutes.",
+    "promiseHtml": "<p>Read and write one plain-text file with a few symbols for headings and lists, and understand why every skill, rule, and draft on this site lives in that format. Fifteen minutes.</p>\n",
     "minutes": 15,
-    "whyHtml": "<p>Every chapter of the two books was drafted as an .md file. Every skill I&#39;ve built is one. The voice rules, the brand page, the corrections log, the agent job descriptions: .md files, all of them. If there&#39;s one piece of technical knowledge the book asks of you, it&#39;s this one, and it&#39;s about ten lines of symbols.</p>\n<p>An .md file (the letters stand for Markdown) is plain text. You can open it in any program that opens text, on any computer, forever. It has no hidden formatting, no fonts, nothing that depends on one company&#39;s software staying in business. The few symbols it uses tell a reader, human or machine, where the headings are and what&#39;s a list. That&#39;s it.</p>\n<p>The reason it matters for this work: the tool reads .md perfectly, writes it by default, and treats the structure as meaning. A heading called &quot;Rules&quot; is a section the tool knows to obey. A list under &quot;Never&quot; is a list it knows not to do. Chapter 11 said to keep what you&#39;ve learned somewhere that survives the platform. This is the somewhere.</p>\n",
-    "exampleHtml": "<p>Here is the top of one of my skill files, exactly as it&#39;s written. The symbols are the whole lesson.</p>\n<pre><code># Skill: Growth Brief post\n\nThis skill serves Mark. Use it when I say &quot;write the brief.&quot;\n</code></pre>\n",
+    "whyHtml": "<p>Every skill, rule, and page in your vault is an .md file. Voice rules, the who-we-are page, the corrections log, agent job descriptions: all of them. If there&#39;s one piece of technical knowledge this site asks of you, it&#39;s this one, and it&#39;s about ten lines of symbols.</p>\n<p>An .md file (the letters stand for Markdown) is plain text. You can open it in any program that opens text, on any computer, forever. It has no hidden formatting, no fonts, nothing that depends on one company&#39;s software staying in business. The few symbols it uses tell a reader, human or machine, where the headings are and what&#39;s a list. That&#39;s it.</p>\n<p>The reason it matters for this work: the tool reads .md perfectly, writes it by default, and treats the structure as meaning. A heading called &quot;Rules&quot; is a section the tool knows to obey. A list under &quot;Never&quot; is a list it knows not to do. Keep what you&#39;ve learned somewhere that survives the platform. This is the somewhere.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> Here is the top of a skill file a solo consultant might keep for the monthly client report. The symbols are the whole lesson.</p>\n<pre><code># Skill: Monthly client report\n\nThis skill serves [the consultant]. Use it when I say &quot;monthly report.&quot;\n\n## What this task is\nA two-page update for one client: what was done, what it found, what&#39;s next.\n\n## Rules\n- Open with the one number the client watches.\n- Every figure has a source and a date.\n- Never the word &quot;leverage.&quot;\n</code></pre>\n<p>One <code>#</code> is the title. Two <code>##</code> is a section heading. A line that starts with <code>-</code> is a list item. Blank lines separate paragraphs. A pair of backticks around a word shows it as code. That&#39;s five symbols, and people write hundreds of pages with no others.</p>\n<p>Keep every .md file in one folder on your computer, sorted into subfolders by what it&#39;s for: skills, notes, logs. The folder gets backed up like anything else. When the tool changes, the folder doesn&#39;t.</p>\n",
     "yourTurn": [
       {
         "type": "item",
@@ -206,7 +209,7 @@
         "type": "item",
         "n": 2,
         "question": "Write your first .md file",
-        "html": "<p><strong>Write your first .md file.</strong> Type this, with your own words in place of mine, and save it as <code>about-me.md</code>:</p>\n<pre><code># About me\n\n## Who I am\nOne or two sentences.\n\n## What I&#39;m working on\n- First thing\n- Second thing\n\n## How I like work done\n- One rule\n</code></pre>\n",
+        "html": "<p><strong>Write your first .md file.</strong> Type this, with your own words, and save it as <code>about-me.md</code>:</p>\n<pre><code># About me\n\n## Who I am\nOne or two sentences.\n\n## What I&#39;m working on\n- First thing\n- Second thing\n\n## How I like work done\n- One rule\n</code></pre>\n",
         "fields": [
           {
             "key": "write-your-first-md-file",
@@ -232,7 +235,7 @@
         "type": "item",
         "n": 4,
         "question": "Make your folder",
-        "html": "<p><strong>Make your folder.</strong> One folder for everything from this workbook, with subfolders: <code>skills</code>, <code>notes</code>, <code>logs</code>. Write the path. (One line.)</p>\n",
+        "html": "<p><strong>Make your folder.</strong> One folder for everything from this site, with subfolders: <code>skills</code>, <code>notes</code>, <code>logs</code>. Write the path. (One line.)</p>\n",
         "expected": "One line",
         "fields": [
           {
@@ -255,7 +258,7 @@
         ]
       }
     ],
-    "howToHtml": "<p><em>How to: .md files, as of October 20, 2026. Any text editor writes them; save with the <code>.md</code> extension. The tool accepts them as attachments on every plan and writes them when you ask for &quot;a markdown file.&quot; Skills on Claude.ai are a folder containing a file named <code>SKILL.md</code>, zipped and uploaded under Customize &gt; Skills (Worksheet 0.5 has the steps). You don&#39;t need a special program to read one; the symbols are readable as-is.</em></p>\n",
+    "howToHtml": "<p><em>How to: .md files, as of October 26, 2026. Any text editor writes them; save with the <code>.md</code> extension. The tool accepts them as attachments on every plan and writes them when you ask for &quot;a markdown file.&quot; A skill on Claude.ai is a folder containing a file named <code>SKILL.md</code>, zipped and uploaded under Customize &gt; Skills (Worksheet 0.5 has the steps). You don&#39;t need a special program to read one; the symbols are readable as-is.</em></p>\n",
     "compoundsHtml": "<p>Every file from here on is one of these, and every one of them outlives the conversation it was made in. The <code>about-me.md</code> you just wrote is the first draft of Worksheet A1, and the folder you made is where your skills (Part B) and your agent job descriptions (Part C) will live.</p>\n",
     "draft": false,
     "source": "content/workbook/part0/ws03-what-an-md-file-is.md"
@@ -268,14 +271,15 @@
     "promiseText": "Start a conversation on purpose, make one project, and see what memory carries between rooms, so you know where everything you tell the tool ends up. Thirty minutes.",
     "promiseHtml": "<p>Start a conversation on purpose, make one project, and see what memory carries between rooms, so you know where everything you tell the tool ends up. Thirty minutes.</p>\n",
     "minutes": 30,
-    "whyHtml": "<p>Chapters 11 and 12 made the argument: a conversation is a room, and nothing follows you out unless you&#39;ve set up something to carry it. Three things can. Memory carries what&#39;s true about you. A project carries what&#39;s true about one body of work. A skill carries how to do one kind of task. This page sets up the first two. Part B sets up the third.</p>\n<p>The three sorting questions from Chapter 12 are the whole method, so here they are again. Is this true about me regardless of what I&#39;m working on? Memory. Is this about one body of work, and only that? The project. Is this about how to do one kind of task, wherever it comes up? A skill. If you ask those three questions every time you&#39;re about to tell the tool something you&#39;ll want it to keep, you&#39;ll never explain yourself from scratch again.</p>\n<p>The trap is treating them as the same thing. Project facts in memory means every conversation about dinner knows about your Q3 pipeline. Personal preferences in a project means you repeat them in the next project. Sort first.</p>\n",
-    "exampleHtml": "<p>My memory holds who I am and how I like work done: my career with dates, which email to use for which business, the &quot;hundreds of partnerships&quot; wording, the em-dash ban, the rule that anything in my voice gets the humanize pass. Every one of those started as a correction in a conversation and crossed over when I&#39;d said it more than once in more than one room.</p>\n<p>I keep two kinds of things out. Anything a stranger shouldn&#39;t see on a screen, and anything about other people that&#39;s theirs. Memory is for durable, shareable facts about how I work. It isn&#39;t a diary.</p>\n<p>My projects are rooms with furniture. The book project&#39;s instructions say what the book is for and who it&#39;s for; its files are the outline, my notes on my own history, the glossary, and the skills that draft the chapters. Open a conversation inside it and the tool already knows all of that. The company has a different project with different furniture. When something from one belongs in the other, I carry it across on purpose, as a file. The web service I&#39;m building got its own project the day it stopped being a book idea, and the handoff was three files and four minutes.</p>\n",
+    "whyHtml": "<p>A conversation is a room, and nothing follows you out unless you&#39;ve set up something to carry it. Three things can. Memory carries what&#39;s true about you. A project carries what&#39;s true about one body of work. A skill carries how to do one kind of task. This page sets up the first two. Part B sets up the third.</p>\n<p>Three sorting questions are the whole method. Is this true about me regardless of what I&#39;m working on? Memory. Is this about one body of work, and only that? The project. Is this about how to do one kind of task, wherever it comes up? A skill. Ask those three questions every time you&#39;re about to tell the tool something you&#39;ll want it to keep, and you&#39;ll never explain yourself from scratch again.</p>\n<p>The trap is treating them as the same thing. Project facts in memory means every conversation about dinner knows about your Q3 pipeline. Personal preferences in a project means you repeat them in the next project. Sort first.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> Say you manage a sales team of eight. Your memory holds who you are and how you like work done: your role, that you want the number before the narrative, that you never want bullet points in anything going to your VP, that every deal gets a date. Each of those started as a correction in a conversation and crossed over when you&#39;d said it more than once in more than one room.</p>\n<p>You keep two kinds of things out. Anything a stranger shouldn&#39;t see on a screen, and anything about other people that&#39;s theirs. Memory is for durable, shareable facts about how you work. It isn&#39;t a diary.</p>\n<p>Your projects are rooms with furniture. The pipeline project&#39;s instructions say what the weekly summary is for and who reads it; its files are the current pipeline export, the territory map, and the skill that drafts the Monday summary. Open a conversation inside it and the tool already knows all of that. The hiring project has different furniture. When something from one belongs in the other, you carry it across on purpose, as a file.</p>\n",
     "yourTurn": [
       {
         "type": "item",
         "n": 1,
         "question": "Check memory",
-        "html": "<p><strong>Check memory.</strong> Open Settings &gt; Memory. Is &quot;Generate memory from chats&quot; on? Read what it holds under Topics. Write down one thing it has right and one thing it has wrong or missing. (Two lines.)</p>\n",
+        "html": "<p><strong>Check memory.</strong> Open Settings &gt; Your Claude. Is memory on? Select &quot;Manage&quot; next to &quot;Your memory&quot; and read what it holds under Topics. Write down one thing it has right and one thing it has wrong or missing. (Two lines.)</p>\n",
         "expected": "Two lines",
         "fields": [
           {
@@ -395,7 +399,7 @@
         ]
       }
     ],
-    "howToHtml": "<p><em>How to: memory and projects, as of October 20, 2026, from the Claude help center. Memory: Settings &gt; Memory, toggle &quot;Generate memory from chats.&quot; Everything it remembers is listed under Topics; select one to read, edit, or delete it, or tell the tool in a chat to remember, change, or forget something and it applies from the next conversation. Sensitive topics (health, politics) are excluded unless you turn on &quot;Include sensitive topics in memory.&quot; To keep one chat out of memory, click &quot;+&quot; in a new chat and turn off Memory before the first message, or use the ghost icon for an incognito chat. Turning memory off offers &quot;Pause memory&quot; (keeps what&#39;s saved, stops using it) or &quot;Reset memory&quot; (deletes everything, including project memories, permanently). Memory is on by default for Free, Pro, and Max; on Team and Enterprise an owner must enable it first. Each project has its own memory plus your account memory; &quot;Use account memory&quot; on the project page turns the account part off for that project. Projects: Projects in the left sidebar, &quot;+ New Project,&quot; name and describe it, then &quot;Set project instructions&quot; and the &quot;+&quot; under project knowledge to add files; any chat started inside the project uses both. Free accounts get five projects; paid plans, unlimited. Past-chat search (&quot;Search and reference chats&quot; under Settings &gt; Memory) is on paid plans only.</em></p>\n",
+    "howToHtml": "<p><em>How to: memory and projects, as of October 26, 2026, from the Claude help center. Memory: Settings &gt; Your Claude (older layout: Settings &gt; Memory, &quot;Generate memory from chats&quot;). Everything it remembers is listed under Topics (Settings &gt; Your Claude &gt; Manage); select one to read, edit, or delete it, or tell the tool in a chat to remember, change, or forget something. Sensitive topics are excluded unless you turn on &quot;Include sensitive topics in memory.&quot; To keep one chat out of memory, click &quot;+&quot; in a new chat and turn off Memory before the first message, or use an incognito chat. Turning memory off offers a pause (keeps what&#39;s saved, stops adding) or &quot;Reset memory&quot; (deletes everything, including project memories, permanently). Memory is on by default for Free, Pro, and Max; on Team and Enterprise an owner must enable it first. Each project has its own memory plus your account memory; &quot;Use account memory&quot; on the project page turns the account part off for that project. Projects: Projects in the left sidebar, &quot;+ New Project,&quot; name and describe it, then set project instructions and add files under project knowledge; any chat started inside the project uses both. Free accounts get five projects; paid plans, unlimited. Past-chat search (&quot;Search and reference chats&quot; under Settings &gt; Your Claude) is on paid plans only.</em></p>\n",
     "compoundsHtml": "<p>The fact you gave memory in question 2 is the first line of Worksheet A1, and the project you made in question 4 is where every Part B skill gets tested. From here on, each conversation starts closer to where the last one ended, and the explaining you did this week is explaining you won&#39;t do next week.</p>\n",
     "draft": false,
     "source": "content/workbook/part0/ws04-organizing-conversations-projects-memory.md"
@@ -408,8 +412,9 @@
     "promiseText": "Edit, save, and share one thing the tool built for you, and know where a skill lives once you've written one, with the no-setup fallback that works everywhere. Twenty minutes.",
     "promiseHtml": "<p>Edit, save, and share one thing the tool built for you, and know where a skill lives once you&#39;ve written one, with the no-setup fallback that works everywhere. Twenty minutes.</p>\n",
     "minutes": 20,
-    "whyHtml": "<p>When the tool makes something substantial (a document, a page, a deck, a small tool), it doesn&#39;t put it in the chat. It opens it in a panel beside the chat, saves it, and lets you come back to it, change it, and share it. The help pages call these artifacts. The book mostly calls them &quot;the thing it built,&quot; because that&#39;s what they are.</p>\n<p>Two habits here. First: anything you&#39;ll keep, you edit in the panel and export, because the rendered file is what a reader sees and the chat&#39;s description of it is not (Chapter 10 learned this the hard way). Second: a skill you&#39;ve written (Part B) has to live somewhere the tool will load it. There&#39;s a proper place, and there&#39;s a fallback that works on every plan with no setup, and you should know both, because the proper place has moved more than once and will again.</p>\n",
-    "exampleHtml": "<p>The investor deck came back as an artifact: fourteen slides in a panel beside the chat, rebuilt twenty-three times, each version rendered so I could read it as the investor would. I exported the PDF to send and kept the PowerPoint as the source. Both are in the Artifacts tab if I need them again, and I&#39;ve gone back to that tab for a deck more than once.</p>\n<p>My skills live in two places. The saved version is uploaded under Customize &gt; Skills, where the tool loads it whenever I name the task. The source is the .md file in my skills folder on my own computer, and that&#39;s the one I edit, because the file is mine and the upload is a copy. When a skill changes, I upload the new version and the old one is gone. Before I had saved skills, I pasted the instructions at the top of every conversation, which is slower and works exactly as well. If the upload button moves tomorrow, pasting still works.</p>\n",
+    "whyHtml": "<p>When the tool makes something substantial (a document, a page, a deck, a small tool), it doesn&#39;t put it in the chat. It opens it in a panel beside the chat, saves it, and lets you come back to it, change it, and share it. The help pages call these artifacts. Most people call them &quot;the thing it built,&quot; because that&#39;s what they are.</p>\n<p>Two habits here. First: anything you&#39;ll keep, you edit in the panel and export, because the rendered file is what a reader sees and the chat&#39;s description of it is not. Second: a skill you&#39;ve written (Part B) has to live somewhere the tool will load it. There&#39;s a proper place, and there&#39;s a fallback that works on every plan with no setup, and you should know both, because the proper place has moved more than once and will again.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> Say you run a two-person accounting practice and you&#39;ve asked for a client-facing one-pager on a rule change. It comes back as an artifact: a document in a panel beside the chat. You fix two sentences directly in the panel, then export the PDF to send and keep the Word file as the source. Both are in the Artifacts tab if you need them next quarter, and you will, because the same rule comes up with every new client.</p>\n<p>Your skills live in two places. The saved version is uploaded under Customize &gt; Skills, where the tool loads it whenever you name the task. The source is the .md file in your skills folder on your own computer, and that&#39;s the one you edit, because the file is yours and the upload is a copy. When a skill changes, you upload the new version and the old one is gone. Before you had saved skills, you pasted the instructions at the top of every conversation, which is slower and works exactly as well. If the upload button moves tomorrow, pasting still works.</p>\n",
     "yourTurn": [
       {
         "type": "item",
@@ -480,8 +485,7 @@
         "type": "item",
         "n": 6,
         "question": "Your rule",
-        "html": "<p><strong>Your rule.</strong> Finish: &quot;Anything I&#39;ll keep, I ______ before I send it.&quot; (The answer is in Chapter 10.)</p>\n",
-        "expected": "The answer is in Chapter 10",
+        "html": "<p><strong>Your rule.</strong> Finish: &quot;Anything I&#39;ll keep, I ______ before I send it.&quot;</p>\n",
         "fields": [
           {
             "key": "your-rule",
@@ -490,8 +494,8 @@
         ]
       }
     ],
-    "howToHtml": "<p><em>How to: artifacts and skills, as of October 20, 2026, from the Claude help center. Artifacts open beside the chat and are saved to the Artifacts tab in the sidebar; they start private. Document, deck, and design artifacts have an Export control (documents to Word, PDF, Markdown, or Google Docs; decks to PowerPoint or PDF; designs to zip, PDF, PowerPoint, or HTML); older-style artifacts have view, copy, and download controls at the top of the panel. In a document, highlight text and choose &quot;Edit with Claude&quot; to change a passage. Creating artifacts requires &quot;Code execution and file creation&quot; on under Settings &gt; Capabilities; it&#39;s available on every plan, with the template kinds (Docs, Slides, Design) on paid plans. Skills: put your <code>SKILL.md</code> in a folder named for the skill, zip the folder, go to Customize &gt; Skills, click &quot;+&quot;, then &quot;+ Create skill,&quot; then &quot;Upload a skill.&quot; Each skill has an on/off toggle there. Skills are available on every plan and need code execution turned on. If an upload fails, the usual reasons are a folder name that doesn&#39;t match the skill name, a missing <code>SKILL.md</code>, or an odd character in the name. The fallback, pasting the file at the top of a conversation, needs nothing.</em></p>\n",
-    "compoundsHtml": "<p>You now have the two moves every later worksheet assumes: get the rendered thing out before you ship it, and put a skill where the tool loads it without being asked. Part B&#39;s first worksheet ends with you uploading a real skill using exactly step 5, and Chapter 11&#39;s re-test routine assumes you know where your skills live.</p>\n",
+    "howToHtml": "<p><em>How to: artifacts and skills, as of October 26, 2026, from the Claude help center. Artifacts open beside the chat and are saved to the Artifacts tab in the sidebar; they start private; they&#39;re available on every plan. Document, deck, and design artifacts have an Export control (documents to Word, PDF, Markdown, or Google Docs; decks to PowerPoint or PDF; designs to zip, PDF, PowerPoint, or HTML). In a document, highlight text and choose &quot;Edit with Claude&quot; to change a passage. Creating artifacts requires &quot;Code execution and file creation&quot; on under Settings &gt; Capabilities. Skills: put your <code>SKILL.md</code> in a folder named for the skill, zip the folder, go to Customize &gt; Skills, click &quot;+&quot;, then &quot;+ Create skill,&quot; then &quot;Upload a skill.&quot; Each skill has an on/off toggle there. Skills upload on every plan and need code execution turned on. If an upload fails, the usual reasons are a folder name that doesn&#39;t match the skill name, a missing <code>SKILL.md</code>, or an odd character in the name. The fallback, pasting the file at the top of a conversation, needs nothing.</em></p>\n",
+    "compoundsHtml": "<p>You now have the two moves every later worksheet assumes: get the rendered thing out before you ship it, and put a skill where the tool loads it without being asked. Part B&#39;s first worksheet ends with you uploading a real skill using exactly step 5, and the re-test routine in Worksheet 0.7 assumes you know where your skills live.</p>\n",
     "draft": false,
     "source": "content/workbook/part0/ws05-artifacts-and-outputs.md"
   },
@@ -503,8 +507,9 @@
     "promiseText": "A dated table of the five settings that change what the tool does for you, checked once so you stop wondering why it behaved differently today. Ten minutes.",
     "promiseHtml": "<p>A dated table of the five settings that change what the tool does for you, checked once so you stop wondering why it behaved differently today. Ten minutes.</p>\n",
     "minutes": 10,
-    "whyHtml": "<p>Most of what people blame on the tool is a setting. It didn&#39;t search the web because search was off for that chat. It didn&#39;t remember because memory was paused. It gave a shallower answer because a faster model was selected. It couldn&#39;t make a file because file creation wasn&#39;t turned on. None of those is the tool being bad at the job. All of them are a toggle.</p>\n<p>Five settings account for nearly every &quot;it worked yesterday&quot; I&#39;ve heard, so this page is a table and a check. Go through it once. Then, when something behaves oddly, come back here before you blame yourself or the machine.</p>\n<p>Chapter 11 warned that these move. The table has a date on it. If the date is old, the names may have changed; the setting itself almost certainly still exists, so ask the tool where it is now.</p>\n",
-    "exampleHtml": "<p>The setting that cost me the most was web search, early on. I&#39;d ask for a figure, get a confident number, and only later work out that search had been off and the number came from the model&#39;s memory of the world, with the world itself never consulted. Now I check the slider when a fact matters, and Chapter 6&#39;s pass assumes search is on.</p>\n<p>The one I changed most recently was model choice. For a year I ran the strongest model for everything. I still do for judgment work: drafting, arguing, anything with a reader who matters. For routine summaries I&#39;ve moved down a tier, because the wait and the usage limit started to cost me more than the difference in quality. The right setting changes with the job in front of you.</p>\n",
+    "whyHtml": "<p>Most of what people blame on the tool is a setting. It didn&#39;t search the web because it decided not to, or search was off for that chat. It didn&#39;t remember because memory was paused. It gave a shallower answer because a faster model was selected. It couldn&#39;t make a file because file creation wasn&#39;t turned on. None of those is the tool being bad at the job. All of them are a switch.</p>\n<p>Five settings account for nearly every &quot;it worked yesterday,&quot; so this page is a table and a check. Go through it once. Then, when something behaves oddly, come back here before you blame yourself or the machine.</p>\n<p>These move. The table has a date on it. If the date is old, the names may have changed; the setting itself almost certainly still exists, so check the Where things live page, or ask the tool where it is now.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> Say you&#39;re a first-year founder and the setting that cost you the most was web search. You&#39;d ask for a market figure, get a confident number, and only later work out that the number came from the model&#39;s memory of the world, with the world itself never consulted. Now, when a fact matters, you ask it outright to search and to cite, and the fact pass in Part B assumes it did.</p>\n<p>The one you changed most recently was model choice. For three months you ran the strongest model for everything. You still do for judgment work: the pitch, the pricing argument, anything with a reader who matters. For routine summaries you&#39;ve moved down a tier, because the wait and the usage limit started to cost more than the difference in quality. The right setting changes with the job in front of you.</p>\n",
     "yourTurn": [
       {
         "type": "md",
@@ -517,7 +522,7 @@
         "header": [
           "Setting",
           "What it changes",
-          "Where it was on October 20, 2026",
+          "Where it was on October 26, 2026",
           "My choice"
         ],
         "blankCol": 3,
@@ -525,8 +530,8 @@
           {
             "cells": [
               "Web search",
-              "Whether it looks things up live, with citations, or answers from what it learned in training. On when facts matter.",
-              "The slider icon in the chat box, &quot;Web search&quot; toggle; per chat",
+              "Whether it looks things up live, with citations, or answers from what it learned in training",
+              "In the current layout there&#39;s no toggle; it searches when it judges that useful, so say &quot;search the web&quot; when a fact matters. Older layout: &quot;+&quot; in the chat box, &quot;Web search.&quot; Team and Enterprise: an owner enables it first",
               ""
             ],
             "field": {
@@ -539,7 +544,7 @@
             "cells": [
               "Memory",
               "Whether it keeps and uses what it knows about you between conversations",
-              "Settings &gt; Memory, &quot;Generate memory from chats&quot;; pause or reset from the same toggle",
+              "Settings &gt; Your Claude; pause or reset from the same place; &quot;Manage&quot; shows what it holds",
               ""
             ],
             "field": {
@@ -552,7 +557,7 @@
             "cells": [
               "Past-chat search",
               "Whether it can look back through your earlier conversations when you ask",
-              "Settings &gt; Memory, &quot;Search and reference chats&quot; (paid plans)",
+              "Settings &gt; Your Claude, &quot;Search and reference chats&quot; (paid plans)",
               ""
             ],
             "field": {
@@ -565,7 +570,7 @@
             "cells": [
               "Model",
               "Which model answers: the strongest for judgment, a faster one for routine work",
-              "The model picker in the chat box; which models you see depends on plan",
+              "The model name next to the send button; click it to change; &quot;More models&quot; shows the rest",
               ""
             ],
             "field": {
@@ -610,8 +615,8 @@
         "type": "item",
         "n": 2,
         "question": "Your check",
-        "html": "<p><strong>Your check.</strong> When an answer surprises you, which row will you look at first? (One line. Mine is web search.)</p>\n",
-        "expected": "One line. Mine is web search",
+        "html": "<p><strong>Your check.</strong> When an answer surprises you, which row will you look at first? (One line.)</p>\n",
+        "expected": "One line",
         "fields": [
           {
             "key": "your-check",
@@ -620,8 +625,8 @@
         ]
       }
     ],
-    "howToHtml": "<p><em>How to: settings, as of October 20, 2026, from the Claude help center and claude.com. Web search is per chat and counts against usage on free accounts. Memory is on by default on Free, Pro, and Max and must be enabled by an owner on Team and Enterprise. Past-chat search is on paid plans. Models by plan, per claude.com/pricing: Free has Sonnet and Haiku; Pro adds Opus and the Fable model through usage credits; Max and Team premium seats include Fable at a share of weekly limits. Where preferences live: Settings &gt; Memory for what it remembers about you; a project&#39;s instructions for how it behaves in that project; your skills for how it does a task. All three are the places Worksheet 0.4 sorted things into.</em></p>\n",
-    "compoundsHtml": "<p>You&#39;ve turned five mysteries into five known switches. From now on, a strange answer costs you thirty seconds of checking instead of an afternoon of doubt, and when Chapter 11&#39;s next change arrives, you&#39;ll know which switch to look for instead of relearning the tool.</p>\n",
+    "howToHtml": "<p><em>How to: settings, as of October 26, 2026, from the Claude help center and claude.com. Web search counts against usage on free accounts. Memory is on by default on Free, Pro, and Max and must be enabled by an owner on Team and Enterprise. Past-chat search is on paid plans. Models by plan, per claude.com/pricing: Free has Sonnet and Haiku; Pro adds Opus and the Fable model through usage credits; Max and Team premium seats include Fable at a share of weekly limits. Effort and thinking are separate settings under the model name. Where preferences live: Settings &gt; Your Claude for what it remembers about you; a project&#39;s instructions for how it behaves in that project; your skills for how it does a task. All three are the places Worksheet 0.4 sorted things into.</em></p>\n",
+    "compoundsHtml": "<p>You&#39;ve turned five mysteries into five known switches. From now on, a strange answer costs you thirty seconds of checking instead of an afternoon of doubt, and when the next change arrives, you&#39;ll know which switch to look for instead of relearning the tool.</p>\n",
     "draft": false,
     "source": "content/workbook/part0/ws06-five-settings-worth-knowing.md"
   },
@@ -633,14 +638,15 @@
     "promiseText": "A dated table of the current models and which to use for what, a one-page change log you'll keep, and the hour-long re-test routine for the day a new model lands. Thirty minutes to set up; an hour each time it's needed.",
     "promiseHtml": "<p>A dated table of the current models and which to use for what, a one-page change log you&#39;ll keep, and the hour-long re-test routine for the day a new model lands. Thirty minutes to set up; an hour each time it&#39;s needed.</p>\n",
     "minutes": 30,
-    "whyHtml": "<p>Chapter 11 said the platform moves. This is the page that keeps you standing when it does.</p>\n<p>Three things on it. A table of today&#39;s models, dated, so you know what you&#39;re choosing between and which to pick for which work. A change log, which is a half-page file you add a line to whenever the tool changes under you. And the re-test routine: the hour you spend after a release running your most-used skills against a real task and comparing to the last thing you approved, so drift gets caught by you, on purpose, instead of by a reader, by accident.</p>\n<p>None of this is technical. The hardest part is remembering to do it, which is why the log has a date column and the first line in it is today.</p>\n",
-    "exampleHtml": "<p>My log started after the first time a release broke a skill without telling me. My column skill, tuned over months, started producing longer paragraphs and a phrase I&#39;d never had to ban before. It took me a day to work out that the model had changed and my file hadn&#39;t. The log is three lines per release now: date, model, what I changed. I&#39;ve been glad of it every time.</p>\n<p>The re-test is an hour. Three skills (column, voice pass, deck), one real task each, compare to the last version I approved. If something drifted, fix the file, not the draft. Read the release notes for anything about writing style or tools. Log it. Since the Logitech years, when every operating-system release meant re-testing every product, I haven&#39;t found a better routine than test before, test after, write down what moved.</p>\n<p>Which model for what, as I do it today: the strongest for anything with a reader who matters or a judgment call in it; a faster tier for summaries, sorting, and first passes I&#39;ll check anyway. A good brief outranks the tier. The weak model with four hundred words of context beats the strong one with four.</p>\n",
+    "whyHtml": "<p>The platform moves. This is the page that keeps you standing when it does.</p>\n<p>Three things on it. A table of today&#39;s models, dated, so you know what you&#39;re choosing between and which to pick for which work. A change log, which is a half-page file you add a line to whenever the tool changes under you. And the re-test routine: the hour you spend after a release running your most-used skills against a real task and comparing to the last thing you approved, so drift gets caught by you, on purpose, instead of by a reader, by accident.</p>\n<p>None of this is technical. The hardest part is remembering to do it, which is why the log has a date column and the first line in it is today.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> Say you teach high school and your log started after the first time a release broke a skill without telling you. The parent-update skill, tuned over a semester, started producing longer paragraphs and a cheerful opener you&#39;d never had to ban before. It took a day to work out that the model had changed and your file hadn&#39;t. The log is three lines per release now: date, model, what you changed.</p>\n<p>The re-test is an hour. Three skills (parent update, lesson plan, department memo), one real task each, compared to the last version you approved. If something drifted, fix the file, not the draft. Read the release notes for anything about writing style or tools. Log it.</p>\n<p>Which model for what: the strongest for anything with a reader who matters or a judgment call in it; a faster tier for summaries, sorting, and first passes you&#39;ll check anyway. A good brief outranks the tier. The weaker model with four hundred words of context beats the stronger one with four.</p>\n",
     "yourTurn": [
       {
         "type": "item",
         "n": 1,
         "question": "Copy the model table",
-        "html": "<p><strong>Copy the model table</strong> into your notes folder as <code>models.md</code>, with today&#39;s date at the top. Cross out rows as they retire; add rows as they arrive.</p>\n<table>\n<thead>\n<tr>\n<th>Model (as of October 20, 2026)</th>\n<th>What Anthropic calls it</th>\n<th>What I use it for</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Fable 5.1</td>\n<td>&quot;Next generation intelligence for long-running agents&quot;</td>\n<td>Judgment work, long documents, hard arguments</td>\n</tr>\n<tr>\n<td>Opus 5.5</td>\n<td>&quot;Daily driver for agentic coding and enterprise work&quot;</td>\n<td>Drafting and building; the default on paid plans</td>\n</tr>\n<tr>\n<td>Sonnet 5.5</td>\n<td>&quot;High-performance model for coding and agents&quot;</td>\n<td>Routine drafts, summaries, sorting</td>\n</tr>\n<tr>\n<td>Haiku 5.5</td>\n<td>&quot;Fastest, most cost-efficient model&quot;</td>\n<td>Quick questions, bulk work I&#39;ll check</td>\n</tr>\n</tbody></table>\n<p>Write your own third column. (Four lines.)</p>\n",
+        "html": "<p><strong>Copy the model table</strong> into your notes folder as <code>models.md</code>, with today&#39;s date at the top. Cross out rows as they retire; add rows as they arrive.</p>\n<table>\n<thead>\n<tr>\n<th>Model (as of October 26, 2026)</th>\n<th>What Anthropic calls it</th>\n<th>What I use it for</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Fable 5.1</td>\n<td>&quot;Next generation intelligence for long-running agents&quot;</td>\n<td>Judgment work, long documents, hard arguments</td>\n</tr>\n<tr>\n<td>Opus 5.5</td>\n<td>&quot;Daily driver for agentic coding and enterprise work&quot;</td>\n<td>Drafting and building; the default on paid plans</td>\n</tr>\n<tr>\n<td>Sonnet 5.5</td>\n<td>&quot;High-performance model for coding and agents&quot;</td>\n<td>Routine drafts, summaries, sorting</td>\n</tr>\n<tr>\n<td>Haiku 5.5</td>\n<td>&quot;Fastest, most cost-efficient model&quot;</td>\n<td>Quick questions, bulk work I&#39;ll check</td>\n</tr>\n</tbody></table>\n<p>Write your own third column. (Four lines.)</p>\n",
         "expected": "Four lines",
         "fields": [
           {
@@ -654,7 +660,7 @@
         "type": "item",
         "n": 2,
         "question": "Start your change log",
-        "html": "<p><strong>Start your change log.</strong> Create <code>logs/platform-changes.md</code> in your folder with this header and one line for today:</p>\n<pre><code># Platform changes\n| Date | What changed | What I did about it |\n|---|---|---|\n| 2026-10-20 | Started this log; models as of today in models.md | Nothing yet |\n</code></pre>\n",
+        "html": "<p><strong>Start your change log.</strong> Create <code>logs/platform-changes.md</code> in your folder with this header and one line for today:</p>\n<pre><code># Platform changes\n| Date | What changed | What I did about it |\n|---|---|---|\n| 2026-10-26 | Started this log; models as of today in models.md | Nothing yet |\n</code></pre>\n",
         "fields": [
           {
             "key": "start-your-change-log",
@@ -724,7 +730,7 @@
         "type": "item",
         "n": 5,
         "question": "Set a trigger",
-        "html": "<p><strong>Set a trigger.</strong> How will you find out a new model has landed? (The model picker changes; the tool often announces it; a colleague mentions it.) Write the one you&#39;ll rely on. (One line.)</p>\n",
+        "html": "<p><strong>Set a trigger.</strong> How will you find out a new model has landed? (The name next to the send button changes; the tool often announces it; this site&#39;s What changed page.) Write the one you&#39;ll rely on. (One line.)</p>\n",
         "expected": "One line",
         "fields": [
           {
@@ -734,7 +740,7 @@
         ]
       }
     ],
-    "howToHtml": "<p><em>How to: models and releases, as of October 20, 2026, from claude.com/pricing. Four current models are offered: Fable 5.1, Opus 5.5, Sonnet 5.5, and Haiku 5.5; older versions remain listed as legacy for a time. Free accounts use Sonnet and Haiku; Pro adds Opus and Fable through usage credits; Max and Team premium seats include Fable at a share of weekly limits. A new release usually appears in the model picker in the chat box and in Anthropic&#39;s announcements; the previous model stays available for a while and then retires. A separate Mythos tier exists and is not generally available. Treat every name in this sidebar as provisional; the table in question 1 is yours to keep current.</em></p>\n",
+    "howToHtml": "<p><em>How to: models and releases, as of October 26, 2026, from claude.com/pricing and the Claude release notes. Four current models: Fable 5.1 (Sep 1, 2026), Opus 5.5 (Sep 22), Sonnet 5.5 (Sep 28), and Haiku 5.5 (Oct 7); older versions remain listed for a time. Free accounts use Sonnet and Haiku; Pro adds Opus and Fable through usage credits; Max and Team premium seats include Fable at a share of weekly limits. The model you&#39;re on shows next to the send button; a new release appears there and in Anthropic&#39;s announcements; the previous model stays available for a while and then retires. A separate Mythos tier exists and is not generally available. Treat every name in this sidebar as provisional; the table in question 1 is yours to keep current, and this site&#39;s What changed page carries the re-test for each release.</em></p>\n",
     "compoundsHtml": "<p>Every release after this one costs you an hour instead of a lost week, and the log turns each change into a line you can read back when a draft feels off. Your skills (Part B) survive because you re-test them; your voice (Part A) stays yours because drift gets caught the week it happens, not the month after.</p>\n",
     "draft": false,
     "source": "content/workbook/part0/ws07-models-and-platform-changes.md"
@@ -747,8 +753,9 @@
     "promiseText": "The 150 words you give the AI once, so every conversation starts knowing who you are, what you know, and what you're working on. Thirty minutes.",
     "promiseHtml": "<p>The 150 words you give the AI once, so every conversation starts knowing who you are, what you know, and what you&#39;re working on. Thirty minutes.</p>\n",
     "minutes": 30,
-    "whyHtml": "<p>Chapter 1 said the quality of the answer is set by what you give before you ask. The first thing to give is you. Not a résumé. The two or three things about your experience that should change how the tool reasons with you, what you&#39;re trying to do, and what you&#39;d want a smart new colleague to know on day one.</p>\n<p>I spent a year getting generic answers because I never said who I was. The morning that changed, in Chapter 1, I typed four hundred words before asking anything, and the first hundred were about me: a coffee company at 23, hundreds of store openings, what retail labor costs. The tool stopped explaining retail to me and started reasoning with me. That paragraph is the one you&#39;ll write here, and Chapter 12 showed where it lives so you never type it again.</p>\n<p>Keep it to what you&#39;d be comfortable with a colleague reading on a screen. This is the durable, shareable version of you. It isn&#39;t a diary, and it isn&#39;t the place for anything you&#39;d keep out of a work email.</p>\n",
-    "exampleHtml": "<p>Here&#39;s mine, as it stands today. It&#39;s changed a dozen times and it&#39;ll change again.</p>\n<blockquote>\n<p>I&#39;m Mark Anderson. I run revenue at a security company that builds trust infrastructure for AI agents, and I run a small consultancy on the side. I&#39;ve spent thirty years building and growing companies: a coffee company I started at 23, a big coffee chain&#39;s expansion from under 300 stores to over 1,000, an internet bank in 1997, then hardware and software companies where I built hundreds of partnerships, including one with Google that put our touch technology into a product they shipped. I know go-to-market, partnerships, and what it costs to open a location or sign an enterprise deal. I&#39;m working on two books about using AI and on a web service that grows out of them. I think in facts and reasonable conclusions, I&#39;d rather you be direct and let me decide than lay out options and wait, and I&#39;ll tell you when you&#39;re wrong. <span class=\"bracket\">[MARK: tighten this to the version you&#39;d actually hand it.]</span></p>\n</blockquote>\n<p>What&#39;s in it: who I am, in one line; the experience that should change how it reasons (the operator&#39;s view of retail, partnerships, enterprise sales); what I&#39;m working on now; how to work with me. What&#39;s not in it: anything about money, health, family, or other people.</p>\n",
+    "whyHtml": "<p>The quality of the answer is set by what you give before you ask. The first thing to give is you. Not a résumé. The two or three things about your experience that should change how the tool reasons with you, what you&#39;re trying to do, and what you&#39;d want a smart new colleague to know on day one.</p>\n<p>Most people spend their first year getting generic answers because they never say who they are. The tool explains their own field to them, politely, at length. The morning that changes is the morning they type a hundred words about themselves before asking anything, and the tool stops explaining and starts reasoning with them. That paragraph is the one you&#39;ll write here, and Worksheet 0.4 showed where it lives so you never type it again.</p>\n<p>Keep it to what you&#39;d be comfortable with a colleague reading on a screen. This is the durable, shareable version of you. It isn&#39;t a diary, and it isn&#39;t the place for anything you&#39;d keep out of a work email.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> A solo consultant&#39;s paragraph might read like this. It will change a dozen times, and that&#39;s fine.</p>\n<blockquote>\n<p>I&#39;m an independent consultant. I help mid-sized logistics companies fix their pricing and their sales process, and I&#39;ve done it for eleven years after a decade running operations inside two of them. I know what a freight contract looks like from both sides, what a bad quote costs, and why most pricing projects fail in month three. I&#39;m working on two client proposals and a short course I teach twice a year. Be direct and let me decide; give me one recommendation and the reasoning, not a menu. Push back when I&#39;m wrong, with the fact that shows it. Never use bullet points in anything I&#39;ll send.</p>\n</blockquote>\n<p>What&#39;s in it: who they are, in one line; the experience that should change how the tool reasons (both sides of a freight contract, why pricing projects fail); what they&#39;re working on now; how to work with them. What&#39;s not in it: anything about money, health, family, or other people.</p>\n",
     "yourTurn": [
       {
         "type": "md",
@@ -839,9 +846,9 @@
         ]
       }
     ],
-    "howToHtml": "<p><em>How to: where the paragraph lives, as of October 20, 2026. Memory (Settings &gt; Memory, &quot;Generate memory from chats&quot;) carries it between conversations on Free, Pro, and Max; on Team and Enterprise an owner enables memory first. You can also paste it at the top of any conversation, which works on every plan with no setup. If you keep the paragraph in a project&#39;s instructions instead, it applies only inside that project; memory is the right home for the parts that are true everywhere. Worksheet 0.4 has the details.</em></p>\n",
+    "howToHtml": "<p><em>How to: where the paragraph lives, as of October 26, 2026. Memory (Settings &gt; Your Claude) carries it between conversations on Free, Pro, and Max; on Team and Enterprise an owner enables memory first. You can also paste it at the top of any conversation, which works on every plan with no setup. If you keep the paragraph in a project&#39;s instructions instead, it applies only inside that project; memory is the right home for the parts that are true everywhere. Worksheet 0.4 has the details.</em></p>\n",
     "compoundsHtml": "<p>This paragraph is the first hundred words of every brief you&#39;ll ever write, and you just wrote it for the last time. Worksheet A2 builds the rest of the brief on top of it, and A3 refines the &quot;how to work with me&quot; line into ten.</p>\n",
-    "draft": true,
+    "draft": false,
     "source": "content/workbook/partA/wsA1-the-paragraph-about-you.md"
   },
   {
@@ -852,8 +859,9 @@
     "promiseText": "A five-part frame you fill in before any real task, with one real brief completed and tested. Forty minutes.",
     "promiseHtml": "<p>A five-part frame you fill in before any real task, with one real brief completed and tested. Forty minutes.</p>\n",
     "minutes": 40,
-    "whyHtml": "<p>Four hundred words beats four. Chapter 1 said it and every chapter after it depended on it. The difference between the generic retail report I got in my first year and the business plan I got a year later wasn&#39;t the tool. It was the brief: who I was, who the work was for, what I was actually trying to do, what I&#39;d already tried, and what good looked like. Then the ask, in one sentence.</p>\n<p>The frame is the same every time, which is why it belongs on a page you can copy. After a few weeks you won&#39;t need the page; the shape will be in your hands. Until then, fill it in.</p>\n<p>One thing to expect. The first answer to a good brief is often still the easy answer, the one the tool reaches for by habit. Chapter 1&#39;s second lesson was to stay in the conversation and correct it. The brief gets you a better first draft; the correction gets you the real one.</p>\n",
-    "exampleHtml": "<p>The brief that opened Chapter 1, condensed to its parts. The real one was four hundred words.</p>\n<p><strong>Who I am and what I know.</strong> Ran a coffee company at 23. Helped open hundreds of Starbucks stores. I know what retail labor costs, what a lease does to you, what a slow Tuesday looks like.</p>\n<p><strong>Who the work is for.</strong> Me, first, to decide whether this concept can work. Then a business partner who&#39;ll want the numbers.</p>\n<p><strong>What I&#39;m trying to do.</strong> Not &quot;research this market.&quot; Find out whether a model exists for this concept that doesn&#39;t break on retail&#39;s margins, and if so, what it looks like.</p>\n<p><strong>What I&#39;ve tried and what I don&#39;t want.</strong> I&#39;ve asked this before and got a generic report on why retail is hard. I know why retail is hard. Don&#39;t give me that.</p>\n<p><strong>What good looks like.</strong> A model that works on paper, with the math shown, and a note on every assumption I&#39;d have to prove.</p>\n<p><strong>The ask.</strong> Build me the unit economics for this concept, one location at a time, and show me where it breaks.</p>\n<p>Then, when it came back generic anyway: the capital-and-labor problem isn&#39;t a reason to stop, it&#39;s the thing to design around; assume one central kitchen and partner locations; rebuild the model on that. That correction was the whole morning.</p>\n",
+    "whyHtml": "<p>Four hundred words beats four. The difference between a generic report and a plan you can act on is almost never the tool. It&#39;s the brief: who you are, who the work is for, what you&#39;re actually trying to do, what you&#39;ve already tried, and what good looks like. Then the ask, in one sentence.</p>\n<p>The frame is the same every time, which is why it belongs on a page you can copy. After a few weeks you won&#39;t need the page; the shape will be in your hands. Until then, fill it in.</p>\n<p>One thing to expect. The first answer to a good brief is often still the easy answer, the one the tool reaches for by habit. The brief gets you a better first draft; staying in the conversation and correcting it gets you the real one.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> Say you run a two-person accounting practice and you&#39;re deciding whether to add a fixed-fee advisory package for your forty clients. The brief, condensed to its parts:</p>\n<p><strong>Who I am and what I know.</strong> Two-partner practice, forty clients, mostly owner-operated businesses under a few million in revenue. I know what our clients actually ask us between tax seasons, and that most of it goes unbilled.</p>\n<p><strong>Who the work is for.</strong> My partner, who&#39;s skeptical, and then our clients, who&#39;ll see the price.</p>\n<p><strong>What I&#39;m trying to do.</strong> Not &quot;research advisory services.&quot; Find out whether a fixed monthly package can be priced so that it pays for the hours we already give away, without losing the clients who&#39;d balk.</p>\n<p><strong>What I&#39;ve tried and what I don&#39;t want.</strong> I&#39;ve asked this before and got a generic piece on &quot;the shift to advisory.&quot; I know the shift. Don&#39;t give me that.</p>\n<p><strong>What good looks like.</strong> A price, a scope, the hours it assumes, and a note on every assumption I&#39;d have to check against our own time records.</p>\n<p><strong>The ask.</strong> Build me the economics of one package, for one client type, and show me where it breaks.</p>\n<p>Then, when it came back generic anyway: the unbilled hours aren&#39;t a reason this is hard, they&#39;re the thing the package is built on; assume we already do the work; price the work we do. That correction was the whole exercise.</p>\n",
     "yourTurn": [
       {
         "type": "md",
@@ -977,12 +985,13 @@
     "promiseText": "Ten preference lines (length, tone, format, what to skip, what to never say) ready to paste or save, so the tool's default manner becomes yours. Twenty minutes.",
     "promiseHtml": "<p>Ten preference lines (length, tone, format, what to skip, what to never say) ready to paste or save, so the tool&#39;s default manner becomes yours. Twenty minutes.</p>\n",
     "minutes": 20,
-    "whyHtml": "<p>Chapter 2 said to talk to it like a colleague, and the colleague should learn how you like to be talked to. Most people never say. They get the tool&#39;s default manner (eager, thorough, balanced, a little too pleased with itself) and either put up with it or quit. Ten lines fix it.</p>\n<p>The lines are about manner, not content. Length: short or complete. Format: prose or lists. Stance: a recommendation or the options. Pushback: argue with me or defer. And the phrases it never uses with you, because you&#39;ve heard them and they cost it your trust.</p>\n<p>Chapter 12 explained why these belong in memory and not in a project: they&#39;re true about you regardless of the work. Write them once, give them once, and every room you walk into already knows.</p>\n",
-    "exampleHtml": "<p>Mine, as they stand. Ten lines, and the first three do most of the work.</p>\n<ol>\n<li>Be direct and let me decide. One recommendation, then the reasoning. Options only if I ask.</li>\n<li>Lead with the deliverable or the answer. No restating my question, no preamble.</li>\n<li>Push back when I&#39;m wrong, with the fact that shows it. Don&#39;t soften it.</li>\n<li>Default to prose. Lists only when I&#39;ll scan or compare.</li>\n<li>Short when the point is short. Don&#39;t pad to look thorough.</li>\n<li>Plain words. &quot;Move money,&quot; not &quot;execute financial transactions.&quot;</li>\n<li>Never write &quot;I want to be honest with you&quot; or any sentence that announces sincerity. Say the thing.</li>\n<li>No em dashes, anywhere. Commas, periods, colons, parentheses.</li>\n<li>Never invent a memory, a quote, a meeting, or a number. Leave a bracket and ask.</li>\n<li>When you don&#39;t know, say so in one line and tell me what you&#39;d check.</li>\n</ol>\n<p>Every one of those started as a correction in a conversation. Number 7 was the first, and the story&#39;s in Chapter 2.</p>\n",
+    "whyHtml": "<p>Talk to it like a colleague, and the colleague should learn how you like to be talked to. Most people never say. They get the tool&#39;s default manner (eager, thorough, balanced, a little too pleased with itself) and either put up with it or quit. Ten lines fix it.</p>\n<p>The lines are about manner, not content. Length: short or complete. Format: prose or lists. Stance: a recommendation or the options. Pushback: argue with me or defer. And the phrases it never uses with you, because you&#39;ve heard them and they cost it your trust.</p>\n<p>These belong in memory and not in a project, because they&#39;re true about you regardless of the work. Write them once, give them once, and every room you walk into already knows.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> A sales manager&#39;s ten might look like this. The first three do most of the work.</p>\n<ol>\n<li>Be direct and let me decide. One recommendation, then the reasoning. Options only if I ask.</li>\n<li>Lead with the number or the answer. No restating my question, no preamble.</li>\n<li>Push back when I&#39;m wrong, with the fact that shows it. Don&#39;t soften it.</li>\n<li>Default to prose. Lists only when I&#39;ll scan or compare.</li>\n<li>Short when the point is short. Don&#39;t pad to look thorough.</li>\n<li>Plain words. &quot;Call the customer,&quot; not &quot;initiate outreach to the stakeholder.&quot;</li>\n<li>Never open with &quot;Great question&quot; or any sentence that compliments me or announces sincerity. Say the thing.</li>\n<li>No exclamation points, anywhere.</li>\n<li>Never invent a deal, a quote, a meeting, or a number. Leave a bracket and ask.</li>\n<li>When you don&#39;t know, say so in one line and tell me what you&#39;d check.</li>\n</ol>\n<p>Every one of those started as a correction in a conversation. Number 7 is usually the first one anybody writes.</p>\n",
     "yourTurn": [
       {
         "type": "md",
-        "html": "<p>Write your ten. Use mine as a shape, not a script; half of yours should be different from mine.</p>\n"
+        "html": "<p>Write your ten. Use the example as a shape, not a script; half of yours should be different.</p>\n"
       },
       {
         "type": "item",
@@ -1072,7 +1081,7 @@
         "type": "item",
         "n": 8,
         "question": "Punctuation or style",
-        "html": "<p><strong>Punctuation or style.</strong> One rule, if you have one (mine is em dashes).</p>\n",
+        "html": "<p><strong>Punctuation or style.</strong> One rule, if you have one.</p>\n",
         "fields": [
           {
             "key": "punctuation-or-style",
@@ -1109,7 +1118,7 @@
         "html": "<p>Then: paste all ten into a new conversation after &quot;Remember how I want you to talk to me:&quot; and, in a second new conversation, ask for something you&#39;d normally get a padded answer to. Did the manner change? Save the ten as <code>preferences.md</code> in your notes folder.</p>\n"
       }
     ],
-    "howToHtml": "<p><em>How to: as of October 20, 2026, these lines live best in memory (Settings &gt; Memory; Worksheet 0.4), where they apply in every conversation on Free, Pro, and Max. On every plan they also work pasted at the top of a conversation. Put them in a project&#39;s instructions only if you want a different manner for one body of work.</em></p>\n",
+    "howToHtml": "<p><em>How to: as of October 26, 2026, these lines live best in memory (Settings &gt; Your Claude; Worksheet 0.4), where they apply in every conversation on Free, Pro, and Max. On every plan they also work pasted at the top of a conversation. Put them in a project&#39;s instructions only if you want a different manner for one body of work.</em></p>\n",
     "compoundsHtml": "<p>Ten lines, given once, change every answer you&#39;ll get from now on. And they&#39;re the seed of your voice skill in Part B: when the tool writes as you, these are the first rules it follows, and the corrections log in A4 is where the next ten come from.</p>\n",
     "draft": false,
     "source": "content/workbook/partA/wsA3-how-you-want-it-to-talk-to-you.md"
@@ -1122,8 +1131,9 @@
     "promiseText": "A running list of the corrections that must stick, with the first five filled in and a rule for when a correction graduates into memory or a skill. Twenty minutes to start; two minutes a week after.",
     "promiseHtml": "<p>A running list of the corrections that must stick, with the first five filled in and a rule for when a correction graduates into memory or a skill. Twenty minutes to start; two minutes a week after.</p>\n",
     "minutes": 20,
-    "whyHtml": "<p>Chapter 2&#39;s whole argument fits in one line: every correction you keep is one you never make again. The keeping is the part people skip. They correct the tool in the moment, it holds for the conversation, and the next conversation makes the same mistake (Chapter 11 explained why: a conversation is a room). The log is where the correction goes so it survives the room.</p>\n<p>It&#39;s a file. One line per correction: what it did, what it should do instead, the date. Nothing else. After a month you&#39;ll have twenty lines and you&#39;ll notice three things about them: the same correction appears more than once, some of them are about you regardless of the task, and some are about one kind of work. That&#39;s the sorting from Chapter 12, and the log is where it happens.</p>\n<p>I didn&#39;t set out to build a list. I set out to fix one sentence in one draft. The list is longer now, and every item on it started as a second message.</p>\n",
-    "exampleHtml": "<p>The first entries in mine, from memory, with the dates approximate.</p>\n<table>\n<thead>\n<tr>\n<th>Date</th>\n<th>What it did</th>\n<th>What it should do</th>\n<th>Where it went</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Early 2026</td>\n<td>Wrote &quot;I want to be honest with you&quot; in a column draft</td>\n<td>Never. Say the thing.</td>\n<td>Memory, then the voice skill</td>\n</tr>\n<tr>\n<td>Spring 2026</td>\n<td>Implied I&#39;d worked at Google</td>\n<td>I built a partnership with Google, from RAPT. I never worked there.</td>\n<td>Memory, and every book skill</td>\n</tr>\n<tr>\n<td>Sept 2026</td>\n<td>Wrote &quot;100+ partnerships&quot;</td>\n<td>&quot;Hundreds of partnerships.&quot;</td>\n<td>Memory</td>\n</tr>\n<tr>\n<td>Sept 2026</td>\n<td>Em dashes in everything</td>\n<td>None. Commas, periods, colons, parentheses.</td>\n<td>Memory, voice skill, the linter</td>\n</tr>\n<tr>\n<td>Oct 2026</td>\n<td>&quot;Thirty years using computers&quot;</td>\n<td>&quot;Close to fifty years.&quot;</td>\n<td>The book skills</td>\n</tr>\n<tr>\n<td>Oct 2026</td>\n<td>Named an investor in a chapter</td>\n<td>No names of investors, prospects, customers, or colleagues. Roles only.</td>\n<td>The book skills</td>\n</tr>\n</tbody></table>\n<p>The last column is the point. A correction that&#39;s true about me everywhere went to memory. A correction about one kind of work went to that skill. The ones that cost me most (the em dashes, that first banned line) got a line in the linter, so a machine catches them before I do.</p>\n",
+    "whyHtml": "<p>Every correction you keep is one you never make again. The keeping is the part people skip. They correct the tool in the moment, it holds for the conversation, and the next conversation makes the same mistake, because a conversation is a room and nothing follows you out. The log is where the correction goes so it survives the room.</p>\n<p>It&#39;s a file. One line per correction: what it did, what it should do instead, the date. Nothing else. After a month you&#39;ll have twenty lines and you&#39;ll notice three things about them: the same correction appears more than once, some of them are about you regardless of the task, and some are about one kind of work. That&#39;s the sorting from Worksheet 0.4, and the log is where it happens.</p>\n<p>Nobody sets out to build a list. They set out to fix one sentence in one draft. The list gets long anyway, and every item on it started as a second message.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> The first entries in a nonprofit director&#39;s log might look like this.</p>\n<table>\n<thead>\n<tr>\n<th>Date</th>\n<th>What it did</th>\n<th>What it should do</th>\n<th>Where it went</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>March</td>\n<td>Opened a donor letter with &quot;I hope this finds you well&quot;</td>\n<td>Never. Open on the thing we did with their money.</td>\n<td>Memory, then the writing skill</td>\n</tr>\n<tr>\n<td>April</td>\n<td>Called our programs &quot;initiatives&quot;</td>\n<td>We run programs. Use the word we use.</td>\n<td>Memory</td>\n</tr>\n<tr>\n<td>May</td>\n<td>Wrote &quot;over 500 families served&quot;</td>\n<td>The real number, with the year: &quot;612 families in 2025.&quot;</td>\n<td>Memory, and the grant skill</td>\n</tr>\n<tr>\n<td>June</td>\n<td>Three exclamation points in a board memo</td>\n<td>None, ever.</td>\n<td>Memory, writing skill</td>\n</tr>\n<tr>\n<td>August</td>\n<td>Invented a quote from a board member</td>\n<td>Never invent a quote, a number, or a meeting. Leave a bracket.</td>\n<td>Memory, every skill</td>\n</tr>\n<tr>\n<td>September</td>\n<td>Named a donor who asked to be anonymous</td>\n<td>No donor names in anything unless I&#39;ve confirmed consent.</td>\n<td>The grant and donor skills</td>\n</tr>\n</tbody></table>\n<p>The last column is the point. A correction that&#39;s true everywhere went to memory. A correction about one kind of work went to that skill. The ones that cost the most (the invented quote, the named donor) became lines the fact-check pass looks for, so a machine catches them first.</p>\n",
     "yourTurn": [
       {
         "type": "item",
@@ -1175,7 +1185,7 @@
         "type": "item",
         "n": 3,
         "question": "Sort them",
-        "html": "<p><strong>Sort them.</strong> For each row, ask Chapter 12&#39;s questions: true about me everywhere (memory), about one kind of task (a skill, Part B), or true only in one project (that project&#39;s instructions)? Fill in the last column with where it should go, even if you haven&#39;t put it there yet.</p>\n",
+        "html": "<p><strong>Sort them.</strong> For each row, ask the three questions from Worksheet 0.4: true about me everywhere (memory), about one kind of task (a skill, Part B), or true only in one project (that project&#39;s instructions)? Fill in the last column with where it should go, even if you haven&#39;t put it there yet.</p>\n",
         "fields": [
           {
             "key": "sort-them",
@@ -1201,8 +1211,7 @@
         "type": "item",
         "n": 5,
         "question": "Set the habit",
-        "html": "<p><strong>Set the habit.</strong> Finish this sentence and put it where you&#39;ll see it: &quot;When I correct the tool and I&#39;ve corrected it before, I ______ within ______.&quot; (Mine: add a row the same day.)</p>\n",
-        "expected": "Mine: add a row the same day",
+        "html": "<p><strong>Set the habit.</strong> Finish this sentence and put it where you&#39;ll see it: &quot;When I correct the tool and I&#39;ve corrected it before, I ______ within ______.&quot;</p>\n",
         "fields": [
           {
             "key": "set-the-habit",
@@ -1211,7 +1220,7 @@
         ]
       }
     ],
-    "howToHtml": "<p><em>How to: nothing to install; the log is an .md file in your folder (Worksheet 0.3). Memory items go in through a conversation (&quot;Remember this:&quot;) or Settings &gt; Memory; skill items go into the Rules section of the skill&#39;s <code>SKILL.md</code>; project items go into the project&#39;s instructions. Worksheet 0.4 has the locations as of October 20, 2026.</em></p>\n",
+    "howToHtml": "<p><em>How to: nothing to install; the log is an .md file in your folder (Worksheet 0.3). Memory items go in through a conversation (&quot;Remember this:&quot;) or Settings &gt; Your Claude; skill items go into the Rules section of the skill&#39;s <code>SKILL.md</code>; project items go into the project&#39;s instructions. Worksheet 0.4 has the locations as of October 26, 2026.</em></p>\n",
     "compoundsHtml": "<p>The log is the raw material for everything in Part B. Every rule in your first skill comes from a row here, and every row you add is a correction you&#39;ll make once instead of forever. After three months, read the log top to bottom: it&#39;s a record of the tool learning you, written by you.</p>\n",
     "draft": false,
     "source": "content/workbook/partA/wsA4-your-corrections-log.md"
@@ -1224,8 +1233,9 @@
     "promiseText": "Your own rules for what you check and how, in five lines, with one real piece of work checked against them. Thirty minutes.",
     "promiseHtml": "<p>Your own rules for what you check and how, in five lines, with one real piece of work checked against them. Thirty minutes.</p>\n",
     "minutes": 30,
-    "whyHtml": "<p>Chapter 3 said the tool sounds the same when it&#39;s right and when it&#39;s wrong. Chapter 6 said the biggest mistake people are making with AI right now is passing along output they never checked, and told you about a friend of mine who&#39;s deciding whether to keep people over it. Nothing leaves your hands unchecked. This page turns that from a sentence you agree with into five rules you run.</p>\n<p>The rules are yours because the stakes are yours. A number in a deck to an investor needs a different check from a number in a note to yourself. A quote attributed to a public figure needs a different check from a summary of a document you attached. Write the rules for the work you actually send, and make them short enough to run every time.</p>\n<p>The last rule on your list should be the three-minute test from Chapter 6: can you explain the thing out loud, with no materials, for three minutes? If you can&#39;t, you aren&#39;t done. It&#39;s the check that catches what the other four miss, because it&#39;s a check on you, not on the draft.</p>\n",
-    "exampleHtml": "<p>Mine, in the order I run them on anything with a number, a name, a date, or a quote in it.</p>\n<ol>\n<li>Every number has a named source and a date, in the text or in a note. &quot;According to industry data&quot; doesn&#39;t count.</li>\n<li>Open the source. Read the sentence the number comes from. If I can&#39;t find it, the number comes out or gets marked as unverified.</li>\n<li>Find the one number the argument turns on and check it twice. One wrong number there costs more than ten wrong numbers elsewhere.</li>\n<li>Anything I&#39;ll say to someone who knows the subject better than I do gets the whole pass, not the quick one. The investor who knows the competitor&#39;s real figures exists for every piece of work.</li>\n<li>Before it goes out: three minutes, out loud, no notes. If I can&#39;t, it isn&#39;t finished.</li>\n</ol>\n<p>What I write down at the end of every pass: the line listing what I couldn&#39;t verify. That line is the habit. It&#39;s the one most people never write, and it&#39;s what lets me stand in front of a reader and say &quot;this holds, and here&#39;s the one thing I&#39;m not sure of.&quot;</p>\n",
+    "whyHtml": "<p>The tool sounds the same when it&#39;s right and when it&#39;s wrong. The biggest mistake people are making with AI right now is passing along output they never checked, and managers have started deciding whether to keep people over it. Nothing leaves your hands unchecked. This page turns that from a sentence you agree with into five rules you run.</p>\n<p>The rules are yours because the stakes are yours. A number in a deck to an investor needs a different check from a number in a note to yourself. A quote attributed to a public figure needs a different check from a summary of a document you attached. Write the rules for the work you actually send, and make them short enough to run every time.</p>\n<p>The last rule on your list should be the three-minute test: can you explain the thing out loud, with no materials, for three minutes? If you can&#39;t, you aren&#39;t done. It&#39;s the check that catches what the other four miss, because it&#39;s a check on you, not on the draft.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> A first-year founder&#39;s five, in the order they&#39;d run them on anything with a number, a name, a date, or a quote in it.</p>\n<ol>\n<li>Every number has a named source and a date, in the text or in a note. &quot;According to industry data&quot; doesn&#39;t count.</li>\n<li>Open the source. Read the sentence the number comes from. If I can&#39;t find it, the number comes out or gets marked as unverified.</li>\n<li>Find the one number the argument turns on and check it twice. One wrong number there costs more than ten wrong numbers elsewhere.</li>\n<li>Anything I&#39;ll say to someone who knows the subject better than I do gets the whole pass, not the quick one. The investor who knows the competitor&#39;s real figures exists for every piece of work.</li>\n<li>Before it goes out: three minutes, out loud, no notes. If I can&#39;t, it isn&#39;t finished.</li>\n</ol>\n<p>What they write at the end of every pass: the line listing what they couldn&#39;t verify. That line is the habit. It&#39;s the one most people never write, and it&#39;s what lets you stand in front of a reader and say &quot;this holds, and here&#39;s the one thing I&#39;m not sure of.&quot;</p>\n",
     "yourTurn": [
       {
         "type": "item",
@@ -1255,7 +1265,7 @@
         "type": "item",
         "n": 2,
         "question": "Write your five rules",
-        "html": "<p><strong>Write your five rules.</strong> Use mine as a shape. At least two of yours should be specific to the work in question 1.</p>\n",
+        "html": "<p><strong>Write your five rules.</strong> Use the example as a shape. At least two of yours should be specific to the work in question 1.</p>\n",
         "fields": [
           {
             "key": "write-your-five-rules.item-1",
@@ -1336,9 +1346,797 @@
         ]
       }
     ],
-    "howToHtml": "<p><em>How to: as of October 20, 2026, checking needs web search on (the slider in the chat box, &quot;Web search&quot;) so the tool can open sources and cite them; ask it for &quot;the source and the sentence the number comes from,&quot; then open the link yourself. Worksheet 0.6 has the setting. The three-minute test needs nothing but a door you can close.</em></p>\n",
+    "howToHtml": "<p><em>How to: as of October 26, 2026, checking works best when the tool searches the web so it can open sources and cite them; in the current layout it decides when to search, so say &quot;search the web and cite&quot; when a fact matters, and ask for &quot;the source and the sentence the number comes from,&quot; then open the link yourself. Worksheet 0.6 has the setting. The three-minute test needs nothing but a door you can close.</em></p>\n",
     "compoundsHtml": "<p>Part B&#39;s fact-check skill (B5) is these five rules written so the tool runs them before you do, and your &quot;unverified&quot; line becomes a standard part of everything it hands you. Each time you catch something, add it to the corrections log (A4). The rules get sharper, the catches get rarer, and the person at the center stays the one who decides what&#39;s true.</p>\n",
     "draft": false,
     "source": "content/workbook/partA/wsA5-your-trust-rules.md"
+  },
+  {
+    "id": "B1",
+    "part": "B",
+    "slug": "your-first-skill",
+    "title": "Your first skill",
+    "promiseText": "The thing you do every week, written down once. When you finish this page you'll have one working skill for a task you repeat, tested on a real week. About an hour.",
+    "promiseHtml": "<p>The thing you do every week, written down once. When you finish this page you&#39;ll have one working skill for a task you repeat, tested on a real week. About an hour.</p>\n",
+    "whyHtml": "<p>The rule is simple: explain something to it three times and it&#39;s time to write it down. This page is where you write it down.</p>\n<p>Pick a task with a shape. Something you do every week or every month, that has the same parts each time, and that you do in your own particular way. The weekly report. The client proposal. The summary after every meeting. The post you write every Friday. If you&#39;re stuck, ask yourself what you&#39;d hand to someone covering for you on vacation, and what you&#39;d have to explain so they didn&#39;t embarrass you.</p>\n<p>Don&#39;t pick the hardest job you have. Pick the one you do most. The first skill teaches you how skills work, and you learn fastest from the one you&#39;ll run every week.</p>\n<p>Three things to expect, overstated on purpose so you don&#39;t quit in week two. The first version will be wrong in ways you can&#39;t see until you use it. The first result will need real editing, not a polish. And you&#39;ll be changing the file as often as you use it for a while, which feels like failure and is the process. Most people rebuild their first skill many times in its first two months. The box at the bottom of this page is where that work goes.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> A sales manager&#39;s first skill, for the Monday pipeline summary to the VP, condensed. The full version runs two pages; this is what it looks like with the specifics trimmed so you can see the bones.</p>\n<pre><code># Skill: Monday summary\nThis skill serves [the manager]. Use it whenever I say &quot;Monday summary.&quot;\n\n## What this task is\nA one-page pipeline update for my VP, every Monday. Done means: the\nnumber against target first, what moved, what&#39;s at risk, what I need\nfrom her. She reads it in three minutes on her phone.\n\n## Inputs I&#39;ll give you\n- The pipeline export (CSV)\n- My notes from the week, rough\n- Which deals I already discussed with her (so you don&#39;t repeat them)\n\n## Steps\n1. Open with the number against target, one line.\n2. What moved since last Monday: closed, advanced, slipped. Dates on every deal.\n3. What&#39;s at risk, with why, in one line each.\n4. What I need from her, as a question she can answer yes or no.\n5. Stop. No summary paragraph.\n\n## Output\nPlain text I can paste into email. Under 250 words. No bullets.\n\n## Rules\n- A date on every deal. Always.\n- Never the words &quot;robust,&quot; &quot;leverage,&quot; or &quot;circle back.&quot;\n- Never a deal I haven&#39;t put in the export.\n- If a number in my notes disagrees with the export, ask; don&#39;t pick one.\n</code></pre>\n<p>Half of that rules section is the corrections log from Worksheet A4, moved into a file so it never gets typed again. Most of those lines weren&#39;t in version one. They arrived one at a time, each after a draft that got it wrong.</p>\n",
+    "yourTurn": [
+      {
+        "type": "md",
+        "html": "<p>Fill these in. Write in plain sentences, the way you&#39;d explain it across a desk. Each answer has a length beside it so you know when you&#39;re done.</p>\n"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "question": "The task, in one sentence",
+        "html": "<p><strong>The task, in one sentence.</strong> What is it, and how often do you do it?</p>\n",
+        "fields": [
+          {
+            "key": "the-task-in-one-sentence",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "The words you'll use to ask for it",
+        "html": "<p><strong>The words you&#39;ll use to ask for it.</strong> Two or three. (&quot;Weekly update.&quot; &quot;Draft the recap.&quot;)</p>\n",
+        "expected": "\"Weekly update.\" \"Draft the recap.\"",
+        "fields": [
+          {
+            "key": "the-words-you-ll-use-to-ask-for-it",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "What it is and who it's for",
+        "html": "<p><strong>What it is and who it&#39;s for.</strong> One paragraph. Who reads it, what they need from it, what &quot;done&quot; looks like.</p>\n",
+        "fields": [
+          {
+            "key": "what-it-is-and-who-it-s-for",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "What you'll hand it every time",
+        "html": "<p><strong>What you&#39;ll hand it every time.</strong> A list of two to five things. Files, numbers, notes, links.</p>\n",
+        "fields": [
+          {
+            "key": "what-you-ll-hand-it-every-time",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "The steps",
+        "html": "<p><strong>The steps.</strong> Three to six, in the order you&#39;d do them yourself. Short.</p>\n",
+        "fields": [
+          {
+            "key": "the-steps",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "What the result looks like",
+        "html": "<p><strong>What the result looks like.</strong> Be exact: length, format, what comes first, what kind of file or message.</p>\n",
+        "fields": [
+          {
+            "key": "what-the-result-looks-like",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 7,
+        "question": "Always",
+        "html": "<p><strong>Always.</strong> Two to four things that must be true of every result.</p>\n",
+        "fields": [
+          {
+            "key": "always",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 8,
+        "question": "Never",
+        "html": "<p><strong>Never.</strong> Two to four things that must not appear. Start with anything it&#39;s done before that made you wince.</p>\n",
+        "fields": [
+          {
+            "key": "never",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 9,
+        "question": "Ask me before guessing",
+        "html": "<p><strong>Ask me before guessing.</strong> One or two things it should check with you rather than assume.</p>\n",
+        "fields": [
+          {
+            "key": "ask-me-before-guessing",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "md",
+        "html": "<p>Now paste the frame below into a conversation with your answers filled in, and ask it to tidy the wording without changing the meaning. Save what comes back as a file named for the task.</p>\n<pre><code># Skill: [answer 1]\nThis skill serves [your name]. Use it whenever I say &quot;[answer 2]&quot;.\n\n## What this task is\n[answer 3]\n\n## Inputs I&#39;ll give you\n[answer 4]\n\n## Steps\n[answer 5]\n\n## Output\n[answer 6]\n\n## Rules\n[answer 7, each on its own line]\n[answer 8, each on its own line]\n[answer 9, each on its own line]\n</code></pre>\n<p><strong>Test it once.</strong> Open a fresh conversation. Paste the skill at the top (or load it, if your setup saves skills; Part 0 covers both). Hand it this week&#39;s inputs and say the words from answer 2. Read the result next to what you&#39;d have done by hand. Write down the three biggest differences.</p>\n"
+      }
+    ],
+    "howToHtml": "<p><em>How to: saving a skill. Where saved skills live, and whether your account supports them, has changed more than once; see Part 0, worksheet 0.5, for the current steps. Pasting at the top of a conversation works everywhere and is how to start.</em></p>\n",
+    "version2Heading": "Version 2, after a week of real use",
+    "version2Html": "<p>A skill is never finished. Come back to this box after you&#39;ve run the skill on two or three real weeks and answer:</p>\n<ul>\n<li>What did it get wrong that you corrected by hand? (Each one goes into Rules.)</li>\n<li>What did you find yourself explaining in the conversation that should have been in the file? (Goes into Steps or Inputs.)</li>\n<li>What did it do that you liked and hadn&#39;t asked for? (Make it a rule so it keeps doing it.)</li>\n<li>What&#39;s one thing in the file that turned out not to matter? (Cut it.)</li>\n</ul>\n<p>Make the changes. Rename the file with a version number if that helps you keep track. That&#39;s version 2, and it&#39;s where the compounding starts to show.</p>\n",
+    "compoundsHtml": "<p>Every correction you put in this file is one you&#39;ll never make again, on a task you do every week. The first version saves you the setup. The fifth version, carrying months of corrections, hands you a first draft that&#39;s mostly right before you&#39;ve read it. And the shape you just learned is the shape of every skill you&#39;ll ever build, so the second one takes half the time of the first.</p>\n",
+    "draft": false,
+    "source": "content/workbook/partB/wsB1-your-first-skill.md"
+  },
+  {
+    "id": "B2",
+    "part": "B",
+    "slug": "your-writing-voice-skill",
+    "title": "Your writing-voice skill",
+    "promiseText": "A file that teaches the tool how you sound, built from things you actually wrote. When you finish this page you'll have a voice skill with your samples, your banned list, and the one rule that matters more than the list. About ninety minutes, most of it reading.",
+    "promiseHtml": "<p>A file that teaches the tool how you sound, built from things you actually wrote. When you finish this page you&#39;ll have a voice skill with your samples, your banned list, and the one rule that matters more than the list. About ninety minutes, most of it reading.</p>\n",
+    "whyHtml": "<p>The habit: don&#39;t ask it to write for you, ask it to draft, then correct it, and keep the corrections. What the corrections add up to is two things: a baseline every writer should demand, and then three rules that are only yours. This page builds both into one file.</p>\n<p>Most people skip this worksheet because it feels like vanity. It isn&#39;t. Anything the tool writes that goes out under your name is your name on it. A draft that sounds like the average of the internet costs you with every reader who knows you, and most readers can tell faster than they can say why.</p>\n<p>Two warnings. Your voice skill will be wrong for weeks; most people rebuild theirs more times than they count before a draft reliably sounds like them, and a new model release still knocks it loose. And the banned list is the easy part and the part that does the least. The work is in the three rules at the end of this page, and in what you add to the file after every draft that gets past you.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> The first page of a solo consultant&#39;s voice skill, condensed. The real one runs several pages.</p>\n<pre><code># Skill: My voice\nThis skill serves [the consultant]. Use it for anything I&#39;ll send or\npublish as myself: client emails, proposals, the newsletter.\n\n## Who I am, in one paragraph\nIndependent consultant to mid-sized logistics companies; eleven years\non my own after a decade running operations inside two of them. I write\nfor owners and operations heads who have heard every pitch.\n\n## What I sound like\n- Direct and fact-driven. The claim, then the number, then the reason.\n- I show the reasoning from fact to conclusion so the reader can argue\n  with a step.\n- Not hyperbolic. If a sentence would embarrass me across a table, cut it.\n- Short paragraphs of uneven length. Contractions.\n\n## Three rules that are mine\n1. One real detail from my own work in every piece. NEVER invent one;\n   leave a bracket.\n2. Plain words. Use, not utilize. Fix, not remediate. Run, not orchestrate.\n3. Specific over significant. Every claim gets a number, a name, a date,\n   or a scene, or it goes.\n\n## Words and phrases I never use\n- &quot;I hope this finds you well.&quot; &quot;Circle back.&quot; &quot;Leverage.&quot;\n- Pivotal, transformative, game-changer, a testament to.\n- Exclamation points.\n\n## Rules\n- Draft, then I edit. Never tell me it&#39;s finished.\n- A flagged sentence gets rewritten into something specific, or cut.\n  Never swapped for a synonym.\n- When unsure of my view, ask. Don&#39;t invent it.\n</code></pre>\n<p>Notice what isn&#39;t in it: adjectives about style. &quot;Confident,&quot; &quot;warm,&quot; &quot;authoritative&quot; tell the tool nothing. Every line in that file is a thing it can check a sentence against.</p>\n",
+    "yourTurn": [
+      {
+        "type": "md",
+        "html": "<p>Work through these in order. The samples come first because everything else is built from them.</p>\n"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Collect three to five samples",
+        "html": "<p><strong>Collect three to five samples.</strong> Things you wrote yourself, sent, and were happy with. An email that landed. A note to your team. A post. Not your best writing; your normal writing, 100 to 300 words each. Paste them into a conversation.</p>\n",
+        "fields": [
+          {
+            "key": "collect-three-to-five-samples",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "Ask what they have in common",
+        "html": "<p><strong>Ask what they have in common.</strong> Paste this: &quot;Read these as samples of how I write. Tell me what they have in common: sentence length, paragraph length, how I open, how I close, how formal I am, which words recur, which words never appear, whether I use contractions. Be specific and quote me.&quot; Then argue with the answer. Some of what it finds is you. Some is a habit you&#39;d rather drop. Keep only what you&#39;d defend. Write the keepers here, three to five lines.</p>\n",
+        "fields": [
+          {
+            "key": "ask-what-they-have-in-common",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Run the baseline audit",
+        "html": "<p><strong>Run the baseline audit.</strong> Wikipedia&#39;s editors keep a free page called &quot;Signs of AI writing.&quot; Search for it and read it; twenty minutes. Then paste this: &quot;Read Wikipedia&#39;s &#39;Signs of AI writing&#39; guide. Go through my samples and flag every place one of its patterns appears: inflated significance, trailing participles, lists of three, &#39;experts say&#39; with no expert, the summary paragraph, the hook question.&quot; Some flags will be yours. Write down the ones you recognize, because you&#39;ve been letting drafts get away with them.</p>\n",
+        "fields": [
+          {
+            "key": "run-the-baseline-audit",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Your banned list",
+        "html": "<p><strong>Your banned list.</strong> From step 3 and from every phrase the tool has written for you that made you wince. Ten to twenty items. Start with the ones that bother you most.</p>\n",
+        "fields": [
+          {
+            "key": "your-banned-list",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "Your three rules",
+        "html": "<p><strong>Your three rules.</strong> This is the page. read a sample from step 1 next to something the tool drafted for you this month, and name three things the first one has that the second one doesn&#39;t. A detail only you&#39;d know. A word you&#39;d use that it didn&#39;t. A place where it went grand and you&#39;d have gone specific. Write each as a rule in one sentence, with an example of right and wrong.</p>\n",
+        "fields": [
+          {
+            "key": "your-three-rules",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "Who you are, in one paragraph",
+        "html": "<p><strong>Who you are, in one paragraph.</strong> Your role, what you know a lot about, how long you&#39;ve done it, who you write for. Two or three sentences. Not a bio; the context a ghostwriter would need.</p>\n",
+        "fields": [
+          {
+            "key": "who-you-are-in-one-paragraph",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "md",
+        "html": "<p>Now paste the frame below with your answers filled in, and ask the tool to tidy the wording without changing the meaning. Save what comes back as <code>my-voice.md</code>.</p>\n<pre><code># Skill: My writing voice\nThis skill serves [your name]. Use it for anything I&#39;ll send or publish as myself.\n\n## Who I am, in one paragraph\n[answer 6]\n\n## Three samples of how I write\n[answer 1, pasted in full]\n\n## What I sound like\n[answer 2]\n\n## Three rules that are mine\n[answer 5, each with a right/wrong example]\n\n## Words and phrases I never use\n[answer 4]\n\n## Rules\n- Draft, then I edit. Never tell me it&#39;s finished.\n- A flagged sentence gets rewritten into something specific (a number,\n  a name, a date) or cut. Never swapped for a synonym.\n- When unsure of my view, ask. Don&#39;t invent it.\n</code></pre>\n<p><strong>Test it once.</strong> Open a fresh conversation, load the skill (or paste it at the top), and brief one real thing you need to send this week. Read the draft out loud, under your breath. Mark every sentence you wouldn&#39;t say. Those sentences are your first additions to the file.</p>\n<p><strong>Check before it leaves.</strong> Nothing leaves your hands unchecked, and a draft in your voice is the easiest thing to wave through because it sounds like you. Before you send anything this skill drafted, run the three-minute test: can you say what it says, out loud, without the screen? If you can&#39;t, it isn&#39;t yours yet.</p>\n"
+      }
+    ],
+    "howToHtml": "<p><em>How to: the rewrite-don&#39;t-swap rule. The Wikipedia guide is explicit that replacing a banned word with a synonym hides the problem without fixing it. &quot;Pivotal&quot; becomes &quot;key&quot; and the empty claim behind it is untouched. When the tool flags a sentence, ask it what fact the sentence is standing in for. If there&#39;s a fact, the fact replaces the phrase. If there isn&#39;t, the sentence comes out.</em></p>\n",
+    "version2Heading": "Version 2, after a week of real use",
+    "version2Html": "<p>Come back after you&#39;ve drafted five or six real things with this skill and answer:</p>\n<ul>\n<li>Which sentences did you rewrite by hand more than once? Each one is a missing rule or a missing banned phrase.</li>\n<li>Did it reach for a detail about you that was wrong? Add &quot;never invent; leave a bracket&quot; if it isn&#39;t there, and add the right detail.</li>\n<li>Did it get something right that surprised you? Write down why, as a rule, so it keeps doing it.</li>\n<li>Read your three rules again. Would you still defend all three? Rewrite the one you wouldn&#39;t.</li>\n</ul>\n<p>Make the changes. The file knows more about how you write than you did a week ago, and that gap keeps widening in your favor.</p>\n",
+    "compoundsHtml": "<p>Every skill you build after this one that produces words, your brand skill in B3, your post skill in B6, the brief that becomes your business in C1, points to this file instead of describing your voice again. One correction here fixes every downstream draft at once. And the file gets read every time, so the drafts start closer to you than your own first drafts used to, and you spend your editing on the argument instead of the sound.</p>\n",
+    "draft": false,
+    "source": "content/workbook/partB/wsB2-your-writing-voice-skill.md"
+  },
+  {
+    "id": "B3",
+    "part": "B",
+    "slug": "who-you-are-your-brand-skill",
+    "title": "Who you are (your brand skill)",
+    "promiseText": "A page that says who your company is, and a set of rules derived from it that the tool checks every output against. When you finish you'll have a brand skill whose first section is written in your words and whose colors come last. About an hour, plus whatever time it takes to agree on the first five sentences if you have partners.",
+    "promiseHtml": "<p>A page that says who your company is, and a set of rules derived from it that the tool checks every output against. When you finish you&#39;ll have a brand skill whose first section is written in your words and whose colors come last. About an hour, plus whatever time it takes to agree on the first five sentences if you have partners.</p>\n",
+    "whyHtml": "<p>Three sentences carry the argument. Brand is who your company is and what it stands for. The guidelines, the colors, the type, the voice rules, are developed from that, and never the other way around. A company that starts with the palette ends up with a consistent picture of nothing in particular.</p>\n<p>This is the one thing the tool cannot supply. It can produce a decent palette in a second and confident copy about anyone. What it can&#39;t do is know what you stand for, because no training data holds it. It lives in you and the people you work with. If you don&#39;t present it to the platform in a form it can use, the platform fills the gap with the average of every company it has ever read about, and you get a deck that could be anyone&#39;s.</p>\n<p>Most companies that have a brand guide have the second half of this page and not the first. The guide has the colors and none of the reasons, and the reasons are in people&#39;s heads, which is the one place the tool can&#39;t read. So this worksheet starts where the guide should have: the page that says who we are. The colors are question nine.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> The top of a two-person accounting practice&#39;s brand skill, condensed.</p>\n<pre><code># Skill: Who [the practice] is, and the rules that follow\nThis skill serves [the partners]. Read the first section before anything\nelse. Check every document, letter, page, and post against this file\nbefore showing it to anyone.\n\n## Who we are\nWe are two accountants who answer the phone. The long version, said the\nsame way every time: we do the books and the taxes for forty\nowner-operated businesses, and we&#39;re the people they call before they\nmake a decision with money in it.\nWe serve owners who can&#39;t afford a surprise.\nWe lead with the number and what it means. We don&#39;t dress up bad news\nand we don&#39;t bury it.\nWe never promise a result we don&#39;t control.\nWe never share one client&#39;s situation with another, even as an example.\nPeople who deal with us should feel that someone careful is paying\nattention.\n\n## Because of who we are\n- Because we lead with the number: every letter opens with the figure\n  and what it means, before any explanation.\n- Because we serve owners who can&#39;t afford a surprise: every memo ends\n  with &quot;what this means for you&quot; in two lines, and a date.\n- Because someone careful is paying attention: the look is plain. One\n  dark blue, black type, white paper, nothing decorative.\n\n## The visible layer\n- Colors: one dark blue for headings; black text; nothing else.\n- Type: the same plain serif in every document.\n- Name: &quot;[the practice],&quot; exactly, never abbreviated.\n- Files: client name, then date, then document type.\n\n## The check, before delivering anything\n1. Read the output against &quot;Who we are&quot; first. Does it sound like\n   people who answer the phone? Is there a promise we don&#39;t control?\n2. Then the visible layer.\n3. List anything that doesn&#39;t match. Don&#39;t fix it silently.\n</code></pre>\n<p>That check at the bottom is the piece most brand guides never have. Every design rule has a &quot;because,&quot; and the because is a sentence about who you are. When a new question comes up, the answer comes from the first section, not from taste.</p>\n",
+    "yourTurn": [
+      {
+        "type": "md",
+        "html": "<p>If you don&#39;t have a company, do this for yourself. You have a brand whether you&#39;ve named it or not, and the tool is making those decisions for you right now.</p>\n"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "question": "We are",
+        "html": "<p><strong>We are.</strong> One sentence that says what you are, in words a customer would use. Then the longer version, two sentences, said the way you&#39;d say it every time.</p>\n",
+        "fields": [
+          {
+            "key": "we-are",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "We serve",
+        "html": "<p><strong>We serve.</strong> Who, specifically, and what they can&#39;t afford.</p>\n",
+        "fields": [
+          {
+            "key": "we-serve",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "We believe",
+        "html": "<p><strong>We believe.</strong> One or two sentences about how you do the work. What you lead with.</p>\n",
+        "fields": [
+          {
+            "key": "we-believe",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "We never",
+        "html": "<p><strong>We never.</strong> Two or three things you won&#39;t do, even when it would be easier or would win the deal. Make them real. You&#39;ll be held to them.</p>\n",
+        "fields": [
+          {
+            "key": "we-never",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "People who deal with us should feel",
+        "html": "<p><strong>People who deal with us should feel.</strong> One sentence. Finish it however you&#39;d finish it.</p>\n",
+        "fields": [
+          {
+            "key": "people-who-deal-with-us-should-feel",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "md",
+        "html": "<p>Stop here and read answers 1 through 5 out loud. If any of them would be true of your competitor, rewrite it until it&#39;s only true of you. Don&#39;t make them sound good. Make them true.</p>\n"
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "Because of who we are, our voice is",
+        "html": "<p><strong>Because of who we are, our voice is.</strong> Two or three rules, each starting with &quot;Because&quot; and one of your five sentences. (&quot;Because we serve people in a hurry, every document opens with the decision.&quot;)</p>\n",
+        "expected": "\"Because we serve people in a hurry, every document opens with the decision.\"",
+        "fields": [
+          {
+            "key": "because-of-who-we-are-our-voice-is",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 7,
+        "question": "Because of who we are, we never put on a page",
+        "html": "<p><strong>Because of who we are, we never put on a page.</strong> Two or three rules in the same form. Claims, names, words, tones.</p>\n",
+        "fields": [
+          {
+            "key": "because-of-who-we-are-we-never-put-on-a-page",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 8,
+        "question": "Because of who we are, the look is",
+        "html": "<p><strong>Because of who we are, the look is.</strong> One or two sentences about the feel, before any color. Restrained, warm, plain, loud. Say why.</p>\n",
+        "fields": [
+          {
+            "key": "because-of-who-we-are-the-look-is",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 9,
+        "question": "The visible layer",
+        "html": "<p><strong>The visible layer.</strong> Now the colors, with hex codes if you have them (one main, one accent, what&#39;s never allowed); the fonts for documents and for marketing; how the company name is written, exactly; your file naming convention. If you don&#39;t have these yet, write &quot;to be derived from 8&quot; and come back; the tool can propose a palette from answer 8, and you&#39;ll be choosing from options that already fit.</p>\n",
+        "fields": [
+          {
+            "key": "the-visible-layer",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "md",
+        "html": "<p>Paste the frame below with your answers and ask the tool to tidy the wording without changing the meaning. Save it as <code>brand.md</code>.</p>\n<pre><code># Skill: Who [company] is, and the rules that follow\nThis skill serves [your name]. Read &quot;Who we are&quot; before anything else.\nCheck every document, slide, page, and post against this file before\nshowing it to me.\n\n## Who we are\n[answers 1 to 5, as five to seven sentences]\n\n## Because of who we are\n[answers 6, 7, 8, each as a &quot;Because...&quot; rule]\n\n## The visible layer\n[answer 9]\n\n## The check, before delivering anything\n1. Read the output against &quot;Who we are&quot; first. Does it sound like us?\n   Is there a claim we can&#39;t back?\n2. Then the visible layer: colors, type, name, files.\n3. List anything that doesn&#39;t match. Don&#39;t fix it silently.\n4. If something I ask for breaks a rule above, say so before making it.\n</code></pre>\n<p><strong>Test it once.</strong> Load the skill and ask for something small you&#39;d actually use: a one-page summary, three slides, a short bio. Read the result against the first section before you look at the colors. The question is whether it sounds like a company that believes what you wrote in answer 3.</p>\n<p><strong>Check before it leaves.</strong> Nothing leaves your hands unchecked, and brand is where unchecked output does its quietest damage: nothing is wrong, exactly, it just isn&#39;t you. Before anything from this skill goes to a customer or a room, run the three-minute test on the who-we-are page itself. Can you say who your company is for three minutes with no slide? If you can&#39;t, the first section isn&#39;t finished, and no color fixes that.</p>\n"
+      }
+    ],
+    "howToHtml": "<p><em>How to: the attached guide. If you already have a brand or style guide, don&#39;t paste it into this skill. Keep it as a reference file in the project (Part 0, worksheet 0.4) and point to it from &quot;The visible layer.&quot; A file in the conversation is information the tool may consult. The rules in this skill are instructions it follows. Most people take a year to learn the difference.</em></p>\n",
+    "version2Heading": "Version 2, after a week of real use",
+    "version2Html": "<p>Come back after the skill has produced five or six things and answer:</p>\n<ul>\n<li>What did it get wrong that no rule covered? Write the rule, and write the &quot;because&quot; first.</li>\n<li>Did any &quot;because&quot; turn out to be taste rather than identity? Cut it or move it to the visible layer.</li>\n<li>Did someone on your team disagree with a sentence in &quot;Who we are&quot;? That disagreement is worth more than the rest of the page. Settle it, in words, and update the file.</li>\n<li>Did it ever say &quot;this breaks a rule&quot; before making something? If never, the check isn&#39;t firing. Make it the first line of the skill.</li>\n</ul>\n",
+    "compoundsHtml": "<p>Every output the tool makes for anyone outside your company now gets read against who you are before it leaves. Your post skill in B6 checks against this file instead of carrying its own copy. The deck you build in C5 is scored against it alongside the outside standard. And the brief in C1, the one that becomes the business, opens with these five sentences, because the brief is the business and this page is who the business is.</p>\n",
+    "draft": false,
+    "source": "content/workbook/partB/wsB3-who-you-are-your-brand-skill.md"
+  },
+  {
+    "id": "B4",
+    "part": "B",
+    "slug": "your-research-and-cite-skill",
+    "title": "Your research-and-cite skill",
+    "promiseText": "A file that makes the tool show its trail every time you ask it to find something out. When you finish you'll have a research skill that names the decision, requires a source and a date on every fact, and ends with a line about what it couldn't verify. About forty-five minutes, including one real test.",
+    "promiseHtml": "<p>A file that makes the tool show its trail every time you ask it to find something out. When you finish you&#39;ll have a research skill that names the decision, requires a source and a date on every fact, and ends with a line about what it couldn&#39;t verify. About forty-five minutes, including one real test.</p>\n",
+    "minutes": 45,
+    "whyHtml": "<p>The research brief is the ordinary brief with two additions: the decision the research serves, and the sources you trust. Then four rules at the top of every request: every fact gets a source and a date, prefer primary sources, when two sources disagree show both, end with what you couldn&#39;t verify. If you&#39;ve been typing those four lines every time, this page is where you stop.</p>\n<p>Research is where the tool is most useful and most dangerous in the same breath. It reads faster than any analyst, and it will hand you a confident, well-organized answer built on a source that says something adjacent to the claim. The skill can&#39;t make it right. It can make it show you where every fact came from, so that you can be right.</p>\n<p>Research you did yourself used to be slow, partial, and yours, and you trusted it because you&#39;d done it. Research the tool does is fast, broad, and not yours until you&#39;ve opened the sources. The skill is how you make it yours in ten minutes instead of a week.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> A nonprofit director&#39;s research skill, condensed. Yours will have your own list of trusted sources.</p>\n<pre><code># Skill: Research I can trust\nThis skill serves [the director]. Use it whenever I ask you to research,\nlook up, compare, find out, or &quot;what&#39;s happening with.&quot;\n\n## Before searching\n- If I haven&#39;t said what decision this serves, ask. One question.\n- If I haven&#39;t said which sources I trust for this topic, use the list\n  below, and tell me which you used.\n\n## Sources I trust, in order\n1. The funder&#39;s own guidelines and published reports.\n2. Government statistics and the original study.\n3. The two national associations in our sector.\n4. General press, only to find a primary source, never as the source.\n5. Never: vendor blogs, anything selling a platform.\n\n## While searching\n- Search the web. Never answer a current-facts question from memory.\n- Date every fact in the text: &quot;as of September 2026.&quot;\n- Older than six months on anything that moves: say so.\n- Two sources disagree: show me both with their dates.\n- Quote the sentence the fact comes from.\n\n## Output\n1. The answer, in one paragraph, written for the decision I named.\n2. The facts, numbered, each with source, date, and the sentence.\n3. The three sources worth my time and why.\n4. A line that begins &quot;What I couldn&#39;t verify:&quot; followed by the list.\n5. Links.\n\n## Rules\n- Never attach a claim to a source that didn&#39;t make it.\n- No &quot;experts say&quot; or &quot;studies show&quot; without a name.\n- If you can&#39;t find it, say so. &quot;Couldn&#39;t find&quot; is a finding.\n- Don&#39;t round. Give the number the source gives.\n</code></pre>\n<p>The line that changes the most for most people is the &quot;What I couldn&#39;t verify&quot; line. Without it, research comes back looking complete, which is the most dangerous way research can look.</p>\n",
+    "yourTurn": [
+      {
+        "type": "item",
+        "n": 1,
+        "question": "The words you'll use to trigger it",
+        "html": "<p><strong>The words you&#39;ll use to trigger it.</strong> Three or four. (&quot;Research.&quot; &quot;Look up.&quot; &quot;What&#39;s the latest on.&quot;)</p>\n",
+        "expected": "\"Research.\" \"Look up.\" \"What's the latest on.\"",
+        "fields": [
+          {
+            "key": "the-words-you-ll-use-to-trigger-it",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "The decision question",
+        "html": "<p><strong>The decision question.</strong> Write the one question it should ask you if you haven&#39;t said what the research is for. Keep it to one line.</p>\n",
+        "fields": [
+          {
+            "key": "the-decision-question",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Sources you trust, in order",
+        "html": "<p><strong>Sources you trust, in order.</strong> For your field. The primary sources first (whose filings, which agency, which standards body), then the two or three publications you&#39;d read yourself, then what it should never treat as a source. Five to eight lines.</p>\n",
+        "fields": [
+          {
+            "key": "sources-you-trust-in-order",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "How old is too old",
+        "html": "<p><strong>How old is too old.</strong> For your kind of question, when does a fact need a freshness warning? Six months for most. A week for prices. Five years for history.</p>\n",
+        "fields": [
+          {
+            "key": "how-old-is-too-old",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "What the answer looks like",
+        "html": "<p><strong>What the answer looks like.</strong> How long, and what comes first. One paragraph is usually right. Say whether you want the recommendation or just the findings.</p>\n",
+        "fields": [
+          {
+            "key": "what-the-answer-looks-like",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "Never",
+        "html": "<p><strong>Never.</strong> Two or three things it must not do. Start with the &quot;experts say&quot; line and add anything research has burned you on.</p>\n",
+        "fields": [
+          {
+            "key": "never",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "md",
+        "html": "<p>Paste the frame below with your answers filled in, ask the tool to tidy the wording, and save it as <code>research.md</code>.</p>\n<pre><code># Skill: Research I can trust\nThis skill serves [your name]. Use it whenever I say [answer 1].\n\n## Before searching\n- If I haven&#39;t said what decision this serves, ask: [answer 2]\n- Use the sources below and tell me which you used.\n\n## Sources I trust, in order\n[answer 3]\n\n## While searching\n- Turn on web search. Never answer a current-facts question from\n  training alone.\n- Date every fact in the text.\n- Older than [answer 4]: say so.\n- Two sources disagree: show me both with dates. Don&#39;t pick one silently.\n- Quote the sentence the fact comes from.\n\n## Output\n1. [answer 5]\n2. The facts, numbered, each with source, date, and the sentence.\n3. The three sources worth my time and why.\n4. &quot;What I couldn&#39;t verify:&quot; and the list.\n5. Links.\n\n## Rules\n- Never attach a claim to a source that didn&#39;t make it.\n[answer 6, each on its own line]\n- If you can&#39;t find it, say so.\n</code></pre>\n<p><strong>Test it once.</strong> Pick a real decision you&#39;re facing this month and run the related page&#39;s exercise through the skill: &quot;I&#39;m deciding whether to X, and I&#39;ll do it if Y.&quot; Then open the three sources it recommends and read the sentence behind the fact the decision turns on. Write down whether the sentence said what the tool said it did.</p>\n<p><strong>Check before it leaves.</strong> Research is the output people forward without reading, and nothing leaves your hands unchecked. Before any finding from this skill goes into a deck, an email, or a decision you&#39;ll have to defend, run the three-minute test: explain the finding and where it came from, out loud, with no notes. If you can&#39;t name the source without looking, you haven&#39;t read it yet.</p>\n"
+      }
+    ],
+    "howToHtml": "<p><em>How to: turning on web search. Where the search toggle lives and whether it&#39;s on by default has changed more than once; see Part 0, worksheet 0.6, for the current steps. The rule in the skill (&quot;turn on web search&quot;) works as a reminder to the tool, but it can&#39;t flip a setting you&#39;ve turned off.</em></p>\n",
+    "version2Heading": "Version 2, after a week of real use",
+    "version2Html": "<p>Come back after four or five real research requests and answer:</p>\n<ul>\n<li>Which source did it lean on that you wouldn&#39;t have? Move it down the list or add it to Never.</li>\n<li>Which source did it miss that you found yourself? Add it, with a line on when to use it.</li>\n<li>Did the &quot;couldn&#39;t verify&quot; line ever come back empty? It shouldn&#39;t. If it did, the skill is being agreeable; add &quot;there is always at least one item here.&quot;</li>\n<li>Did you ever skip opening the sources because the answer looked complete? Write that down too. The skill can&#39;t fix that one. Only you can.</li>\n</ul>\n",
+    "compoundsHtml": "<p>Every fact-bearing thing you build from here on runs through this file first: the fact-check pass in B5 is this skill&#39;s little sibling and reads the same source list, the posts in B6 cite from it, the deck in C5 is built on research it produced. The source list is the part that grows. After a quarter it&#39;s a map of your industry&#39;s reliable voices that no new hire could build in a month, and the tool reads it every time you ask a question.</p>\n",
+    "draft": false,
+    "source": "content/workbook/partB/wsB4-your-research-and-cite-skill.md"
+  },
+  {
+    "id": "B5",
+    "part": "B",
+    "slug": "your-fact-check-pass",
+    "title": "Your fact-check pass",
+    "promiseText": "A short checklist the tool runs on anything with a number, a name, a date, or a quote in it, before you read it as a reader. When you finish you'll have the pass as a skill, and you'll have run it by hand once so you know what it's doing. About thirty minutes.",
+    "promiseHtml": "<p>A short checklist the tool runs on anything with a number, a name, a date, or a quote in it, before you read it as a reader. When you finish you&#39;ll have the pass as a skill, and you&#39;ll have run it by hand once so you know what it&#39;s doing. About thirty minutes.</p>\n",
+    "minutes": 30,
+    "whyHtml": "<p>One sentence belongs on the wall: nothing leaves your hands unchecked. Relying on the tool&#39;s output without checking it is the biggest mistake people make with AI. Not the only one. The biggest.</p>\n<p>The pass has seven steps and takes five to ten minutes on a page by hand. This worksheet turns it into a skill so the tool runs it on every draft before you see it. Two warnings about that. The tool is checking its own work, so it will miss things, and it will miss them in the confident register that makes them hard to spot. And a pass that comes back clean gives you a page with fewer obvious errors in it, which is different from a page you can skip. You still read it, and the one number the argument turns on, you still check yourself.</p>\n<p>Some managers now have a standing rule for their teams: before anything goes up the chain, the person who made it has to explain it for three minutes, out loud, with no materials. That&#39;s the test this site uses everywhere. The fact-check skill gets you to the point where you can pass it. It doesn&#39;t take the test for you.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> The fact-check skill a two-person accounting practice might run on anything with a number in it, condensed. It is the shortest skill they own and the one they&#39;d keep if they could only keep one.</p>\n<pre><code># Skill: Fact-check pass\nThis skill serves [the partners]. Run it on any draft that contains a\nnumber, a name, a date, a quote, or a claim about what a rule says,\nbefore I read it. Run it again after I edit.\n\n## Check every one of these\n1. Numbers. Each has a named source and a date, in the text or in a\n   note. Not &quot;industry data.&quot; Flag any that don&#39;t.\n2. The one that matters. Name the number the argument turns on. Find a\n   second source for it. Say whether they agree.\n3. Names and titles. Current and spelled right. Search for each one.\n4. Dates. Correct, and consistent with each other and with the sources.\n   For a rule: the final rule&#39;s date, not the proposal&#39;s.\n5. Quotes. Found in the source they&#39;re attributed to, word for word.\n   Under fifteen words. A quote you can&#39;t find is a paraphrase, attributed.\n6. Arithmetic. Show the formula and the inputs. Add it up.\n7. &quot;Says&quot; and &quot;requires.&quot; The source actually says that, not something\n   adjacent.\n\n## Output\nA table: item, status (confirmed / close but wrong / couldn&#39;t find),\nsource opened, what to change.\nThen one line beginning &quot;Couldn&#39;t verify:&quot; for whatever&#39;s left.\nThen the draft with only the flagged items changed, changes marked.\n\n## Rules\n- &quot;Couldn&#39;t find&quot; is a valid answer. Never upgrade it to &quot;confirmed&quot;\n  to be helpful.\n- Don&#39;t rewrite anything except the flagged items.\n- Don&#39;t round, and don&#39;t pick the more impressive of two numbers.\n- Any source you can&#39;t open is not a source.\n</code></pre>\n<p>The row that earns its keep is &quot;close but wrong.&quot; A real source, a real number, and the number in the draft is from a different year, a different unit, or the sentence next to the one the tool read. Half of what people catch over a year is in that row.</p>\n",
+    "yourTurn": [
+      {
+        "type": "md",
+        "html": "<p>Run the pass by hand first. Then build the skill.</p>\n"
+      },
+      {
+        "type": "item",
+        "n": 1,
+        "question": "By hand, once",
+        "html": "<p><strong>By hand, once.</strong> Take something the tool wrote for you this week with at least three facts in it. For each fact: ask the tool for the single source and the sentence it comes from; open the source; read the sentence. Mark each one confirmed, close but wrong, or couldn&#39;t find. Write down how many of each you got.</p>\n",
+        "fields": [
+          {
+            "key": "by-hand-once",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "What kind of facts you handle",
+        "html": "<p><strong>What kind of facts you handle.</strong> Numbers in a budget. Names in a client memo. Dates in a contract. Quotes in a post. List the three or four kinds that show up in your work most, because the skill should check those first.</p>\n",
+        "fields": [
+          {
+            "key": "what-kind-of-facts-you-handle",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "Your \"close but wrong\" list",
+        "html": "<p><strong>Your &quot;close but wrong&quot; list.</strong> What has the tool gotten almost right for you before? Wrong year, wrong title, wrong unit, a figure from a different market. Two or three lines. These go in as explicit checks.</p>\n",
+        "fields": [
+          {
+            "key": "your-close-but-wrong-list",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Who it's for",
+        "html": "<p><strong>Who it&#39;s for.</strong> What&#39;s the cost if a wrong fact gets through, in your work? A correction, a lost client, a legal problem. One sentence. The skill should know how careful to be.</p>\n",
+        "fields": [
+          {
+            "key": "who-it-s-for",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "What you want back",
+        "html": "<p><strong>What you want back.</strong> The table as above, or a shorter list? Do you want the draft changed or just flagged? Say so in one or two lines.</p>\n",
+        "fields": [
+          {
+            "key": "what-you-want-back",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "md",
+        "html": "<p>Paste the frame below with your answers, ask the tool to tidy the wording, and save it as <code>fact-check.md</code>.</p>\n<pre><code># Skill: Fact-check pass\nThis skill serves [your name]. Run it on any draft that contains\n[answer 2], before I read it. The cost of a miss here is [answer 4].\n\n## Check every one of these\n1. Numbers: named source and date in the text or a note. Flag any without.\n2. The one that matters: name it, find a second source, say if they agree.\n3. Names and titles: current and spelled right. Search for each.\n4. Dates: correct and consistent.\n5. Quotes: found word for word in the source, under fifteen words.\n6. Arithmetic: formula and inputs shown.\n7. &quot;Said&quot; and &quot;reported&quot;: the source actually says that.\n8. [answer 3, each as its own numbered check]\n\n## Output\n[answer 5]\nOne line beginning &quot;Couldn&#39;t verify:&quot; for whatever&#39;s left.\n\n## Rules\n- &quot;Couldn&#39;t find&quot; is a valid answer. Never upgrade it to &quot;confirmed.&quot;\n- Don&#39;t rewrite anything except the flagged items.\n- Don&#39;t round, and don&#39;t pick the more impressive of two numbers.\n- Any source you can&#39;t open is not a source.\n</code></pre>\n<p><strong>Test it once.</strong> Run the skill on the same draft you checked by hand in step 1. Compare its table to your marks. Where it caught something you missed, good. Where you caught something it missed, write down what kind of thing it was, because that&#39;s the kind you&#39;ll always have to check yourself.</p>\n<p><strong>Check before it leaves.</strong> The pass coming back clean is the start of the check, not the end. Before the draft goes anywhere, the three-minute test: explain the three most important facts in it, out loud, and name where each came from. If one of them is &quot;the tool said it was confirmed,&quot; open the source yourself. Nothing leaves your hands unchecked, including the checker&#39;s work.</p>\n"
+      }
+    ],
+    "howToHtml": "<p><em>How to: running two passes. The fact-check and the voice check (B2) are different passes; run both, in that order: facts first, because fixing a fact can change a sentence, then voice. If your setup lets you chain skills, chain them. If not, two messages: &quot;run the fact-check pass,&quot; then &quot;now run it against my voice.&quot;</em></p>\n",
+    "version2Heading": "Version 2, after a week of real use",
+    "version2Html": "<p>Come back after the pass has run on five or six real drafts and answer:</p>\n<ul>\n<li>What got through that a reader caught? Add it as a numbered check, in the specific form it took.</li>\n<li>Did the &quot;couldn&#39;t verify&quot; line ever come back empty on a draft with more than five facts? Treat that as a failure of the skill, and add a line saying so.</li>\n<li>Which check never fires in your work? Leave it; it costs nothing. Which fires every time? Move it to the top.</li>\n<li>How many sources did you open yourself this week? If the answer is zero, the skill is working and you aren&#39;t.</li>\n</ul>\n",
+    "compoundsHtml": "<p>This is the skill the others depend on. The research skill in B4 feeds it sources; the post skill in B6 won&#39;t release a draft until it has run; the deck in C5 logs every catch it makes next to yours and the standard&#39;s. And your &quot;close but wrong&quot; list, the one you started in question 3, becomes a record of exactly how the tool fails on your kind of facts, which is knowledge no one else has and the tool reads every time it checks your work.</p>\n",
+    "draft": false,
+    "source": "content/workbook/partB/wsB5-your-fact-check-pass.md"
+  },
+  {
+    "id": "B6",
+    "part": "B",
+    "slug": "your-post-skill",
+    "title": "Your post skill",
+    "promiseText": "A file for the posts you put up under your own name: open on a fact, hold one opinion, no tells, checked before it goes. When you finish you'll have a post skill that reads your voice file and your brand file instead of carrying its own copies, and you'll have run one real post through it. About forty-five minutes.",
+    "promiseHtml": "<p>A file for the posts you put up under your own name: open on a fact, hold one opinion, no tells, checked before it goes. When you finish you&#39;ll have a post skill that reads your voice file and your brand file instead of carrying its own copies, and you&#39;ll have run one real post through it. About forty-five minutes.</p>\n",
+    "minutes": 45,
+    "whyHtml": "<p>What a post is: it opens on a specific fact, moment, or number, it holds one opinion you&#39;d defend in the comments, and it ends on the point. Everything else about social media is format, and the format is where the tool fails, because it has read more posts than any human alive and the average of all of it is what it produces when you don&#39;t tell it otherwise.</p>\n<p>Watch your own feed the day something happens in your field. Most of the posts restate the announcement with a sentence of enthusiasm on top and a row of hashtags underneath, and if you swapped the names on them nobody would notice. The post that does well is the one with an opinion in it and a file behind it that knows how its author states one.</p>\n<p>This skill is short because it leans on two others. Your voice is in B2. Who your company is lives in B3. The post skill says what a post is and points at both. If you haven&#39;t built those two, build them first. A post skill with no voice behind it produces fluent posts by nobody.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> A first-year founder&#39;s post skill, condensed. Note how little is in it. The voice and the brand live elsewhere.</p>\n<pre><code># Skill: My posts\nThis skill serves [the founder]. Use it when I say &quot;post,&quot; &quot;LinkedIn,&quot;\nor &quot;draft something on this.&quot; Load my voice skill and the brand skill first.\n\n## What a post of mine is\n- Opens on a specific fact, moment, or number from the news peg or from\n  what we&#39;re building. Never on a question, a hook formula, or &quot;I&#39;ve\n  been thinking.&quot;\n- Holds exactly one opinion I&#39;d defend in the comments. If the draft\n  has two, ask me which.\n- 120 to 200 words. Paragraphs of uneven length. Not one sentence per\n  line down the screen.\n- Ends on the point. Never on &quot;Thoughts?&quot; or &quot;Agree?&quot;\n- Written for other founders and the operators we sell to.\n\n## The brief I&#39;ll give you\nTwo or three sentences: what happened, what I think, who I&#39;m talking to.\nIf I give you only the news, ask what I think before drafting.\n\n## Never\n- Hashtag walls. Emoji. Exclamation points. Rocket ships.\n- &quot;Excited to share.&quot; &quot;Thrilled to announce.&quot; &quot;Honored to.&quot; &quot;Humbled.&quot;\n- &quot;Three things I learned when...&quot; (the humble brag disguised as a lesson).\n- Admiring the announcement. Admiration is a decision, not a default;\n  push toward the harder read and let me pull back.\n- A number that wasn&#39;t in the source.\n- Anything about a customer or an investor by name.\n\n## Before I see it\n1. Run the fact-check pass on every number, name, and quote.\n2. Check against the brand skill if it mentions the company.\n3. Then show me the draft.\n\n## Always\n- Draft, then I edit, then I post it myself. You never post.\n</code></pre>\n<p>The last line is the one to keep if you cut everything else. The moment a post goes up is the moment it becomes yours in public, and your hand should be on it.</p>\n",
+    "yourTurn": [
+      {
+        "type": "item",
+        "n": 1,
+        "question": "Where you post, and for whom",
+        "html": "<p><strong>Where you post, and for whom.</strong> The platform, and the two or three kinds of people you&#39;re actually talking to. One or two sentences.</p>\n",
+        "fields": [
+          {
+            "key": "where-you-post-and-for-whom",
+            "kind": "long"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "What a post of yours opens on",
+        "html": "<p><strong>What a post of yours opens on.</strong> Look at the last three posts you wrote yourself and liked. How did they start? A number, a scene, a line someone said to you? Write the rule.</p>\n",
+        "fields": [
+          {
+            "key": "what-a-post-of-yours-opens-on",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "How long, and what shape",
+        "html": "<p><strong>How long, and what shape.</strong> A word range. Whether you break lines or write paragraphs. One line.</p>\n",
+        "fields": [
+          {
+            "key": "how-long-and-what-shape",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Your \"never\" list for posts",
+        "html": "<p><strong>Your &quot;never&quot; list for posts.</strong> Start with the tells you recognize in your own feed, then add anything the tool has drafted for you that made you wince. Six to ten items.</p>\n",
+        "fields": [
+          {
+            "key": "your-never-list-for-posts",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "The admiration question",
+        "html": "<p><strong>The admiration question.</strong> When something happens in your field, what&#39;s your default reaction, and what&#39;s the harder read you&#39;d rather be known for? One or two sentences. The skill should push you toward the second.</p>\n",
+        "fields": [
+          {
+            "key": "the-admiration-question",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "The brief you'll give it",
+        "html": "<p><strong>The brief you&#39;ll give it.</strong> Write the three-sentence brief you&#39;d give for something that happened in your field this week: what happened, what you think, who you&#39;re talking to. You&#39;ll use it in the test.</p>\n",
+        "fields": [
+          {
+            "key": "the-brief-you-ll-give-it",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "md",
+        "html": "<p>Paste the frame below with your answers, ask the tool to tidy the wording, and save it as <code>posts.md</code>.</p>\n<pre><code># Skill: My posts\nThis skill serves [your name]. Use it when I ask for a post for\n[answer 1]. Load my voice skill (and my brand skill, if the post is\nabout my company) first.\n\n## What a post of mine is\n- Opens on [answer 2]. Never on a question or a hook formula.\n- Holds one opinion I&#39;d defend in the comments. Two: ask me which.\n- [answer 3]\n- Ends on the point. Never on &quot;Thoughts?&quot;\n- Written for [answer 1].\n\n## The brief I&#39;ll give you\nWhat happened, what I think, who I&#39;m talking to. If I give you only\nthe news, ask what I think before drafting.\n\n## Never\n[answer 4, each on its own line]\n- Admiring the announcement by default. [answer 5]\n- A number that wasn&#39;t in the source.\n\n## Before I see it\n1. Run my fact-check pass on every number, name, and quote.\n2. Check against my brand skill if it mentions my company.\n\n## Always\n- Draft, then I edit, then I post it myself. You never post.\n</code></pre>\n<p><strong>Test it once.</strong> Give it the brief from answer 6 and ask for the post. Then run the five passes yourself, one message each: is the opinion actually in it or did it drift into summary; cut it to your word range; fix every line you&#39;d never say; check the facts; read it aloud and rewrite anything that sounds like a press release. Count how many of the five found something. Four or five is normal for a first draft.</p>\n<p><strong>Check before it leaves.</strong> A post is the fastest route from the tool to the public with your name attached, and nothing leaves your hands unchecked. Before you hit post, the three-minute test: say what the post argues and where its fact came from, out loud, without the screen. If you&#39;d be uncomfortable defending it in the comments tomorrow, it isn&#39;t finished. Then post it yourself.</p>\n"
+      }
+    ],
+    "howToHtml": "<p><em>How to: the killed post. Sooner or later the fact pass will find a number in a draft that was never in the announcement, and you&#39;ll pull the post. The skill&#39;s &quot;a number that wasn&#39;t in the source&quot; line is the result. If you&#39;ve killed a post for a reason, write that reason into Never, in its specific form. The specific form is the one the tool can check.</em></p>\n",
+    "version2Heading": "Version 2, after a week of real use",
+    "version2Html": "<p>Come back after three or four real posts and answer:</p>\n<ul>\n<li>Which pass found something every time? That&#39;s a missing rule. Write it so the draft arrives with it already done.</li>\n<li>Did the draft ever open on a question or a hook? Make the opening rule more specific: name what it should open on, not just what it shouldn&#39;t.</li>\n<li>Did the opinion drift into summary? Add &quot;state the opinion in the first fifty words&quot; to What a post of mine is.</li>\n<li>Did it admire something you&#39;d have questioned? Sharpen answer 5. The tool pushes toward the average take; the file is how you push back.</li>\n</ul>\n",
+    "compoundsHtml": "<p>Every post now arrives already in your voice (B2), already checked against who your company is (B3), already through the fact pass (B5), and you spend the forty minutes on the argument instead of on fixing the sound. The &quot;never&quot; list grows with every post you almost regretted. And the brief habit in question 6, three sentences before you ask, is the same habit that writes the deck in C5 and the business brief in C1, practiced on something small every week.</p>\n",
+    "draft": false,
+    "source": "content/workbook/partB/wsB6-your-post-skill.md"
+  },
+  {
+    "id": "C5",
+    "part": "C",
+    "slug": "your-23-passes",
+    "title": "Your 23 passes",
+    "promiseText": "One real deliverable, built with the tool against a standard you chose, with every pass logged and every catch credited. When you finish, you'll have the thing itself, plus a page that shows you where your judgment lives. About two hours, spread over a morning.",
+    "promiseHtml": "<p>One real deliverable, built with the tool against a standard you chose, with every pass logged and every catch credited. When you finish, you&#39;ll have the thing itself, plus a page that shows you where your judgment lives. About two hours, spread over a morning.</p>\n",
+    "whyHtml": "<p>A good deck takes twenty passes. It always did. What changed is that each pass now costs a minute instead of an afternoon, and every version that matters still starts with a note from you, and every version that goes out still has to be checked against a standard you chose. Diligence didn&#39;t get cheaper. It got faster.</p>\n<p>This page has you do that once, on purpose, and keep score. Not because the score matters. Because the two columns you&#39;ll fill in at the end, catches that came from you and catches that came from the tool, are the clearest picture you&#39;ll ever get of what human-led AI means in your own work. You&#39;ll see what the machine is for. You&#39;ll see what only you can do. And you&#39;ll stop being surprised that it takes twenty passes, because you&#39;ll have watched twenty passes turn something competent into something you&#39;d sign.</p>\n<p>Pick something real. A deck you owe someone, a proposal, a one-pager, a report. Something with a reader who matters and a deadline that&#39;s close enough to feel.</p>\n<p>One more reason to keep score. Your reader knows these tools exist. When the checks are this cheap, a wrong number or a claim you can&#39;t back no longer reads as a rough draft; it reads as a decision not to check. The passes aren&#39;t polish. They&#39;re the part your reader is quietly grading.</p>\n",
+    "exampleHeading": "An example",
+    "exampleHtml": "<p><em>An illustration, not a real person.</em> A first-year founder&#39;s morning, condensed to the parts you&#39;ll fill in yourself.</p>\n<p><strong>The deliverable.</strong> A pitch deck for a seed investor, cut from a 24-slide company overview. Eight slides maximum.</p>\n<p><strong>The room.</strong> One partner who has read every market-stats slide in the category this year. She needs to leave knowing what the company does, why now, and what the money buys. She&#39;ll stop trusting the founders at the first claim they can&#39;t back.</p>\n<p><strong>The standard.</strong> A widely cited published guide to seed decks: one piece on what the deck has to say, one on how it has to look.</p>\n<p><strong>The log,</strong> ten of the twenty-two rows:</p>\n<table>\n<thead>\n<tr>\n<th>Pass</th>\n<th>My note</th>\n<th>What changed</th>\n<th>Caught by</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1</td>\n<td>Eight slides max</td>\n<td>24 cut to 8</td>\n<td>me</td>\n</tr>\n<tr>\n<td>2</td>\n<td>She knows the stats; open on the need</td>\n<td>Stats out, need in</td>\n<td>me</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Score against the guide</td>\n<td>Team slide moved from 7 to 2; traction slide had no numbers</td>\n<td>standard</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Revenue targets we won&#39;t hit by the date on the slide</td>\n<td>Targets became adoption milestones</td>\n<td>me</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Customer named on slide 5 is under NDA</td>\n<td>Name out, &quot;a regional bank&quot; in</td>\n<td>tool</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Product name spelled two ways</td>\n<td>Fixed on both pages</td>\n<td>tool</td>\n</tr>\n<tr>\n<td>11</td>\n<td>Speaker notes would travel in a forwarded file</td>\n<td>Notes stripped</td>\n<td>tool</td>\n</tr>\n<tr>\n<td>14</td>\n<td>&quot;Revolutionary&quot; on slide 3</td>\n<td>Replaced with the number</td>\n<td>me</td>\n</tr>\n<tr>\n<td>17</td>\n<td>Text overflow on slide 6 in the rendered PDF</td>\n<td>Shortened</td>\n<td>tool</td>\n</tr>\n<tr>\n<td>22</td>\n<td>Cover line to one sentence</td>\n<td>Done</td>\n<td>me</td>\n</tr>\n</tbody></table>\n<p><strong>The two columns at the end.</strong> Catches from the founder: 11, mostly about the room and about claims. Catches from the tool: 8, mostly about consistency, leaks, and rendering. Catches from the standard: 3, all about order and emphasis. That split is typical: the person catches what&#39;s wrong for the reader; the machine catches what&#39;s wrong on the page.</p>\n",
+    "yourTurn": [
+      {
+        "type": "item",
+        "n": 1,
+        "question": "The deliverable",
+        "html": "<p><strong>The deliverable.</strong> What are you making, and for whom? One sentence.</p>\n",
+        "fields": [
+          {
+            "key": "the-deliverable",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 2,
+        "question": "The room",
+        "html": "<p><strong>The room.</strong> Who reads it, what do they already know, what must they leave with, and what would make them stop trusting you? Four short lines.</p>\n",
+        "fields": [
+          {
+            "key": "the-room",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 3,
+        "question": "The standard",
+        "html": "<p><strong>The standard.</strong> Find a published standard for this kind of thing: a style guide, a checklist, a well-known essay on how to do it well. Name it. If you can&#39;t find one, ask the tool: &quot;What&#39;s the most respected published guidance on how to write a good [X]?&quot; and pick one.</p>\n",
+        "fields": [
+          {
+            "key": "the-standard",
+            "kind": "short"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 4,
+        "question": "Brief and first draft",
+        "html": "<p><strong>Brief and first draft.</strong> Paste the brief (Worksheet A2&#39;s shape plus the room above) and ask for the draft. Read the rendered result, not the description of it.</p>\n",
+        "fields": [
+          {
+            "key": "brief-and-first-draft",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 5,
+        "question": "The log",
+        "html": "<p><strong>The log.</strong> Copy this table and add a row for every pass. Keep notes to one line. In the last column write &quot;me,&quot; &quot;tool,&quot; or &quot;standard.&quot;</p>\n<table>\n<thead>\n<tr>\n<th>Pass</th>\n<th>My note</th>\n<th>What changed</th>\n<th>Caught by</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>2</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody></table>\n",
+        "fields": [
+          {
+            "key": "the-log",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 6,
+        "question": "The review",
+        "html": "<p><strong>The review.</strong> Somewhere past the midpoint, ask: &quot;Score this against [the standard]. Be blunt. List what&#39;s wrong in order of how much it matters.&quot; Log what you agree with as passes. Skip what you don&#39;t.</p>\n",
+        "fields": [
+          {
+            "key": "the-review",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 7,
+        "question": "Ship it",
+        "html": "<p><strong>Ship it.</strong> When you&#39;d sign it, stop. Write down the pass number.</p>\n",
+        "fields": [
+          {
+            "key": "ship-it",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 8,
+        "question": "The two columns",
+        "html": "<p><strong>The two columns.</strong> From your log, list every catch by who made it.</p>\n<p>Catches that came from me: _____\nCatches that came from the tool: _____\nWhat the standard caught: _____</p>\n",
+        "fields": [
+          {
+            "key": "the-two-columns",
+            "kind": "check",
+            "label": "Done"
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "n": 9,
+        "question": "One line",
+        "html": "<p><strong>One line.</strong> What&#39;s in your column that could never be in the tool&#39;s? Write it as a sentence you&#39;d say to someone who thinks the machine does the work.</p>\n",
+        "fields": [
+          {
+            "key": "one-line",
+            "kind": "short"
+          }
+        ]
+      }
+    ],
+    "howToHtml": "<p><em>How to: rendering and files. The tool can produce slides, documents, and images directly, and the formats change; Part 0 has the current steps. Whatever the format, read the rendered version before every &quot;ship,&quot; because the rendered version is what your reader sees.</em></p>\n",
+    "version2Heading": "Version 2, next time you build one",
+    "version2Html": "<p>The deliverable itself won&#39;t repeat; the way you built it will. After you&#39;ve done this once:</p>\n<ul>\n<li>Which notes did you give that you&#39;ll give every time? (Those become rules in a skill for this kind of deliverable.)</li>\n<li>What did the standard catch that you should have caught? (Add it to the brief next time, so the first draft starts there.)</li>\n<li>What did the tool catch that you&#39;d rather it always check? (Say so in the skill: &quot;before every version, check that product names match across pages.&quot;)</li>\n<li>How many passes did it take? Write the number down. It&#39;ll be lower next time, and it&#39;ll never be one.</li>\n</ul>\n",
+    "compoundsHtml": "<p>Every catch in your column is a piece of judgment you now know you own; every catch in the tool&#39;s column is a check you can hand off permanently by writing it into a skill. The log turns one morning&#39;s work into rules for every deliverable after it. And the pass count, written down, cures the thing that stops most people: the belief that if it took twenty tries, they did something wrong.</p>\n",
+    "draft": false,
+    "source": "content/workbook/partC/wsC5-your-23-passes.md"
   }
 ]

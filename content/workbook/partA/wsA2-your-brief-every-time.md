@@ -4,29 +4,29 @@ A five-part frame you fill in before any real task, with one real brief complete
 
 ## Why this matters
 
-Four hundred words beats four. Chapter 1 said it and every chapter after it depended on it. The difference between the generic retail report I got in my first year and the business plan I got a year later wasn't the tool. It was the brief: who I was, who the work was for, what I was actually trying to do, what I'd already tried, and what good looked like. Then the ask, in one sentence.
+Four hundred words beats four. The difference between a generic report and a plan you can act on is almost never the tool. It's the brief: who you are, who the work is for, what you're actually trying to do, what you've already tried, and what good looks like. Then the ask, in one sentence.
 
 The frame is the same every time, which is why it belongs on a page you can copy. After a few weeks you won't need the page; the shape will be in your hands. Until then, fill it in.
 
-One thing to expect. The first answer to a good brief is often still the easy answer, the one the tool reaches for by habit. Chapter 1's second lesson was to stay in the conversation and correct it. The brief gets you a better first draft; the correction gets you the real one.
+One thing to expect. The first answer to a good brief is often still the easy answer, the one the tool reaches for by habit. The brief gets you a better first draft; staying in the conversation and correcting it gets you the real one.
 
-## Mark's example
+## An example
 
-The brief that opened Chapter 1, condensed to its parts. The real one was four hundred words.
+*An illustration, not a real person.* Say you run a two-person accounting practice and you're deciding whether to add a fixed-fee advisory package for your forty clients. The brief, condensed to its parts:
 
-**Who I am and what I know.** Ran a coffee company at 23. Helped open hundreds of Starbucks stores. I know what retail labor costs, what a lease does to you, what a slow Tuesday looks like.
+**Who I am and what I know.** Two-partner practice, forty clients, mostly owner-operated businesses under a few million in revenue. I know what our clients actually ask us between tax seasons, and that most of it goes unbilled.
 
-**Who the work is for.** Me, first, to decide whether this concept can work. Then a business partner who'll want the numbers.
+**Who the work is for.** My partner, who's skeptical, and then our clients, who'll see the price.
 
-**What I'm trying to do.** Not "research this market." Find out whether a model exists for this concept that doesn't break on retail's margins, and if so, what it looks like.
+**What I'm trying to do.** Not "research advisory services." Find out whether a fixed monthly package can be priced so that it pays for the hours we already give away, without losing the clients who'd balk.
 
-**What I've tried and what I don't want.** I've asked this before and got a generic report on why retail is hard. I know why retail is hard. Don't give me that.
+**What I've tried and what I don't want.** I've asked this before and got a generic piece on "the shift to advisory." I know the shift. Don't give me that.
 
-**What good looks like.** A model that works on paper, with the math shown, and a note on every assumption I'd have to prove.
+**What good looks like.** A price, a scope, the hours it assumes, and a note on every assumption I'd have to check against our own time records.
 
-**The ask.** Build me the unit economics for this concept, one location at a time, and show me where it breaks.
+**The ask.** Build me the economics of one package, for one client type, and show me where it breaks.
 
-Then, when it came back generic anyway: the capital-and-labor problem isn't a reason to stop, it's the thing to design around; assume one central kitchen and partner locations; rebuild the model on that. That correction was the whole morning.
+Then, when it came back generic anyway: the unbilled hours aren't a reason this is hard, they're the thing the package is built on; assume we already do the work; price the work we do. That correction was the whole exercise.
 
 ## Your turn
 

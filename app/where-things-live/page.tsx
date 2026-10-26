@@ -5,37 +5,41 @@ export const metadata = { title: "Where things live", description: "Where each s
 export default function WhereThingsLive() {
   const checked = whereIsChecked();
   return (
-    <main>
+    <main className="where">
       <h1>Where things live</h1>
-      <p className="lede">
-        As of today. This page will be wrong first, so we keep it current. The habits don&apos;t move. Only the buttons do. When a
-        release lands, this page is what we update first, with the date.
-      </p>
       {checked ? (
         <>
-          <p className="meta">Last checked {WHERE.lastChecked}.</p>
-          <table className="cardtable">
-            <tbody>
-              {WHERE.rows.map((r) => (
-                <tr key={r.label}>
-                  <th scope="row">{r.label}</th>
-                  <td>
-                    {r.where}
-                    {r.was && <span className="meta"> (was: {r.was})</span>}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <p className="lede">Last checked {WHERE.lastChecked}. {WHERE.intro}</p>
+          {WHERE.rows.map((r) => (
+            <section key={r.id} id={r.id} className="where-row">
+              <h2>{r.thing}</h2>
+              <p>{r.whereToday}</p>
+              {r.wasCalled && (
+                <p className="meta">
+                  <strong>If an older article says otherwise:</strong> {r.wasCalled}
+                </p>
+              )}
+              {r.plans && (
+                <p className="meta">
+                  <strong>Plans:</strong> {r.plans}
+                </p>
+              )}
+              <p className="meta">
+                {r.lastChanged && <>Last changed {r.lastChanged}. </>}
+                {r.source && (
+                  <a href={r.source} rel="noreferrer">
+                    Source
+                  </a>
+                )}
+              </p>
+            </section>
+          ))}
+          {WHERE.checkedAgainst && <p className="fineprint">Checked against: {WHERE.checkedAgainst}.</p>}
         </>
       ) : (
         <div className="card">
           <h3>First check in progress</h3>
-          <p>
-            Nothing is listed until it&apos;s been checked against today&apos;s screens and dated. A page like this that goes stale
-            is worse than none. Until then, ask your AI directly: &quot;Where do I turn memory on or off, and where do I upload a
-            skill, as of today?&quot; and check its answer against what you see.
-          </p>
+          <p>Nothing is listed until it&apos;s been checked against today&apos;s screens and dated. A page like this that goes stale is worse than none.</p>
         </div>
       )}
     </main>
