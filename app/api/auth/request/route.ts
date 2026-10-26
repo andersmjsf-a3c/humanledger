@@ -1,3 +1,4 @@
+import { appUrl } from "@/config/app-url";
 import { createLoginToken, normalizeEmail } from "@/lib/auth/session";
 import { sendSignInLink } from "@/lib/auth/email";
 import { log } from "@/lib/log";
@@ -10,7 +11,7 @@ export async function POST(req: Request) {
   const email = normalizeEmail(String(form?.get("email") ?? ""));
   if (email) {
     const token = await createLoginToken(email);
-    const link = `${process.env.APP_URL}/api/auth/verify?token=${encodeURIComponent(token)}`;
+    const link = `${appUrl()}/api/auth/verify?token=${encodeURIComponent(token)}`;
     await sendSignInLink(email, link);
   }
   log({ event: "login_requested", route: "/api/auth/request", status: 200 });

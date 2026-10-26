@@ -1,3 +1,4 @@
+import { appUrl } from "@/config/app-url";
 import { readCookie } from "./cookies";
 import { safeEqual } from "@/lib/auth/tokens";
 
@@ -13,9 +14,9 @@ export function humanOnlyGuard(req: Request): GuardResult {
   for (const h of ["x-api-key", "api-key", "x-auth-token"]) {
     if (req.headers.get(h)) return { ok: false, status: 401, code: "no_tokens_accepted" };
   }
-  const appUrl = process.env.APP_URL;
+  const site = appUrl();
   const origin = req.headers.get("origin");
-  if (!appUrl || !origin || origin !== new URL(appUrl).origin) {
+  if (!site || !origin || origin !== new URL(site).origin) {
     return { ok: false, status: 403, code: "bad_origin" };
   }
   if (req.headers.get("sec-fetch-site") && req.headers.get("sec-fetch-site") !== "same-origin") {

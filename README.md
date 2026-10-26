@@ -149,6 +149,13 @@ come back to this deployment. Source: `grader/grade-my-work/` (SKILL.md and `scr
   events; they never block Send.
 - The drift watcher (unattended re-tests) waits until after the beta.
 
+## Staging
+
+Vercel plus Neon, locked with Vercel's deployment protection. Setup: `docs/staging.md`. The `vercel-build`
+script runs `scripts/migrate.ts` (applies `./drizzle` over `DATABASE_URL_UNPOOLED` or `DATABASE_URL`; skipped without either) before `next build`.
+The site's address is `APP_URL`, or Vercel's production address when that's unset (`src/config/app-url.ts`).
+The database is connected to Production only; preview deploys show pages but have no database.
+
 ## Next: week 8
 
 The beta: onboard readers and measure, with counts only, who finishes Part A and comes back to check real
