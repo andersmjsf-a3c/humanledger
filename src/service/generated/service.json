@@ -1,0 +1,581 @@
+{
+  "pages": [
+    {
+      "n": 1,
+      "slug": "write-something-that-sounds-like-me",
+      "title": "Write something that sounds like me",
+      "summary": "Ask for a draft, not a finished piece. Correct it three times. Keep the corrections.",
+      "worksheets": [
+        "B2",
+        "A3"
+      ],
+      "glossary": [
+        "draft",
+        "ai-tell",
+        "skill"
+      ],
+      "persona": "the solo consultant",
+      "ruleHtml": "<p>Don&#39;t ask it to write for you. Ask it to draft, then correct it, and keep every correction somewhere it will be read next time.</p>\n<p>Here&#39;s why. The tool has read more email, more posts, and more reports than any person alive, and when you say &quot;write this,&quot; it gives you the average of all of them. The average is fluent, tidy, and nobody&#39;s. It isn&#39;t yours, and the people who know you can tell in a sentence, usually before they can say why.</p>\n<p>The fix is a different first move. Brief it like a colleague who&#39;s drafting for your signature: who this is for, what you want to happen, what you don&#39;t want to sound like, how you&#39;d say it across a table. Then ask for a draft. Then read the draft and send it corrections one at a time: a sentence you&#39;d never say, a word you&#39;d never use, a place where it went grand and you&#39;d have gone specific. Three or four rounds gets you a draft you&#39;d sign.</p>\n<p>The part most people skip is the last one. Those corrections are the one thing you produced today that you&#39;ll use again, and if they stay in the conversation they&#39;re gone tomorrow. Write them down. After a week you&#39;ll have a list, and that list is the beginning of a file the tool reads before it writes anything for you. That file is called a skill, and it&#39;s how you stop correcting the same thing twice.</p>\n",
+      "tryIt": {
+        "beforeHtml": "<p>Open your AI and paste this, with your details filled in:</p>\n",
+        "prompt": [
+          {
+            "text": "I need to send "
+          },
+          {
+            "blank": "what: an email, a note, a short update"
+          },
+          {
+            "text": " to "
+          },
+          {
+            "blank": "who"
+          },
+          {
+            "text": ". What I want to happen: "
+          },
+          {
+            "blank": "one sentence"
+          },
+          {
+            "text": ". What I don't want to sound like: "
+          },
+          {
+            "blank": "two or three words: salesy, stiff, apologetic"
+          },
+          {
+            "text": ". If I were saying this across a table I'd say: "
+          },
+          {
+            "blank": "one or two sentences, the way you'd actually talk"
+          },
+          {
+            "text": ". Draft it. Keep it under "
+          },
+          {
+            "blank": "length"
+          },
+          {
+            "text": ". Don't tell me it's finished; I'll edit it."
+          }
+        ],
+        "afterHtml": "<p>Read what comes back once. Then, one message at a time: tell it one sentence you&#39;d never say and what you&#39;d say instead; tell it one word to cut; ask for a version two-thirds the length. Read the last version out loud under your breath. Anything that sounds like a press release, send back.</p>\n"
+      },
+      "sections": [
+        {
+          "heading": "What it looks like",
+          "html": "<p><em>An illustration, not a real person.</em> Say you&#39;re a solo consultant with six clients, and one of them has gone quiet for three weeks after a proposal. You ask the tool to &quot;write a follow-up email&quot; and get four paragraphs opening with &quot;I hope this message finds you well&quot; and closing with &quot;I look forward to hearing from you at your earliest convenience.&quot; You&#39;ve never written either sentence in your life.</p>\n<p>So you start over with the brief above. Who: a client who went quiet; probably busy, possibly cooling. What you want: a yes, a no, or a date. What you don&#39;t want to sound like: needy. Across a table you&#39;d say: &quot;Haven&#39;t heard back, and I&#39;d rather know where this stands than guess. Still interested, or should I close the file?&quot; The draft comes back at three sentences. You cut one word and send it. The client replies that afternoon.</p>\n<p>The three corrections you made (no greeting-card openers, no &quot;at your earliest convenience,&quot; ask the plain question) go in a note. Next week you&#39;ll make them again, and the week after that you won&#39;t have to.</p>\n"
+        }
+      ],
+      "keepHtml": "<p>If the draft worked, the corrections are worth keeping. <strong>Turn them into a file</strong> opens the writing-voice builder (workbook B2), pre-filled with what you typed above. It asks for three things you&#39;ve written yourself and liked, finds what they have in common, and builds the file the tool reads before every draft. Takes about an hour. The result is yours, stays yours, and gets better every time you catch it.</p>\n<p>Related: how you want it to talk to you (A3), the glossary entries for <em>draft</em>, <em>AI tell</em>, and <em>skill</em>.</p>\n",
+      "source": "content/service/do/01-write-something-that-sounds-like-me.md"
+    },
+    {
+      "n": 2,
+      "slug": "check-whether-its-true",
+      "title": "Check whether something it told me is true",
+      "summary": "It sounds exactly the same when it's wrong. Ask for the source, open it, read the sentence.",
+      "worksheets": [
+        "B5",
+        "A5"
+      ],
+      "glossary": [
+        "hallucination",
+        "source",
+        "web-search",
+        "three-minute-test"
+      ],
+      "persona": "the practice owner",
+      "ruleHtml": "<p>Nothing it gives you leaves your hands unchecked.</p>\n<p>That&#39;s the one rule under everything else here, and the reason is simple. When the tool is wrong, it sounds exactly the way it sounds when it&#39;s right: confident, specific, well organized. It isn&#39;t lying. It fills gaps with what sounds plausible, and plausible is its specialty. A figure from the wrong year, a title from two jobs ago, a quote that&#39;s close to what someone said, a source that exists and says something adjacent. None of it looks wrong on the page.</p>\n<p>So the check can&#39;t be &quot;does this look right.&quot; The check is a short pass you run on anything with a number, a name, a date, or a quote in it, before it goes anywhere. Ask for the source of each fact and the sentence it comes from. Open the source. Read the sentence. Mark each fact confirmed, close but wrong, or couldn&#39;t find. Then write one line at the bottom listing what you couldn&#39;t verify, because that line is what makes the rest trustworthy to whoever reads it.</p>\n<p>And the test for whether you&#39;re done: can you explain the thing out loud, for three minutes, without looking at the screen? If you can&#39;t, you haven&#39;t finished the work yet, no matter how finished the page looks.</p>\n",
+      "tryIt": {
+        "beforeHtml": "<p>Take something the tool wrote for you this week that has at least three facts in it. Paste this under it:</p>\n",
+        "prompt": [
+          {
+            "text": "For every number, name, date, and quote above: give me the single source it came from and quote the exact sentence from that source. If you can't find a source you can link to, say \"couldn't find.\" Don't round, and don't pick the more impressive of two numbers. Then list anything you're not sure of."
+          }
+        ],
+        "afterHtml": "<p>Open every link. Read the sentence it quoted and compare it to the claim. Count how many came back confirmed, how many were close but wrong, and how many it couldn&#39;t find. The second category is the one to remember; it&#39;s where most of the damage lives.</p>\n<p>If your AI has a web search setting, make sure it&#39;s on before you ask. Answering from memory is how it gets dates wrong.</p>\n"
+      },
+      "sections": [
+        {
+          "heading": "What it looks like",
+          "html": "<p><em>An illustration, not a real person.</em> Say you run a two-person accounting practice and you&#39;ve asked the tool for a client memo on a tax rule that changed this year. The memo is clean: a threshold, an effective date, a citation to the agency&#39;s own page. It reads like something you&#39;d send.</p>\n<p>You run the pass. The threshold is right. The agency page is real. The effective date is from the proposal, not the final rule, and the final rule moved it by six months. The citation is to a page that exists and discusses the rule but never states the date the memo gives. Two facts confirmed, one close but wrong, one source that didn&#39;t say what the memo said it did.</p>\n<p>Ten minutes. The memo that goes out has the right date and a line at the bottom: &quot;Threshold and rule confirmed against the agency&#39;s published guidance; effective date confirmed against the final rule, not the proposal.&quot; Your client never knows there was a first draft. That&#39;s the point.</p>\n"
+        }
+      ],
+      "keepHtml": "<p>The pass above is seven steps and you just ran four of them by hand. <strong>Turn it into a file</strong> opens the fact-check builder (workbook B5), which writes the full pass as a skill the tool runs on every draft before you read it. It still misses things, because it&#39;s checking its own work. It catches the obvious ones, never gets tired, and leaves you the judgment calls. About thirty minutes.</p>\n<p>Related: your trust rules (A5), the glossary entries for <em>hallucination</em>, <em>source</em>, <em>web search</em>, and <em>the three-minute test</em>.</p>\n",
+      "source": "content/service/do/02-check-whether-something-it-told-me-is-true.md"
+    },
+    {
+      "n": 3,
+      "slug": "teach-it-a-job",
+      "title": "Teach it a job I do every week",
+      "summary": "Explained it three times? Write it down once. That file is a skill.",
+      "worksheets": [
+        "B1"
+      ],
+      "glossary": [
+        "skill",
+        "brief",
+        "project"
+      ],
+      "persona": "the sales manager",
+      "ruleHtml": "<p>If you&#39;ve explained something to the tool three times, stop explaining and write it down.</p>\n<p>Every conversation starts from nothing. The tool doesn&#39;t remember that your weekly report opens with the number, not the narrative, or that your client summaries never use the word &quot;leverage,&quot; or that you want three options and a recommendation, never five. So you say it again. And again. Most people are re-briefing the same five things in every conversation and calling it &quot;getting the hang of it.&quot;</p>\n<p>A skill is the file you write instead. It says what the job is, who it&#39;s for, what you&#39;ll hand over each time, the steps, what the finished thing looks like, and the rules you&#39;d never let anyone break. The tool reads it before it starts, so the first draft arrives already knowing what you&#39;d otherwise spend ten minutes saying. You name the job; it does the job.</p>\n<p>Two things to expect. The first version will be wrong in ways you can&#39;t see until you use it. And you&#39;ll be changing it as often as you use it for a while, which feels like failure and is the process. A skill is never finished. Every correction you&#39;d otherwise make again goes into the file, and after a month the file knows your job better than a new hire would.</p>\n",
+      "tryIt": {
+        "beforeHtml": "<p>Pick the thing you do every week that has the same shape each time. Paste this:</p>\n",
+        "prompt": [
+          {
+            "text": "I'm going to describe a job I do repeatedly, the way I'd explain it to someone covering for me. Turn it into a one-page set of instructions with these sections: what the job is and who it's for; what I'll hand you each time; the steps in order; what the finished result looks like (length, format, what comes first); rules that must always be true; things that must never appear; and one or two things to ask me about before guessing. Here's the job: "
+          },
+          {
+            "blank": "describe it in a paragraph, including the mistakes you've seen made"
+          },
+          {
+            "text": "."
+          }
+        ],
+        "afterHtml": "<p>Read what comes back. Fix the lines that aren&#39;t quite you. Then open a brand new conversation, paste the whole thing at the top, hand it this week&#39;s inputs, and ask for the job by name. Compare the result to what you&#39;d have made by hand. The differences are your first edits to the file.</p>\n"
+      },
+      "sections": [
+        {
+          "heading": "What it looks like",
+          "html": "<p><em>An illustration, not a real person.</em> Say you manage a sales team of eight and every Monday you send your VP a pipeline summary. Every Monday you tell the tool the same things: open with the number against target, then what moved, then what&#39;s at risk, then what you need from her. Never more than a page. Never the word &quot;robust.&quot; Always a date on every deal.</p>\n<p>The third Monday you write it down instead. One page: the job, the inputs (the pipeline export and your notes), six steps, the format, four always-rules, three never-rules, and one question it should ask you (which deals you&#39;ve already discussed with the VP so it doesn&#39;t repeat them). You save it and name it &quot;Monday summary.&quot;</p>\n<p>The fourth Monday you paste the export, type &quot;Monday summary,&quot; and get a draft that&#39;s eighty percent right. You fix the other twenty percent and add two lines to the file. By the eighth Monday you&#39;re editing for judgment, not format. The twenty minutes you used to spend briefing are gone, and the summaries are more consistent than when you wrote them yourself.</p>\n"
+        }
+      ],
+      "keepHtml": "<p>What you just made is a skill, and it&#39;s worth keeping somewhere the tool can read it every time instead of pasting it. <strong>Turn it into a file</strong> opens the skill builder (workbook B1), pre-filled with what you wrote above, and saves it as a versioned file you can load into your AI. About an hour the first time, and the second skill takes half that, because the shape is the same.</p>\n<p>Related: the glossary entries for <em>skill</em>, <em>brief</em>, and <em>project</em>. Where skills live in your AI today, and how to load one, is on the Where things live page.</p>\n",
+      "source": "content/service/do/03-teach-it-a-job-i-do-every-week.md"
+    },
+    {
+      "n": 4,
+      "slug": "find-out-something-i-can-rely-on",
+      "title": "Find out something I can rely on",
+      "summary": "Name the decision, name the sources you trust, and make it show the trail.",
+      "worksheets": [
+        "B4"
+      ],
+      "glossary": [
+        "source",
+        "web-search",
+        "context"
+      ],
+      "persona": "the nonprofit director",
+      "ruleHtml": "<p>Research from the tool is only as good as the question, and the question has two parts most people leave out: what decision this serves, and which sources you trust.</p>\n<p>Left alone, the tool answers the question you typed. &quot;Tell me about the market for X&quot; gets you a competent summary that reads like the first page of search results, because that&#39;s roughly what it is. It weighs sources by volume, and volume is not reliability. It will give you a confident number with no date on it, and the number may be three years old.</p>\n<p>So the brief for research has everything a normal brief has (who you are, what you know, what good looks like) plus two lines. The decision: &quot;I&#39;m deciding whether to X, and I&#39;ll do it if Y.&quot; Now it knows what matters. The sources: whose filings, which agency, which publications you&#39;d read yourself, and what it should never treat as a source. Now it knows where to look.</p>\n<p>Then four rules at the top of every request: every fact gets a source and a date; prefer the original (the company&#39;s own statement, the study, the government page) over coverage of it; when two sources disagree, show both; end with a line that begins &quot;What I couldn&#39;t verify.&quot; The last one is the line that makes the rest usable.</p>\n",
+      "tryIt": {
+        "beforeHtml": "<p>Pick a real decision you&#39;re facing this month. Paste this, filled in:</p>\n",
+        "prompt": [
+          {
+            "text": "I'm deciding whether to "
+          },
+          {
+            "blank": "X"
+          },
+          {
+            "text": ", and I'll do it if "
+          },
+          {
+            "blank": "Y"
+          },
+          {
+            "text": ". What I already know: "
+          },
+          {
+            "blank": "two or three lines"
+          },
+          {
+            "text": ". What would change my mind: "
+          },
+          {
+            "blank": "one line"
+          },
+          {
+            "text": ". Sources I trust for this: "
+          },
+          {
+            "blank": "name two or three; say what you don't trust"
+          },
+          {
+            "text": ". Search for current information. Give every fact a source and a date. Prefer original sources over articles about them. If two sources disagree, show me both. Give me the three sources most worth my time and why. End with a line that begins \"What I couldn't verify:\" and list anything I should treat as unconfirmed."
+          }
+        ],
+        "afterHtml": "<p>Open the three sources it recommends. Read the sentence behind the fact your decision turns on. Then decide.</p>\n"
+      },
+      "sections": [
+        {
+          "heading": "What it looks like",
+          "html": "<p><em>An illustration, not a real person.</em> Say you direct a small nonprofit and your board wants to know whether to move the annual fundraiser online next year. You&#39;ve asked the tool before and got a page of generalities about &quot;the evolving landscape of virtual events.&quot;</p>\n<p>This time: &quot;I&#39;m deciding whether to hold next year&#39;s gala online, and I&#39;ll do it if comparable organizations our size raised at least as much online as in person over the last two years. What I know: our in-person gala nets about a fixed amount after costs; a third of our donors are over seventy. What would change my mind: evidence that donor retention drops after a move online. Sources I trust: sector research from the national associations, published annual reports from organizations our size; not vendor blogs selling event platforms.&quot;</p>\n<p>What comes back is narrower and more useful: three studies with dates, two of them agreeing and one not, a note that most of the data is from the pandemic years and may not hold, and a &quot;couldn&#39;t verify&quot; line saying it found no retention data for donors over seventy specifically. That last line is the one you bring to the board, because it&#39;s the question nobody had asked.</p>\n"
+        }
+      ],
+      "keepHtml": "<p>Those four rules and your list of trusted sources are the same every time. <strong>Turn it into a file</strong> opens the research builder (workbook B4), which writes them once as a skill, with your source list in it, so you never type them again. The source list is the part that grows; after a few months it&#39;s a map of your field&#39;s reliable voices.</p>\n<p>Related: check whether something it told me is true; the glossary entries for <em>source</em>, <em>web search</em>, and <em>context</em>.</p>\n",
+      "source": "content/service/do/04-find-out-something-i-can-rely-on.md"
+    },
+    {
+      "n": 5,
+      "slug": "make-something-someone-will-judge",
+      "title": "Make a deck or a one-pager someone will judge",
+      "summary": "Brief it for the room, score the draft against a published standard, and count your passes.",
+      "worksheets": [
+        "C5",
+        "B3"
+      ],
+      "glossary": [
+        "artifact",
+        "standard",
+        "brief",
+        "brand"
+      ],
+      "persona": "the first-year founder",
+      "ruleHtml": "<p>Anything you hand to another person gets briefed for the room, checked against a standard that isn&#39;t yours, and read by you before it goes.</p>\n<p>The tool can produce a deck in a minute, and the deck will be wrong in ways that cost you. Not wrong on the facts, usually. Wrong for the room: it explains things the reader already knows, it buries the point on slide six, it uses the word &quot;revolutionary&quot; where a number would do, and it carries something in the speaker notes that was never meant to leave the building.</p>\n<p>So the brief starts with the reader. Who reads this, what they already know, what they must leave with, what would lose them. Then the draft. Then the step that changes everything: find a published standard for this kind of thing (a well-known essay on pitch decks, a style guide for memos, a checklist for board papers) and ask the tool to score your draft against it. Fix what fails. Then read it yourself, every page, as the reader would. Then the fact pass on every number. Then send.</p>\n<p>Expect twenty passes, not two. The tool hasn&#39;t failed when that happens; twenty passes is what producing something good has always taken, and the only thing that changed is that each pass now costs a minute instead of an afternoon. Diligence didn&#39;t get cheaper. It got faster.</p>\n",
+      "tryIt": {
+        "beforeHtml": "<p>Pick one thing you have to hand to a specific person this week. Paste this:</p>\n",
+        "prompt": [
+          {
+            "text": "I'm making "
+          },
+          {
+            "blank": "a one-page summary / a short deck / a chart"
+          },
+          {
+            "text": " for "
+          },
+          {
+            "blank": "who"
+          },
+          {
+            "text": ". They already know: "
+          },
+          {
+            "blank": "two lines"
+          },
+          {
+            "text": ". They must leave with: "
+          },
+          {
+            "blank": "one sentence"
+          },
+          {
+            "text": ". What would lose them: "
+          },
+          {
+            "blank": "one line"
+          },
+          {
+            "text": ". Here's what I have: "
+          },
+          {
+            "blank": "paste your notes or numbers"
+          },
+          {
+            "text": ". Draft it. Then find a widely cited published guide on how to do this kind of document well, name it, and score the draft against it point by point. Tell me what fails and why."
+          }
+        ],
+        "afterHtml": "<p>Fix what fails. Then ask: &quot;Is there anything in this that shouldn&#39;t leave the building: names, numbers, notes, claims we can&#39;t back?&quot; Then read every page yourself, out loud if you can. Count the changes you made. That number is normal.</p>\n"
+      },
+      "sections": [
+        {
+          "heading": "What it looks like",
+          "html": "<p><em>An illustration, not a real person.</em> Say you&#39;re a first-year founder and an investor asks for a short deck by Friday. Your first draft from the tool is twenty-two slides and opens with four slides on the size of the market. The investor has been looking at this market for five years. She knows.</p>\n<p>You brief for the room: she knows the market; she needs to leave believing the two of you can build this and that someone will pay for it; a launch date you can&#39;t commit to would lose her. The redraft is nine slides. You ask for a score against a well-known seed-deck guide, and it flags that your &quot;traction&quot; slide has no numbers and your team slide is last when it should be second. You fix both. You ask what shouldn&#39;t leave the building, and it finds a customer&#39;s name on slide seven that&#39;s under NDA and a revenue figure in the speaker notes. Both come out.</p>\n<p>Twenty-three versions by lunch, your own count. The investor&#39;s first question on Friday is about the team, which is the slide you moved.</p>\n"
+        }
+      ],
+      "keepHtml": "<p>The passes you just made are worth logging, because the pattern of what you catch, what the tool catches, and what the standard catches tells you what to put in a rule. <strong>Turn it into a file</strong> opens the deliverable log (workbook C5), which records one real piece of work pass by pass. If your deck is about your company, it also points you to the brand page (B3): who your company is, written down, so the tool can check every slide against it.</p>\n<p>Related: write something that sounds like me; check whether something it told me is true; the glossary entries for <em>artifact</em>, <em>standard</em>, <em>brief</em>, and <em>brand</em>.</p>\n",
+      "source": "content/service/do/05-make-a-deck-or-one-pager-someone-will-judge.md"
+    },
+    {
+      "n": 6,
+      "slug": "what-just-changed",
+      "title": "Figure out what just changed",
+      "summary": "The buttons move. The habits don't. Here's what to re-check after a release.",
+      "worksheets": [
+        "0.7",
+        "A4"
+      ],
+      "glossary": [
+        "model",
+        "model-release",
+        "conversation",
+        "cowork"
+      ],
+      "persona": "the teacher",
+      "ruleHtml": "<p>The platform you&#39;re using is not finished and never will be. Plan for that instead of being surprised by it.</p>\n<p>Three kinds of change hit you. A setting moves: the toggle you found last month is somewhere else, or has a new name. A name changes: a feature you read about in an article no longer appears under that word, because it was folded into something else. And the model changes: the company behind the tool releases a new version, and the thing you&#39;re talking to has slightly different habits than it did on Monday. Your drafts read a little differently. A rule it always followed, it now follows most of the time.</p>\n<p>None of these are your fault, and none of them mean you were doing it wrong. The habits in these pages (brief it, correct it, check it, write the rules down) don&#39;t change when the buttons do. What changes is where the buttons are and how firmly the rules hold.</p>\n<p>So two practices. Keep your rules somewhere that survives the room: a file, not a conversation. And after a release, re-test. Run your most-used skill on a task you&#39;ve run before and compare the results. Where it drifted, add a line to the file. Where a setting moved, this site&#39;s Where things live page is the dated record, and it gets updated first.</p>\n",
+      "tryIt": {
+        "beforeHtml": "<p>Open your AI and ask it directly:</p>\n",
+        "prompt": [
+          {
+            "text": "Which model am I talking to right now, and when was it released? Has anything about how you work changed recently that I should know about: memory, projects, skills, search?"
+          }
+        ],
+        "afterHtml": "<p>Then take one thing the tool has done for you reliably (a weekly summary, an email in your voice) and ask for it again today, the same way you did last time. Read the two side by side. If something slipped, you&#39;ve found a line that belongs in a file rather than in your head.</p>\n<p>Then look at the Where things live page on this site. If what you see on your screen doesn&#39;t match what the page says, tell us. That page is only useful if it&#39;s current, and you&#39;re how we know.</p>\n"
+      },
+      "sections": [
+        {
+          "heading": "What it looks like",
+          "html": "<p><em>An illustration, not a real person.</em> Say you teach high school and run your department, and for a semester you&#39;ve used the tool to turn your rough lesson notes into a parent-facing weekly update. It&#39;s been reliable: plain language, no jargon, under two hundred words, the week&#39;s topic in the first sentence.</p>\n<p>One Monday the update comes back at three hundred words with a cheerful opening line you&#39;d never write and a bulleted list where there used to be a paragraph. Nothing you did changed. You ask the tool which model you&#39;re talking to, and it names one you haven&#39;t heard of, released the previous week.</p>\n<p>You re-brief the three rules that slipped (length, no bullets, topic first), and the next draft is fine. Then you do the thing that matters: you write those three rules into the file you keep for this job, dated, with a note that the new model loosened them. Next release, you&#39;ll re-test this job first, because now you know it&#39;s the one that drifts.</p>\n"
+        }
+      ],
+      "keepHtml": "<p>The re-test you just ran is the routine; the rules you re-briefed are the ones that go in a file. <strong>Turn it into a file</strong> opens the corrections log (workbook A4) if you&#39;re keeping one, and the models-and-changes page (workbook 0.7), which walks through where to see which model you&#39;re on and how to run the re-test after each release. Both are short.</p>\n<p>Related: Where things live (dated), What changed (the release log), the glossary entries for <em>model</em>, <em>model release</em>, <em>conversation</em>, and <em>Cowork</em>, a retired name you may still meet in older articles.</p>\n",
+      "source": "content/service/do/06-figure-out-what-just-changed.md"
+    },
+    {
+      "n": 7,
+      "slug": "keep-it-from-forgetting",
+      "title": "Keep it from forgetting who I am",
+      "summary": "Three places context can live. Pick the right one for each thing, and write it down once.",
+      "worksheets": [
+        "A1",
+        "0.4"
+      ],
+      "glossary": [
+        "context",
+        "memory",
+        "project",
+        "conversation"
+      ],
+      "persona": "the solo consultant",
+      "ruleHtml": "<p>Every new conversation starts with a stranger. If you want it to know you, you have to put that knowledge somewhere it will be read.</p>\n<p>This is the single most common frustration, and it&#39;s a design fact, not a flaw. A conversation is a room. What you say in it stays in it. Open a new one and the tool has no idea you&#39;re a consultant who hates exclamation points and is in the middle of a proposal for a logistics client. It can&#39;t; nothing carried over.</p>\n<p>Three places context can live, and each is right for different things. Memory is for who you are: a paragraph about you, your role, how you like work done, that the tool keeps across every conversation once you&#39;ve told it. A project is a room with its own walls: one body of work, with its files and instructions, so your proposal work doesn&#39;t leak into your newsletter work and vice versa. A skill is for a job: the instructions for a thing you do repeatedly, loaded when you name the job.</p>\n<p>Who you are goes in memory. What you&#39;re working on goes in a project. How you do a job goes in a skill. The common mistake is putting everything in the conversation and being surprised tomorrow.</p>\n",
+      "tryIt": {
+        "beforeHtml": "<p>Write the paragraph about yourself you&#39;d want the tool to know every time. Who you are, what you do, what you&#39;re working toward this quarter, and three things about how you like work done. Keep it to what you&#39;d be comfortable with a colleague reading. Then paste it with:</p>\n",
+        "prompt": [
+          {
+            "text": "Here's who I am and how I like to work. Remember this for future conversations: "
+          },
+          {
+            "blank": "your paragraph"
+          },
+          {
+            "text": "."
+          }
+        ],
+        "afterHtml": "<p>Whether that saves depends on your AI&#39;s memory setting being on, and where that setting lives has moved more than once; the Where things live page has today&#39;s answer. Then pick one body of work you&#39;re in the middle of, make a project for it, and put the two or three files you keep re-attaching inside. Tomorrow, open a new conversation in that project and notice what you didn&#39;t have to say.</p>\n"
+      },
+      "sections": [
+        {
+          "heading": "What it looks like",
+          "html": "<p><em>An illustration, not a real person.</em> Say you&#39;re a solo consultant and you&#39;ve noticed that every conversation starts with the same three minutes: I&#39;m an independent consultant, I work with mid-sized logistics companies, I&#39;m writing a proposal for one now, please don&#39;t use bullet points, please keep it under a page.</p>\n<p>You split that into its three homes. The first two sentences and the two preferences go into memory as a paragraph. The proposal gets a project, and the client&#39;s brief, your rate sheet, and the last proposal you were proud of go in it as files. The proposal format itself (sections, length, tone) becomes a skill, because you write six of these a year.</p>\n<p>The next morning you open a conversation inside the project and type &quot;draft the proposal.&quot; The tool knows who you are, has the client&#39;s brief in front of it, and follows your format. The three minutes are gone. What&#39;s left is the part only you can do: deciding whether the proposal is right.</p>\n"
+        }
+      ],
+      "keepHtml": "<p>The paragraph you just wrote is the page you&#39;ll use more than any other here. <strong>Turn it into a file</strong> opens the paragraph-about-you builder (workbook A1), which tightens it, keeps it versioned, and tells you where to put it as the setting moves. The setup for memory and projects as they work today is workbook 0.4.</p>\n<p>Related: teach it a job I do every week; the glossary entries for <em>context</em>, <em>memory</em>, <em>project</em>, and <em>conversation</em>.</p>\n",
+      "source": "content/service/do/07-keep-it-from-forgetting-who-i-am.md"
+    },
+    {
+      "n": 8,
+      "slug": "understand-a-word",
+      "title": "Understand a word everyone keeps using",
+      "summary": "The glossary, in sentences you can repeat out loud. No jargon in the definition of jargon.",
+      "worksheets": [],
+      "glossary": [
+        "all"
+      ],
+      "persona": "none",
+      "ruleHtml": "<p>If you can&#39;t explain a term in one or two plain sentences, you don&#39;t have it yet, and most of the people using it don&#39;t either.</p>\n<p>AI vocabulary has two problems. Some of it is borrowed from engineering and means something precise that nobody tells you. Some of it is marketing and means nothing in particular. Both kinds get used in meetings as if everyone knows, and most people nod. You don&#39;t need the engineering, and you should ignore the marketing. You need about twenty-five words, each defined so you could repeat the definition to a colleague without looking.</p>\n<p>That&#39;s what the glossary on this site is. Every term in one or two sentences, in plain words, with a link to the page where it matters. Terms are added when they earn a place, not when they appear in a press release. Retired names are kept, with a note, so that when you read an article from last year telling you to open a feature that no longer exists under that name, you know you aren&#39;t the one who&#39;s confused.</p>\n",
+      "tryIt": {
+        "beforeHtml": "<p>Pick the word you&#39;ve been nodding at. Look it up in the glossary. Then, without looking, say the definition out loud to no one. If you can, you have it. If you can&#39;t, read it again, and then ask your AI:</p>\n",
+        "prompt": [
+          {
+            "text": "Explain "
+          },
+          {
+            "blank": "the term"
+          },
+          {
+            "text": " to me in two sentences, in plain words, with one example from ordinary office work. Don't use any other technical term in the explanation."
+          }
+        ],
+        "afterHtml": "<p>Compare what it says to the glossary. If they disagree, the glossary was written by people and checked; the tool was answering from the average of what it has read. Trust the one with a date on it, and tell us if you think we got it wrong.</p>\n"
+      },
+      "sections": [
+        {
+          "heading": "The ones people ask about first",
+          "html": "<p><strong>Skill.</strong> Instructions you write once for a repeat task, so next time you just name the task. It is never finished; every correction you&#39;d otherwise repeat goes into it.</p>\n<p><strong>Memory.</strong> Things the tool remembers about you between conversations, once you&#39;ve told it and it has saved them.</p>\n<p><strong>Project.</strong> A separate room with its own instructions and files, so work on one thing doesn&#39;t bleed into another.</p>\n<p><strong>Hallucination.</strong> When the tool states something false with full confidence. It fills a gap with what sounds right, and it sounds exactly the same as when it&#39;s right.</p>\n<p><strong>Agent.</strong> An AI with a job, a name, tools it&#39;s allowed to use, and a boundary it can&#39;t cross. It runs without you in the room and reports back.</p>\n<p><strong>Model.</strong> The AI itself, the thing doing the thinking. Models have names and versions, and the one you&#39;re talking to changes over time.</p>\n<p><strong>Context.</strong> What the tool knows about you and the task at the moment it answers. You supply most of it.</p>\n<p><strong>Prompt.</strong> What you type to it. The whole message, not a magic phrase.</p>\n<p>The full glossary has the rest, including <em>artifact</em>, <em>brief</em>, <em>draft</em>, <em>AI tell</em>, <em>source</em>, <em>web search</em>, <em>standard</em>, <em>the three-minute test</em>, <em>vibe coding</em>, <em>coding agent</em>, <em>harness</em>, and the retired name <em>Cowork</em>.</p>\n"
+        }
+      ],
+      "keepHtml": "<p>Nothing to keep here; this page is reference. If a word you keep meeting isn&#39;t in the glossary, tell us, and if it earns a place it goes in with a date.</p>\n<p>Related: every other page on this site links its terms here.</p>\n",
+      "source": "content/service/do/08-understand-a-word-everyone-keeps-using.md"
+    }
+  ],
+  "glossary": [
+    {
+      "slug": "agent",
+      "term": "Agent",
+      "definitionText": "An AI with a job, a name, tools it's allowed to use, and a boundary it can't cross.",
+      "definitionHtml": "An AI with a job, a name, tools it&#39;s allowed to use, and a boundary it can&#39;t cross."
+    },
+    {
+      "slug": "ai-tell",
+      "term": "AI tell",
+      "definitionText": "A habit of phrasing that gives away machine-written text: the smooth rhythm, the stock line, the inflated word.",
+      "definitionHtml": "A habit of phrasing that gives away machine-written text: the smooth rhythm, the stock line, the inflated word."
+    },
+    {
+      "slug": "artifact",
+      "term": "Artifact",
+      "definitionText": "A document, page, or app it builds for you that you can keep, edit, and share.",
+      "definitionHtml": "A document, page, or app it builds for you that you can keep, edit, and share."
+    },
+    {
+      "slug": "brand",
+      "term": "Brand (for the tool)",
+      "definitionText": "Who your company is and what it stands for, written down as rules the tool checks every output against. The colors and type are derived from it, not the other way around.",
+      "definitionHtml": "Who your company is and what it stands for, written down as rules the tool checks every output against. The colors and type are derived from it, not the other way around."
+    },
+    {
+      "slug": "brief",
+      "term": "Brief",
+      "definitionText": "What you give the tool before you ask for anything: who it's for, what good looks like, what you already know, what to avoid. Four hundred words beats four.",
+      "definitionHtml": "What you give the tool before you ask for anything: who it&#39;s for, what good looks like, what you already know, what to avoid. Four hundred words beats four."
+    },
+    {
+      "slug": "brief-or-spec",
+      "term": "Brief (or spec)",
+      "definitionText": "The written description a coding agent builds from: who it's for, what it does, what it must never do.",
+      "definitionHtml": "The written description a coding agent builds from: who it&#39;s for, what it does, what it must never do."
+    },
+    {
+      "slug": "coding-agent",
+      "term": "Coding agent",
+      "definitionText": "An AI that writes and runs software from your brief.",
+      "definitionHtml": "An AI that writes and runs software from your brief."
+    },
+    {
+      "slug": "context",
+      "term": "Context",
+      "definitionText": "What it knows about you and the task when it answers. You supply most of it.",
+      "definitionHtml": "What it knows about you and the task when it answers. You supply most of it."
+    },
+    {
+      "slug": "conversation",
+      "term": "Conversation (or thread)",
+      "definitionText": "One room. Everything you say in it stays in it; a new conversation starts with a clean slate unless memory, a project, or a skill carries context in.",
+      "definitionHtml": "One room. Everything you say in it stays in it; a new conversation starts with a clean slate unless memory, a project, or a skill carries context in."
+    },
+    {
+      "slug": "cowork",
+      "term": "Cowork",
+      "definitionText": "The name, for a while, of the part of Claude that did longer work: multi-step jobs, file handling, tasks that kept running while you were away. Those capabilities are now part of Claude itself and the separate name is gone. If something tells you to open Cowork, it's out of date.",
+      "definitionHtml": "The name, for a while, of the part of Claude that did longer work: multi-step jobs, file handling, tasks that kept running while you were away. Those capabilities are now part of Claude itself and the separate name is gone. If something tells you to open Cowork, it&#39;s out of date."
+    },
+    {
+      "slug": "draft",
+      "term": "Draft",
+      "definitionText": "What you should ask for instead of a finished product. You edit the draft; that's the job.",
+      "definitionHtml": "What you should ask for instead of a finished product. You edit the draft; that&#39;s the job."
+    },
+    {
+      "slug": "hallucination",
+      "term": "Hallucination",
+      "definitionText": "When it states something false with full confidence. It isn't lying; it's filling a gap with what sounds right.",
+      "definitionHtml": "When it states something false with full confidence. It isn&#39;t lying; it&#39;s filling a gap with what sounds right."
+    },
+    {
+      "slug": "harness",
+      "term": "Harness",
+      "definitionText": "The scaffolding that lets an AI do work rather than just talk: the tools it can call, the memory it keeps, the loop that lets it try again. The model is the engine; the harness is the car.",
+      "definitionHtml": "The scaffolding that lets an AI do work rather than just talk: the tools it can call, the memory it keeps, the loop that lets it try again. The model is the engine; the harness is the car."
+    },
+    {
+      "slug": "memory",
+      "term": "Memory",
+      "definitionText": "Things it remembers about you between conversations, once you've told it.",
+      "definitionHtml": "Things it remembers about you between conversations, once you&#39;ve told it."
+    },
+    {
+      "slug": "model",
+      "term": "Model",
+      "definitionText": "The AI itself, the thing doing the thinking. Different models have different strengths; the one you're talking to has a name (Claude).",
+      "definitionHtml": "The AI itself, the thing doing the thinking. Different models have different strengths; the one you&#39;re talking to has a name (Claude)."
+    },
+    {
+      "slug": "model-release",
+      "term": "Model release",
+      "definitionText": "A new version of the AI, with a new name and sometimes different habits, replacing the one you were talking to. Your rules don't change; re-test your skills.",
+      "definitionHtml": "A new version of the AI, with a new name and sometimes different habits, replacing the one you were talking to. Your rules don&#39;t change; re-test your skills."
+    },
+    {
+      "slug": "project",
+      "term": "Project",
+      "definitionText": "A separate room with its own instructions and files, so work on one thing doesn't bleed into another.",
+      "definitionHtml": "A separate room with its own instructions and files, so work on one thing doesn&#39;t bleed into another."
+    },
+    {
+      "slug": "prompt",
+      "term": "Prompt",
+      "definitionText": "What you type to it. The whole message, not a magic phrase.",
+      "definitionHtml": "What you type to it. The whole message, not a magic phrase."
+    },
+    {
+      "slug": "skill",
+      "term": "Skill",
+      "definitionText": "Instructions you write once for a repeat task, so next time you just name the task. It is never finished; every correction you'd otherwise repeat goes into it.",
+      "definitionHtml": "Instructions you write once for a repeat task, so next time you just name the task. It is never finished; every correction you&#39;d otherwise repeat goes into it."
+    },
+    {
+      "slug": "source",
+      "term": "Source",
+      "definitionText": "Where a fact came from. Ask for one, then open it.",
+      "definitionHtml": "Where a fact came from. Ask for one, then open it."
+    },
+    {
+      "slug": "standard",
+      "term": "Standard (outside)",
+      "definitionText": "A published guide, checklist, or essay on how to do a kind of work well, which you ask the tool to grade your draft against.",
+      "definitionHtml": "A published guide, checklist, or essay on how to do a kind of work well, which you ask the tool to grade your draft against."
+    },
+    {
+      "slug": "three-minute-test",
+      "term": "The three-minute test",
+      "definitionText": "Can you explain the output out loud, with no materials, for three minutes? If not, you haven't finished the work.",
+      "definitionHtml": "Can you explain the output out loud, with no materials, for three minutes? If not, you haven&#39;t finished the work."
+    },
+    {
+      "slug": "vibe-coding",
+      "term": "Vibe coding",
+      "definitionText": "Building software by telling a coding agent what you want in plain language, looking at what comes back, and asking for changes, instead of writing the code yourself.",
+      "definitionHtml": "Building software by telling a coding agent what you want in plain language, looking at what comes back, and asking for changes, instead of writing the code yourself."
+    },
+    {
+      "slug": "web-search",
+      "term": "Web search",
+      "definitionText": "When it looks things up live instead of answering from what it learned in training. Ask for it when facts matter.",
+      "definitionHtml": "When it looks things up live instead of answering from what it learned in training. Ask for it when facts matter."
+    }
+  ],
+  "tiles": [
+    {
+      "n": 1,
+      "title": "Write something that sounds like me",
+      "covers": "Voice, drafts, corrections"
+    },
+    {
+      "n": 2,
+      "title": "Check whether something it told me is true",
+      "covers": "Sources, dates, the fact pass"
+    },
+    {
+      "n": 3,
+      "title": "Teach it a job I do every week",
+      "covers": "Skills, written once"
+    },
+    {
+      "n": 4,
+      "title": "Find out something I can rely on",
+      "covers": "Research with a trail"
+    },
+    {
+      "n": 5,
+      "title": "Make a deck or a one-pager someone will judge",
+      "covers": "Briefs, standards, passes"
+    },
+    {
+      "n": 6,
+      "title": "Figure out what just changed",
+      "covers": "Releases, renamed things, settings"
+    },
+    {
+      "n": 7,
+      "title": "Keep it from forgetting who I am",
+      "covers": "Memory, projects, context"
+    },
+    {
+      "n": 8,
+      "title": "Understand a word everyone keeps using",
+      "covers": "The glossary, in plain words"
+    }
+  ]
+}

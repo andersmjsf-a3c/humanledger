@@ -21,7 +21,7 @@ export default tseslint.config(
   { files: ["tests/**", "scripts/**"], rules: { "no-console": "off" } },
   // Privacy guard 4: the vault can't make network calls.
   {
-    files: ["src/vault/**", "src/worksheets/**", "src/skills/**", "src/linters/**", "app/workbook/**", "app/skills/**", "app/check/**", "src/cards/**", "app/review/**", "src/grader/**", "app/grader/**"],
+    files: ["src/vault/**", "src/worksheets/**", "src/skills/**", "src/linters/**", "app/workbook/**", "app/skills/**", "app/check/**", "src/cards/**", "app/review/**", "src/grader/**", "app/grader/**", "src/service/**", "app/do/**", "app/glossary/**", "app/where-things-live/**", "app/what-changed/**", "app/privacy/**"],
     rules: {
       "no-restricted-globals": ["error", ...NETWORK_GLOBALS],
       "no-restricted-properties": [
