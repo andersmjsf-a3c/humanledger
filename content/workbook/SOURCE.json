@@ -97,6 +97,32 @@
         "C5"
       ],
       "note": "service-worksheets-and-data.zip (Oct 26 2026): company-voice worksheets from the human-led-service skill"
+    },
+    {
+      "kind": "human-led-service",
+      "sha256": "3495af8bfbbb2c1fde196f3e3213c5553bcd8d4f0f0c83f83501e12324d16b58",
+      "importedAt": "2026-10-29T18:34:52.007Z",
+      "worksheets": [
+        "0.1",
+        "0.2",
+        "0.3",
+        "0.4",
+        "0.5",
+        "0.6",
+        "0.7",
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "B6",
+        "C5"
+      ]
     }
   ]
 }

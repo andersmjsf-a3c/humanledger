@@ -144,7 +144,7 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
 
       {ws.version2Html && (
         <>
-          <h2>{ws.version2Heading}</h2>
+          <h2 id="version-2">{ws.version2Heading}</h2>
           <Html html={ws.version2Html} />
         </>
       )}

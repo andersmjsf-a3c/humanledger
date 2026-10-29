@@ -1,9 +1,16 @@
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { PRODUCT_NAME } from "@/config/brand";
+import { SESSION_COOKIE, userIdForSession } from "@/lib/auth/session";
 import { DO_PAGES, TILES, termBySlug } from "@/service";
 import { CHANGES, HOME_ROWS, WHERE, firstSentence, rowById, whereIsChecked } from "@/service/reference";
 
 // The approved Oct 26 homepage, rebuilt with the site's styles. Copy from content/service/do/homepage-copy.md.
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+// Signed in, the same tiles become the person's capabilities on /your-ai (Oct 29 2026).
+export default async function Home() {
+  if (await userIdForSession((await cookies()).get(SESSION_COOKIE)?.value)) redirect("/your-ai");
   const checked = whereIsChecked();
   return (
     <main className="home">

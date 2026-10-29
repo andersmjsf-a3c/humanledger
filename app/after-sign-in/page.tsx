@@ -2,12 +2,12 @@
 import { useEffect } from "react";
 import { peekPending } from "@/review/pending";
 
-// Back from the sign-in link: return to the scorecard that was waiting, or to history.
+// Back from the sign-in link: return to the scorecard that was waiting, or to Your AI.
 // The waiting card is cleared when it's sent or discarded on /review.
 export default function AfterSignIn() {
   useEffect(() => {
     const pending = peekPending();
-    window.location.replace(pending ? `/review#${pending}` : "/history");
+    window.location.replace(pending ? `/review#${pending}` : "/your-ai");
   }, []);
   return (
     <main>

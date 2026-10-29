@@ -185,6 +185,22 @@ mockup, rebuilt with the site's styles: "What are you trying to do?" and eight t
 - Look: white ground, accent #1F5F4A, Inter (self-hosted, no font requests to third parties). Placeholder
   until the brand work.
 
+## Your AI: the signed-in dashboard (Oct 29)
+
+Signed in, the homepage's tiles become the person's capabilities at `/your-ai` (spec:
+`content/service/do/dashboard-spec.md`). Same tiles, same order; the glossary tile moves to the nav and a
+dashed ninth tile (agents, C2) is added.
+
+- `src/dashboard/model.ts` builds the page as a pure function from metadata only: which vault files exist
+  and when they changed (read in the browser, never the answers), local check runs (counts), the person's
+  own scorecards (`GET /api/ledger`), and the release log. Tested in `tests/15-dashboard.test.ts`.
+- States: Not started, Tried (Copy on a page's Try it now; kept on this device), Kept (a worksheet or skill
+  saved), Connected (exported in Claude's skill format, or memory confirmed for the paragraph about you).
+- The coach's five rules pick each card's next step and the "Next for you" block; releases whose re-test
+  says "Not needed" don't count.
+- Header: Your AI and Vault when signed in, and Sign out (`POST /api/auth/signout`). The homepage sends a
+  signed-in visitor to `/your-ai`, and so does the end of sign-in.
+
 ## Next: week 8
 
 The beta: onboard readers and measure, with counts only, who finishes Part A and comes back to check real

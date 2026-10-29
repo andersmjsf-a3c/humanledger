@@ -114,4 +114,14 @@ export class AnswerStore {
   async getFolderHandle<T>(): Promise<T | undefined> {
     return done((await this.tx(META, "readonly")).get("folder"));
   }
+
+  // Small local flags for the dashboard: which pages' Try it now were done, and confirmations
+  // like "Claude's memory has my paragraph". Dates and slugs only, never what was typed.
+  async getMeta<T>(key: string): Promise<T | undefined> {
+    return done((await this.tx(META, "readonly")).get(key));
+  }
+
+  async setMeta(key: string, value: unknown): Promise<void> {
+    await done((await this.tx(META, "readwrite")).put(value, key));
+  }
 }
