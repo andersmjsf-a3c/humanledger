@@ -83,6 +83,9 @@ describe("guard 3: the human-only submit path", () => {
   it("a sign-in link works only once", async () => {
     const token = await createLoginToken("again@example.test");
     expect((await verify(new Request(`${APP}/api/auth/verify?token=${token}`))).status).toBe(303);
-    expect((await verify(new Request(`${APP}/api/auth/verify?token=${token}`))).status).toBe(400);
+    const again = await verify(new Request(`${APP}/api/auth/verify?token=${token}`));
+    expect(again.status).toBe(303);
+    expect(again.headers.get("location")).toBe("/login?error=expired");
+    expect(again.headers.get("set-cookie")).toBeNull();
   });
 });

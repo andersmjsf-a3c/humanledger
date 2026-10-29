@@ -12,10 +12,18 @@ export async function sendSignInLink(to: string, link: string): Promise<void> {
     }
     throw new Error("RESEND_API_KEY and EMAIL_FROM must be set in production");
   }
-  await new Resend(key).emails.send({
+  // Resend reports failures in the result rather than by throwing, so check it.
+  const { error } = await new Resend(key).emails.send({
     from,
     to,
     subject: `Your ${PRODUCT_NAME} sign-in link`,
     text: `Here's your sign-in link. It works once and expires in 15 minutes.\n\n${link}\n\nIf you didn't ask for it, ignore this email.`,
   });
+  if (error) throw new EmailError(error.name ?? "send_failed");
+}
+
+export class EmailError extends Error {
+  constructor(public code: string) {
+    super(`sign-in email not sent: ${code}`);
+  }
 }
