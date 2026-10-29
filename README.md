@@ -187,7 +187,7 @@ mockup, rebuilt with the site's styles: "What are you trying to do?" and eight t
 
 ## Your AI: the signed-in dashboard (Oct 29)
 
-Signed in, the homepage's tiles become the person's capabilities at `/your-ai` (spec:
+Signed in, the tiles also appear as the person's capabilities at `/your-ai` (spec:
 `content/service/do/dashboard-spec.md`). Same tiles, same order; the glossary tile moves to the nav and a
 dashed ninth tile (agents, C2) is added.
 
@@ -198,8 +198,12 @@ dashed ninth tile (agents, C2) is added.
   saved), Connected (exported in Claude's skill format, or memory confirmed for the paragraph about you).
 - The coach's five rules pick each card's next step and the "Next for you" block; releases whose re-test
   says "Not needed" don't count.
-- Header: Your AI and Vault when signed in, and Sign out (`POST /api/auth/signout`). The homepage sends a
-  signed-in visitor to `/your-ai`, and so does the end of sign-in.
+- `/` stays the homepage for everyone (content first). Signed in, each tile also shows its state dot and
+  one line (file and version, or "Tried Oct 25"); the tile still opens its page. Full cards only on
+  `/your-ai`.
+- Header: Your AI and Vault when signed in, and Sign out (`POST /api/auth/signout`). Sign-in returns to the
+  page the person was on (`src/account/returnTo.ts`, same-site paths only); a waiting scorecard comes
+  first; with neither, `/your-ai`.
 
 ## Next: week 8
 
