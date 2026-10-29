@@ -40,3 +40,35 @@ describe("the database address", () => {
     expect(databaseUrl({})).toBeUndefined();
   });
 });
+
+import { POST as requestLink } from "../app/api/auth/request/route";
+import { freshDb } from "./helpers";
+import { vi } from "vitest";
+
+describe("the sign-in form lands back on the site, never on a bare text page", () => {
+  const post = (email: string) => {
+    const body = new FormData();
+    body.set("email", email);
+    return requestLink(new Request("https://x/api/auth/request", { method: "POST", body }));
+  };
+
+  it("a sent link, a bad address, and a failed send each return to /login with a status", async () => {
+    await freshDb();
+    vi.spyOn(console, "log").mockImplementation(() => undefined);
+    const ok = await post("reader@example.test");
+    expect([ok.status, ok.headers.get("location")]).toEqual([303, "/login?sent=1"]);
+    const bad = await post("not an email");
+    expect([bad.status, bad.headers.get("location")]).toEqual([303, "/login?error=email"]);
+
+    const env = process.env as Record<string, string | undefined>;
+    const prev = env.NODE_ENV;
+    env.NODE_ENV = "production"; // no Resend key in tests: the send fails
+    try {
+      const failed = await post("reader@example.test");
+      expect([failed.status, failed.headers.get("location")]).toEqual([303, "/login?error=send"]);
+    } finally {
+      env.NODE_ENV = prev;
+      vi.restoreAllMocks();
+    }
+  });
+});

@@ -253,3 +253,7 @@ main :where(ul, ol):not([class]) { padding-left: 1.4em; }
 main ul:not([class]) { list-style: disc; }
 main ol:not([class]) { list-style: decimal; }
 main :where(ul, ol):not([class]) li { margin: 4px 0; }
+.signin-form { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; max-width: 420px; margin: 16px 0; }
+.signin-form input { margin-top: 0; }
+.privacy-lines { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 0.92rem; color: var(--muted); }
+.privacy-lines p { margin: 4px 0; }
