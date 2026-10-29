@@ -21,7 +21,7 @@ Frontmatter: `slug`, `title`, `summary` (for the tile and meta description), `wo
 | 7 | Keep it from forgetting who I am | 07-keep-it-from-forgetting-who-i-am.md | A1, 0.4 | solo consultant |
 | 8 | Understand a word everyone keeps using | 08-understand-a-word-everyone-keeps-using.md | glossary (no form) | none |
 
-Also in this folder: `homepage-copy.md`, the homepage text from the Oct 26 mockup.
+Also in this folder: `homepage-mockup.html`, the approved Oct 26 homepage as a standalone page (open it in a browser; it's a reference for order, copy, and the eight tiles, not production CSS), and `homepage-copy.md`, the same text as plain copy.
 
 Pages 6 and 8 depend on two reference pages that need real, dated content before beta: **Where things live** and **the glossary**. The glossary text exists (book back matter, 25 terms, already anonymous). Where things live needs the Part 0 product check re-run against today's screens and dated.
 

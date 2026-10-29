@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import type { PromptPart } from "./types";
 import { fillPrompt, loadValues, saveValues } from "./keep";
+import { markTried } from "@/dashboard/useVaultSummary";
 
 // The paste-ready prompt with its blanks as fields. Typing here never leaves this tab.
 export function TryIt({ slug, parts }: { slug: string; parts: PromptPart[] }) {
@@ -43,6 +44,8 @@ export function TryIt({ slug, parts }: { slug: string; parts: PromptPart[] }) {
             try {
               await navigator.clipboard.writeText(fillPrompt(parts, values));
               setCopied(true);
+              // The dashboard counts this page as tried. Only the page and the date are kept, on this device.
+              markTried(slug).catch(() => undefined);
             } catch {
               setCopied(false);
             }

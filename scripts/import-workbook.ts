@@ -39,7 +39,7 @@ function copyServiceContent(entries: Record<string, Uint8Array>, serviceRoot: st
       writeFileSync(join(serviceRoot, dir, m[1]), b);
     }
   };
-  take(/(?:^|\/)references\/content-do-pages\/((?:\d+-[^/]+|README|homepage-copy)\.md)$/, "do");
+  take(/(?:^|\/)references\/content-do-pages\/((?:\d+-[^/]+|README|homepage-copy|dashboard-spec)\.md)$/, "do");
   take(/(?:^|\/)references\/(glossary\.md|personas\.md)$/, ".");
   take(/(?:^|\/)references\/data\/((?:where-things-live|what-changed)\.json)$/, ".");
 }

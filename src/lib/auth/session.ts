@@ -59,3 +59,10 @@ export function sessionCookieHeader(sessionId: string): string {
   const maxAge = Math.floor(SESSION_TTL_MS / 1000);
   return `${SESSION_COOKIE}=${sessionId}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${maxAge}`;
 }
+
+export async function endSession(sessionId: string | undefined): Promise<void> {
+  if (!sessionId) return;
+  await getDb().delete(sessions).where(eq(sessions.idHash, hashToken(sessionId)));
+}
+
+export const clearedSessionCookie = `${SESSION_COOKIE}=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0`;

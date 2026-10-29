@@ -1,4 +1,5 @@
 import { PRODUCT_NAME } from "@/config/brand";
+import { AccountNav } from "@/account/AccountNav";
 
 export function SiteHeader() {
   return (
@@ -7,14 +8,12 @@ export function SiteHeader() {
         {PRODUCT_NAME}
       </a>
       <nav aria-label="Main">
-        <a href="/#do">What are you trying to do?</a>
+        <AccountNav part="lead" />
         <a href="/glossary">Glossary</a>
         <a href="/where-things-live">Where things live</a>
         <a href="/what-changed">What changed</a>
       </nav>
-      <a className="btn-quiet" href="/login">
-        Sign in
-      </a>
+      <AccountNav part="button" />
     </header>
   );
 }
@@ -25,7 +24,7 @@ export function SiteFooter() {
       <div className="site-footer">
       <span>{PRODUCT_NAME}</span>
       <div className="links">
-        <a href="/privacy">Privacy: what leaves your vault</a>
+        <a href="/privacy">Privacy: what leaves your vault (scores only)</a>
         <a href="/glossary">Glossary</a>
         <a href="/grader">Grade your work</a>
         <a href="/history">Your history</a>
