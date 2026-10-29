@@ -1,16 +1,12 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 import { PRODUCT_NAME } from "@/config/brand";
-import { SESSION_COOKIE, userIdForSession } from "@/lib/auth/session";
+import { TileStatus } from "@/account/TileStatus";
 import { DO_PAGES, TILES, termBySlug } from "@/service";
 import { CHANGES, HOME_ROWS, WHERE, firstSentence, rowById, whereIsChecked } from "@/service/reference";
 
 // The approved Oct 26 homepage, rebuilt with the site's styles. Copy from content/service/do/homepage-copy.md.
-export const dynamic = "force-dynamic";
-
-// Signed in, the same tiles become the person's capabilities on /your-ai (Oct 29 2026).
-export default async function Home() {
-  if (await userIdForSession((await cookies()).get(SESSION_COOKIE)?.value)) redirect("/your-ai");
+// The homepage is for everyone, signed in or not: a stranger lands here (content first, Oct 29 2026).
+// Signed in, each tile also shows its state dot and one line; the full cards live on /your-ai.
+export default function Home() {
   const checked = whereIsChecked();
   return (
     <main className="home">
@@ -40,8 +36,12 @@ export default async function Home() {
               const page = DO_PAGES.find((p) => p.n === t.n);
               return (
                 <a key={t.n} className="tile" href={page ? `/do/${page.slug}` : "#do"}>
-                  <span className="tile-title">{t.title}</span>
+                  <span className="tile-top">
+                    <span className="tile-title">{t.title}</span>
+                    {page && <TileStatus slug={page.slug} part="dot" />}
+                  </span>
                   <span className="tile-covers">{t.covers}</span>
+                  {page && <TileStatus slug={page.slug} part="line" />}
                 </a>
               );
             })}

@@ -148,3 +148,14 @@ describe("the ledger read and sign-out", () => {
     expect(await userIdForSession(cookie.split("=")[1])).toBeNull();
   });
 });
+
+import { safePath } from "@/account/returnTo";
+
+describe("after sign-in, back to the page you were on", () => {
+  it("only same-site pages, never sign-in itself, the API, or another site", () => {
+    expect(safePath("/do/teach-it-a-job")).toBe("/do/teach-it-a-job");
+    expect(safePath("/workbook/B1#version-2")).toBe("/workbook/B1#version-2");
+    expect(safePath("/")).toBe("/");
+    for (const bad of ["//evil.test/x", "https://evil.test", "/login", "/after-sign-in", "/api/ledger", "/\\evil", 42, null]) expect(safePath(bad)).toBeNull();
+  });
+});

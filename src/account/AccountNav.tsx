@@ -1,15 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { rememberReturn } from "./returnTo";
+import { useSignedIn } from "./useSignedIn";
 
 // Header items that depend on being signed in. Asks the server only "am I signed in?".
 export function AccountNav({ part }: { part: "lead" | "button" }) {
-  const [signedIn, setSignedIn] = useState<boolean | null>(null);
-  useEffect(() => {
-    fetch("/api/me", { credentials: "same-origin" })
-      .then((r) => r.json())
-      .then((j) => setSignedIn(!!j.signedIn))
-      .catch(() => setSignedIn(false));
-  }, []);
+  const signedIn = useSignedIn();
 
   if (part === "lead")
     return signedIn ? (
@@ -28,7 +23,7 @@ export function AccountNav({ part }: { part: "lead" | "button" }) {
       </button>
     </form>
   ) : (
-    <a className="btn-quiet" href="/login">
+    <a className="btn-quiet" href="/login" onClick={() => rememberReturn(window.location.pathname + window.location.hash)}>
       Sign in
     </a>
   );

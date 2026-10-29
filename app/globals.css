@@ -300,3 +300,6 @@ button.linklike { background: none; border: 0; padding: 0; color: var(--accent);
 .site-header form { margin: 0; }
 @media (max-width: 900px) { .stats, .caps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .stats, .caps { grid-template-columns: 1fr; } }
+.tile-top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+.tile-top .dot { margin-top: 6px; }
+.tile-line { font-size: 0.85rem; color: var(--ink); }
