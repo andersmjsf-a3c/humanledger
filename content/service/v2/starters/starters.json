@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30b",
+  "version": "2026-10-30c",
   "rule": "Three questions per starter, never more. Answers fill the {{placeholders}}; everything else ships as written. The nine-question worksheet is the Version 2 step, offered after a week of use.",
   "starters": [
     {
@@ -191,6 +191,34 @@
       ],
       "worksheetV2": "C2",
       "note": "Preview of the agents layer (Builders Book). Runs as a scheduled task; read-and-report only; it never sends."
+    },
+    {
+      "id": "about-me",
+      "title": "About me",
+      "oneLine": "The paragraph it should know in every conversation: who you are, what you're working on, how you like work done. Goes into memory once.",
+      "file": "about-me.md",
+      "questions": [
+        {
+          "key": "who",
+          "label": "Who you are, in one sentence",
+          "hint": "Role and what you know a lot about. \"Office manager for a twelve-person dental practice, nine years.\"",
+          "type": "text"
+        },
+        {
+          "key": "working_on",
+          "label": "What you're working on this quarter",
+          "hint": "One or two things. \"Switching our scheduling software. Hiring a second front-desk person.\"",
+          "type": "text"
+        },
+        {
+          "key": "how",
+          "label": "How you like work done",
+          "hint": "\"One recommendation, not a menu. Short. Never bullet points in anything I'll send.\"",
+          "type": "text"
+        }
+      ],
+      "worksheetV2": "A1",
+      "note": "Produces about-me.md and the one-line instruction to paste into Claude so memory keeps it. Pairs with screenshot 02."
     }
   ]
 }

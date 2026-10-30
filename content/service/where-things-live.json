@@ -1,14 +1,14 @@
 {
   "page": "Where things live",
-  "lastChecked": "2026-10-26",
+  "lastChecked": "2026-10-30",
   "checkedAgainst": "support.claude.com help center articles and the Claude release notes page, read on 2026-10-26; menu paths quoted as the articles give them",
   "intro": "As of the date above. The habits don't move. Only the buttons do. If what you see on your screen doesn't match a row, tell us; that's how this page stays current.",
   "rows": [
     {
       "id": "memory-toggle",
       "thing": "Turn memory on or off",
-      "whereToday": "Settings > Your Claude. Toggles: memory from chats, \"Search and reference chats\", and \"Include sensitive topics in memory\" (off by default). Pausing keeps what's saved and stops new entries; \"Reset memory\" deletes everything and can't be undone.",
-      "wasCalled": "Settings > Memory, with a toggle named \"Generate memory from chats\" (older layout). Some Team and Enterprise organizations still see an older version under Settings > Capabilities.",
+      "whereToday": "Two names for the same place. Web app: Settings > Your Claude. Desktop app: Settings > Memory. Toggles: \"Search and reference chats\", \"Generate memory from chats\", and \"Include sensitive topics in memory\" (off by default); import and export memory. Pausing keeps what's saved and stops new entries; \"Reset memory\" deletes everything and can't be undone.",
+      "wasCalled": "Settings > Memory with \"Generate memory from chats\" was the original layout; the desktop app still shows it (Oct 30, 2026). Some Team and Enterprise organizations see an older version under Settings > Capabilities.",
       "plans": "On by default for Free, Pro, and Max. Team and Enterprise owners decide; off for each member until they turn it on.",
       "source": "https://support.claude.com/en/articles/11817273",
       "lastChanged": "2026-08-25 (memory works across chat and Cowork; entries editable under Topics; sensitive-topics setting added)"
@@ -16,7 +16,7 @@
     {
       "id": "memory-view-edit",
       "thing": "See, change, or delete what it remembers",
-      "whereToday": "Settings > Your Claude, then \"Manage\" next to \"Your memory\". Entries are listed under Topics; open one to read it, use the edit icon to change it, or Delete. You can also tell it in chat to remember, change, or forget something.",
+      "whereToday": "Web: Settings > Your Claude, then \"Manage\" next to \"Your memory\". Desktop app: Settings > Memory, scroll to You (Preferences, Profile) and Topics. Open an entry to read it, use the edit icon to change it, or Delete. You can also tell it in chat to remember, change, or forget something.",
       "wasCalled": "A single daily memory summary, not individual entries (before 2026-07-10).",
       "plans": "Same as memory.",
       "source": "https://support.claude.com/en/articles/11817273",

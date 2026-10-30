@@ -775,6 +775,35 @@
       "worksheetV2": "C2",
       "note": "Preview of the agents layer (Builders Book). Runs as a scheduled task; read-and-report only; it never sends.",
       "template": "---\nname: my-work-register\ndescription: Keeps a running register of my open work from what I did with Claude each day, and tells me each morning what needs me, what's going stale, and what's waiting on someone else. Use when I say \"update the register,\" \"what needs me,\" or at the end of the day.\n---\n\n# My work register\n\nThis skill serves me. It keeps one page current: everything I have open, who it's waiting on, and how long it's been idle. I decide what to do about it. It never does the work on its own and never contacts anyone.\n\n## What I'm tracking\n{{streams}}\n\n## When it runs\n- {{cadence}} Read the day's conversations and files I point it at, and update the register.\n- Any time I say \"what needs me\": answer from the register, oldest first.\n\n## The register, one page\nFour counts at the top: needs me · going stale · open notes · open work.\nThen three lists:\n1. **Needs me.** Waiting on my input or a decision, or has a meeting today or tomorrow. Oldest first.\n2. **Going stale.** Nothing has moved in {{stale_days}} days. Say how many days.\n3. **Everything else open.** One line each: what it is, what the next step is, who it's waiting on.\nEach item: a title, one line on the next step, the stream it belongs to, days idle, who it's waiting on.\n\n## What goes in\n- Anything I said I'd do, decide, send, or follow up on.\n- Anything I asked someone else for and haven't received.\n- Anything with a date.\nNot: ideas with no next step, finished work, or anything I marked done or parked.\n\n## Rules\n- Never invent an item, a date, or a person. If a conversation is ambiguous, list it under \"unsure\" and ask.\n- Never send, post, or reply to anyone. You keep the list; I act on it.\n- Don't nag. One line per item, no commentary, no encouragement.\n- Items I mark done, snoozed, or parked stay that way until I change them.\n- Names of other people stay as I wrote them; don't add titles or companies from memory.\n\n## Corrections (add a line here every time it lists something that wasn't work, or misses something that was)\n- \n"
+    },
+    {
+      "id": "about-me",
+      "title": "About me",
+      "oneLine": "The paragraph it should know in every conversation: who you are, what you're working on, how you like work done. Goes into memory once.",
+      "file": "about-me.md",
+      "questions": [
+        {
+          "key": "who",
+          "label": "Who you are, in one sentence",
+          "hint": "Role and what you know a lot about. \"Office manager for a twelve-person dental practice, nine years.\"",
+          "type": "text"
+        },
+        {
+          "key": "working_on",
+          "label": "What you're working on this quarter",
+          "hint": "One or two things. \"Switching our scheduling software. Hiring a second front-desk person.\"",
+          "type": "text"
+        },
+        {
+          "key": "how",
+          "label": "How you like work done",
+          "hint": "\"One recommendation, not a menu. Short. Never bullet points in anything I'll send.\"",
+          "type": "text"
+        }
+      ],
+      "worksheetV2": "A1",
+      "note": "Produces about-me.md and the one-line instruction to paste into Claude so memory keeps it. Pairs with screenshot 02.",
+      "template": "---\nname: about-me\ndescription: The paragraph Claude should know about me in every conversation. Not a skill it runs; a file I give to memory once and keep as the master copy.\n---\n\n# About me\n\nGive this to Claude once, in a new conversation, as: \"Remember this about me:\" followed by the paragraph. Then open another new conversation and ask what it knows about you. Fix anything it got wrong. Keep this file; the memory is a copy.\n\n## The paragraph\nI'm {{who}} This quarter I'm working on {{working_on}} How I like work done: {{how}}\n\n## Rules for what goes here\n- Only what's true regardless of what I'm working on today. Project facts go in a project; how to do a job goes in a skill.\n- Only what I'd be comfortable with a colleague reading on a screen. No numbers I wouldn't put in an email. Nothing about other people that's theirs.\n- Update it when something changes, and give the new version to memory the same way. Memory goes stale; this file is where the current version lives.\n\n## Corrections (add a line each time it remembers something wrong, or you re-explained something it should have known)\n- \n"
     }
   ],
   "screenshots": [
@@ -791,13 +820,44 @@
     {
       "file": "02-memory-settings.png",
       "alt": "Settings, Memory, on the desktop app: search and reference chats, generate memory from chats, include sensitive topics (off), import and export memory, and the You and Topics sections.",
-      "caption": "Memory settings on the desktop app, where it's labeled Settings > Memory. The help center's web path is Settings > Your Claude.",
+      "caption": "Memory settings on the desktop app, where it's Settings > Memory. In the web app the same settings are under Settings > Your Claude.",
       "worksheets": [
         "0.4",
         "A1"
       ],
       "where": [
         "memory-toggle"
+      ],
+      "starters": [
+        "about-me"
+      ]
+    },
+    {
+      "file": "10a-asking-for-a-skill.png",
+      "alt": "A new conversation with a one-line request typed: a new skill that combines my writing voice with a weekly recommendation of what to write about next.",
+      "caption": "The before: one sentence asking for a skill.",
+      "starters": [
+        "write-like-me",
+        "check-the-facts",
+        "my-weekly-report",
+        "research-i-can-trust",
+        "who-my-company-is",
+        "my-posts",
+        "my-work-register"
+      ]
+    },
+    {
+      "file": "10b-a-skill-made-from-a-conversation.png",
+      "alt": "The Save skill card: the skill's name and description, Content to read before saving, and Dismiss and Save buttons; below it, the explanation of the skill's two stages.",
+      "caption": "The after: a Save skill card. Open Content to read the skill before you save it.",
+      "starters": [
+        "write-like-me",
+        "check-the-facts",
+        "my-weekly-report",
+        "research-i-can-trust",
+        "who-my-company-is",
+        "my-posts",
+        "my-work-register"
       ]
     },
     {
@@ -811,7 +871,15 @@
       "where": [
         "skills-upload"
       ],
-      "starters": "all"
+      "starters": [
+        "write-like-me",
+        "check-the-facts",
+        "my-weekly-report",
+        "research-i-can-trust",
+        "who-my-company-is",
+        "my-posts",
+        "my-work-register"
+      ]
     },
     {
       "file": "04-model-next-to-send.png",
@@ -845,6 +913,23 @@
       ],
       "starters": [
         "my-work-register"
+      ]
+    },
+    {
+      "file": "07-skill-running-in-a-chat-service.png",
+      "alt": "A conversation in a Posts project: a one-line ask to research a news article about a state changing its charity reporting rules and prepare a post; the steps it took; and the draft post that came back.",
+      "caption": "A one-line ask, the steps it took, and the draft that came back. Example: a nonprofit director's post on a new state reporting rule.",
+      "starters": [
+        "my-posts"
+      ]
+    },
+    {
+      "file": "08-the-check-service.png",
+      "alt": "The follow-up question \"Has that gone through my humanize/voice tests?\" and the answer: the linter run on the delivered draft, its clean result, and the manual checks for signature moves, owned opinions, real history, and the closer.",
+      "caption": "The follow-up: asking whether the draft went through your own checks, and what the check found.",
+      "starters": [
+        "check-the-facts",
+        "write-like-me"
       ]
     }
   ],

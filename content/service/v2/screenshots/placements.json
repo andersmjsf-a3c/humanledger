@@ -1,62 +1,131 @@
 {
-  "note": "Where each screenshot shows on the site, from captions.md (Oct 30 2026). The build serves only screenshots listed here and not held. Captions are short and factual; every figure says the date it was taken.",
+  "note": "Where each screenshot shows on the site, from captions.md (Oct 30 2026; afternoon update: 07 and 08 are the service versions, 10a and 10b added; 09, 11, and 12 are for the book and workbook only). The build serves only screenshots listed here and not held. Captions are short and factual; every figure says the date it was taken.",
   "taken": "2026-10-30",
   "screenshots": [
     {
       "file": "01-the-window.png",
       "alt": "The main window: sidebar with New, Search, Projects, Artifacts, Scheduled, Customize, and pinned projects; the chat box; the model and effort next to it; recent artifacts.",
       "caption": "The main window: the sidebar on the left, the chat box, and the model and effort shown under it.",
-      "worksheets": ["0.1"],
+      "worksheets": [
+        "0.1"
+      ],
       "glossary": true,
       "home": true
     },
     {
       "file": "02-memory-settings.png",
       "alt": "Settings, Memory, on the desktop app: search and reference chats, generate memory from chats, include sensitive topics (off), import and export memory, and the You and Topics sections.",
-      "caption": "Memory settings on the desktop app, where it's labeled Settings > Memory. The help center's web path is Settings > Your Claude.",
-      "worksheets": ["0.4", "A1"],
-      "where": ["memory-toggle"]
+      "caption": "Memory settings on the desktop app, where it's Settings > Memory. In the web app the same settings are under Settings > Your Claude.",
+      "worksheets": [
+        "0.4",
+        "A1"
+      ],
+      "where": [
+        "memory-toggle"
+      ],
+      "starters": [
+        "about-me"
+      ]
+    },
+    {
+      "file": "10a-asking-for-a-skill.png",
+      "alt": "A new conversation with a one-line request typed: a new skill that combines my writing voice with a weekly recommendation of what to write about next.",
+      "caption": "The before: one sentence asking for a skill.",
+      "starters": [
+        "write-like-me",
+        "check-the-facts",
+        "my-weekly-report",
+        "research-i-can-trust",
+        "who-my-company-is",
+        "my-posts",
+        "my-work-register"
+      ]
+    },
+    {
+      "file": "10b-a-skill-made-from-a-conversation.png",
+      "alt": "The Save skill card: the skill's name and description, Content to read before saving, and Dismiss and Save buttons; below it, the explanation of the skill's two stages.",
+      "caption": "The after: a Save skill card. Open Content to read the skill before you save it.",
+      "starters": [
+        "write-like-me",
+        "check-the-facts",
+        "my-weekly-report",
+        "research-i-can-trust",
+        "who-my-company-is",
+        "my-posts",
+        "my-work-register"
+      ]
     },
     {
       "file": "03-skills-list.png",
       "alt": "Customize, Skills: skills created by you, each with a name, a tag, a one-line description, a date, and a menu; the Add button at top right.",
       "caption": "Customize > Skills, with uploaded skills listed. Add is at the top right.",
-      "worksheets": ["0.5", "B1"],
-      "where": ["skills-upload"],
-      "starters": "all"
+      "worksheets": [
+        "0.5",
+        "B1"
+      ],
+      "where": [
+        "skills-upload"
+      ],
+      "starters": [
+        "write-like-me",
+        "check-the-facts",
+        "my-weekly-report",
+        "research-i-can-trust",
+        "who-my-company-is",
+        "my-posts",
+        "my-work-register"
+      ]
     },
     {
       "file": "04-model-next-to-send.png",
       "alt": "The chat box with a request typed, and the model, effort, and permission mode shown under it.",
       "caption": "The model you're talking to, with its effort and permission mode, shown under the chat box.",
-      "worksheets": ["0.6", "0.7"],
-      "where": ["model-selector"]
+      "worksheets": [
+        "0.6",
+        "0.7"
+      ],
+      "where": [
+        "model-selector"
+      ]
     },
     {
       "file": "05-work-register.png",
       "alt": "A work register: four counts (needs you, going stale, open notes, open work), a notes box, and items with buttons to work on, log, note, link, finish, snooze, or park.",
       "caption": "A work register kept by a skill like this one: four counts, notes, and each item with what to do next.",
-      "starters": ["my-work-register"]
+      "starters": [
+        "my-work-register"
+      ]
     },
     {
       "file": "06-scheduled-task.png",
       "alt": "A scheduled task: requires this computer, history, instructions, when it runs, permissions set to Manual, and the always-allowed list.",
       "caption": "A scheduled task: when it runs, its instructions, and its permissions. Manual means it asks before using a new tool.",
-      "worksheets": ["0.7"],
-      "skills": ["7-agent-job-description"],
-      "starters": ["my-work-register"]
+      "worksheets": [
+        "0.7"
+      ],
+      "skills": [
+        "7-agent-job-description"
+      ],
+      "starters": [
+        "my-work-register"
+      ]
     },
     {
-      "file": "07-skill-running-in-a-chat.png",
-      "held": "Shows a draft post naming a real executive and company, and the post's argument is the founder's own. Held until Mark decides.",
-      "caption": "A one-line ask, the steps it took, and the draft that came back.",
-      "starters": ["my-posts"]
+      "file": "07-skill-running-in-a-chat-service.png",
+      "alt": "A conversation in a Posts project: a one-line ask to research a news article about a state changing its charity reporting rules and prepare a post; the steps it took; and the draft post that came back.",
+      "caption": "A one-line ask, the steps it took, and the draft that came back. Example: a nonprofit director's post on a new state reporting rule.",
+      "starters": [
+        "my-posts"
+      ]
     },
     {
-      "file": "08-the-check.png",
-      "held": "Refers to the founder's own career record (\"the 2022 deal comes from your actual record\"). Held until Mark decides.",
-      "caption": "The follow-up check: what the linter found and the manual checks it did.",
-      "starters": ["check-the-facts", "write-like-me"]
+      "file": "08-the-check-service.png",
+      "alt": "The follow-up question \"Has that gone through my humanize/voice tests?\" and the answer: the linter run on the delivered draft, its clean result, and the manual checks for signature moves, owned opinions, real history, and the closer.",
+      "caption": "The follow-up: asking whether the draft went through your own checks, and what the check found.",
+      "starters": [
+        "check-the-facts",
+        "write-like-me"
+      ]
     }
   ]
 }

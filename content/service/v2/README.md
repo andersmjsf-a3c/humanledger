@@ -6,7 +6,7 @@ Mark's direction after testing: too confusing; a user shouldn't need the book to
 - `homepage-v2.html`: the new one-screen homepage. Headline, four-panel how-it-works picture, six starter cards with one button each ("Make it mine"), a "What a skill is" section with the annotated file picture, and a quiet "When something's confusing" row at the bottom (glossary, Where things live, What changed, the content pages). Replaces homepage-mockup.html. The dashboard (`/your-ai`) is unchanged.
 - `illustrations/how-it-works.png` and `.svg`: pick a starter → answer three questions → load it into Claude → it gets better as you fix it.
 - `illustrations/a-skill-file.png` and `.svg`: a skill file with five callouts (the job; your three answers; the steps; what it must never do; where corrections go).
-- `starters/starters.json`: the seven starters (the seventh, My work register, is the productivity tool and a preview of the agents layer; it runs as a scheduled task and only reads and reports), each with exactly three questions (key, label, hint, type: text or list3) and the worksheet that becomes its Version 2.
+- `starters/starters.json`: the eight starters (eighth, About me, is the memory paragraph; it produces a file and the one line to paste so memory keeps it; Version 2 is A1) (the seventh, My work register, is the productivity tool and a preview of the agents layer; it runs as a scheduled task and only reads and reports), each with exactly three questions (key, label, hint, type: text or list3) and the worksheet that becomes its Version 2.
 - `starters/*.md`: the six skill files, complete, with `{{placeholders}}` for the three answers. Everything else ships as written. Each ends with a `## Corrections` section the connector appends to.
 
 ## The flow, per starter
@@ -28,3 +28,9 @@ In `screenshots/`, eight anonymized real screens with `captions.md` saying what 
 
 ### Previously
 Real screenshots of Mark's own Claude window, captioned and dated like the Where things live rows: the window's four parts; Settings > Your Claude (memory); Customize > Skills with a skill uploaded; the model name next to the send button; a conversation with a skill loaded, before and after. Drawn imitations of the product's interface are off the table.
+
+## Oct 30 afternoon changes
+- Eight starters; on wide screens use a four-column grid (two rows of four). Three columns at tablet width, one at phone.
+- `illustrations/how-it-works.png` now says "Eight skills, already written."
+- `data/where-things-live.json`: memory rows now give both names (web: Settings > Your Claude; desktop app: Settings > Memory).
+- Screenshots 07 and 08: use the `-service.png` versions on the site (persona rewrite); the originals are for the book only.

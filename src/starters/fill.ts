@@ -48,6 +48,10 @@ export function fillParts(s: Starter, answers: StarterAnswers): Part[] {
     const after = t.slice(at + m[0].length);
     const lineStart = t.lastIndexOf("\n", at) + 1;
     const bullet = /^\s*-\s/.test(t.slice(lineStart, at));
+    // Mid-sentence ("I'm {{who}}"), a capital copied from the example reads wrong: "I'm Office manager".
+    // Lowercase it only for a plain phrase: two words or more, second word lowercase, so names stay.
+    const midSentence = /[a-z,]\s$/.test(t.slice(lineStart, at));
+    if (midSentence && /^[A-Z][a-z]+\s+[a-z]/.test(a)) a = a[0].toLowerCase() + a.slice(1);
     if (!a) a = "(none yet)";
     else if (!bullet && !/[!?]$/.test(a) && (/^\s+[A-Z]/.test(after) || /^\s*(\n|$)/.test(after))) a += ".";
     out.push({ answer: a, key: m[1] });
@@ -77,3 +81,12 @@ export function splitHint(hint: string): { guidance: string; example: string } {
   const guidance = hint.replace(/"[^"]+"/g, "").replace(/\s+/g, " ").trim();
   return { guidance, example: quoted.length ? quoted.join(" / ") : hint };
 }
+
+// A starter that ends in memory, not a skill (About me): its template has a "## The paragraph"
+// section. The paragraph is what Claude should remember; the line is what the person pastes.
+export function memoryParagraph(s: Starter, answers: StarterAnswers): string | null {
+  const m = fillStarter(s, answers).match(/^## The paragraph\n([\s\S]*?)(?=\n## |$)/m);
+  return m ? m[1].trim() : null;
+}
+export const isMemoryStarter = (s: Starter) => /^## The paragraph$/m.test(s.template);
+export const memoryLine = (paragraph: string) => `Remember this about me: ${paragraph}`;

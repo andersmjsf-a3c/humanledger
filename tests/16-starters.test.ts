@@ -2,7 +2,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { STARTERS } from "@/service";
-import { fillParts, fillStarter, listHints, missing, optional, splitHint, type Starter, type StarterAnswers } from "@/starters/fill";
+import { fillParts, fillStarter, isMemoryStarter, listHints, memoryLine, memoryParagraph, missing, optional, splitHint, type Starter, type StarterAnswers } from "@/starters/fill";
 import { buildBundle, bumpVersions, parseBundle, starterAnswersOf, flatStarterAnswers } from "@/vault/bundle";
 import { buildDashboard } from "@/dashboard/model";
 import { FORM_ROUTES } from "@/service";
@@ -14,8 +14,8 @@ const sample = (s: Starter): StarterAnswers =>
   Object.fromEntries(s.questions.map((q) => [q.key, q.type === "list3" ? listHints(q.hint) : (q.hint.match(/"([^"]+)"/)?.[1] ?? q.hint)]));
 
 describe("the six starters", () => {
-  it("seven of them, each with exactly three questions: never more than three before a file exists", () => {
-    expect(STARTERS).toHaveLength(7);
+  it("eight of them, each with exactly three questions: never more than three before a file exists", () => {
+    expect(STARTERS).toHaveLength(8);
     for (const s of STARTERS) {
       expect(s.questions, s.id).toHaveLength(3);
       for (const q of s.questions) expect(["text", "list3"], `${s.id}.${q.key}`).toContain(q.type);
@@ -136,6 +136,22 @@ describe("screenshots, placed per captions.md", () => {
     }
   });
 
+  it("the book-only screens never reach the site (Mark, Oct 30 pm)", () => {
+    const served = readdirSync("public/screenshots");
+    for (const f of ["07-skill-running-in-a-chat.png", "08-the-check.png", "09-project-page.png", "11-pushing-back.png", "12-export-control.png"]) {
+      expect(served, f).not.toContain(f);
+      expect(placements.screenshots.map((s: { file: string }) => s.file), f).not.toContain(f);
+    }
+    expect(served).toContain("07-skill-running-in-a-chat-service.png");
+    expect(served).toContain("08-the-check-service.png");
+  });
+
+  it("About me shows the memory screen, not the skills list", () => {
+    const files = (id: string) => SCREENSHOTS.filter((s) => s.starters === "all" || s.starters?.includes(id)).map((s) => s.file);
+    expect(files("about-me")).toEqual(["02-memory-settings.png"]);
+    expect(files("write-like-me")).toContain("03-skills-list.png");
+  });
+
   it("every placement points at a page that exists", () => {
     const ws = new Set(ALL_WS.map((w) => w.id));
     const rows = new Set(WHERE.rows.map((r) => r.id));
@@ -148,5 +164,32 @@ describe("screenshots, placed per captions.md", () => {
       for (const k of s.skills ?? []) expect(skills.has(k), `${s.file} -> ${k}`).toBe(true);
     }
     expect(/[–—]/.test(JSON.stringify(placements))).toBe(false);
+  });
+});
+
+describe("About me: a paragraph for memory, not a skill", () => {
+  const s = STARTERS.find((x) => x.id === "about-me")!;
+  const a: StarterAnswers = {
+    who: "Office manager for a twelve-person dental practice, nine years.",
+    working_on: "Switching our scheduling software. Hiring a second front-desk person.",
+    how: "One recommendation, not a menu. Short.",
+  };
+
+  it("is the only memory starter, and its Version 2 is A1", () => {
+    expect(STARTERS.filter(isMemoryStarter).map((x) => x.id)).toEqual(["about-me"]);
+    expect(s.worksheetV2).toBe("A1");
+  });
+
+  it("fills the paragraph as sentences and makes the one line to paste", () => {
+    const p = memoryParagraph(s, a)!;
+    expect(p).toBe(
+      "I'm office manager for a twelve-person dental practice, nine years. This quarter I'm working on switching our scheduling software. Hiring a second front-desk person. How I like work done: One recommendation, not a menu. Short."
+    );
+    expect(memoryLine(p)).toBe(`Remember this about me: ${p}`);
+    expect(memoryParagraph(STARTERS.find((x) => x.id === "write-like-me")!, {})).toBeNull();
+  });
+
+  it("keeps a capitalized name mid-sentence", () => {
+    expect(memoryParagraph(s, { ...a, who: "Dana Ruiz, office manager." })).toMatch(/^I'm Dana Ruiz, office manager\./);
   });
 });
