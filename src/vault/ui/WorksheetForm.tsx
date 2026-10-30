@@ -5,6 +5,8 @@ import { getStore, useVault } from "./useVault";
 import { FolderBar } from "./FolderBar";
 import { KeptPanel } from "@/service/KeptPanel";
 import { StarterAnswersPanel } from "@/starters/StarterAnswersPanel";
+import { Shots } from "@/service/Shot";
+import { shotsFor } from "@/service/screenshots";
 import { worksheetCard } from "@/cards/build";
 import { encodeCard } from "@/lib/scorecard/encode";
 
@@ -136,6 +138,7 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
       {savedAt && <p className="saved">Saved on this device at {savedAt}.</p>}
 
       {ws.howToHtml && <Html className="howto" html={ws.howToHtml} />}
+      <Shots list={shotsFor.worksheet(ws.id)} />
 
       {SKILL_BUILDER[ws.id] && (
         <p className="meta">

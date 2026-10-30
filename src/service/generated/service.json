@@ -746,6 +746,107 @@
       ],
       "worksheetV2": "B6",
       "template": "---\nname: my-posts\ndescription: Drafts a post for my platform that opens on a specific fact, holds one opinion I'd defend, and carries none of the social-media tells. I post it myself. Use when I say \"post,\" \"LinkedIn,\" or \"draft something on this.\"\n---\n\n# My posts\n\nThis skill serves me. Use it when I ask for a post. If I've also given you a \"write like me\" skill, load it first; it wins on voice.\n\n## Where I post, and for whom\n{{platform}}\n\n## What a post of mine is\n- Opens on a specific fact, moment, or number. Never on a question, a hook formula, or \"I've been thinking.\"\n- Holds exactly one opinion I'd defend in the comments. If the draft has two, ask me which.\n- {{length}} Paragraphs of uneven length. Not one sentence per line down the screen.\n- Ends on the point. Never on \"Thoughts?\" or \"Agree?\"\n\n## The brief I'll give you\nTwo or three sentences: what happened, what I think, who I'm talking to. If I give you only the news, ask what I think before drafting.\n\n## Never\n- {{never.1}}\n- {{never.2}}\n- {{never.3}}\n- Hashtag walls. Emoji. Rocket ships. Exclamation points.\n- \"Excited to share.\" \"Thrilled to announce.\" \"Honored to.\" \"Humbled.\"\n- \"Three things I learned when...\" (the humble brag disguised as a lesson).\n- Admiring the announcement by default. Admiration is a decision; push toward the harder read and let me pull back.\n- A number that wasn't in the source.\n\n## Before I see it\n1. Check every number, name, and quote against its source.\n2. If it mentions my company, check it against \"who my company is\" if I have that skill.\n3. Then show me the draft.\n\n## Always\n- Draft, then I edit, then I post it myself. You never post.\n\n## Corrections (add a line here every time I cut the same thing twice)\n- \n"
+    },
+    {
+      "id": "my-work-register",
+      "title": "My work register",
+      "oneLine": "Keeps one page of everything you have open, who it's waiting on, and how long it's been idle. You decide; it never acts.",
+      "file": "my-work-register.md",
+      "questions": [
+        {
+          "key": "streams",
+          "label": "The three or four kinds of work you juggle",
+          "hint": "\"Client projects. Sales pipeline. The hiring plan. Personal admin.\"",
+          "type": "text"
+        },
+        {
+          "key": "cadence",
+          "label": "When it should update the register",
+          "hint": "\"Every evening at 8.\" \"Monday and Thursday mornings.\"",
+          "type": "text"
+        },
+        {
+          "key": "stale_days",
+          "label": "How many idle days before something counts as going stale",
+          "hint": "\"7\"",
+          "type": "text"
+        }
+      ],
+      "worksheetV2": "C2",
+      "note": "Preview of the agents layer (Builders Book). Runs as a scheduled task; read-and-report only; it never sends.",
+      "template": "---\nname: my-work-register\ndescription: Keeps a running register of my open work from what I did with Claude each day, and tells me each morning what needs me, what's going stale, and what's waiting on someone else. Use when I say \"update the register,\" \"what needs me,\" or at the end of the day.\n---\n\n# My work register\n\nThis skill serves me. It keeps one page current: everything I have open, who it's waiting on, and how long it's been idle. I decide what to do about it. It never does the work on its own and never contacts anyone.\n\n## What I'm tracking\n{{streams}}\n\n## When it runs\n- {{cadence}} Read the day's conversations and files I point it at, and update the register.\n- Any time I say \"what needs me\": answer from the register, oldest first.\n\n## The register, one page\nFour counts at the top: needs me · going stale · open notes · open work.\nThen three lists:\n1. **Needs me.** Waiting on my input or a decision, or has a meeting today or tomorrow. Oldest first.\n2. **Going stale.** Nothing has moved in {{stale_days}} days. Say how many days.\n3. **Everything else open.** One line each: what it is, what the next step is, who it's waiting on.\nEach item: a title, one line on the next step, the stream it belongs to, days idle, who it's waiting on.\n\n## What goes in\n- Anything I said I'd do, decide, send, or follow up on.\n- Anything I asked someone else for and haven't received.\n- Anything with a date.\nNot: ideas with no next step, finished work, or anything I marked done or parked.\n\n## Rules\n- Never invent an item, a date, or a person. If a conversation is ambiguous, list it under \"unsure\" and ask.\n- Never send, post, or reply to anyone. You keep the list; I act on it.\n- Don't nag. One line per item, no commentary, no encouragement.\n- Items I mark done, snoozed, or parked stay that way until I change them.\n- Names of other people stay as I wrote them; don't add titles or companies from memory.\n\n## Corrections (add a line here every time it lists something that wasn't work, or misses something that was)\n- \n"
     }
-  ]
+  ],
+  "screenshots": [
+    {
+      "file": "01-the-window.png",
+      "alt": "The main window: sidebar with New, Search, Projects, Artifacts, Scheduled, Customize, and pinned projects; the chat box; the model and effort next to it; recent artifacts.",
+      "caption": "The main window: the sidebar on the left, the chat box, and the model and effort shown under it.",
+      "worksheets": [
+        "0.1"
+      ],
+      "glossary": true,
+      "home": true
+    },
+    {
+      "file": "02-memory-settings.png",
+      "alt": "Settings, Memory, on the desktop app: search and reference chats, generate memory from chats, include sensitive topics (off), import and export memory, and the You and Topics sections.",
+      "caption": "Memory settings on the desktop app, where it's labeled Settings > Memory. The help center's web path is Settings > Your Claude.",
+      "worksheets": [
+        "0.4",
+        "A1"
+      ],
+      "where": [
+        "memory-toggle"
+      ]
+    },
+    {
+      "file": "03-skills-list.png",
+      "alt": "Customize, Skills: skills created by you, each with a name, a tag, a one-line description, a date, and a menu; the Add button at top right.",
+      "caption": "Customize > Skills, with uploaded skills listed. Add is at the top right.",
+      "worksheets": [
+        "0.5",
+        "B1"
+      ],
+      "where": [
+        "skills-upload"
+      ],
+      "starters": "all"
+    },
+    {
+      "file": "04-model-next-to-send.png",
+      "alt": "The chat box with a request typed, and the model, effort, and permission mode shown under it.",
+      "caption": "The model you're talking to, with its effort and permission mode, shown under the chat box.",
+      "worksheets": [
+        "0.6",
+        "0.7"
+      ],
+      "where": [
+        "model-selector"
+      ]
+    },
+    {
+      "file": "05-work-register.png",
+      "alt": "A work register: four counts (needs you, going stale, open notes, open work), a notes box, and items with buttons to work on, log, note, link, finish, snooze, or park.",
+      "caption": "A work register kept by a skill like this one: four counts, notes, and each item with what to do next.",
+      "starters": [
+        "my-work-register"
+      ]
+    },
+    {
+      "file": "06-scheduled-task.png",
+      "alt": "A scheduled task: requires this computer, history, instructions, when it runs, permissions set to Manual, and the always-allowed list.",
+      "caption": "A scheduled task: when it runs, its instructions, and its permissions. Manual means it asks before using a new tool.",
+      "worksheets": [
+        "0.7"
+      ],
+      "skills": [
+        "7-agent-job-description"
+      ],
+      "starters": [
+        "my-work-register"
+      ]
+    }
+  ],
+  "screenshotsTaken": "2026-10-30"
 }

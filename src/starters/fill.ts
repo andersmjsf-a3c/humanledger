@@ -68,3 +68,12 @@ export function missing(s: Starter, answers: StarterAnswers): string[] {
     })
     .map((q) => q.key);
 }
+
+// A text question's hint is guidance plus quoted examples: the examples become the placeholder,
+// the guidance shows under the label. 'One sentence. "Two accountants." "Owners."' ->
+// { guidance: "One sentence.", example: "Two accountants. / Owners." }
+export function splitHint(hint: string): { guidance: string; example: string } {
+  const quoted = [...hint.matchAll(/"([^"]+)"/g)].map((m) => m[1].trim());
+  const guidance = hint.replace(/"[^"]+"/g, "").replace(/\s+/g, " ").trim();
+  return { guidance, example: quoted.length ? quoted.join(" / ") : hint };
+}

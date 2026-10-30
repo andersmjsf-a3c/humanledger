@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { strToU8, zipSync } from "fflate";
-import { fillParts, fillStarter, listHints, missing, optional, type Starter, type StarterAnswers } from "./fill";
+import { fillParts, fillStarter, listHints, missing, optional, splitHint, type Starter, type StarterAnswers } from "./fill";
 import { downloadBytes } from "@/vault/folder";
 import { getStore } from "@/vault/ui/useVault";
 import { STARTER_PREFIX } from "@/vault/storage";
@@ -127,12 +127,13 @@ export function StarterMaker({ s }: { s: Starter }) {
               {n + 1}. {q.label}
               {optional(q) && <span className="meta"> (optional)</span>}
             </label>
+            {q.type === "text" && splitHint(q.hint).guidance && <span className="meta">{splitHint(q.hint).guidance}</span>}
             {q.type === "list3" ? (
               listHints(q.hint).map((h, i) => (
                 <input key={i} id={`${q.key}-${i}`} aria-label={`${q.label} ${i + 1}`} placeholder={h} value={(answers[q.key] as string[])[i]} onChange={(e) => set(q.key, e.target.value, i)} />
               ))
             ) : (
-              <input id={`${q.key}-0`} placeholder={q.hint.replace(/^"|"$/g, "")} value={answers[q.key] as string} onChange={(e) => set(q.key, e.target.value)} />
+              <input id={`${q.key}-0`} placeholder={splitHint(q.hint).example} value={answers[q.key] as string} onChange={(e) => set(q.key, e.target.value)} />
             )}
           </div>
         ))}
