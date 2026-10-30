@@ -104,7 +104,7 @@ This skill serves [your name]. Use it for anything I'll send or publish as mysel
 
 **Test it once.** Open a fresh conversation, load the skill (or paste it at the top), and brief one real thing you need to send this week. Read the draft out loud, under your breath. Mark every sentence you wouldn't say. Those sentences are your first additions to the file.
 
-**Check before it leaves.** Nothing leaves your hands unchecked, and a draft in your voice is the easiest thing to wave through because it sounds like you. Before you send anything this skill drafted, run the three-minute test: put away the materials and explain your argument, succinctly and convincingly, in three minutes or less. If you can't, it isn't yours yet.
+**Check before it leaves.** Nothing leaves your hands unchecked, and a draft in your voice is the easiest thing to wave through because it sounds like you. Before you send anything this skill drafted, run the three-minute test: put away the materials and explain your argument, succinctly and convincingly, in three minutes or less, without the screen. If you can't, it isn't yours yet.
 
 *How to: the rewrite-don't-swap rule. The Wikipedia guide is explicit that replacing a banned word with a synonym hides the problem without fixing it. "Pivotal" becomes "key" and the empty claim behind it is untouched. When the tool flags a sentence, ask it what fact the sentence is standing in for. If there's a fact, the fact replaces the phrase. If there isn't, the sentence comes out.*
 

@@ -10,6 +10,7 @@ export interface Screenshot {
   skills?: string[];
   glossary?: boolean;
   home?: boolean;
+  showMeWhere?: boolean; // general how-to screens a starter page keeps behind "Show me where" (Oct 30)
 }
 
 // Only placed, not-held screenshots are in the generated data (and in public/screenshots).

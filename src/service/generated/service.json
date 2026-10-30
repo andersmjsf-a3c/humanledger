@@ -86,7 +86,7 @@
         "three-minute-test"
       ],
       "persona": "the practice owner",
-      "ruleHtml": "<p>Nothing it gives you leaves your hands unchecked.</p>\n<p>That&#39;s the one rule under everything else here, and the reason is simple. When the tool is wrong, it sounds exactly the way it sounds when it&#39;s right: confident, specific, well organized. It isn&#39;t lying. It fills gaps with what sounds plausible, and plausible is its specialty. A figure from the wrong year, a title from two jobs ago, a quote that&#39;s close to what someone said, a source that exists and says something adjacent. None of it looks wrong on the page.</p>\n<p>So the check can&#39;t be &quot;does this look right.&quot; The check is a short pass you run on anything with a number, a name, a date, or a quote in it, before it goes anywhere. Ask for the source of each fact and the sentence it comes from. Open the source. Read the sentence. Mark each fact confirmed, close but wrong, or couldn&#39;t find. Then write one line at the bottom listing what you couldn&#39;t verify, because that line is what makes the rest trustworthy to whoever reads it.</p>\n<p>And the test for whether you&#39;re done, the three-minute test: put away the materials and explain your argument, succinctly and convincingly, in three minutes or less. If you can&#39;t, you haven&#39;t finished the work yet, no matter how finished the page looks.</p>\n",
+      "ruleHtml": "<p>Nothing it gives you leaves your hands unchecked.</p>\n<p>That&#39;s the one rule under everything else here, and the reason is simple. When the tool is wrong, it sounds exactly the way it sounds when it&#39;s right: confident, specific, well organized. It isn&#39;t lying. It fills gaps with what sounds plausible, and plausible is its specialty. A figure from the wrong year, a title from two jobs ago, a quote that&#39;s close to what someone said, a source that exists and says something adjacent. None of it looks wrong on the page.</p>\n<p>So the check can&#39;t be &quot;does this look right.&quot; The check is a short pass you run on anything with a number, a name, a date, or a quote in it, before it goes anywhere. Ask for the source of each fact and the sentence it comes from. Open the source. Read the sentence. Mark each fact confirmed, close but wrong, or couldn&#39;t find. Then write one line at the bottom listing what you couldn&#39;t verify, because that line is what makes the rest trustworthy to whoever reads it.</p>\n<p>And the test for whether you&#39;re done: put away the materials and explain your argument, succinctly and convincingly, in three minutes or less. If you can&#39;t, you haven&#39;t finished the work yet, no matter how finished the page looks.</p>\n",
       "tryIt": {
         "beforeHtml": "<p>Take something the tool wrote for you this week that has at least three facts in it. Paste this under it:</p>\n",
         "prompt": [
@@ -859,7 +859,8 @@
         "who-my-company-is",
         "my-posts",
         "my-work-register"
-      ]
+      ],
+      "showMeWhere": true
     },
     {
       "file": "10b-a-skill-made-from-a-conversation-service.png",
@@ -873,7 +874,8 @@
         "who-my-company-is",
         "my-posts",
         "my-work-register"
-      ]
+      ],
+      "showMeWhere": true
     },
     {
       "file": "03-skills-list.png",
@@ -894,7 +896,8 @@
         "who-my-company-is",
         "my-posts",
         "my-work-register"
-      ]
+      ],
+      "showMeWhere": true
     },
     {
       "file": "16-skills-add-menu.png",
@@ -912,7 +915,8 @@
         "who-my-company-is",
         "my-posts",
         "my-work-register"
-      ]
+      ],
+      "showMeWhere": true
     },
     {
       "file": "04-model-next-to-send.png",
@@ -949,7 +953,7 @@
       ]
     },
     {
-      "file": "18-claude-code-pane.png",
+      "file": "18-claude-code-pane-service.png",
       "alt": "Claude Code in the desktop app: the folder it's working in, a notice that auto mode is on, the commands it ran, and a status report of what's done and not done.",
       "caption": "Claude Code in the desktop app: the folder it works in, what it ran, and a plain status of what's done and what isn't.",
       "starters": [
@@ -974,16 +978,16 @@
       ]
     },
     {
-      "file": "13a-playbook-correction.png",
-      "alt": "A request for a one-pager on the company's go-to-market including a consumer sales focus; the tool builds it, then says the consumer section is written as a partner-led motion; the person replies that there is no direct consumer sales motion, that was a test, and asks it to fix the playbook.",
+      "file": "13a-playbook-correction-service.png",
+      "alt": "A request for a one-pager on the company's go-to-market including a consumer sales focus; the tool builds it from a playbook line about a consumer tier under consideration; the person replies that the company doesn't sell to consumers, that line was a test from last spring, and asks it to fix the playbook.",
       "caption": "A claim the company couldn't back. The one-pager gained a consumer sales section, and the correction took one line.",
       "starters": [
         "who-my-company-is"
       ]
     },
     {
-      "file": "13b-the-playbook-fix.png",
-      "alt": "An Update skill card for the company's go-to-market playbook, showing the canon rules, with Dismiss and Update buttons; below it, the tool admits it should have said up front that there is no consumer motion.",
+      "file": "13b-the-playbook-fix-service.png",
+      "alt": "An Update skill card for the company's go-to-market playbook, showing its canon rules, with Dismiss and Update buttons; below it, the tool admits it should have said up front that the company doesn't sell to consumers, and that the fix removes the line.",
       "caption": "The fix going into the file: an Update skill card, so the next draft starts from the corrected rule.",
       "starters": [
         "who-my-company-is"

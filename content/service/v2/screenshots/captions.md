@@ -38,3 +38,6 @@ Real screens from a Claude Max account on the desktop app, taken Oct 30 2026 and
 | 16-skills-add-menu.png | Customize > Skills > Add: Upload skill, Create a skill, Create with Claude, Record your screen | Chapter 5, plate 15; workbook 0.5 and B1; service "Load it into Claude" |
 | 17-skill-used-by-name.png | "use my compounding ai skill to give me a recent example" and the answer | Chapter 5, plate 16. BOOK ONLY: the answer names the author's companies. |
 | 18-claude-code-pane.png | Claude Code in the desktop app: folder, auto mode notice, commands run, status with file links | Chapter 15, plate 17; workbook Part C. Repo and chat names replaced. |
+
+## Service versions (Oct 30 2026, evening)
+`13a-playbook-correction-service.png`, `13b-the-playbook-fix-service.png`: the same screens rewritten around the first-year founder persona (a consumer tier the company doesn't sell, left in the playbook from a test). `18-claude-code-pane-service.png`: generic file names. Use the `-service` versions on the site; the originals are book-only.

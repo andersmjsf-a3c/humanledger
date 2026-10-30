@@ -343,3 +343,12 @@ figure.shot.small { max-width: 520px; }
 
 .memory-line { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; margin: 12px 0; }
 .memory-line .paste { margin: 6px 0 0; user-select: all; }
+
+/* Starter pages: the general screens (ask, save, skills list, Add menu) behind one toggle, closed by default. */
+.show-me-where { margin: 16px 0 0; border-top: 1px solid var(--rule); padding-top: 12px; }
+.show-me-where > summary { cursor: pointer; font-weight: 600; color: var(--accent); min-height: 44px; display: flex; align-items: center; }
+.show-me-where > summary::-webkit-details-marker { display: none; }
+.show-me-where > summary { list-style: none; gap: 8px; }
+.show-me-where > summary::before { content: ""; width: 0; height: 0; border-left: 6px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent; transition: transform 0.15s; }
+.show-me-where[open] > summary::before { transform: rotate(90deg); }
+.show-me-where[open] > summary { margin-bottom: 8px; }

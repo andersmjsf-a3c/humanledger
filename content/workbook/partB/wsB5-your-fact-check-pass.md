@@ -99,7 +99,7 @@ One line beginning "Couldn't verify:" for whatever's left.
 
 **Test it once.** Run the skill on the same draft you checked by hand in step 1. Compare its table to your marks. Where it caught something you missed, good. Where you caught something it missed, write down what kind of thing it was, because that's the kind you'll always have to check yourself.
 
-**Check before it leaves.** The pass coming back clean is the start of the check, not the end. Before the draft goes anywhere, the three-minute test: put away the materials and explain your argument, succinctly and convincingly, in three minutes or less, naming where each of its three most important facts came from. If one of them is "the tool said it was confirmed," open the source yourself. Nothing leaves your hands unchecked, including the checker's work.
+**Check before it leaves.** The pass coming back clean is the start of the check, not the end. Before the draft goes anywhere, the three-minute test: put away the materials and explain your argument, succinctly and convincingly, in three minutes or less, including the three most important facts and where each came from. If one of them is "the tool said it was confirmed," open the source yourself. Nothing leaves your hands unchecked, including the checker's work.
 
 *How to: running two passes. The fact-check and the voice check (B2) are different passes; run both, in that order: facts first, because fixing a fact can change a sentence, then voice. If your setup lets you chain skills, chain them. If not, two messages: "run the fact-check pass," then "now run it against my voice."*
 
