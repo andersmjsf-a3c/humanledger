@@ -116,7 +116,7 @@ showing it to me.
 
 **Test it once.** Load the skill and ask for something small you'd actually use: a one-page summary, three slides, a short bio. Read the result against the first section before you look at the colors. The question is whether it sounds like a company that believes what you wrote in answer 3.
 
-**Check before it leaves.** Nothing leaves your hands unchecked, and brand is where unchecked output does its quietest damage: nothing is wrong, exactly, it just isn't you. Before anything from this skill goes to a customer or a room, run the three-minute test on the who-we-are page itself. Can you say who your company is for three minutes with no slide? If you can't, the first section isn't finished, and no color fixes that.
+**Check before it leaves.** Nothing leaves your hands unchecked, and brand is where unchecked output does its quietest damage: nothing is wrong, exactly, it just isn't you. Before anything from this skill goes to a customer or a room, run the three-minute test on the who-we-are page itself: put away the materials and explain your argument, succinctly and convincingly, in three minutes or less, where the argument is who your company is. If you can't, the first section isn't finished, and no color fixes that.
 
 *How to: the attached guide. If you already have a brand or style guide, don't paste it into this skill. Keep it as a reference file in the project (Part 0, worksheet 0.4) and point to it from "The visible layer." A file in the conversation is information the tool may consult. The rules in this skill are instructions it follows. Most people take a year to learn the difference.*
 

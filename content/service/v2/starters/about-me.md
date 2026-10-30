@@ -8,7 +8,7 @@ description: The paragraph Claude should know about me in every conversation. No
 Give this to Claude once, in a new conversation, as: "Remember this about me:" followed by the paragraph. Then open another new conversation and ask what it knows about you. Fix anything it got wrong. Keep this file; the memory is a copy.
 
 ## The paragraph
-I'm {{who}} This quarter I'm working on {{working_on}} How I like work done: {{how}}
+Who I am: {{who}} What I'm working on this quarter: {{working_on}} How I like work done: {{how}}
 
 ## Rules for what goes here
 - Only what's true regardless of what I'm working on today. Project facts go in a project; how to do a job goes in a skill.

@@ -121,7 +121,7 @@ Schema 1.2 (`src/schemas/scorecard.schema.json`) adds `unverified_line` (boolean
 - **Making a card** (`src/cards/build.ts`): "Done with this worksheet" on each worksheet page makes a
   worksheet card (`completed`, or `revisited_v2` once one was sent), with an optional "I did the check step"
   box. The draft checker makes a deliverable card from the run's counts plus the A5 checks the reader
-  ticks: the three-minute test (out loud, no notes) and whether they wrote the line listing what they
+  ticks: the three-minute test (put away the materials and explain the argument, succinctly and convincingly, in three minutes or less) and whether they wrote the line listing what they
   couldn't verify. Neither page sends anything; both link to `/review#v1.<card>`.
 - **`/review`** is the only page that sends. It shows every line in plain words (`src/cards/labels.ts`,
   tested to cover every schema field), the exact JSON, and a box on each optional line to hold it back.

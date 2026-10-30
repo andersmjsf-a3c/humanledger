@@ -8,7 +8,7 @@ The tool sounds the same when it's right and when it's wrong. The biggest mistak
 
 The rules are yours because the stakes are yours. A number in a deck to an investor needs a different check from a number in a note to yourself. A quote attributed to a public figure needs a different check from a summary of a document you attached. Write the rules for the work you actually send, and make them short enough to run every time.
 
-The last rule on your list should be the three-minute test: can you explain the thing out loud, with no materials, for three minutes? If you can't, you aren't done. It's the check that catches what the other four miss, because it's a check on you, not on the draft.
+The last rule on your list should be the three-minute test: put away the materials and explain your argument, succinctly and convincingly, in three minutes or less. If you can't, you aren't done. It's the check that catches what the other four miss, because it's a check on you, not on the draft.
 
 ## An example
 
@@ -18,7 +18,7 @@ The last rule on your list should be the three-minute test: can you explain the 
 2. Open the source. Read the sentence the number comes from. If I can't find it, the number comes out or gets marked as unverified.
 3. Find the one number the argument turns on and check it twice. One wrong number there costs more than ten wrong numbers elsewhere.
 4. Anything I'll say to someone who knows the subject better than I do gets the whole pass, not the quick one. The investor who knows the competitor's real figures exists for every piece of work.
-5. Before it goes out: three minutes, out loud, no notes. If I can't, it isn't finished.
+5. Before it goes out: put away the materials and explain my argument, succinctly and convincingly, in three minutes or less. If I can't, it isn't finished.
 
 What they write at the end of every pass: the line listing what they couldn't verify. That line is the habit. It's the one most people never write, and it's what lets you stand in front of a reader and say "this holds, and here's the one thing I'm not sure of."
 
@@ -42,7 +42,7 @@ What they write at the end of every pass: the line listing what they couldn't ve
 4. **Write the unverified line.** At the bottom of that piece, one line listing what you couldn't confirm. Copy it here.
    _____
 
-5. **The three-minute test.** Stand up and explain the piece out loud, no materials, for three minutes. Did you make it? What did you stumble on? (Two lines.)
+5. **The three-minute test.** Put away the materials and explain your argument, succinctly and convincingly, in three minutes or less. Did you make it? What did you stumble on? (Two lines.)
    _____
 
 6. **Save the rules** as `trust-rules.md` in your notes folder, and paste them into memory ("Remember my checking rules:") so the tool knows what you'll hold it to.

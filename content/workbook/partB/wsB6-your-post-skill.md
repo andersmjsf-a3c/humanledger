@@ -108,7 +108,7 @@ the news, ask what I think before drafting.
 
 **Test it once.** Give it the brief from answer 6 and ask for the post. Then run the five passes yourself, one message each: is the opinion actually in it or did it drift into summary; cut it to your word range; fix every line you'd never say; check the facts; read it aloud and rewrite anything that sounds like a press release. Count how many of the five found something. Four or five is normal for a first draft.
 
-**Check before it leaves.** A post is the fastest route from the tool to the public with your name attached, and nothing leaves your hands unchecked. Before you hit post, the three-minute test: say what the post argues and where its fact came from, out loud, without the screen. If you'd be uncomfortable defending it in the comments tomorrow, it isn't finished. Then post it yourself.
+**Check before it leaves.** A post is the fastest route from the tool to the public with your name attached, and nothing leaves your hands unchecked. Before you hit post, the three-minute test: put away the materials and explain your argument, succinctly and convincingly, in three minutes or less, including where its fact came from. If you'd be uncomfortable defending it in the comments tomorrow, it isn't finished. Then post it yourself.
 
 *How to: the killed post. Sooner or later the fact pass will find a number in a draft that was never in the announcement, and you'll pull the post. The skill's "a number that wasn't in the source" line is the result. If you've killed a post for a reason, write that reason into Never, in its specific form. The specific form is the one the tool can check.*
 
