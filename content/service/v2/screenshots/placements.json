@@ -1,5 +1,5 @@
 {
-  "note": "Where each screenshot shows on the site, from captions.md (Oct 30 2026). Afternoon: 07 and 08 are the service versions; 09, 11, and 12 are book and workbook only. Evening: 10a and 10b are the service versions; 13a, 13b, 14a, 14b, 15, 16, and 18 added; 17 is book only. The build serves only screenshots listed here and not held. Captions are short and factual; every figure says the date it was taken.",
+  "note": "Where each screenshot shows on the site, from captions.md (Oct 30 2026). Afternoon: 07 and 08 are the service versions; 09, 11, and 12 are book and workbook only. Evening: 10a and 10b are the service versions; 13a, 13b, 14a, 14b, 15, 16, and 18 added; 17 is book only. Late evening: 13a, 13b, and 18 are the service versions. showMeWhere marks the general screens a starter page keeps behind its \"Show me where\" toggle. The build serves only screenshots listed here and not held. Captions are short and factual; every figure says the date it was taken.",
   "taken": "2026-10-30",
   "screenshots": [
     {
@@ -54,7 +54,8 @@
         "who-my-company-is",
         "my-posts",
         "my-work-register"
-      ]
+      ],
+      "showMeWhere": true
     },
     {
       "file": "10b-a-skill-made-from-a-conversation-service.png",
@@ -68,7 +69,8 @@
         "who-my-company-is",
         "my-posts",
         "my-work-register"
-      ]
+      ],
+      "showMeWhere": true
     },
     {
       "file": "03-skills-list.png",
@@ -89,7 +91,8 @@
         "who-my-company-is",
         "my-posts",
         "my-work-register"
-      ]
+      ],
+      "showMeWhere": true
     },
     {
       "file": "16-skills-add-menu.png",
@@ -107,7 +110,8 @@
         "who-my-company-is",
         "my-posts",
         "my-work-register"
-      ]
+      ],
+      "showMeWhere": true
     },
     {
       "file": "04-model-next-to-send.png",
@@ -144,7 +148,7 @@
       ]
     },
     {
-      "file": "18-claude-code-pane.png",
+      "file": "18-claude-code-pane-service.png",
       "alt": "Claude Code in the desktop app: the folder it's working in, a notice that auto mode is on, the commands it ran, and a status report of what's done and not done.",
       "caption": "Claude Code in the desktop app: the folder it works in, what it ran, and a plain status of what's done and what isn't.",
       "starters": [
@@ -169,16 +173,16 @@
       ]
     },
     {
-      "file": "13a-playbook-correction.png",
-      "alt": "A request for a one-pager on the company's go-to-market including a consumer sales focus; the tool builds it, then says the consumer section is written as a partner-led motion; the person replies that there is no direct consumer sales motion, that was a test, and asks it to fix the playbook.",
+      "file": "13a-playbook-correction-service.png",
+      "alt": "A request for a one-pager on the company's go-to-market including a consumer sales focus; the tool builds it from a playbook line about a consumer tier under consideration; the person replies that the company doesn't sell to consumers, that line was a test from last spring, and asks it to fix the playbook.",
       "caption": "A claim the company couldn't back. The one-pager gained a consumer sales section, and the correction took one line.",
       "starters": [
         "who-my-company-is"
       ]
     },
     {
-      "file": "13b-the-playbook-fix.png",
-      "alt": "An Update skill card for the company's go-to-market playbook, showing the canon rules, with Dismiss and Update buttons; below it, the tool admits it should have said up front that there is no consumer motion.",
+      "file": "13b-the-playbook-fix-service.png",
+      "alt": "An Update skill card for the company's go-to-market playbook, showing its canon rules, with Dismiss and Update buttons; below it, the tool admits it should have said up front that the company doesn't sell to consumers, and that the fix removes the line.",
       "caption": "The fix going into the file: an Update skill card, so the next draft starts from the corrected rule.",
       "starters": [
         "who-my-company-is"

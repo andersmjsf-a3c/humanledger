@@ -39,7 +39,14 @@ export default async function StartPage({ params }: { params: Promise<{ id: stri
             it uses the skill.
           </p>
         )}
-        <Shots list={shotsFor.starter(s.id)} />
+        {/* The starter's own screens stay in view; the general how-to screens wait behind a toggle. */}
+        <Shots list={shotsFor.starter(s.id).filter((x) => !x.showMeWhere)} />
+        {shotsFor.starter(s.id).some((x) => x.showMeWhere) && (
+          <details className="show-me-where">
+            <summary>Show me where</summary>
+            <Shots list={shotsFor.starter(s.id).filter((x) => x.showMeWhere)} />
+          </details>
+        )}
       </section>
     </main>
   );

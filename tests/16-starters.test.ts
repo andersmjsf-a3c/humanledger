@@ -138,7 +138,7 @@ describe("screenshots, placed per captions.md", () => {
 
   it("the book-only screens never reach the site (Mark, Oct 30 pm)", () => {
     const served = readdirSync("public/screenshots");
-    for (const f of ["07-skill-running-in-a-chat.png", "08-the-check.png", "09-project-page.png", "10a-asking-for-a-skill.png", "10b-a-skill-made-from-a-conversation.png", "11-pushing-back.png", "12-export-control.png", "17-skill-used-by-name.png"]) {
+    for (const f of ["07-skill-running-in-a-chat.png", "08-the-check.png", "09-project-page.png", "10a-asking-for-a-skill.png", "10b-a-skill-made-from-a-conversation.png", "11-pushing-back.png", "12-export-control.png", "13a-playbook-correction.png", "13b-the-playbook-fix.png", "17-skill-used-by-name.png", "18-claude-code-pane.png"]) {
       expect(served, f).not.toContain(f);
       expect(placements.screenshots.map((s: { file: string }) => s.file), f).not.toContain(f);
     }
@@ -149,11 +149,17 @@ describe("screenshots, placed per captions.md", () => {
   it("About me shows the memory screen, not the skills list", () => {
     const files = (id: string) => SCREENSHOTS.filter((s) => s.starters === "all" || s.starters?.includes(id)).map((s) => s.file);
     expect(files("about-me")).toEqual(["02-memory-settings.png", "15-memory-settings-web.png"]);
-    expect(files("who-my-company-is")).toEqual(expect.arrayContaining(["13a-playbook-correction.png", "13b-the-playbook-fix.png"]));
+    expect(files("who-my-company-is")).toEqual(expect.arrayContaining(["13a-playbook-correction-service.png", "13b-the-playbook-fix-service.png"]));
     expect(files("check-the-facts")).toEqual(expect.arrayContaining(["14a-fact-pass-ask.png", "14b-fact-pass-output.png"]));
-    expect(files("my-work-register")).toEqual(expect.arrayContaining(["06-scheduled-task.png", "18-claude-code-pane.png"]));
+    expect(files("my-work-register")).toEqual(expect.arrayContaining(["06-scheduled-task.png", "18-claude-code-pane-service.png"]));
     for (const s of STARTERS.filter((x) => x.id !== "about-me")) expect(files(s.id), s.id).toEqual(expect.arrayContaining(["03-skills-list.png", "16-skills-add-menu.png"]));
     expect(files("write-like-me")).toContain("03-skills-list.png");
+  });
+
+  it("starter pages keep exactly the four general screens behind Show me where", () => {
+    expect(SCREENSHOTS.filter((s) => s.showMeWhere).map((s) => s.file).sort()).toEqual(
+      ["03-skills-list.png", "10a-asking-for-a-skill-service.png", "10b-a-skill-made-from-a-conversation-service.png", "16-skills-add-menu.png"]
+    );
   });
 
   it("every placement points at a page that exists", () => {
