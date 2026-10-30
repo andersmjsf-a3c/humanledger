@@ -50,7 +50,7 @@ export const CAPABILITIES: Capability[] = [
   { key: "research", title: "Find out something I can rely on", slug: "find-out-something-i-can-rely-on", worksheet: "B4", skill: "4-research-and-cite", slot: "research", starter: "research-i-can-trust", fileName: "research.md" },
   { key: "deck", title: "Make a deck or a one-pager someone will judge", slug: "make-something-someone-will-judge", worksheet: "C5", fileName: "pass log" },
   { key: "changed", title: "Figure out what just changed", slug: "what-just-changed", worksheet: "0.7", fileName: "platform-changes.md" },
-  { key: "memory", title: "Keep it from forgetting who I am", slug: "keep-it-from-forgetting", worksheet: "A1", fileName: "about-me.md" },
+  { key: "memory", title: "Keep it from forgetting who I am", slug: "keep-it-from-forgetting", worksheet: "A1", starter: "about-me", fileName: "about-me.md" },
   { key: "agent", title: "Give it a job to do on its own", slug: "", worksheet: "C2", skill: "7-agent-job-description", starter: "my-work-register", fileName: "agent job card", later: true },
 ];
 

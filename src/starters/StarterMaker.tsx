@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { strToU8, zipSync } from "fflate";
-import { fillParts, fillStarter, listHints, missing, optional, splitHint, type Starter, type StarterAnswers } from "./fill";
+import { fillParts, fillStarter, isMemoryStarter, listHints, memoryLine, memoryParagraph, missing, optional, splitHint, type Starter, type StarterAnswers } from "./fill";
+import { confirmMemory } from "@/dashboard/useVaultSummary";
 import { downloadBytes } from "@/vault/folder";
 import { getStore } from "@/vault/ui/useVault";
 import { STARTER_PREFIX } from "@/vault/storage";
@@ -74,6 +75,7 @@ export function StarterMaker({ s }: { s: Starter }) {
   };
 
   const content = () => fillStarter(s, answers);
+  const memory = isMemoryStarter(s);
 
   async function keep() {
     if (!signedIn) {
@@ -98,16 +100,42 @@ export function StarterMaker({ s }: { s: Starter }) {
     setNote(`Kept in your vault as version ${version}.`);
   }
 
-  async function download() {
-    const text = content();
-    downloadBytes(zipSync({ [`${s.id}/SKILL.md`]: strToU8(text) }), `${s.id}.zip`);
+  // The file left for Claude (downloaded, or the memory line copied): remember which version did.
+  async function markExported(text: string) {
     setDownloaded(fingerprint(text));
     const store = getStore();
     const rec = await store.get(STARTER_PREFIX + s.id);
     if (rec && JSON.stringify(rec.answers) === JSON.stringify(flatStarterAnswers(answers))) {
       await store.replaceAll([{ ...rec, exportedHash: fingerprint(text) }]);
     }
+  }
+
+  async function download() {
+    const text = content();
+    if (memory) {
+      downloadBytes(strToU8(text), `${s.id}.md`);
+      await markExported(text);
+      setNote("Downloaded. Keep this file; the memory is a copy of it.");
+      return;
+    }
+    downloadBytes(zipSync({ [`${s.id}/SKILL.md`]: strToU8(text) }), `${s.id}.zip`);
+    await markExported(text);
     setNote("Downloaded. In Claude, add the ZIP under Customize > Skills, then name the job.");
+  }
+
+  async function copyLine() {
+    try {
+      await navigator.clipboard.writeText(memoryLine(memoryParagraph(s, answers) ?? ""));
+      await markExported(content());
+      setNote("Copied. Paste it into a new conversation in Claude and send it.");
+    } catch {
+      setNote("Couldn't copy. Select the line above and copy it yourself.");
+    }
+  }
+
+  async function confirmed() {
+    await confirmMemory(true);
+    setNote("Marked as in Claude's memory. Your dashboard shows it connected.");
   }
 
   if (step === "ask") {
@@ -147,12 +175,31 @@ export function StarterMaker({ s }: { s: Starter }) {
   return (
     <div className="starter-file">
       <p className="lede">
-        Here&apos;s your skill. The <span className="yours">green</span> parts are yours; everything else is ready as written.
+        Here&apos;s your {memory ? "paragraph" : "skill"}. The <span className="yours">green</span> parts are yours; everything else is ready as written.
       </p>
+      {memory && (
+        <div className="memory-line">
+          <p className="qlabel">The one line to paste into Claude</p>
+          <p className="paste" aria-label="The line to paste">
+            {memoryLine(memoryParagraph(s, answers) ?? "")}
+          </p>
+        </div>
+      )}
       <div className="actions">
-        <button className="primary" onClick={download}>
-          Download for Claude
-        </button>
+        {memory ? (
+          <>
+            <button className="primary" onClick={copyLine}>
+              Copy for Claude
+            </button>
+            <button className="secondary" onClick={download}>
+              Download the file
+            </button>
+          </>
+        ) : (
+          <button className="primary" onClick={download}>
+            Download for Claude
+          </button>
+        )}
         <button className="secondary" onClick={keep}>
           {kept ? `Kept, version ${kept.version}. Save changes` : "Keep it in my vault"}
         </button>
@@ -161,7 +208,15 @@ export function StarterMaker({ s }: { s: Starter }) {
         </button>
       </div>
       {note && <p className="saved">{note}</p>}
-      <pre className="skillfile" aria-label="Your skill file">
+      {memory && downloaded && (
+        <p className="fineprint">
+          Asked Claude what it knows about you, in a new conversation, and it had this right?{" "}
+          <button className="linklike" onClick={confirmed}>
+            Yes, it remembers
+          </button>
+        </p>
+      )}
+      <pre className="skillfile" aria-label={memory ? "Your about-me file" : "Your skill file"}>
         {fillParts(s, answers).map((p, i) => ("text" in p ? <span key={i}>{p.text}</span> : <mark key={i} className="yours">{p.answer}</mark>))}
       </pre>
       <p className="fineprint">

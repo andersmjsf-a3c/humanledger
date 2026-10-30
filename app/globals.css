@@ -310,7 +310,7 @@ button.linklike { background: none; border: 0; padding: 0; color: var(--accent);
 .picture img { width: 100%; height: auto; display: block; }
 .picture.framed { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: #fff; }
 #how { padding-bottom: 48px; }
-.starters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 24px 0 16px; }
+.starters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 24px 0 16px; }
 .starter-card { background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 8px; min-height: 170px; }
 .starter-card h3 { font-size: 1.15rem; font-weight: 600; margin: 0; }
 .starter-card p { color: var(--muted); margin: 0; flex: 1; }
@@ -321,8 +321,9 @@ button.linklike { background: none; border: 0; padding: 0; color: var(--accent);
 .confusing .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; align-items: center; }
 .confusing nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 .confusing a { text-decoration: none; }
-@media (max-width: 900px) { .starters { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .starters { grid-template-columns: 1fr; } }
+/* Eight starters (Oct 30 pm): two rows of four wide, three columns at tablet width, one on phones. */
+@media (max-width: 1080px) { .starters { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .starters { grid-template-columns: 1fr; } }
 
 /* Make it mine */
 .starter-form { display: flex; flex-direction: column; gap: 18px; margin: 20px 0; }
@@ -339,3 +340,6 @@ figure.shot img { width: 100%; height: auto; display: block; border: 1px solid v
 figure.shot figcaption { font-size: 0.88rem; color: var(--muted); margin-top: 8px; }
 figure.shot.small { max-width: 520px; }
 .load-it { margin-top: 32px; }
+
+.memory-line { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; margin: 12px 0; }
+.memory-line .paste { margin: 6px 0 0; user-select: all; }
