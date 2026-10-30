@@ -7,7 +7,9 @@ import { fileNameFor, renderMarkdown } from "@/worksheets/render";
 import { TEMPLATES, templateById } from "@/skills";
 import { skillFile } from "@/skills/render";
 import { SHARED_NAME } from "@/skills/parse";
-import { SHARED_ID, SKILL_PREFIX, type StoredWorksheet } from "./storage";
+import { SHARED_ID, SKILL_PREFIX, STARTER_PREFIX, type StoredWorksheet } from "./storage";
+import { STARTERS, starterById } from "@/service";
+import { fillStarter, type Starter, type StarterAnswers } from "@/starters/fill";
 
 export const ANSWERS_PATH = ".workbook/answers.json";
 const FORMAT = "workbook-answers";
@@ -28,6 +30,27 @@ export function skillFileFor(rec: StoredWorksheet, shared: Record<string, string
   return t ? skillFile(t, { ...shared, ...rec.answers }) : undefined;
 }
 
+const isStarter = (id: string) => id.startsWith(STARTER_PREFIX) && !!starterById(id.slice(STARTER_PREFIX.length));
+
+// Stored answers (flat, list items as key.1..key.3) to the shape a starter fills from, and back.
+export function starterAnswersOf(s: Starter, flat: Record<string, string>): StarterAnswers {
+  return Object.fromEntries(s.questions.map((q) => [q.key, q.type === "list3" ? [1, 2, 3].map((i) => flat[`${q.key}.${i}`] ?? "") : flat[q.key] ?? ""]));
+}
+export function flatStarterAnswers(a: StarterAnswers): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const [k, v] of Object.entries(a)) {
+    if (Array.isArray(v)) v.forEach((x, i) => (out[`${k}.${i + 1}`] = x));
+    else out[k] = v;
+  }
+  return out;
+}
+const starterKeys = (s: Starter) => new Set(s.questions.flatMap((q) => (q.type === "list3" ? [1, 2, 3].map((i) => `${q.key}.${i}`) : [q.key])));
+
+export function starterFileFor(rec: StoredWorksheet) {
+  const s = starterById(rec.id.slice(STARTER_PREFIX.length));
+  return s ? { path: `skills/${s.id}/SKILL.md`, content: fillStarter(s, starterAnswersOf(s, rec.answers)) } : undefined;
+}
+
 export function buildBundle(records: StoredWorksheet[], now = new Date()): FileMap {
   const day = now.toISOString().slice(0, 10);
   const shared = sharedOf(records);
@@ -39,6 +62,10 @@ export function buildBundle(records: StoredWorksheet[], now = new Date()): FileM
       const f = skillFileFor(r, shared);
       if (f) files[f.path] = f.content;
     }
+    if (isStarter(r.id) && hasText(r.answers)) {
+      const f = starterFileFor(r)!;
+      files[f.path] = f.content;
+    }
   }
   const pick = (r: StoredWorksheet) => ({ answers: r.answers, updatedAt: r.updatedAt, ...(r.version ? { version: r.version } : {}) });
   const payload = {
@@ -48,6 +75,7 @@ export function buildBundle(records: StoredWorksheet[], now = new Date()): FileM
     worksheets: Object.fromEntries(records.filter((r) => worksheetById(r.id)).map((r) => [r.id, pick(r)])),
     skills: Object.fromEntries(records.filter((r) => isSkill(r.id)).map((r) => [r.id.slice(SKILL_PREFIX.length), pick(r)])),
     shared: { answers: shared },
+    starters: Object.fromEntries(records.filter((r) => isStarter(r.id)).map((r) => [r.id.slice(STARTER_PREFIX.length), pick(r)])),
   };
   files[ANSWERS_PATH] = JSON.stringify(payload, null, 2);
   return files;
@@ -97,6 +125,15 @@ export function parseBundle(text: string): { records: StoredWorksheet[]; skipped
     const version = Number.isInteger(entry.version) && entry.version > 0 && entry.version < 10_000 ? entry.version : undefined;
     records.push({ id: SKILL_PREFIX + id, answers: c.answers, updatedAt: at, savedToFolderAt: at, ...(version ? { version } : {}) });
   }
+  for (const [id, entry] of Object.entries<any>(data.starters ?? {})) {
+    const s = STARTERS.find((x) => x.id === id);
+    if (!s || typeof entry?.answers !== "object") { skipped++; continue; }
+    const c = cleanAnswers(entry.answers, starterKeys(s));
+    skipped += c.skipped;
+    const at = validTime(entry.updatedAt);
+    const version = Number.isInteger(entry.version) && entry.version > 0 && entry.version < 10_000 ? entry.version : undefined;
+    records.push({ id: STARTER_PREFIX + id, answers: c.answers, updatedAt: at, savedToFolderAt: at, ...(version ? { version } : {}) });
+  }
   if (data.shared?.answers) {
     const c = cleanAnswers(data.shared.answers, new Set([SHARED_NAME]));
     skipped += c.skipped;
@@ -119,8 +156,8 @@ export function fingerprint(s: string): string {
 export function bumpVersions(records: StoredWorksheet[]): StoredWorksheet[] {
   const shared = sharedOf(records);
   const changed: StoredWorksheet[] = [];
-  for (const r of records.filter((r) => isSkill(r.id) && hasText(r.answers))) {
-    const f = skillFileFor(r, shared);
+  for (const r of records.filter((r) => (isSkill(r.id) || isStarter(r.id)) && hasText(r.answers))) {
+    const f = isStarter(r.id) ? starterFileFor(r) : skillFileFor(r, shared);
     if (!f) continue;
     const h = fingerprint(f.content);
     if (h !== r.exportedHash) changed.push({ ...r, version: (r.version ?? 0) + 1, exportedHash: h });

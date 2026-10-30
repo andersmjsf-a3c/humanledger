@@ -17,6 +17,8 @@ export interface StoredWorksheet {
 // reader gives once for every skill lives in "skill:shared".
 export const SKILL_PREFIX = "skill:";
 export const SHARED_ID = "skill:shared";
+// Starters (Oct 30 2026): "starter:<starter id>"; list answers are stored as key.1, key.2, key.3.
+export const STARTER_PREFIX = "starter:";
 
 const DB_NAME = "workbook-vault";
 const STORE = "worksheets";

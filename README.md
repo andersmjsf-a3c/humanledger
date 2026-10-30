@@ -205,6 +205,24 @@ dashed ninth tile (agents, C2) is added.
   page the person was on (`src/account/returnTo.ts`, same-site paths only); a waiting scorecard comes
   first; with neither, `/your-ai`.
 
+## v2: starters first (Oct 30)
+
+The front door leads with skills already written (`content/service/v2/`, from the human-led-service skill).
+
+- `/`: headline, the how-it-works picture, six starter cards ("Make it mine"), "What a skill is" with the
+  annotated file, and a quiet "When something's confusing" row (glossary, Where things live, What changed,
+  and `/why`, the first homepage with the eight content pages).
+- `/start/[id]`: exactly three questions from `starters.json` (`text` or `list3`), then the finished
+  `SKILL.md` with the person's answers in green (`src/starters/fill.ts` tidies punctuation where an answer
+  meets the starter's words; a blank optional answer reads "(none yet)"). "Download for Claude" builds
+  `<id>/SKILL.md` in a ZIP in the browser. "Keep it in my vault" is the only place sign-in is asked; it
+  returns to the page and saves as `starter:<id>` in the local vault, versioned, in folder saves too.
+- The dashboard counts kept starters (voice, fact check, weekly report, research map to their cards; the
+  brand and posts starters count as files kept). Version 2 is the worksheet named in `worksheetV2`, which
+  shows the three starter answers at the top.
+- `tests/16-starters.test.ts`: three questions each, every placeholder answered, filled files complete,
+  vault round trip, dashboard counts, plain SVGs.
+
 ## Next: week 8
 
 The beta: onboard readers and measure, with counts only, who finishes Part A and comes back to check real

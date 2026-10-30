@@ -1,0 +1,36 @@
+{
+  "version": "2026-10-30",
+  "rule": "Three questions per starter, never more. Answers fill the {{placeholders}}; everything else ships as written. The nine-question worksheet is the Version 2 step, offered after a week of use.",
+  "starters": [
+    {"id":"write-like-me","title":"Write like me","oneLine":"Drafts emails, notes, and posts that sound like you, then you edit.","file":"write-like-me.md","questions":[
+      {"key":"who","label":"Who you are, in one sentence","hint":"Role and what you know a lot about. \"Independent consultant to logistics companies, eleven years.\"","type":"text"},
+      {"key":"reader","label":"Who usually reads what you write","hint":"\"Owners and operations heads who've heard every pitch.\"","type":"text"},
+      {"key":"never","label":"Three words or phrases you never use","hint":"\"Leverage. Circle back. I hope this finds you well.\"","type":"list3"}],
+     "worksheetV2":"B2"},
+    {"id":"check-the-facts","title":"Check the facts before I send","oneLine":"Runs a seven-step pass on anything with a number, a name, a date, or a quote in it.","file":"check-the-facts.md","questions":[
+      {"key":"kinds","label":"What you send that has to be right","hint":"\"Client memos. Board reports. Proposals.\"","type":"text"},
+      {"key":"cost","label":"What a wrong fact costs you","hint":"\"A client. A correction in front of the board.\"","type":"text"},
+      {"key":"burned","label":"One thing it has gotten almost right before","hint":"\"The date from the proposal instead of the final rule.\" Leave blank if none yet.","type":"text"}],
+     "worksheetV2":"B5"},
+    {"id":"my-weekly-report","title":"My weekly report","oneLine":"The thing you write every week, drafted from your notes in the shape you'd write it.","file":"my-weekly-report.md","questions":[
+      {"key":"job","label":"What the report is and who reads it","hint":"\"Monday pipeline summary for my VP, read on her phone.\"","type":"text"},
+      {"key":"first","label":"What comes first, every time","hint":"\"The number against target.\"","type":"text"},
+      {"key":"never","label":"Three things that must never appear","hint":"\"Bullets. The word robust. A deal without a date.\"","type":"list3"}],
+     "worksheetV2":"B1"},
+    {"id":"research-i-can-trust","title":"Research I can trust","oneLine":"Finds things out with a source and a date on every fact, and a line for what it couldn't verify.","file":"research-i-can-trust.md","questions":[
+      {"key":"field","label":"Your field, in a few words","hint":"\"Nonprofit fundraising.\" \"Commercial real estate in the Midwest.\"","type":"text"},
+      {"key":"trusted","label":"Three sources you trust in your field","hint":"\"The funder's own reports. The national association. The agency's statistics.\"","type":"list3"},
+      {"key":"distrusted","label":"One kind of source it should never treat as a source","hint":"\"Vendor blogs.\"","type":"text"}],
+     "worksheetV2":"B4"},
+    {"id":"who-my-company-is","title":"Who my company is","oneLine":"Checks everything it makes for you against who you are, before colors and fonts.","file":"who-my-company-is.md","questions":[
+      {"key":"weare","label":"We are...","hint":"One sentence a customer would use. \"Two accountants who answer the phone.\"","type":"text"},
+      {"key":"weserve","label":"We serve...","hint":"Who, and what they can't afford. \"Owners who can't afford a surprise.\"","type":"text"},
+      {"key":"wenever","label":"We never...","hint":"One thing you won't do even when it would win. \"Promise a result we don't control.\"","type":"text"}],
+     "worksheetV2":"B3"},
+    {"id":"my-posts","title":"My posts","oneLine":"Drafts a post that opens on a fact, holds one opinion, and has none of the tells. You post it.","file":"my-posts.md","questions":[
+      {"key":"platform","label":"Where you post, and for whom","hint":"\"LinkedIn, for other founders and the operators we sell to.\"","type":"text"},
+      {"key":"length","label":"How long a post of yours is","hint":"\"120 to 200 words.\"","type":"text"},
+      {"key":"never","label":"Three things you never do in a post","hint":"\"Hashtags. Exclamation points. End on a question.\"","type":"list3"}],
+     "worksheetV2":"B6"}
+  ]
+}

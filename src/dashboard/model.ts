@@ -37,16 +37,17 @@ export interface Capability {
   slug: string; // the content page
   worksheet: string; // where Keep this goes
   skill?: string; // skill builder template, if this capability is a skill
+  starter?: string; // the starter that makes this file in three questions (Oct 30 2026)
   slot?: string; // scorecard skill slot for re-tests
   fileName: string;
   later?: boolean; // the dashed ninth tile
 }
 
 export const CAPABILITIES: Capability[] = [
-  { key: "voice", title: "Write something that sounds like me", slug: "write-something-that-sounds-like-me", worksheet: "B2", skill: "2-writing-voice", slot: "voice", fileName: "my-voice.md" },
-  { key: "fact", title: "Check whether something it told me is true", slug: "check-whether-its-true", worksheet: "B5", skill: "5-fact-check-pass", slot: "fact_check", fileName: "fact-check.md" },
-  { key: "job", title: "Teach it a job I do every week", slug: "teach-it-a-job", worksheet: "B1", skill: "1-weekly-task", slot: "first_skill", fileName: "first skill" },
-  { key: "research", title: "Find out something I can rely on", slug: "find-out-something-i-can-rely-on", worksheet: "B4", skill: "4-research-and-cite", slot: "research", fileName: "research.md" },
+  { key: "voice", title: "Write something that sounds like me", slug: "write-something-that-sounds-like-me", worksheet: "B2", skill: "2-writing-voice", slot: "voice", starter: "write-like-me", fileName: "my-voice.md" },
+  { key: "fact", title: "Check whether something it told me is true", slug: "check-whether-its-true", worksheet: "B5", skill: "5-fact-check-pass", slot: "fact_check", starter: "check-the-facts", fileName: "fact-check.md" },
+  { key: "job", title: "Teach it a job I do every week", slug: "teach-it-a-job", worksheet: "B1", skill: "1-weekly-task", slot: "first_skill", starter: "my-weekly-report", fileName: "first skill" },
+  { key: "research", title: "Find out something I can rely on", slug: "find-out-something-i-can-rely-on", worksheet: "B4", skill: "4-research-and-cite", slot: "research", starter: "research-i-can-trust", fileName: "research.md" },
   { key: "deck", title: "Make a deck or a one-pager someone will judge", slug: "make-something-someone-will-judge", worksheet: "C5", fileName: "pass log" },
   { key: "changed", title: "Figure out what just changed", slug: "what-just-changed", worksheet: "0.7", fileName: "platform-changes.md" },
   { key: "memory", title: "Keep it from forgetting who I am", slug: "keep-it-from-forgetting", worksheet: "A1", fileName: "about-me.md" },
@@ -80,9 +81,9 @@ const DAY_MS = 86_400_000;
 const upper = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 function fileFor(cap: Capability, files: VaultFile[]): VaultFile | undefined {
-  const ids = [cap.skill ? `skill:${cap.skill}` : "", cap.worksheet].filter(Boolean);
+  const ids = [cap.starter ? `starter:${cap.starter}` : "", cap.skill ? `skill:${cap.skill}` : "", cap.worksheet].filter(Boolean);
   const found = files.filter((f) => ids.includes(f.id) && f.filled).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
-  const skill = found.find((f) => f.id.startsWith("skill:"));
+  const skill = found.find((f) => f.id.startsWith("skill:") || f.id.startsWith("starter:"));
   return skill ?? found[0];
 }
 
@@ -153,8 +154,9 @@ export function buildDashboard(input: DashboardInput): Dashboard {
     }
 
     const page = cap.slug ? `/do/${cap.slug}` : `/workbook/${cap.worksheet}`;
-    const keepHref = cap.skill && cap.key === "agent" ? `/skills/${cap.skill}` : `/workbook/${cap.worksheet}`;
-    const exportHref = cap.skill ? `/skills/${cap.skill}` : keepHref;
+    const fromStarter = file?.id.startsWith("starter:");
+    const keepHref = cap.skill && cap.key === "agent" ? `/skills/${cap.skill}` : fromStarter ? `/start/${cap.starter}` : `/workbook/${cap.worksheet}`;
+    const exportHref = fromStarter ? `/start/${cap.starter}` : cap.skill ? `/skills/${cap.skill}` : keepHref;
     const retestDue = !!(file && cap.slot && lastRelease && (lastRetest(cap, cards) ?? day(file.updatedAt)) < lastRelease.date);
     const oldEnough = file && now.getTime() - Date.parse(file.updatedAt) > 7 * DAY_MS;
 
@@ -165,7 +167,7 @@ export function buildDashboard(input: DashboardInput): Dashboard {
       const memory = cap.key === "memory";
       [rule, next, tone, action] = [2, memory ? "Add it to Claude's memory, then confirm here" : "Export it so Claude loads it by name", "amber", { label: memory ? "Open the paragraph" : "Export to Claude", href: memory ? keepHref : exportHref, primary: true }];
     } else if (file && connected && cap.skill && oldEnough && cap.key !== "agent") {
-      [rule, next, tone, action] = [3, "Healthy. Version 2 questions are waiting", "green", { label: "Answer Version 2", href: `/workbook/${cap.worksheet}#version-2`, primary: false }];
+      [rule, next, tone, action] = [3, "Healthy. Version 2 questions are waiting", "green", { label: "Answer Version 2", href: fromStarter ? `/workbook/${cap.worksheet}` : `/workbook/${cap.worksheet}#version-2`, primary: false }];
     } else if (state === "tried") {
       [rule, next, tone, action] = [4, "Turn what you tried into a file", "green", { label: "Start the file", href: keepHref, primary: false }];
     } else if (file) {
@@ -180,7 +182,10 @@ export function buildDashboard(input: DashboardInput): Dashboard {
   const weekAgo = now.getTime() - 7 * DAY_MS;
   const threeMinute = cards.filter((c) => c.three_minute_test === "passed" || c.three_minute_test === "failed");
   const top = {
-    filesKept: capCards.filter((c) => c.state === "kept" || c.state === "connected").length,
+    filesKept:
+      capCards.filter((c) => c.state === "kept" || c.state === "connected").length +
+      // starters with no card of their own (who my company is, my posts) still count as files kept
+      files.filter((f) => f.filled && f.id.startsWith("starter:") && !CAPABILITIES.some((c) => `starter:${c.starter}` === f.id)).length,
     checksThisWeek: runs.filter((r) => Date.parse(r.at) >= weekAgo).length,
     threeMinute: { passed: threeMinute.filter((c) => c.three_minute_test === "passed").length, of: threeMinute.length },
     skillsToRetest: capCards.filter((c) => c.rule === 1).length,

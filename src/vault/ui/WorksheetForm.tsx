@@ -4,6 +4,7 @@ import type { Answers, Field, Worksheet } from "@/worksheets/types";
 import { getStore, useVault } from "./useVault";
 import { FolderBar } from "./FolderBar";
 import { KeptPanel } from "@/service/KeptPanel";
+import { StarterAnswersPanel } from "@/starters/StarterAnswersPanel";
 import { worksheetCard } from "@/cards/build";
 import { encodeCard } from "@/lib/scorecard/encode";
 
@@ -76,6 +77,7 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
       {ws.draft && <p className="draftnote">Draft: a few lines are still being written.</p>}
       <p className="fineprint">This stays in your vault: this browser and, if you choose, a folder on your computer. We never see it.</p>
       <KeptPanel path={`/workbook/${ws.id}`} />
+      <StarterAnswersPanel worksheetId={ws.id} />
 
       <h2>Why this matters</h2>
       <Html html={ws.whyHtml} />
