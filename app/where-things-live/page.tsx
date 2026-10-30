@@ -1,4 +1,6 @@
 import { WHERE, whereIsChecked } from "@/service/reference";
+import { Shots } from "@/service/Shot";
+import { shotsFor } from "@/service/screenshots";
 
 export const metadata = { title: "Where things live", description: "Where each setting and feature is today, dated." };
 
@@ -14,6 +16,7 @@ export default function WhereThingsLive() {
             <section key={r.id} id={r.id} className="where-row">
               <h2>{r.thing}</h2>
               <p>{r.whereToday}</p>
+              <Shots list={shotsFor.where(r.id)} small />
               {r.wasCalled && (
                 <p className="meta">
                   <strong>If an older article says otherwise:</strong> {r.wasCalled}

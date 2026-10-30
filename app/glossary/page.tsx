@@ -1,4 +1,6 @@
 import { GLOSSARY } from "@/service";
+import { Shots } from "@/service/Shot";
+import { shotsFor } from "@/service/screenshots";
 
 export const metadata = { title: "Glossary", description: "Every term in one or two sentences you can repeat out loud." };
 
@@ -10,6 +12,7 @@ export default function Glossary() {
         One or two sentences each, in plain words. No jargon in the definition of jargon. Retired names stay, with a note, so an
         old article doesn&apos;t make you think you&apos;re the one who&apos;s confused.
       </p>
+      <Shots list={shotsFor.glossary()} />
       <dl className="glossary">
         {GLOSSARY.map((t) => (
           <div key={t.slug} id={t.slug}>

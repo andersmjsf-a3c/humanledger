@@ -2,10 +2,10 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { STARTERS } from "@/service";
-import { fillParts, fillStarter, listHints, missing, optional, type Starter, type StarterAnswers } from "@/starters/fill";
+import { fillParts, fillStarter, listHints, missing, optional, splitHint, type Starter, type StarterAnswers } from "@/starters/fill";
 import { buildBundle, bumpVersions, parseBundle, starterAnswersOf, flatStarterAnswers } from "@/vault/bundle";
 import { buildDashboard } from "@/dashboard/model";
-import { WORKSHEETS } from "@/worksheets";
+import { FORM_ROUTES } from "@/service";
 
 const BANNED = /\bMark('s| Anderson)\b|Vorixs|CyberProtonics|\bA3C\b|a3c\.one|GrowRight|Growth Brief|Logitech|\bRAPT\b|Afero|Jamboard|HyperKey|Alliance Foundry/;
 
@@ -14,8 +14,8 @@ const sample = (s: Starter): StarterAnswers =>
   Object.fromEntries(s.questions.map((q) => [q.key, q.type === "list3" ? listHints(q.hint) : (q.hint.match(/"([^"]+)"/)?.[1] ?? q.hint)]));
 
 describe("the six starters", () => {
-  it("six of them, each with exactly three questions: never more than three before a file exists", () => {
-    expect(STARTERS).toHaveLength(6);
+  it("seven of them, each with exactly three questions: never more than three before a file exists", () => {
+    expect(STARTERS).toHaveLength(7);
     for (const s of STARTERS) {
       expect(s.questions, s.id).toHaveLength(3);
       for (const q of s.questions) expect(["text", "list3"], `${s.id}.${q.key}`).toContain(q.type);
@@ -30,7 +30,7 @@ describe("the six starters", () => {
         for (const i of [1, 2, 3]) expect(s.template, `${s.id} ${q.key}.${i}`).toContain(`{{${q.key}.${i}}}`);
       expect(s.template).toMatch(new RegExp(`^---\\nname: ${s.id}\\ndescription: .+\\n---\\n`));
       expect(s.template).toMatch(/^## Corrections/m);
-      expect(WORKSHEETS.map((w) => w.id), `${s.id} worksheetV2`).toContain(s.worksheetV2);
+      expect(FORM_ROUTES[s.worksheetV2], `${s.id} worksheetV2`).toBeDefined();
     }
   });
 
@@ -41,6 +41,12 @@ describe("the six starters", () => {
       const answers = fillParts(s, sample(s)).filter((p) => "answer" in p);
       expect(answers.length, s.id).toBeGreaterThanOrEqual(3);
     }
+  });
+
+  it("hints split into guidance and examples, so no stray quote marks reach a placeholder", () => {
+    expect(splitHint('"Every evening at 8." "Monday and Thursday mornings."')).toEqual({ guidance: "", example: "Every evening at 8. / Monday and Thursday mornings." });
+    expect(splitHint('One sentence a customer would use. "Two accountants who answer the phone."')).toEqual({ guidance: "One sentence a customer would use.", example: "Two accountants who answer the phone." });
+    for (const s of STARTERS) for (const q of s.questions) expect(splitHint(q.hint).example, `${s.id}.${q.key}`).not.toContain('"');
   });
 
   it("a three-item answer becomes three bullet lines", () => {
@@ -107,5 +113,40 @@ describe("a kept starter lives in the vault like any skill", () => {
     const voice = d.cards.find((c) => c.cap.key === "voice")!;
     expect([voice.state, voice.action.label, voice.action.href]).toEqual(["kept", "Export to Claude", "/start/write-like-me"]);
     expect(d.top.filesKept).toBe(2);
+  });
+});
+
+import { existsSync, readdirSync } from "node:fs";
+import { SCREENSHOTS } from "@/service/screenshots";
+import { WHERE } from "@/service/reference";
+import { WORKSHEETS as ALL_WS } from "@/worksheets";
+import { TEMPLATES } from "@/skills";
+
+describe("screenshots, placed per captions.md", () => {
+  const placements = JSON.parse(readFileSync("content/service/v2/screenshots/placements.json", "utf8"));
+
+  it("only placed, not-held screens are served, and every one has alt text and a caption", () => {
+    const served = readdirSync("public/screenshots").sort();
+    expect(served).toEqual(placements.screenshots.filter((s: { held?: string }) => !s.held).map((s: { file: string }) => s.file).sort());
+    expect(served).toEqual(SCREENSHOTS.map((s) => s.file).sort());
+    for (const s of SCREENSHOTS) {
+      expect(s.alt.length, s.file).toBeGreaterThan(20);
+      expect(s.caption.length, s.file).toBeGreaterThan(10);
+      expect(existsSync(`content/service/v2/screenshots/${s.file}`), s.file).toBe(true);
+    }
+  });
+
+  it("every placement points at a page that exists", () => {
+    const ws = new Set(ALL_WS.map((w) => w.id));
+    const rows = new Set(WHERE.rows.map((r) => r.id));
+    const starters = new Set(STARTERS.map((s) => s.id));
+    const skills = new Set(TEMPLATES.map((t) => t.id));
+    for (const s of placements.screenshots) {
+      for (const w of s.worksheets ?? []) expect(ws.has(w), `${s.file} -> ${w}`).toBe(true);
+      for (const r of s.where ?? []) expect(rows.has(r), `${s.file} -> ${r}`).toBe(true);
+      if (Array.isArray(s.starters)) for (const st of s.starters) expect(starters.has(st), `${s.file} -> ${st}`).toBe(true);
+      for (const k of s.skills ?? []) expect(skills.has(k), `${s.file} -> ${k}`).toBe(true);
+    }
+    expect(/[–—]/.test(JSON.stringify(placements))).toBe(false);
   });
 });

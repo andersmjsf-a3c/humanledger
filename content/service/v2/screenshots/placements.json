@@ -1,0 +1,62 @@
+{
+  "note": "Where each screenshot shows on the site, from captions.md (Oct 30 2026). The build serves only screenshots listed here and not held. Captions are short and factual; every figure says the date it was taken.",
+  "taken": "2026-10-30",
+  "screenshots": [
+    {
+      "file": "01-the-window.png",
+      "alt": "The main window: sidebar with New, Search, Projects, Artifacts, Scheduled, Customize, and pinned projects; the chat box; the model and effort next to it; recent artifacts.",
+      "caption": "The main window: the sidebar on the left, the chat box, and the model and effort shown under it.",
+      "worksheets": ["0.1"],
+      "glossary": true,
+      "home": true
+    },
+    {
+      "file": "02-memory-settings.png",
+      "alt": "Settings, Memory, on the desktop app: search and reference chats, generate memory from chats, include sensitive topics (off), import and export memory, and the You and Topics sections.",
+      "caption": "Memory settings on the desktop app, where it's labeled Settings > Memory. The help center's web path is Settings > Your Claude.",
+      "worksheets": ["0.4", "A1"],
+      "where": ["memory-toggle"]
+    },
+    {
+      "file": "03-skills-list.png",
+      "alt": "Customize, Skills: skills created by you, each with a name, a tag, a one-line description, a date, and a menu; the Add button at top right.",
+      "caption": "Customize > Skills, with uploaded skills listed. Add is at the top right.",
+      "worksheets": ["0.5", "B1"],
+      "where": ["skills-upload"],
+      "starters": "all"
+    },
+    {
+      "file": "04-model-next-to-send.png",
+      "alt": "The chat box with a request typed, and the model, effort, and permission mode shown under it.",
+      "caption": "The model you're talking to, with its effort and permission mode, shown under the chat box.",
+      "worksheets": ["0.6", "0.7"],
+      "where": ["model-selector"]
+    },
+    {
+      "file": "05-work-register.png",
+      "alt": "A work register: four counts (needs you, going stale, open notes, open work), a notes box, and items with buttons to work on, log, note, link, finish, snooze, or park.",
+      "caption": "A work register kept by a skill like this one: four counts, notes, and each item with what to do next.",
+      "starters": ["my-work-register"]
+    },
+    {
+      "file": "06-scheduled-task.png",
+      "alt": "A scheduled task: requires this computer, history, instructions, when it runs, permissions set to Manual, and the always-allowed list.",
+      "caption": "A scheduled task: when it runs, its instructions, and its permissions. Manual means it asks before using a new tool.",
+      "worksheets": ["0.7"],
+      "skills": ["7-agent-job-description"],
+      "starters": ["my-work-register"]
+    },
+    {
+      "file": "07-skill-running-in-a-chat.png",
+      "held": "Shows a draft post naming a real executive and company, and the post's argument is the founder's own. Held until Mark decides.",
+      "caption": "A one-line ask, the steps it took, and the draft that came back.",
+      "starters": ["my-posts"]
+    },
+    {
+      "file": "08-the-check.png",
+      "held": "Refers to the founder's own career record (\"the 2022 deal comes from your actual record\"). Held until Mark decides.",
+      "caption": "The follow-up check: what the linter found and the manual checks it did.",
+      "starters": ["check-the-facts", "write-like-me"]
+    }
+  ]
+}

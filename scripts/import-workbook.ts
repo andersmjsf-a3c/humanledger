@@ -45,6 +45,8 @@ function copyServiceContent(entries: Record<string, Uint8Array>, serviceRoot: st
   // v2 (Oct 30 2026): the six starters, the homepage reference, and the two pictures.
   take(/(?:^|\/)references\/v2\/starters\/([^/]+\.(?:md|json))$/, "v2/starters");
   take(/(?:^|\/)references\/v2\/((?:README\.md|homepage-v2\.html))$/, "v2");
+  // Screenshots and their captions stay in the repo; scripts/build-service.ts serves only the placed ones.
+  take(/(?:^|\/)references\/v2\/screenshots\/([^/]+\.(?:png|md))$/, "v2/screenshots");
   for (const [p, b] of Object.entries(entries)) {
     const m = p.match(/(?:^|\/)references\/v2\/illustrations\/([^/]+\.svg)$/);
     if (!m) continue;

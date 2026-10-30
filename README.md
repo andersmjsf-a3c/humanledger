@@ -209,7 +209,7 @@ dashed ninth tile (agents, C2) is added.
 
 The front door leads with skills already written (`content/service/v2/`, from the human-led-service skill).
 
-- `/`: headline, the how-it-works picture, six starter cards ("Make it mine"), "What a skill is" with the
+- `/`: headline, the how-it-works picture, the starter cards (seven since Oct 30; the seventh, My work register, is a scheduled read-and-report task whose Version 2 is the agent job description, C2) ("Make it mine"), "What a skill is" with the
   annotated file, and a quiet "When something's confusing" row (glossary, Where things live, What changed,
   and `/why`, the first homepage with the eight content pages).
 - `/start/[id]`: exactly three questions from `starters.json` (`text` or `list3`), then the finished
@@ -220,6 +220,10 @@ The front door leads with skills already written (`content/service/v2/`, from th
 - The dashboard counts kept starters (voice, fact check, weekly report, research map to their cards; the
   brand and posts starters count as files kept). Version 2 is the worksheet named in `worksheetV2`, which
   shows the three starter answers at the top.
+- Screenshots (Oct 30): real, anonymized screens in `content/service/v2/screenshots/` with `captions.md`.
+  `placements.json` says where each shows (worksheets, Where things live rows, glossary, homepage, starter
+  pages, the agent skill page); `npm run service` copies only placed, not-held ones to `public/screenshots`.
+  Every figure carries the date it was taken.
 - `tests/16-starters.test.ts`: three questions each, every placeholder answered, filled files complete,
   vault round trip, dashboard counts, plain SVGs.
 

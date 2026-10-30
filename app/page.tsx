@@ -1,4 +1,8 @@
 import { STARTERS } from "@/service";
+import { Shots } from "@/service/Shot";
+import { shotsFor } from "@/service/screenshots";
+
+const COUNT = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
 
 // The front door (Oct 30 2026): lead with skills already written. Pick one, answer three
 // questions, load it into Claude. Everything about the habits sits behind the bottom row.
@@ -28,7 +32,7 @@ export default function Home() {
 
       <section id="starters" className="band">
         <div className="wrap">
-          <h2 className="section-title">Six starters. Pick the one you&apos;d use today.</h2>
+          <h2 className="section-title">{COUNT[STARTERS.length] ?? STARTERS.length} starters. Pick the one you&apos;d use today.</h2>
           <div className="starters">
             {STARTERS.map((s) => (
               <article key={s.id} className="starter-card">
@@ -55,6 +59,7 @@ export default function Home() {
           <p className="meta">
             We keep the scores. Your files stay in your vault; we never read them. <a href="/privacy">What we can see</a>
           </p>
+          <Shots list={shotsFor.home()} small />
         </div>
         <div className="picture framed">
           <img

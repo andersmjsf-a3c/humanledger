@@ -332,3 +332,10 @@ button.linklike { background: none; border: 0; padding: 0; color: var(--accent);
 pre.skillfile { white-space: pre-wrap; font: 0.85rem/1.55 Menlo, Consolas, monospace; background: var(--wash); border: 1px solid var(--rule); border-radius: 10px; padding: 18px; overflow-x: auto; }
 mark.yours, span.yours { background: #e3f1ea; color: #14513d; padding: 0 2px; border-radius: 3px; }
 @media (prefers-color-scheme: dark) { mark.yours, span.yours { background: #1f3b31; color: #bfe6d5; } }
+
+/* Screenshots (Oct 30): real screens, dated */
+figure.shot { margin: 20px 0; }
+figure.shot img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 10px; }
+figure.shot figcaption { font-size: 0.88rem; color: var(--muted); margin-top: 8px; }
+figure.shot.small { max-width: 520px; }
+.load-it { margin-top: 32px; }
