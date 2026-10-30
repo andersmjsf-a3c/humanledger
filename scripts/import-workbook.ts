@@ -42,6 +42,15 @@ function copyServiceContent(entries: Record<string, Uint8Array>, serviceRoot: st
   take(/(?:^|\/)references\/content-do-pages\/((?:\d+-[^/]+|README|homepage-copy|dashboard-spec)\.md)$/, "do");
   take(/(?:^|\/)references\/(glossary\.md|personas\.md)$/, ".");
   take(/(?:^|\/)references\/data\/((?:where-things-live|what-changed)\.json)$/, ".");
+  // v2 (Oct 30 2026): the six starters, the homepage reference, and the two pictures.
+  take(/(?:^|\/)references\/v2\/starters\/([^/]+\.(?:md|json))$/, "v2/starters");
+  take(/(?:^|\/)references\/v2\/((?:README\.md|homepage-v2\.html))$/, "v2");
+  for (const [p, b] of Object.entries(entries)) {
+    const m = p.match(/(?:^|\/)references\/v2\/illustrations\/([^/]+\.svg)$/);
+    if (!m) continue;
+    mkdirSync("public/illustrations", { recursive: true });
+    writeFileSync(join("public/illustrations", m[1]), b);
+  }
 }
 
 export interface ImportOptions {

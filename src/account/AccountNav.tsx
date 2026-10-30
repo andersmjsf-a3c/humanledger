@@ -12,9 +12,7 @@ export function AccountNav({ part }: { part: "lead" | "button" }) {
         <a href="/your-ai">Your AI</a>
         <a href="/workbook">Vault</a>
       </>
-    ) : (
-      <a href="/#do">What are you trying to do?</a>
-    );
+    ) : null;
 
   return signedIn ? (
     <form method="post" action="/api/auth/signout">

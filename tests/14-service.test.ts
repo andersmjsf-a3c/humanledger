@@ -63,6 +63,7 @@ describe("service copy carries no founder stories and no em dashes", () => {
   const files = [
     ...readdirSync("content/service/do").filter((f) => /^\d+-.*\.md$/.test(f) || f === "homepage-copy.md").map((f) => `content/service/do/${f}`),
     "app/page.tsx",
+    "app/why/page.tsx",
     "app/privacy/page.tsx",
     "app/glossary/page.tsx",
     "app/where-things-live/page.tsx",

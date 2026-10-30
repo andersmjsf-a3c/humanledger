@@ -1,8 +1,11 @@
 import data from "./generated/service.json";
 import type { DoPage, GlossaryTerm } from "./types";
+import type { Starter } from "@/starters/fill";
 
 export const DO_PAGES = data.pages as DoPage[];
 export const GLOSSARY = data.glossary as GlossaryTerm[];
+export const STARTERS = data.starters as Starter[];
+export const starterById = (id: string) => STARTERS.find((s) => s.id === id);
 export const TILES = data.tiles as { n: number; title: string; covers: string }[];
 export const pageBySlug = (s: string) => DO_PAGES.find((p) => p.slug === s);
 export const termBySlug = (s: string) => GLOSSARY.find((t) => t.slug === s);

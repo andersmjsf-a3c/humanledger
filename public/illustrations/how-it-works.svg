@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" font-family="Inter, Helvetica, Arial, sans-serif">
+  <rect width="1200" height="340" fill="#ffffff"/>
+  <g id="p1" transform="translate(30,30)">
+    <rect width="255" height="280" rx="14" fill="#F3F6F4" stroke="#DCE3DF"/>
+    <text x="20" y="34" font-size="13" font-weight="700" fill="#1F5F4A">1</text>
+    <text x="40" y="34" font-size="15" font-weight="700" fill="#17201F">Pick a starter</text>
+    <g transform="translate(28,60)">
+      <rect width="200" height="38" rx="7" fill="#ffffff" stroke="#DCE3DF"/><text x="12" y="24" font-size="13" fill="#17201F">Write like me</text>
+      <rect y="48" width="200" height="38" rx="7" fill="#ffffff" stroke="#1F5F4A" stroke-width="2"/><text x="12" y="72" font-size="13" font-weight="600" fill="#17201F">Check the facts before I send</text>
+      <rect y="96" width="200" height="38" rx="7" fill="#ffffff" stroke="#DCE3DF"/><text x="12" y="120" font-size="13" fill="#17201F">My weekly report</text>
+      <rect y="144" width="200" height="38" rx="7" fill="#ffffff" stroke="#DCE3DF"/><text x="12" y="168" font-size="13" fill="#17201F">Research I can trust</text>
+    </g>
+    <text x="20" y="262" font-size="12" fill="#5B6663">Six skills, already written.</text>
+  </g>
+  <g transform="translate(300,160)"><path d="M0 0 L20 0" stroke="#1F5F4A" stroke-width="2"/><path d="M14 -6 L22 0 L14 6" fill="none" stroke="#1F5F4A" stroke-width="2"/></g>
+  <g id="p2" transform="translate(330,30)">
+    <rect width="255" height="280" rx="14" fill="#F3F6F4" stroke="#DCE3DF"/>
+    <text x="20" y="34" font-size="13" font-weight="700" fill="#1F5F4A">2</text>
+    <text x="40" y="34" font-size="15" font-weight="700" fill="#17201F">Answer three questions</text>
+    <g transform="translate(28,60)" font-size="12">
+      <text y="12" fill="#3B4543">What you send that has to be right</text>
+      <rect y="20" width="200" height="30" rx="6" fill="#ffffff" stroke="#DCE3DF"/><text x="10" y="40" fill="#17201F">Client memos</text>
+      <text y="76" fill="#3B4543">What a wrong fact costs you</text>
+      <rect y="84" width="200" height="30" rx="6" fill="#ffffff" stroke="#DCE3DF"/><text x="10" y="104" fill="#17201F">A client</text>
+      <text y="140" fill="#3B4543">One thing it got almost right before</text>
+      <rect y="148" width="200" height="30" rx="6" fill="#ffffff" stroke="#DCE3DF"/><text x="10" y="168" fill="#17201F">The proposal date, not the final</text>
+    </g>
+    <text x="20" y="262" font-size="12" fill="#5B6663">Never more than three.</text>
+  </g>
+  <g transform="translate(600,160)"><path d="M0 0 L20 0" stroke="#1F5F4A" stroke-width="2"/><path d="M14 -6 L22 0 L14 6" fill="none" stroke="#1F5F4A" stroke-width="2"/></g>
+  <g id="p3" transform="translate(630,30)">
+    <rect width="255" height="280" rx="14" fill="#F3F6F4" stroke="#DCE3DF"/>
+    <text x="20" y="34" font-size="13" font-weight="700" fill="#1F5F4A">3</text>
+    <text x="40" y="34" font-size="15" font-weight="700" fill="#17201F">Load it into Claude</text>
+    <g transform="translate(28,62)">
+      <rect width="200" height="150" rx="8" fill="#ffffff" stroke="#DCE3DF"/>
+      <rect x="12" y="12" width="90" height="10" rx="3" fill="#DCE3DF"/>
+      <rect x="12" y="30" width="176" height="8" rx="3" fill="#EEF2F0"/>
+      <rect x="12" y="44" width="150" height="8" rx="3" fill="#EEF2F0"/>
+      <rect x="12" y="58" width="166" height="8" rx="3" fill="#EEF2F0"/>
+      <rect x="12" y="84" width="176" height="52" rx="6" fill="#F3F6F4" stroke="#1F5F4A"/>
+      <text x="22" y="105" font-size="11" fill="#17201F">Check the facts on this</text>
+      <circle cx="170" cy="110" r="10" fill="#1F5F4A"/><path d="M166 110 L174 110 M171 107 L174 110 L171 113" stroke="#fff" stroke-width="1.5" fill="none"/>
+    </g>
+    <text x="20" y="245" font-size="12" fill="#5B6663">One upload, or paste it at the top.</text>
+    <text x="20" y="262" font-size="12" fill="#5B6663">Then name the job.</text>
+  </g>
+  <g transform="translate(900,160)"><path d="M0 0 L20 0" stroke="#1F5F4A" stroke-width="2"/><path d="M14 -6 L22 0 L14 6" fill="none" stroke="#1F5F4A" stroke-width="2"/></g>
+  <g id="p4" transform="translate(930,30)">
+    <rect width="255" height="280" rx="14" fill="#F3F6F4" stroke="#DCE3DF"/>
+    <text x="20" y="34" font-size="13" font-weight="700" fill="#1F5F4A">4</text>
+    <text x="40" y="34" font-size="15" font-weight="700" fill="#17201F">It gets better as you fix it</text>
+    <g transform="translate(28,62)" font-size="12">
+      <rect width="200" height="34" rx="6" fill="#ffffff" stroke="#DCE3DF"/><text x="10" y="22" fill="#17201F">v1 · Oct 2 · the starter</text>
+      <rect y="42" width="200" height="34" rx="6" fill="#ffffff" stroke="#DCE3DF"/><text x="10" y="64" fill="#17201F">v2 · Oct 9 · "never 'leverage'"</text>
+      <rect y="84" width="200" height="34" rx="6" fill="#ffffff" stroke="#DCE3DF"/><text x="10" y="106" fill="#17201F">v3 · Oct 20 · dates on every deal</text>
+      <rect y="126" width="200" height="34" rx="6" fill="#ffffff" stroke="#1F5F4A" stroke-width="2"/><text x="10" y="148" font-weight="600" fill="#17201F">v4 · Oct 24 · your rule, kept</text>
+    </g>
+    <text x="20" y="245" font-size="12" fill="#5B6663">Every correction goes in the file.</text>
+    <text x="20" y="262" font-size="12" fill="#5B6663">The file is yours.</text>
+  </g>
+</svg>

@@ -23,7 +23,7 @@ export default async function DoPage({ params }: { params: Promise<{ slug: strin
   return (
     <main className="dopage">
       <p className="crumb">
-        <a href="/#do">What are you trying to do?</a>
+        <a href="/why#do">What are you trying to do?</a>
       </p>
       <h1>{page.title}</h1>
       <p className="lede">{page.summary}</p>

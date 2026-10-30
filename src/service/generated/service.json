@@ -577,5 +577,175 @@
       "title": "Understand a word everyone keeps using",
       "covers": "The glossary, in plain words"
     }
+  ],
+  "starters": [
+    {
+      "id": "write-like-me",
+      "title": "Write like me",
+      "oneLine": "Drafts emails, notes, and posts that sound like you, then you edit.",
+      "file": "write-like-me.md",
+      "questions": [
+        {
+          "key": "who",
+          "label": "Who you are, in one sentence",
+          "hint": "Role and what you know a lot about. \"Independent consultant to logistics companies, eleven years.\"",
+          "type": "text"
+        },
+        {
+          "key": "reader",
+          "label": "Who usually reads what you write",
+          "hint": "\"Owners and operations heads who've heard every pitch.\"",
+          "type": "text"
+        },
+        {
+          "key": "never",
+          "label": "Three words or phrases you never use",
+          "hint": "\"Leverage. Circle back. I hope this finds you well.\"",
+          "type": "list3"
+        }
+      ],
+      "worksheetV2": "B2",
+      "template": "---\nname: write-like-me\ndescription: Drafts anything I'll send or publish as myself (emails, notes, posts, short documents) in my voice, then hands it to me to edit. Use whenever I ask you to write, draft, reply, or \"put this in my words.\"\n---\n\n# Write like me\n\nThis skill serves {{who}}. Use it for anything I'll send or publish as myself.\n\n## Who I am\n{{who}}\n\n## Who reads what I write\n{{reader}} They've heard every pitch. Write for someone who will stop reading at the first sentence that sounds like a template.\n\n## What I sound like\n- Direct. The point first, then the reason. No warm-up sentence.\n- Plain words. Use, not utilize. Fix, not remediate. Call, not reach out.\n- Short paragraphs of uneven length. Contractions. Sentences can start with And or But.\n- Specific over impressive. A number, a name, a date, or a scene beats an adjective every time.\n- If a sentence would embarrass me said out loud across a table, cut it.\n\n## Words and phrases I never use\n- {{never.1}}\n- {{never.2}}\n- {{never.3}}\n- \"I hope this finds you well.\" \"I wanted to reach out.\" \"Please don't hesitate.\"\n- \"Game-changer,\" \"transformative,\" \"a testament to,\" \"underscores,\" \"pivotal.\"\n- Exclamation points. Em dashes. Lists of three for the rhythm of it.\n- Any sentence that announces sincerity (\"I want to be honest with you\"). Say the thing.\n\n## Rules\n- Draft, then I edit. Never tell me it's finished. Never add \"let me know if you'd like changes.\"\n- Never invent a detail about me, my work, or a person I'm writing to. If the draft needs one, leave [a bracket] and ask.\n- When a flagged phrase comes up, rewrite the sentence into something specific or cut it. Never swap in a synonym.\n- When you don't know what I think, ask in one line. Don't guess my opinion.\n- Match the length to the point. A two-line reply is a two-line reply.\n\n## Corrections (add a line here every time I fix the same thing twice)\n- \n"
+    },
+    {
+      "id": "check-the-facts",
+      "title": "Check the facts before I send",
+      "oneLine": "Runs a seven-step pass on anything with a number, a name, a date, or a quote in it.",
+      "file": "check-the-facts.md",
+      "questions": [
+        {
+          "key": "kinds",
+          "label": "What you send that has to be right",
+          "hint": "\"Client memos. Board reports. Proposals.\"",
+          "type": "text"
+        },
+        {
+          "key": "cost",
+          "label": "What a wrong fact costs you",
+          "hint": "\"A client. A correction in front of the board.\"",
+          "type": "text"
+        },
+        {
+          "key": "burned",
+          "label": "One thing it has gotten almost right before",
+          "hint": "\"The date from the proposal instead of the final rule.\" Leave blank if none yet.",
+          "type": "text"
+        }
+      ],
+      "worksheetV2": "B5",
+      "template": "---\nname: check-the-facts\ndescription: Runs a fact-check pass on any draft that contains a number, a name, a date, a quote, or a claim about what someone said or a rule requires, before I read it. Use when I say \"check this,\" \"fact-check,\" or before any draft of mine goes out.\n---\n\n# Check the facts before I send\n\nThis skill serves me. Run it on anything I'm about to send that contains a number, a name, a date, a quote, or a claim about what a source says. Run it again after I edit.\n\n## What I send that has to be right\n{{kinds}}\n\n## What a wrong fact costs me\n{{cost}} Be as careful as that cost deserves.\n\n## Check every one of these\n1. Numbers. Each has a named source and a date, in the text or in a note. \"Industry data\" is not a source. Flag any that don't.\n2. The one that matters. Name the number the argument turns on. Find a second source for it. Say whether the two agree.\n3. Names and titles. Current and spelled right. Search for each one. Flag anyone whose title may have changed.\n4. Dates. Correct, and consistent with each other and with the sources.\n5. Quotes. Found word for word in the source they're attributed to. Under fifteen words. A quote you can't find becomes a paraphrase, attributed.\n6. Arithmetic. Show the formula and the inputs. Add it up.\n7. \"Said,\" \"reported,\" \"requires.\" The source actually says that, not something adjacent.\n8. Something it has gotten almost right for me before: {{burned}}\n\n## Output\nA short table: item · status (confirmed / close but wrong / couldn't find) · source opened · what to change.\nThen one line beginning \"Couldn't verify:\" listing whatever is left. There is almost always at least one item.\nThen the draft with only the flagged items changed, changes marked.\n\n## Rules\n- \"Couldn't find\" is a valid answer. Never upgrade it to \"confirmed\" to be helpful.\n- Don't rewrite anything except the flagged items.\n- Don't round, and don't pick the more impressive of two numbers.\n- Any source you can't open is not a source.\n- Search the web before checking anything that could have changed since you were trained.\n\n## Corrections (add a line here every time a reader catches something the pass missed)\n- \n"
+    },
+    {
+      "id": "my-weekly-report",
+      "title": "My weekly report",
+      "oneLine": "The thing you write every week, drafted from your notes in the shape you'd write it.",
+      "file": "my-weekly-report.md",
+      "questions": [
+        {
+          "key": "job",
+          "label": "What the report is and who reads it",
+          "hint": "\"Monday pipeline summary for my VP, read on her phone.\"",
+          "type": "text"
+        },
+        {
+          "key": "first",
+          "label": "What comes first, every time",
+          "hint": "\"The number against target.\"",
+          "type": "text"
+        },
+        {
+          "key": "never",
+          "label": "Three things that must never appear",
+          "hint": "\"Bullets. The word robust. A deal without a date.\"",
+          "type": "list3"
+        }
+      ],
+      "worksheetV2": "B1",
+      "template": "---\nname: my-weekly-report\ndescription: Drafts the report I write every week from my notes and inputs, in the exact shape I'd write it. Use when I say \"weekly report,\" \"the report,\" or hand you this week's inputs.\n---\n\n# My weekly report\n\nThis skill serves me. Use it whenever I say \"weekly report\" or hand you this week's inputs.\n\n## What this is and who reads it\n{{job}}\n\n## What comes first, every time\n{{first}} Put it in the first line. No introduction before it.\n\n## Inputs I'll give you\n- My notes from the week, rough.\n- Whatever file or export the report is built from.\n- Anything I've already told the reader, so you don't repeat it.\n\n## Steps\n1. Open with {{first}}, one line.\n2. What changed since last time, in the order the reader cares about.\n3. What's at risk or needs a decision, one line each, with why.\n4. What I need from the reader, as a question they can answer yes or no.\n5. Stop. No summary paragraph, no \"in conclusion.\"\n\n## Output\nPlain text I can paste. Short enough to read on a phone in three minutes. Paragraphs, not bullets, unless I ask.\n\n## Never\n- {{never.1}}\n- {{never.2}}\n- {{never.3}}\n- A fact that isn't in my notes or the file. If my notes and the file disagree, ask; don't pick one.\n- \"Robust,\" \"leverage,\" \"circle back,\" \"synergy.\"\n\n## Rules\n- Draft, then I edit. Never tell me it's finished.\n- A date on anything that moves.\n- When unsure what the reader already knows, ask.\n\n## Corrections (add a line here every time I fix the same thing twice)\n- \n"
+    },
+    {
+      "id": "research-i-can-trust",
+      "title": "Research I can trust",
+      "oneLine": "Finds things out with a source and a date on every fact, and a line for what it couldn't verify.",
+      "file": "research-i-can-trust.md",
+      "questions": [
+        {
+          "key": "field",
+          "label": "Your field, in a few words",
+          "hint": "\"Nonprofit fundraising.\" \"Commercial real estate in the Midwest.\"",
+          "type": "text"
+        },
+        {
+          "key": "trusted",
+          "label": "Three sources you trust in your field",
+          "hint": "\"The funder's own reports. The national association. The agency's statistics.\"",
+          "type": "list3"
+        },
+        {
+          "key": "distrusted",
+          "label": "One kind of source it should never treat as a source",
+          "hint": "\"Vendor blogs.\"",
+          "type": "text"
+        }
+      ],
+      "worksheetV2": "B4",
+      "template": "---\nname: research-i-can-trust\ndescription: Finds things out with a source and a date on every fact, prefers original sources, shows disagreements, and ends with what it couldn't verify. Use whenever I ask you to research, look up, compare, find out, or \"what's the latest on.\"\n---\n\n# Research I can trust\n\nThis skill serves me. Use it whenever I ask you to research, look up, compare, or find out.\n\n## My field\n{{field}}\n\n## Before searching\n- If I haven't said what decision this research serves, ask me in one line. The decision changes what matters.\n\n## Sources I trust, in order\n1. {{trusted.1}}\n2. {{trusted.2}}\n3. {{trusted.3}}\n4. The original document behind any claim: the company's own statement, the filing, the study, the government page.\n5. General press, only to find an original source, never as the source.\nNever treat as a source: {{distrusted}}\n\n## While searching\n- Search the web. Never answer a current-facts question from training alone.\n- Date every fact in the text: \"as of October 2026.\"\n- Anything older than six months on a topic that moves: say so.\n- Two sources disagree: show me both, with dates. Don't pick one silently.\n- Quote the sentence the fact comes from, not a summary of it.\n\n## Output\n1. The answer, in one paragraph, written for the decision I named.\n2. The facts, numbered, each with source, date, and the sentence it comes from.\n3. The three sources most worth my time, and why.\n4. A line that begins \"What I couldn't verify:\" followed by the list. There is almost always something here.\n5. Links.\n\n## Rules\n- Never attach a claim to a source that didn't make it.\n- No \"experts say,\" \"studies show,\" or \"industry data\" without a name.\n- If you can't find it, say so. \"Couldn't find\" is a finding.\n- Don't round. Give the number the source gives.\n\n## Corrections (add a line here when a source let me down, or when you missed one I'd have used)\n- \n"
+    },
+    {
+      "id": "who-my-company-is",
+      "title": "Who my company is",
+      "oneLine": "Checks everything it makes for you against who you are, before colors and fonts.",
+      "file": "who-my-company-is.md",
+      "questions": [
+        {
+          "key": "weare",
+          "label": "We are...",
+          "hint": "One sentence a customer would use. \"Two accountants who answer the phone.\"",
+          "type": "text"
+        },
+        {
+          "key": "weserve",
+          "label": "We serve...",
+          "hint": "Who, and what they can't afford. \"Owners who can't afford a surprise.\"",
+          "type": "text"
+        },
+        {
+          "key": "wenever",
+          "label": "We never...",
+          "hint": "One thing you won't do even when it would win. \"Promise a result we don't control.\"",
+          "type": "text"
+        }
+      ],
+      "worksheetV2": "B3",
+      "template": "---\nname: who-my-company-is\ndescription: Checks every document, slide, page, and post against who my company is and what it stands for, before any question of colors or fonts. Use before showing me anything that goes to a customer, a partner, or the public.\n---\n\n# Who my company is\n\nThis skill serves me and my company. Read \"Who we are\" before anything else. Check everything you make for us against it before showing it to me.\n\n## Who we are\nWe are {{weare}}\nWe serve {{weserve}}\nWe never {{wenever}}\n\n## Because of who we are\n- Because we are {{weare}}: everything we make sounds like that, in plain words a customer would use. No claim we can't back.\n- Because we serve {{weserve}}: every document opens with what matters to them, not with us.\n- Because we never {{wenever}}: if something I ask for would cross that line, say so before making it.\n\n## The visible layer (fill in when you have it; leave blank until then)\n- Colors: \n- Type: \n- The company name, written exactly: \n- File naming: \n\n## The check, before delivering anything\n1. Read the output against \"Who we are\" first. Does it sound like us? Is there a claim we can't back? Does it cross the line we never cross?\n2. Then the visible layer, if it's filled in.\n3. List anything that doesn't match. Don't fix it silently.\n4. If something I asked for breaks a rule above, say so before making it.\n\n## Rules\n- Never name a customer, partner, or investor unless I've said they've agreed.\n- When a rule is missing, ask. Don't guess.\n\n## Corrections (add a line here when something went out that didn't sound like us)\n- \n"
+    },
+    {
+      "id": "my-posts",
+      "title": "My posts",
+      "oneLine": "Drafts a post that opens on a fact, holds one opinion, and has none of the tells. You post it.",
+      "file": "my-posts.md",
+      "questions": [
+        {
+          "key": "platform",
+          "label": "Where you post, and for whom",
+          "hint": "\"LinkedIn, for other founders and the operators we sell to.\"",
+          "type": "text"
+        },
+        {
+          "key": "length",
+          "label": "How long a post of yours is",
+          "hint": "\"120 to 200 words.\"",
+          "type": "text"
+        },
+        {
+          "key": "never",
+          "label": "Three things you never do in a post",
+          "hint": "\"Hashtags. Exclamation points. End on a question.\"",
+          "type": "list3"
+        }
+      ],
+      "worksheetV2": "B6",
+      "template": "---\nname: my-posts\ndescription: Drafts a post for my platform that opens on a specific fact, holds one opinion I'd defend, and carries none of the social-media tells. I post it myself. Use when I say \"post,\" \"LinkedIn,\" or \"draft something on this.\"\n---\n\n# My posts\n\nThis skill serves me. Use it when I ask for a post. If I've also given you a \"write like me\" skill, load it first; it wins on voice.\n\n## Where I post, and for whom\n{{platform}}\n\n## What a post of mine is\n- Opens on a specific fact, moment, or number. Never on a question, a hook formula, or \"I've been thinking.\"\n- Holds exactly one opinion I'd defend in the comments. If the draft has two, ask me which.\n- {{length}} Paragraphs of uneven length. Not one sentence per line down the screen.\n- Ends on the point. Never on \"Thoughts?\" or \"Agree?\"\n\n## The brief I'll give you\nTwo or three sentences: what happened, what I think, who I'm talking to. If I give you only the news, ask what I think before drafting.\n\n## Never\n- {{never.1}}\n- {{never.2}}\n- {{never.3}}\n- Hashtag walls. Emoji. Rocket ships. Exclamation points.\n- \"Excited to share.\" \"Thrilled to announce.\" \"Honored to.\" \"Humbled.\"\n- \"Three things I learned when...\" (the humble brag disguised as a lesson).\n- Admiring the announcement by default. Admiration is a decision; push toward the harder read and let me pull back.\n- A number that wasn't in the source.\n\n## Before I see it\n1. Check every number, name, and quote against its source.\n2. If it mentions my company, check it against \"who my company is\" if I have that skill.\n3. Then show me the draft.\n\n## Always\n- Draft, then I edit, then I post it myself. You never post.\n\n## Corrections (add a line here every time I cut the same thing twice)\n- \n"
+    }
   ]
 }

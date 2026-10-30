@@ -9,9 +9,9 @@ export function SiteHeader() {
       </a>
       <nav aria-label="Main">
         <AccountNav part="lead" />
-        <a href="/glossary">Glossary</a>
-        <a href="/where-things-live">Where things live</a>
-        <a href="/what-changed">What changed</a>
+        <a href="/#starters">Starters</a>
+        <a href="/#how">How it works</a>
+        <a href="/#confusing">When something&apos;s confusing</a>
       </nav>
       <AccountNav part="button" />
     </header>
@@ -22,7 +22,7 @@ export function SiteFooter() {
   return (
     <footer className="footer-band">
       <div className="site-footer">
-      <span>{PRODUCT_NAME}</span>
+      <span>{PRODUCT_NAME} · Helping every person lead AI, keep what they learn, and build on it.</span>
       <div className="links">
         <a href="/privacy">Privacy: what leaves your vault (scores only)</a>
         <a href="/glossary">Glossary</a>

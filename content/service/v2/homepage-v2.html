@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Humanledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ffffff}
+a{color:#1F5F4A}a:hover{color:#143F31}
+</style>
+<style>
+@media (max-width: 900px) { [style*="repeat(3, minmax(0, 1fr))"] { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; } h1 { font-size: 36px !important; } }
+</style>
+</head>
+<body>
+<!-- Homepage v2, Oct 30 2026: one screen, starters first. Replaces homepage-mockup.html (v1). Images in ./illustrations/. Reference for structure and copy; rebuild with the app's components. -->
+<div style="width: 100%; min-height: 100%; box-sizing: border-box; font-family: Inter, system-ui, sans-serif; color: #17201F; background: #ffffff; display: flex; flex-direction: column;">
+
+  <header style="box-sizing: border-box; width: 100%; max-width: 1180px; margin: 0 auto; padding: 24px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+    <div style="font-size: 20px; font-weight: 700; letter-spacing: -0.01em;">Humanledger</div>
+    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px; font-weight: 500;">
+      <a href="#starters" style="text-decoration: none; color: #17201F;">Starters</a>
+      <a href="#how" style="text-decoration: none; color: #17201F;">How it works</a>
+      <a href="#confused" style="text-decoration: none; color: #17201F;">When something's confusing</a>
+    </nav>
+    <a href="#signin" style="text-decoration: none; font-size: 15px; font-weight: 500; color: #17201F; border: 1px solid #C9CFCC; border-radius: 8px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;">Sign in</a>
+  </header>
+
+  <section style="box-sizing: border-box; width: 100%; max-width: 1180px; margin: 0 auto; padding: 56px 32px 40px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start;">
+    <h1 style="margin: 0; font-size: 54px; line-height: 1.08; font-weight: 700; letter-spacing: -0.02em; max-width: 860px;">Your AI, set up the way you work. Start with a skill we've already written.</h1>
+    <p style="margin: 0; font-size: 20px; line-height: 1.5; color: #3B4543; max-width: 720px;">Pick one. Answer three questions. Load it into Claude. It gets better every time you correct it, and the file is yours.</p>
+    <a href="#starters" style="text-decoration: none; background: #1F5F4A; color: #ffffff; font-size: 16px; font-weight: 600; border-radius: 8px; padding: 14px 22px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center;">Pick a starter</a>
+  </section>
+
+  <section id="how" style="box-sizing: border-box; width: 100%; max-width: 1180px; margin: 0 auto; padding: 8px 32px 48px;">
+    <img src="illustrations/how-it-works.png" alt="Four steps: pick a starter, answer three questions, load it into Claude, it gets better as you fix it." style="width: 100%; height: auto; display: block;">
+  </section>
+
+  <section id="starters" style="box-sizing: border-box; width: 100%; background: #F3F6F4; padding: 56px 0;">
+    <div style="box-sizing: border-box; width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; flex-direction: column; gap: 24px;">
+      <h2 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.015em;">Six starters. Pick the one you'd use today.</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;">
+        <div style="background: #ffffff; border: 1px solid #DCE3DF; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-height: 170px;"><h3 style="margin: 0; font-size: 19px; font-weight: 600;">Write like me</h3><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3B4543;">Drafts emails, notes, and posts that sound like you, then you edit.</p><a href="#s1" style="margin-top: auto; text-decoration: none; text-align: center; background: #1F5F4A; color: #ffffff; font-size: 14px; font-weight: 600; border-radius: 8px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center;">Make it mine</a></div>
+        <div style="background: #ffffff; border: 1px solid #DCE3DF; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-height: 170px;"><h3 style="margin: 0; font-size: 19px; font-weight: 600;">Check the facts before I send</h3><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3B4543;">Runs a seven-step pass on anything with a number, a name, a date, or a quote.</p><a href="#s2" style="margin-top: auto; text-decoration: none; text-align: center; background: #1F5F4A; color: #ffffff; font-size: 14px; font-weight: 600; border-radius: 8px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center;">Make it mine</a></div>
+        <div style="background: #ffffff; border: 1px solid #DCE3DF; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-height: 170px;"><h3 style="margin: 0; font-size: 19px; font-weight: 600;">My weekly report</h3><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3B4543;">The thing you write every week, drafted from your notes in the shape you'd write it.</p><a href="#s3" style="margin-top: auto; text-decoration: none; text-align: center; background: #1F5F4A; color: #ffffff; font-size: 14px; font-weight: 600; border-radius: 8px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center;">Make it mine</a></div>
+        <div style="background: #ffffff; border: 1px solid #DCE3DF; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-height: 170px;"><h3 style="margin: 0; font-size: 19px; font-weight: 600;">Research I can trust</h3><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3B4543;">A source and a date on every fact, and a line for what it couldn't verify.</p><a href="#s4" style="margin-top: auto; text-decoration: none; text-align: center; background: #1F5F4A; color: #ffffff; font-size: 14px; font-weight: 600; border-radius: 8px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center;">Make it mine</a></div>
+        <div style="background: #ffffff; border: 1px solid #DCE3DF; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-height: 170px;"><h3 style="margin: 0; font-size: 19px; font-weight: 600;">Who my company is</h3><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3B4543;">Checks everything it makes for you against who you are, before colors and fonts.</p><a href="#s5" style="margin-top: auto; text-decoration: none; text-align: center; background: #1F5F4A; color: #ffffff; font-size: 14px; font-weight: 600; border-radius: 8px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center;">Make it mine</a></div>
+        <div style="background: #ffffff; border: 1px solid #DCE3DF; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-height: 170px;"><h3 style="margin: 0; font-size: 19px; font-weight: 600;">My posts</h3><p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3B4543;">Opens on a fact, holds one opinion, none of the tells. You post it.</p><a href="#s6" style="margin-top: auto; text-decoration: none; text-align: center; background: #1F5F4A; color: #ffffff; font-size: 14px; font-weight: 600; border-radius: 8px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center;">Make it mine</a></div>
+      </div>
+      <p style="margin: 0; font-size: 14px; color: #5B6663;">No account to try one. Sign in only when you want to keep it.</p>
+    </div>
+  </section>
+
+  <section style="box-sizing: border-box; width: 100%; max-width: 1180px; margin: 0 auto; padding: 64px 32px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+    <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
+      <h2 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.015em;">What a skill is</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3B4543;">A one-page file your AI reads before it does a job for you. It says what the job is, what you want, and what it must never do. Every time it gets something wrong, you add a line. That's the whole idea, and it's why the tenth draft is better than the first.</p>
+      <p style="margin: 0; font-size: 14px; color: #5B6663;">We keep the scores. Your files stay in your vault; we never read them.</p>
+    </div>
+    <div style="flex: 999 1 540px; min-width: 0;">
+      <img src="illustrations/a-skill-file.png" alt="A skill file with five callouts: the job, your three answers, the steps, what it must never do, where your corrections go." style="width: 100%; height: auto; display: block; border: 1px solid #DCE3DF; border-radius: 12px;">
+    </div>
+  </section>
+
+  <section id="confused" style="box-sizing: border-box; width: 100%; border-top: 1px solid #DCE3DF; padding: 40px 0;">
+    <div style="box-sizing: border-box; width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;">
+      <p style="margin: 0; font-size: 15px; font-weight: 600;">When something's confusing</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px;">
+        <a href="#glossary" style="color: #1F5F4A; text-decoration: none; font-weight: 500;">A word everyone keeps using</a>
+        <a href="#where" style="color: #1F5F4A; text-decoration: none; font-weight: 500;">Where a setting went (dated)</a>
+        <a href="#changed" style="color: #1F5F4A; text-decoration: none; font-weight: 500;">What changed this week</a>
+        <a href="#pages" style="color: #1F5F4A; text-decoration: none; font-weight: 500;">Why any of this works</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="box-sizing: border-box; width: 100%; border-top: 1px solid #DCE3DF; padding: 24px 0;">
+    <div style="box-sizing: border-box; width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #5B6663;">
+      <span>Humanledger · Helping every person lead AI, keep what they learn, and build on it.</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px;"><a href="#privacy" style="color: #5B6663; text-decoration: none;">Privacy: what leaves your vault (nothing)</a><a href="#about" style="color: #5B6663; text-decoration: none;">About</a></div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
