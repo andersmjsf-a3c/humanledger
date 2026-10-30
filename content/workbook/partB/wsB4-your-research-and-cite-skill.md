@@ -110,7 +110,7 @@ This skill serves [your name]. Use it whenever I say [answer 1].
 
 **Test it once.** Pick a real decision you're facing this month and run the related page's exercise through the skill: "I'm deciding whether to X, and I'll do it if Y." Then open the three sources it recommends and read the sentence behind the fact the decision turns on. Write down whether the sentence said what the tool said it did.
 
-**Check before it leaves.** Research is the output people forward without reading, and nothing leaves your hands unchecked. Before any finding from this skill goes into a deck, an email, or a decision you'll have to defend, run the three-minute test: explain the finding and where it came from, out loud, with no notes. If you can't name the source without looking, you haven't read it yet.
+**Check before it leaves.** Research is the output people forward without reading, and nothing leaves your hands unchecked. Before any finding from this skill goes into a deck, an email, or a decision you'll have to defend, run the three-minute test: put away the materials and explain your argument, succinctly and convincingly, in three minutes or less, including where each finding came from. If you can't name the source without looking, you haven't read it yet.
 
 *How to: turning on web search. Where the search toggle lives and whether it's on by default has changed more than once; see Part 0, worksheet 0.6, for the current steps. The rule in the skill ("turn on web search") works as a reminder to the tool, but it can't flip a setting you've turned off.*
 

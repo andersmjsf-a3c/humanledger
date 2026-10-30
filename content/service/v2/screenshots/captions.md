@@ -25,3 +25,16 @@ Real screens from a Claude Max account on the desktop app, taken Oct 30 2026 and
 
 ## Service versions (Oct 30 2026, afternoon)
 07 and 08 as first anonymized still carried Mark's own argument (a named public executive) and a reference to his record. For the service, which carries none of his stories, use `07-skill-running-in-a-chat-service.png` and `08-the-check-service.png`: the same screens with the draft and the check rewritten around the nonprofit-director persona (a state changing its charity reporting rules). The book keeps the originals; the book carries his stories.
+10a and 10b also have `-service.png` versions (sidebar retitled around the nonprofit-director persona); use those on the site. 09, 11, and 12 stay off the site (book and workbook only).
+
+## Added Oct 30 2026 (late afternoon)
+| File | What it shows | Where it goes |
+|---|---|---|
+| 13a-playbook-correction.png | A one-pager built with a claim the company can't back; the person's one-line correction | Chapter 8, plate 13a; service "Who my company is" page |
+| 13b-the-playbook-fix.png | The Update skill card for the playbook, and the tool's admission | Chapter 8, plate 13b; service "Who my company is" page |
+| 14a-fact-pass-ask.png | "run my fact test pass on this" with the draft pasted under it | Chapter 6, plate 14a; service "Check the facts" page. No anonymizing needed (no names). |
+| 14b-fact-pass-output.png | Errors to fix / checks out / sources, on a short history of chatbots | Chapter 6, plate 14b; service "Check the facts" page. No anonymizing needed. |
+| 15-memory-settings-web.png | The web app's memory page (claude.ai), same toggles as the desktop app; sidebar says Memory here too | Workbook 0.4 and A1; Where things live. Note: this account's web layout shows "Settings > Memory", so the help center's "Settings > Your Claude" is not universal yet; keep both. |
+| 16-skills-add-menu.png | Customize > Skills > Add: Upload skill, Create a skill, Create with Claude, Record your screen | Chapter 5, plate 15; workbook 0.5 and B1; service "Load it into Claude" |
+| 17-skill-used-by-name.png | "use my compounding ai skill to give me a recent example" and the answer | Chapter 5, plate 16. BOOK ONLY: the answer names the author's companies. |
+| 18-claude-code-pane.png | Claude Code in the desktop app: folder, auto mode notice, commands run, status with file links | Chapter 15, plate 17; workbook Part C. Repo and chat names replaced. |

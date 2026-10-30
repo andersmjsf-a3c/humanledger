@@ -17,7 +17,7 @@ That's the one rule under everything else here, and the reason is simple. When t
 
 So the check can't be "does this look right." The check is a short pass you run on anything with a number, a name, a date, or a quote in it, before it goes anywhere. Ask for the source of each fact and the sentence it comes from. Open the source. Read the sentence. Mark each fact confirmed, close but wrong, or couldn't find. Then write one line at the bottom listing what you couldn't verify, because that line is what makes the rest trustworthy to whoever reads it.
 
-And the test for whether you're done: can you explain the thing out loud, for three minutes, without looking at the screen? If you can't, you haven't finished the work yet, no matter how finished the page looks.
+And the test for whether you're done, the three-minute test: put away the materials and explain your argument, succinctly and convincingly, in three minutes or less. If you can't, you haven't finished the work yet, no matter how finished the page looks.
 
 ## Try it now
 

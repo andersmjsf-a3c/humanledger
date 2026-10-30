@@ -138,7 +138,7 @@ describe("screenshots, placed per captions.md", () => {
 
   it("the book-only screens never reach the site (Mark, Oct 30 pm)", () => {
     const served = readdirSync("public/screenshots");
-    for (const f of ["07-skill-running-in-a-chat.png", "08-the-check.png", "09-project-page.png", "11-pushing-back.png", "12-export-control.png"]) {
+    for (const f of ["07-skill-running-in-a-chat.png", "08-the-check.png", "09-project-page.png", "10a-asking-for-a-skill.png", "10b-a-skill-made-from-a-conversation.png", "11-pushing-back.png", "12-export-control.png", "17-skill-used-by-name.png"]) {
       expect(served, f).not.toContain(f);
       expect(placements.screenshots.map((s: { file: string }) => s.file), f).not.toContain(f);
     }
@@ -148,7 +148,11 @@ describe("screenshots, placed per captions.md", () => {
 
   it("About me shows the memory screen, not the skills list", () => {
     const files = (id: string) => SCREENSHOTS.filter((s) => s.starters === "all" || s.starters?.includes(id)).map((s) => s.file);
-    expect(files("about-me")).toEqual(["02-memory-settings.png"]);
+    expect(files("about-me")).toEqual(["02-memory-settings.png", "15-memory-settings-web.png"]);
+    expect(files("who-my-company-is")).toEqual(expect.arrayContaining(["13a-playbook-correction.png", "13b-the-playbook-fix.png"]));
+    expect(files("check-the-facts")).toEqual(expect.arrayContaining(["14a-fact-pass-ask.png", "14b-fact-pass-output.png"]));
+    expect(files("my-work-register")).toEqual(expect.arrayContaining(["06-scheduled-task.png", "18-claude-code-pane.png"]));
+    for (const s of STARTERS.filter((x) => x.id !== "about-me")) expect(files(s.id), s.id).toEqual(expect.arrayContaining(["03-skills-list.png", "16-skills-add-menu.png"]));
     expect(files("write-like-me")).toContain("03-skills-list.png");
   });
 
@@ -180,16 +184,41 @@ describe("About me: a paragraph for memory, not a skill", () => {
     expect(s.worksheetV2).toBe("A1");
   });
 
-  it("fills the paragraph as sentences and makes the one line to paste", () => {
+  it("fills the paragraph and makes the one line to paste", () => {
     const p = memoryParagraph(s, a)!;
     expect(p).toBe(
-      "I'm office manager for a twelve-person dental practice, nine years. This quarter I'm working on switching our scheduling software. Hiring a second front-desk person. How I like work done: One recommendation, not a menu. Short."
+      "Who I am: Office manager for a twelve-person dental practice, nine years. What I'm working on this quarter: Switching our scheduling software. Hiring a second front-desk person. How I like work done: One recommendation, not a menu. Short."
     );
     expect(memoryLine(p)).toBe(`Remember this about me: ${p}`);
     expect(memoryParagraph(STARTERS.find((x) => x.id === "write-like-me")!, {})).toBeNull();
   });
 
-  it("keeps a capitalized name mid-sentence", () => {
-    expect(memoryParagraph(s, { ...a, who: "Dana Ruiz, office manager." })).toMatch(/^I'm Dana Ruiz, office manager\./);
+  it("lowercases a copied capital mid-sentence, but keeps a name", () => {
+    const t = { ...s, questions: [{ key: "who", label: "Who", hint: "", type: "text" as const }], template: "## The paragraph\nI'm {{who}}\n" };
+    expect(memoryParagraph(t, { who: "Office manager at a practice" })).toBe("I'm office manager at a practice.");
+    expect(memoryParagraph(t, { who: "Dana Ruiz, office manager." })).toBe("I'm Dana Ruiz, office manager.");
+  });
+});
+
+// Mark, Oct 30 evening: one wording for the three-minute test, everywhere. An import of an older
+// skill copy (or a stray edit) that brings back an old phrasing fails here.
+describe("the three-minute test has one wording", () => {
+  const FINAL = "put away the materials and explain your argument, succinctly and convincingly, in three minutes or less";
+  const OLD = [/out loud, (with )?no (notes|materials)/i, /for three minutes\b(?! or less)/i, /three minutes, out loud/i, /without (looking at )?the screen\?/i, /for three minutes with no slide/i];
+  const walk = (dir: string): string[] =>
+    readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(`${dir}/${e.name}`) : /\.(md|json|tsx?)$/.test(e.name) ? [`${dir}/${e.name}`] : []));
+  const files = [...walk("content"), ...walk("app"), ...walk("src").filter((f) => !f.includes("/generated/")), "grader/grade-my-work/SKILL.md"];
+
+  it("no old phrasing anywhere the site reads from", () => {
+    for (const f of files) {
+      const text = readFileSync(f, "utf8");
+      if (!/three-minute test/i.test(text)) continue;
+      for (const re of OLD) expect(re.test(text), `${f}: ${re}`).toBe(false);
+    }
+  });
+
+  it("the glossary and A5 carry the final sentence", () => {
+    expect(readFileSync("content/service/glossary.md", "utf8")).toContain("Put away the materials and explain your argument, succinctly and convincingly, in three minutes or less.");
+    expect(readFileSync("content/workbook/partA/wsA5-your-trust-rules.md", "utf8")).toContain(FINAL);
   });
 });

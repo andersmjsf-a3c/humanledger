@@ -117,7 +117,7 @@ export function Checker() {
           <h2>Make a scorecard from this check</h2>
           <p className="meta">Before you do, the two A5 checks. Tick only what you actually did.</p>
           <fieldset className="a5">
-            <legend>The three-minute test: could you explain this out loud, no notes, for three minutes?</legend>
+            <legend>The three-minute test: could you put away the materials and explain your argument, succinctly and convincingly, in three minutes or less?</legend>
             {(["passed", "failed", "skipped", "not_applicable"] as const).map((v) => (
               <label key={v} className="check">
                 <input type="radio" name="three" checked={three === v} onChange={() => setThree(v)} />{" "}

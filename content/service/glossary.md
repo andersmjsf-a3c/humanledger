@@ -27,7 +27,7 @@ Plain definitions for the back matter, added as chapters coin them. One or two s
 | Brief | What you give the tool before you ask for anything: who it's for, what good looks like, what you already know, what to avoid. Four hundred words beats four. | 1 |
 | Brand (for the tool) | Who your company is and what it stands for, written down as rules the tool checks every output against. The colors and type are derived from it, not the other way around. | 8 |
 | Standard (outside) | A published guide, checklist, or essay on how to do a kind of work well, which you ask the tool to grade your draft against. | 10 |
-| The three-minute test | Can you explain the output out loud, with no materials, for three minutes? If not, you haven't finished the work. | 6 |
+| The three-minute test | Put away the materials and explain your argument, succinctly and convincingly, in three minutes or less. If you can't, you haven't finished the work. | 6 |
 | Human-centered, human-led superintelligence | The arrangement this book recommends: the intelligence is the machine's, the center and the lead are yours. "I built" means I decided, directed, checked, and owned it. | Introduction |
 
 ## Back-matter references (sources named in the text; expand as chapters are drafted)
