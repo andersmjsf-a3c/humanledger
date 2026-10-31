@@ -5,6 +5,10 @@ import { useSignedIn } from "./useSignedIn";
 export function PrivacyLink() {
   const signedIn = useSignedIn();
   // Until we know (first paint), no parenthetical rather than a claim that might be wrong for this person.
-  const note = signedIn === null ? "" : signedIn ? " (scores only)" : " (nothing)";
+  const note = signedIn === null ? "" : signedIn ? " (soundings only)" : " (nothing)";
   return <a href="/privacy">Privacy: what leaves your vault{note}</a>;
+}
+
+export function FooterSignIn() {
+  return useSignedIn() === false ? <a href="/login">Sign in</a> : null;
 }

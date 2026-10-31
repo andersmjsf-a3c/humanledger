@@ -8,7 +8,7 @@ export default function Grader() {
       <h1>Grade your work</h1>
       <p className="lede">
         The grading skill runs in your own Claude, next to your files. It checks a piece of work against your rules, gives you
-        the full report, and makes a scorecard. Your work never comes here. Only the scorecard can, and only when you send it.
+        the full report, and makes your sounding (the depth check you take yourself: counts of what&apos;s current, what&apos;s due, what passed). Your work never comes here. Only the sounding can, and only when you send it.
       </p>
 
       <GraderDownload />
@@ -25,7 +25,7 @@ export default function Grader() {
           It asks you two things only you know: did you do the three-minute test, and did you write the line listing what you
           couldn't verify.
         </li>
-        <li>It shows you the scorecard. Hold back any line you like.</li>
+        <li>It shows you the sounding. Hold back any line you like.</li>
         <li>
           If you want to send it, it gives you a link to this site. Open it, check the card one more time, and click Send. It
           can't send anything itself.
@@ -34,13 +34,13 @@ export default function Grader() {
 
       <h2>What the grader can't do</h2>
       <ul className="steps">
-        <li>Send a scorecard. Only you can, from the review page.</li>
-        <li>Put words from your work in a scorecard. Every line is a number, a date, a fixed category, or yes or no.</li>
+        <li>Send a sounding. Only you can, from the review page.</li>
+        <li>Put words from your work in a sounding. Every line is a number, a date, a fixed category, or yes or no.</li>
         <li>Use the internet. Its receipt counts network attempts, and the review page tells you if there were any.</li>
         <li>Name your skills. It records them by slot (voice, brand, research), so a skill called after a client stays private.</li>
       </ul>
       <p className="fineprint">
-        Its receipt, with every file it opened, stays in your folder. The scorecard carries only the counts.
+        Its receipt, with every file it opened, stays in your folder. The sounding carries only the counts.
       </p>
     </main>
   );

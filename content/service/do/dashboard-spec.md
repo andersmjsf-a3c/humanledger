@@ -48,3 +48,15 @@ Understand a word moves to the top nav as Glossary; it isn't a capability.
 - Footer: "Privacy: what leaves your vault (scores only)."
 - Cards never render file content. "Open in vault" shows the file from the user's own storage, client-side.
 - Every version bump that came from a Claude proposal through the connector is shown in the activity list as "Claude proposed a rule, you approved it."
+
+## Oct 30 2026: three tiers on Your AI (Mark)
+
+Your AI is organized in three sections, top to bottom, under the four-number scorecard.
+
+1. **Starter Skills** (live). The eight starters as capability cards, exactly as specified above (state dot, file and version, health line, next step, one button). Subhead: "Eight skills we wrote, made yours with three answers each. Live now." Card titles match the starter names: Write like me · Check the facts before I send · My weekly report · Research I can trust · Who my company is · My posts · My work register · About me.
+2. **Build Skills** (Coming soon badge). Subhead: "Bigger jobs, built on your starters. Each one reads your voice, your company, and your fact pass before it starts." Four dashed placeholder cards, title and one line each, no button: Brand · Go-to-market · Presentations · Proposals, plans, and reports. Copy in `dashboard-mockup.html`. These are examples; the list will grow.
+3. **Advanced Skills** (Coming soon badge). Subhead: "For when your files are doing real work and you want them watched, tested, and shared." Four dashed placeholder cards: Agents with a boundary · Re-tests after every release · Claude updates your files · Your team's scorecard. These are hints at the roadmap (the connector, the drift watcher, the team dashboard), not commitments with dates.
+
+Placeholder cards are not clickable and show no state. "Coming soon" is the only promise made. When a Build or Advanced skill ships, it moves from a dashed card to a live card with the same anatomy as a starter.
+
+**Brand line.** Under the Humanledger wordmark on every page, a small uppercase "Beta" in the accent color. Change it to "MVP" if Mark prefers that word; the mockups use Beta.

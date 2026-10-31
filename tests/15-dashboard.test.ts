@@ -1,3 +1,4 @@
+import { STARTERS } from "@/service";
 // Your AI (Oct 29 2026): the eight tiles become capabilities once signed in. The page is built
 // from metadata only: which files exist and when they changed, counts, and the person's own cards.
 import { describe, it, expect, beforeAll } from "vitest";
@@ -23,7 +24,7 @@ describe("the grid", () => {
   it("keeps the eight tiles' order and pages, adds the agents tile ninth, and drops the glossary tile", () => {
     const pages = DO_PAGES.filter((p) => p.worksheets.length).map((p) => p.slug);
     expect(CAPABILITIES.slice(0, 7).map((c) => c.slug)).toEqual(pages);
-    expect(CAPABILITIES[7]).toMatchObject({ key: "agent", later: true });
+    expect(CAPABILITIES[7]).toMatchObject({ key: "agent", starter: "my-work-register" });
     expect(CAPABILITIES.find((c) => c.slug === "understand-a-word")).toBeUndefined();
   });
 
@@ -157,5 +158,16 @@ describe("after sign-in, back to the page you were on", () => {
     expect(safePath("/workbook/B1#version-2")).toBe("/workbook/B1#version-2");
     expect(safePath("/")).toBe("/");
     for (const bad of ["//evil.test/x", "https://evil.test", "/login", "/after-sign-in", "/api/ledger", "/\\evil", 42, null]) expect(safePath(bad)).toBeNull();
+  });
+});
+
+describe("Your AI in three tiers (Oct 30 dashboard-spec)", () => {
+  it("Starter Skills has a card for each of the eight starters, and an empty one goes straight to the starter", () => {
+    const d = buildDashboard(empty);
+    for (const s of STARTERS) {
+      const c = d.cards.find((x) => x.cap.starter === s.id);
+      expect(c, s.id).toBeDefined();
+      expect(c!.action).toMatchObject({ label: "Make it mine", href: `/start/${s.id}` });
+    }
   });
 });

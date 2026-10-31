@@ -135,7 +135,7 @@ export function StarterMaker({ s }: { s: Starter }) {
 
   async function confirmed() {
     await confirmMemory(true);
-    setNote("Marked as in Claude's memory. Your dashboard shows it connected.");
+    setNote("Marked as in Claude's memory. Your AI shows it connected.");
   }
 
   if (step === "ask") {

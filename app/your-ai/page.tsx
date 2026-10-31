@@ -12,10 +12,10 @@ export default async function YourAIPage() {
   return (
     <main className="home dashboard">
       <section className="wrap dash-head">
-        <p className="eyebrow">Your AI</p>
-        <h1>What you&apos;ve taught it, and what&apos;s next</h1>
-        <p className="section-sub">
-          We keep the scores. Your files stay in your vault. <a href="/privacy">What we can see</a>
+        <h1>Your AI</h1>
+        <p className="section-sub">What you&apos;ve built, what&apos;s current, what to do next.</p>
+        <p className="meta">
+          <a href="/history">Soundings you&apos;ve sent</a> · <a href="/privacy">What we can see</a>
         </p>
       </section>
       <YourAI />
