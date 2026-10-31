@@ -1,83 +1,248 @@
+import { PRODUCT_NAME } from "@/config/brand";
 import { STARTERS } from "@/service";
-import { Shots } from "@/service/Shot";
-import { shotsFor } from "@/service/screenshots";
+import { Glyph } from "@/brand/Glyph";
+import { BELOW, CANT_SEE, CHANGED_CARD, EVERYTHING_YOURS, MINUTES, WHERE_CARD } from "@/service/home";
 
-const COUNT = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+// Homepage v3 (Oct 31 2026), the same page for everyone, signed in or not. Structure follows the
+// who-we-are page: we are, we serve, the starters, we believe, the waterline, we never, how it should
+// feel, Where things live and What changed, why the name. Copy: keelsound-brand messaging.md and the
+// v3 reference build. Layout and palette from the reference; built in our own components.
 
-// The front door (Oct 30 2026): lead with skills already written. Pick one, answer three
-// questions, load it into Claude. Everything about the habits sits behind the bottom row.
+const ROLES = [
+  ["The solo consultant", "Proposals, client notes, and a voice that has to stay yours across forty emails a week."],
+  ["The practice owner", "Two or three people, one reputation, and every number in a letter checked before it goes."],
+  ["The sales manager", "A weekly report, a team that pastes whatever the tool says, and a boss who reads closely."],
+  ["The nonprofit director", "Grant language, a board, and no budget for a mistake in a figure."],
+  ["The first-year founder", "A deck, a brief, and the question of who the company is before the logo."],
+  ["The teacher", "Parent emails, a department memo, and a tool that has to sound like a person."],
+];
+
+const BELIEFS = [
+  ["The person leads.", "The intelligence is the machine's. The center and the tiller are yours. Every card here ends in a decision you make; nothing acts on its own."],
+  [
+    "Nothing leaves your hands unchecked.",
+    "A clean pass is the start of a check, not permission to skip one. Put the materials away and explain your argument in three minutes. If you can't, it isn't yours yet.",
+  ],
+  ["Nothing you keep is read by anyone but you.", "Not a feature. The reason the vault is built the way it is."],
+  [
+    "Files compound. Conversations don't.",
+    "A chat is gone when the window closes. A file gets a line added every time it's wrong, and works in the next model too. The unit of everything here is a file you own.",
+  ],
+];
+
+const FEEL = [
+  ["Nothing is hidden.", "Where things live is dated and re-checked after every model release. The glossary is one or two sentences you can repeat. Nothing here needs the Terminal."],
+  ["Everything is yours.", EVERYTHING_YOURS],
+  [
+    "The next release isn't a threat.",
+    "When the model changes, your rules don't. Your sounding tells you which skills to re-test, and the file is still yours in whatever you're talking to next year.",
+  ],
+];
+
 export default function Home() {
   return (
-    <main className="home v2">
-      <section className="hero wrap">
-        <h1>Eight skills, already written. Three answers make one yours.</h1>
-        <p className="sub">
-          AI changes under you every few weeks. The model gets replaced, the settings move, the names change. Keelsound is the part
-          that doesn&apos;t: how you write, what your company stands for, the facts you&apos;ve checked, kept in a vault only you can
-          open and carried into every new conversation. You lead. Keel keeps you upright.
+    <main className="v3">
+      {/* We are */}
+      <section className="v3-hero wrap">
+        <p className="v3-label">Lead your AI. Keep what you learn. Bring it with you.</p>
+        <h1>AI changes under you every few weeks. {PRODUCT_NAME} is the part that doesn&apos;t.</h1>
+        <p className="v3-lead">
+          The model gets replaced, the settings move, the names change. What you know about your own work shouldn&apos;t go with them.{" "}
+          {PRODUCT_NAME} gives you skills you can use today, keeps the files you make in a vault only you can open, and tells you
+          what&apos;s current and what to fix next. You lead.
         </p>
-        <div className="buttons">
+        <div className="v3-buttons">
           <a className="btn" href="#starters">
             Pick a starter
           </a>
+          <a className="btn ghost" href="#never">
+            What we can&apos;t see
+          </a>
         </div>
+        <p className="v3-quiet">Nothing you keep here is read by anyone but you. No signup to start; sign in only to keep.</p>
       </section>
 
-      <section id="how" className="wrap picture">
-        <img
-          src="/illustrations/how-it-works.svg"
-          alt="Four steps: pick a starter, answer three questions, load it into Claude, it gets better as you fix it."
-          width={1200}
-          height={340}
-        />
-      </section>
-
-      <section id="starters" className="band">
+      {/* We serve */}
+      <section className="v3-section alt">
         <div className="wrap">
-          <p className="meta privacy-line">Nothing you keep here is read by anyone but you.</p>
-          <h2 className="section-title">{COUNT[STARTERS.length] ?? STARTERS.length} starters. Pick the one you&apos;d use today.</h2>
-          <div className="starters">
-            {STARTERS.map((s) => (
-              <article key={s.id} className="starter-card">
-                <h3>{s.title}</h3>
-                <p>{s.oneLine}</p>
-                <a className="btn" href={`/start/${s.id}`}>
-                  Make it mine
-                </a>
-              </article>
+          <p className="v3-label">Who it&apos;s for</p>
+          <h2>People who use AI at work and have no one to show them how.</h2>
+          <p className="v3-sub">Smart, busy, not technical, and judged by what leaves their hands. If you recognize yourself, this was built for you.</p>
+          <div className="v3-roles">
+            {ROLES.map(([who, what], i) => (
+              <div key={who} className="v3-role">
+                <span className="n">{i + 1}</span>
+                <div>
+                  <b>{who}</b>
+                  <span>{what}</span>
+                </div>
+              </div>
             ))}
           </div>
-          <p className="meta">No account to try one. Sign in only when you want to keep it.</p>
         </div>
       </section>
 
-      <section className="wrap split whatskill">
-        <div>
-          <h2 className="section-title">What a skill is</h2>
-          <p className="section-sub">
-            A one-page file your AI reads before it does a job for you. It says what the job is, what you want, and what it must
-            never do. Every time it gets something wrong, you add a line. That&apos;s the whole idea, and it&apos;s why the tenth draft
-            is better than the first.
-          </p>
-          <Shots list={shotsFor.home()} small />
-        </div>
-        <div className="picture framed">
-          <img
-            src="/illustrations/a-skill-file.svg"
-            alt="A skill file with five callouts: the job, your three answers, the steps, what it must never do, where your corrections go."
-          />
-        </div>
-      </section>
-
-      <section id="confusing" className="confusing">
+      {/* The starters: the existing eight, each to its three-question page */}
+      <section id="starters" className="v3-section">
         <div className="wrap">
-          <strong>When something&apos;s confusing</strong>
-          <nav aria-label="When something's confusing">
-            <a href="/glossary">A word everyone keeps using</a>
-            <a href="/where-things-live">Where a setting went (dated)</a>
-            <a href="/what-changed">What changed this week</a>
-            <a href="/why">Why any of this works</a>
-          </nav>
+          <p className="v3-label">Starter Skills</p>
+          <h2>Eight skills, already written. Three answers make one yours.</h2>
+          <p className="v3-sub">
+            A skill is a file your AI reads before it works for you. These are written and tested. Answer three questions, download the
+            file, drop it into Claude. Every correction you&apos;d otherwise repeat goes into the file, and it never gets worse.
+          </p>
+          <div className="v3-starters">
+            {STARTERS.map((s) => (
+              <a key={s.id} className="v3-st" href={`/start/${s.id}`}>
+                <b>{s.title}</b>
+                <p>{s.oneLine}</p>
+                <span className="q">
+                  {s.questions.length} questions{MINUTES[s.id] ? ` · about ${MINUTES[s.id]} minutes` : ""}
+                </span>
+              </a>
+            ))}
+          </div>
+          <p className="v3-quiet">
+            Build Skills (brand, go-to-market, presentations, proposals) and Advanced Skills (agents with a job, a boundary, and a log) are
+            coming. The starters are free and stay free.
+          </p>
+        </div>
+      </section>
+
+      {/* We believe */}
+      <section className="v3-section alt v3-believe">
+        <div className="wrap">
+          <p className="v3-label">What we believe</p>
+          <p className="big">
+            <em>The person is the constant.</em> Models change, settings move, names come and go. What you know about your own work should
+            come with you into all of it.
+          </p>
+          <div className="v3-beliefs">
+            {BELIEFS.map(([t, b]) => (
+              <div key={t}>
+                <b>{t}</b>
+                <span>{b}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The waterline */}
+      <div className="v3-waterline" role="separator">
+        <span>Below the waterline</span>
+      </div>
+
+      {/* We never */}
+      <section className="v3-below" id="never">
+        <div className="wrap">
+          <p className="v3-label">What we never do</p>
+          <h2>{PRODUCT_NAME} is built so the company can&apos;t read your work.</h2>
+          <p className="v3-sub">{BELOW.sub}</p>
+          <div className="v3-nevers">
+            {BELOW.nevers.map((n) => (
+              <div key={n.title} className="never">
+                <b>{n.title}</b>
+                <span>{n.body}</span>
+              </div>
+            ))}
+          </div>
+          <div className="v3-see">
+            <div>
+              <b>What we can see</b>
+              <ul>
+                {BELOW.canSee.map((x) => (
+                  <li key={x}>{x}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <b>What we can&apos;t</b>
+              <ul>
+                {CANT_SEE.map((x) => (
+                  <li key={x}>{x}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="v3-proof">
+            The complete list of what our server holds is on the <a href="/privacy">privacy page</a>, in plain words. A test fails our build if
+            anything else appears. We never name a customer, and nobody on this page is a testimonial.
+          </p>
+        </div>
+      </section>
+
+      {/* How it should feel */}
+      <section className="v3-section">
+        <div className="wrap">
+          <p className="v3-label">How it should feel</p>
+          <h2>Someone careful set this up, and you could walk away tomorrow with everything you made.</h2>
+          <div className="v3-feel">
+            {FEEL.map(([t, b]) => (
+              <div key={t}>
+                <b>{t}</b>
+                <span>{b}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reference, from the dated JSON */}
+      <section className="v3-section alt" id="where">
+        <div className="wrap v3-ref">
+          <div className="card">
+            <h3>
+              <a href="/where-things-live">Where things live</a>
+            </h3>
+            <p className="date">
+              {WHERE_CARD.checked ? `Last checked ${WHERE_CARD.checked}. ` : ""}Names and titles change; this page changes with them.
+            </p>
+            {WHERE_CARD.rows.map((r) => (
+              <div key={r.id} className="row">
+                <span>{r.label}</span>
+                <span>{r.value}</span>
+              </div>
+            ))}
+            <a className="more" href="/where-things-live">
+              Every row, with sources
+            </a>
+          </div>
+          <div className="card" id="changed">
+            <h3>
+              <a href="/what-changed">What changed</a>
+            </h3>
+            <p className="date">Since the last release, in plain words.</p>
+            {CHANGED_CARD.map((e) => (
+              <div key={e.id} className="row">
+                <span>{e.date}</span>
+                <span>{e.title}</span>
+              </div>
+            ))}
+            <a className="more" href="/what-changed">
+              What each one loosens, and the re-test
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Why the name */}
+      <section className="v3-section" id="about">
+        <div className="wrap">
+          <p className="v3-label">Why {PRODUCT_NAME}</p>
+          <h2>The keel is the part of a boat you don&apos;t see.</h2>
+          <p className="v3-sub">
+            It&apos;s what lets you sail into the wind without going over, and you still hold the tiller. Sound, as in a sound hull: nothing
+            gets in, nothing leaks out. And a sounding is the depth check a sailor takes. {PRODUCT_NAME} can&apos;t read a word you write. It
+            keeps what you know about your own work and brings it with you into every new model.
+          </p>
+          <div className="v3-glyphrow">
+            <Glyph size={96} />
+            <p>
+              The water is the AI: it moves, it has depth, it changes every few weeks. The hull is you. The waterline is the boundary between
+              what&apos;s yours and what&apos;s the machine&apos;s. The keel is the part of you that goes down into that layer and stays yours.
+            </p>
+          </div>
         </div>
       </section>
     </main>
