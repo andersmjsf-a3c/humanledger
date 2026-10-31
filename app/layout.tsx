@@ -7,6 +7,7 @@ import "./globals.css";
 export const metadata = {
   title: PRODUCT_NAME,
   description: "Helping every person lead AI, keep what they learn, and build on it.",
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

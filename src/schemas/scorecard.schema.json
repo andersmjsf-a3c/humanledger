@@ -114,7 +114,7 @@
         "model_release":         { "$ref": "#/$defs/model_release" },
 
         "deliverable_type": { "enum": ["email", "message", "post", "deck", "document", "report", "proposal", "spreadsheet", "code", "design", "other"] },
-        "audience":         { "enum": ["self", "internal", "customer", "investor", "partner", "public", "other"] },
+        "audience":         { "enum": ["self", "internal", "customer", "partner", "public", "other"] },
         "length_band":      { "enum": ["under_300_words", "300_to_1000", "1000_to_3000", "over_3000", "not_text"] },
 
         "brief_used":       { "type": "boolean" },

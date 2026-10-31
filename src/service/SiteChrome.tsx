@@ -1,11 +1,13 @@
 import { PRODUCT_NAME } from "@/config/brand";
 import { AccountNav } from "@/account/AccountNav";
+import { PrivacyLink } from "@/account/PrivacyLink";
 
 export function SiteHeader() {
   return (
     <header className="site-header">
       <a className="brand" href="/">
         {PRODUCT_NAME}
+        <span className="beta">Beta</span>
       </a>
       <nav aria-label="Main">
         <AccountNav part="lead" />
@@ -24,7 +26,7 @@ export function SiteFooter() {
       <div className="site-footer">
       <span>{PRODUCT_NAME} · Helping every person lead AI, keep what they learn, and build on it.</span>
       <div className="links">
-        <a href="/privacy">Privacy: what leaves your vault (scores only)</a>
+        <PrivacyLink />
         <a href="/glossary">Glossary</a>
         <a href="/grader">Grade your work</a>
         <a href="/history">Your history</a>
