@@ -59,7 +59,7 @@ describe("guard 1: schemas admit no free text", () => {
 const GOOD: Record<string, Node> = {
   "deck, full card": {
     ...base, kind: "deliverable", model_vendor: "anthropic", model_release: "anthropic.claude-opus-5-5",
-    deliverable_type: "deck", audience: "investor", length_band: "1000_to_3000", brief_used: true,
+    deliverable_type: "deck", audience: "partner", length_band: "1000_to_3000", brief_used: true,
     skills_used: ["voice", "brand", "fact_check"], pass_count: 23, catches_me: 11, catches_tool: 7,
     catches_standard: 5, standard_kind: "published_guide",
     voice_flags_found: { em_dash: 9, hedge: 3 }, voice_flags_remaining: { em_dash: 0, hedge: 0 },
@@ -85,6 +85,10 @@ const BAD: Record<string, Node> = {
 };
 
 describe("guard 1: sample cards", () => {
+  it("no audience hints at a person's situation: investor folded into partner (Mark, Oct 30)", () => {
+    const card = { ...GOOD[Object.keys(GOOD).find((k) => (GOOD as Record<string, { audience?: string }>)[k].audience)!], audience: "investor" };
+    expect(checkCard(card, today).ok).toBe(false);
+  });
   for (const [name, card] of Object.entries(GOOD)) it(`accepts: ${name}`, () => expect(checkCard(card, today).ok).toBe(true));
   for (const [name, card] of Object.entries(BAD)) it(`rejects: ${name}`, () => expect(checkCard(card, today).ok).toBe(false));
   it("rejects a coach that offers to fix things", () => {
