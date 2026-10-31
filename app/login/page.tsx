@@ -10,7 +10,7 @@ export default async function Login({ searchParams }: { searchParams: Promise<{ 
   const { sent, error } = await searchParams;
   return (
     <main className="signin">
-      <h1>Sign in</h1>
+      <h1>Sign in to keep what you make.</h1>
       {sent ? (
         <div className="card">
           <h3>Check your email</h3>
@@ -36,11 +36,12 @@ export default async function Login({ searchParams }: { searchParams: Promise<{ 
       )}
       <div className="privacy-lines">
         <p>
-          <strong>What we store:</strong> your email address, and the scorecards you choose to send.
+          <strong>What we store:</strong> your account and the soundings you choose to send.
         </p>
         <p>
-          <strong>What we never see:</strong> your files, your answers, or anything you write. <a href="/privacy">How that works</a>.
+          <strong>What we never see:</strong> your files. <a href="/privacy">How that works</a>.
         </p>
+        <p>Signing in opens your account. It does not open your vault.</p>
       </div>
     </main>
   );

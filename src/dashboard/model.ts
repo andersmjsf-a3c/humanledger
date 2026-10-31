@@ -51,7 +51,10 @@ export const CAPABILITIES: Capability[] = [
   { key: "deck", title: "Make a deck or a one-pager someone will judge", slug: "make-something-someone-will-judge", worksheet: "C5", fileName: "pass log" },
   { key: "changed", title: "Figure out what just changed", slug: "what-just-changed", worksheet: "0.7", fileName: "platform-changes.md" },
   { key: "memory", title: "Keep it from forgetting who I am", slug: "keep-it-from-forgetting", worksheet: "A1", starter: "about-me", fileName: "about-me.md" },
-  { key: "agent", title: "Give it a job to do on its own", slug: "", worksheet: "C2", skill: "7-agent-job-description", starter: "my-work-register", fileName: "agent job card", later: true },
+  { key: "agent", title: "Give it a job to do on its own", slug: "", worksheet: "C2", skill: "7-agent-job-description", starter: "my-work-register", fileName: "agent job card" },
+  // Oct 30 (dashboard-spec): Your AI shows the eight starters, so the two without a content page get cards too.
+  { key: "brand", title: "Who my company is", slug: "", worksheet: "B3", skill: "3-brand-rules", slot: "brand", starter: "who-my-company-is", fileName: "brand.md" },
+  { key: "posts", title: "My posts", slug: "", worksheet: "B6", skill: "6-post-skill", slot: "post", starter: "my-posts", fileName: "posts.md" },
 ];
 
 export type Tone = "amber" | "green" | "plain";
@@ -172,6 +175,9 @@ export function buildDashboard(input: DashboardInput): Dashboard {
       [rule, next, tone, action] = [4, "Turn what you tried into a file", "green", { label: "Start the file", href: keepHref, primary: false }];
     } else if (file) {
       [rule, next, tone, action] = [5, "Healthy. Nothing to do", "green", { label: "Open in vault", href: keepHref, primary: false }];
+    } else if (cap.starter) {
+      // Not started, and a starter makes this file in three questions: go straight to it.
+      [rule, next, tone, action] = [6, "", "plain", { label: "Make it mine", href: `/start/${cap.starter}`, primary: false }];
     } else {
       [rule, next, tone, action] = [6, cap.later ? "An agent with a name, a job, and a boundary it can't cross. Start with one that only reads and reports." : "", "plain", { label: cap.later ? "Read the page" : "Open the page", href: cap.later ? keepHref : page, primary: false }];
     }
@@ -184,7 +190,7 @@ export function buildDashboard(input: DashboardInput): Dashboard {
   const top = {
     filesKept:
       capCards.filter((c) => c.state === "kept" || c.state === "connected").length +
-      // starters with no card of their own (who my company is, my posts) still count as files kept
+      // a starter kept with no card of its own still counts as a file kept
       files.filter((f) => f.filled && f.id.startsWith("starter:") && !CAPABILITIES.some((c) => `starter:${c.starter}` === f.id)).length,
     checksThisWeek: runs.filter((r) => Date.parse(r.at) >= weekAgo).length,
     threeMinute: { passed: threeMinute.filter((c) => c.three_minute_test === "passed").length, of: threeMinute.length },

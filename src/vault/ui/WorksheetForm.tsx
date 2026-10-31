@@ -159,16 +159,16 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
 
       <section className="done">
         <h2>Done with this worksheet</h2>
-        {completedAt && <p className="meta">You sent a scorecard for this on {completedAt.slice(0, 10)}. Sending again records a revisit.</p>}
+        {completedAt && <p className="meta">You sent a sounding for this on {completedAt.slice(0, 10)}. Sending again records a revisit.</p>}
         <label className="check">
           <input type="checkbox" checked={checkStep} onChange={(e) => setCheckStep(e.target.checked)} /> I did the check step
         </label>
         <p>
           <a className="primarylink" href={`/review#${encodeCard(worksheetCard({ worksheetId: ws.id, revisited: !!completedAt, checkStepDone: checkStep }))}`}>
-            Review the scorecard
+            Review the sounding
           </a>
         </p>
-        <p className="fineprint">The scorecard says which worksheet and that you finished it. None of your answers are on it. You'll see it before anything is sent.</p>
+        <p className="fineprint">The sounding (the depth check you take yourself: counts of what&apos;s current, what&apos;s due, what passed) says which worksheet and that you finished it. None of your answers are on it. You'll see it before anything is sent.</p>
       </section>
 
       <FolderBar vault={vault} />

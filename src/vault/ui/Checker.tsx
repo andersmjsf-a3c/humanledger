@@ -109,12 +109,12 @@ export function Checker() {
 
           <h2>What gets recorded</h2>
           <p className="meta">
-            Counts only, on this device (run {runs}). Later, you can choose to put counts like these on a scorecard. The draft
+            Counts only, on this device (run {runs}). Later, you can choose to put counts like these on your sounding (the depth check you take yourself: counts of what&apos;s current, what&apos;s due, what passed). The draft
             itself is never kept.
           </p>
           <pre className="preview">{JSON.stringify({ words: ran.words, ai_tell_flags_found: counts!.ai, voice_flags_found: counts!.voice }, null, 2)}</pre>
 
-          <h2>Make a scorecard from this check</h2>
+          <h2>Make a sounding from this check</h2>
           <p className="meta">Before you do, the two A5 checks. Tick only what you actually did.</p>
           <fieldset className="a5">
             <legend>The three-minute test: could you put away the materials and explain your argument, succinctly and convincingly, in three minutes or less?</legend>
@@ -136,13 +136,13 @@ export function Checker() {
             {TYPES.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
           </select>
           </p>
-          <p className="meta">The scorecard records whether you did these two things. It never asks what you couldn't verify.</p>
+          <p className="meta">The sounding records whether you did these two things. It never asks what you couldn't verify.</p>
           <p>
             <a
               className="primarylink"
               href={`/review#${encodeCard(checkCard({ words: ran.words, aiTellFlags: counts!.ai, voiceFlags: counts!.voice, deliverableType: dtype || undefined, threeMinute: three || undefined, unverifiedLine: unverified }))}`}
             >
-              Review the scorecard
+              Review the sounding
             </a>
           </p>
         </>

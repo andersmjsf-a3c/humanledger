@@ -10,9 +10,11 @@ export default function Home() {
   return (
     <main className="home v2">
       <section className="hero wrap">
-        <h1>Your AI, set up the way you work. Start with a skill we&apos;ve already written.</h1>
+        <h1>Eight skills, already written. Three answers make one yours.</h1>
         <p className="sub">
-          Pick one. Answer three questions. Load it into Claude. It gets better every time you correct it, and the file is yours.
+          AI changes under you every few weeks. The model gets replaced, the settings move, the names change. Keelsound is the part
+          that doesn&apos;t: how you write, what your company stands for, the facts you&apos;ve checked, kept in a vault only you can
+          open and carried into every new conversation. You lead. Keel keeps you upright.
         </p>
         <div className="buttons">
           <a className="btn" href="#starters">
@@ -32,6 +34,7 @@ export default function Home() {
 
       <section id="starters" className="band">
         <div className="wrap">
+          <p className="meta privacy-line">Nothing you keep here is read by anyone but you.</p>
           <h2 className="section-title">{COUNT[STARTERS.length] ?? STARTERS.length} starters. Pick the one you&apos;d use today.</h2>
           <div className="starters">
             {STARTERS.map((s) => (
@@ -55,9 +58,6 @@ export default function Home() {
             A one-page file your AI reads before it does a job for you. It says what the job is, what you want, and what it must
             never do. Every time it gets something wrong, you add a line. That&apos;s the whole idea, and it&apos;s why the tenth draft
             is better than the first.
-          </p>
-          <p className="meta">
-            We keep the scores. Your files stay in your vault; we never read them. <a href="/privacy">What we can see</a>
           </p>
           <Shots list={shotsFor.home()} small />
         </div>

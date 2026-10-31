@@ -1,6 +1,6 @@
 import { PRODUCT_NAME } from "@/config/brand";
 import { AccountNav } from "@/account/AccountNav";
-import { PrivacyLink } from "@/account/PrivacyLink";
+import { FooterSignIn, PrivacyLink } from "@/account/PrivacyLink";
 
 export function SiteHeader() {
   return (
@@ -28,8 +28,10 @@ export function SiteFooter() {
       <div className="links">
         <PrivacyLink />
         <a href="/glossary">Glossary</a>
-        <a href="/grader">Grade your work</a>
-        <a href="/history">Your history</a>
+        <a href="/where-things-live">Where things live</a>
+        <a href="/what-changed">What changed</a>
+        <a href="/about">About</a>
+        <FooterSignIn />
       </div>
       </div>
     </footer>

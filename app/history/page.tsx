@@ -16,7 +16,7 @@ export default async function History() {
       <main>
         <h1>Your history</h1>
         <p>
-          <a href="/login">Sign in</a> to see the scorecards you've sent.
+          <a href="/login">Sign in</a> to see the soundings you've sent.
         </p>
       </main>
     );
@@ -28,8 +28,8 @@ export default async function History() {
   return (
     <main>
       <h1>Your history</h1>
-      <p className="lede">Every scorecard you've sent, and nothing else. Your answers and drafts stay on your device.</p>
-      {history.length === 0 && <p>Nothing sent yet. Finish a worksheet or check a draft, then review and send its scorecard.</p>}
+      <p className="lede">Every sounding you&apos;ve sent (the depth check you take yourself: counts of what&apos;s current, what&apos;s due, what passed), and nothing else. Your answers and drafts stay on your device.</p>
+      {history.length === 0 && <p>Nothing sent yet. Finish a worksheet or check a draft, then review and send its sounding.</p>}
 
       <h2>Worksheets</h2>
       <table className="cardtable">

@@ -27,7 +27,7 @@ export function Review() {
       setState(v.ok ? { kind: "ready", card } : { kind: "invalid", errors: v.errors });
       if (v.ok && !window.location.hash) window.history.replaceState(null, "", `#${fragment}`);
     } catch {
-      setState({ kind: "invalid", errors: ["This link doesn't hold a scorecard."] });
+      setState({ kind: "invalid", errors: ["This link doesn't hold a sounding."] });
     }
     fetch("/api/me", { credentials: "same-origin" })
       .then((r) => r.json())
@@ -50,7 +50,7 @@ export function Review() {
       });
       if (res.status !== 201) {
         const j = await res.json().catch(() => ({}));
-        throw new Error(j.error === "not_signed_in" ? "Your sign-in has expired. Sign in again; your scorecard will wait." : `Not sent (${j.error ?? res.status}).`);
+        throw new Error(j.error === "not_signed_in" ? "Your sign-in has expired. Sign in again; your sounding will wait." : `Not sent (${j.error ?? res.status}).`);
       }
       if (final.kind === "worksheet") await getStore().markCompleted(String(final.worksheet_id));
       clearPending();
@@ -62,12 +62,12 @@ export function Review() {
     }
   }
 
-  if (state.kind === "loading") return <p>Reading the scorecard in this link…</p>;
-  if (state.kind === "none") return <p>No scorecard here. Scorecards come from finishing a worksheet, the draft checker, or your grading skill.</p>;
+  if (state.kind === "loading") return <p>Reading the sounding in this link…</p>;
+  if (state.kind === "none") return <p>No sounding here. Soundings come from finishing a worksheet, the draft checker, or your grading skill.</p>;
   if (state.kind === "invalid")
     return (
       <>
-        <p>This link doesn't hold a scorecard we can accept, so nothing can be sent from it.</p>
+        <p>This link doesn't hold a sounding we can accept, so nothing can be sent from it.</p>
         <ul className="flags">{state.errors.slice(0, 5).map((e, i) => <li key={i}>{e}</li>)}</ul>
       </>
     );
@@ -92,7 +92,7 @@ export function Review() {
             <tr key={r.key} className={held.includes(r.key) ? "held" : ""}>
               <td className="keep">
                 {req.has(r.key) ? (
-                  <span title="Every scorecard has this line" className="meta">always</span>
+                  <span title="Every sounding has this line" className="meta">always</span>
                 ) : (
                   <input
                     type="checkbox"
@@ -128,7 +128,7 @@ export function Review() {
           >
             Sign in to send
           </a>{" "}
-          <span className="meta">Your scorecard waits in this tab while you do.</span>
+          <span className="meta">Your sounding waits in this tab while you do.</span>
         </p>
       ) : (
         <div className="actions">
