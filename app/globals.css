@@ -354,7 +354,8 @@ figure.shot.small { max-width: 520px; }
 .show-me-where[open] > summary { margin-bottom: 8px; }
 
 /* "Beta" sits under the wordmark on every page until Mark says otherwise (brand). */
-.site-header .brand { display: inline-flex; flex-direction: column; line-height: 1.1; }
+.site-header .lockup { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+.site-header .brand { display: inline-flex; flex-direction: column; line-height: 1.1; font-size: 20px; letter-spacing: -0.02em; }
 .site-header .brand .beta { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
 
 /* Your AI tiers: Build and Advanced are dashed placeholders; "coming soon" is a dashed border, never a second accent. */
@@ -362,3 +363,80 @@ figure.shot.small { max-width: 520px; }
 .cap.soon { border-style: dashed; background: transparent; min-height: 150px; }
 .soon-badge { display: inline-block; margin-left: 10px; padding: 2px 8px; border: 1px dashed var(--rule); border-radius: 999px; font-size: 0.75rem; font-weight: 600; color: var(--muted); vertical-align: middle; }
 .sounding-head { padding-top: 8px; }
+
+/* Homepage v3 (Oct 31 2026): palette and spacing from the reference build. The waterline is one rule
+   low on the page; what the person does sits above it on white, what we promise sits below on the
+   dark ground (#0F2A22). The dark section keeps its colors in dark mode too. */
+:root { --keel: #1f5f4a; --keel-deep: #143f32; --below: #0f2a22; --water: #dce9e3; --rev: #eef3f0; --rev2: #c9d3cf; --rev-accent: #6fb79a; }
+.v3 { font-size: 16px; line-height: 1.55; }
+.v3 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.v3-label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--quiet); margin: 0 0 14px; }
+.v3 h2 { font-size: 28px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 700; margin: 0 0 12px; }
+.v3-sub { font-size: 17px; color: var(--muted); max-width: 680px; margin: 0 0 28px; }
+.v3-quiet { font-size: 14px; color: var(--quiet); margin-top: 18px; }
+.v3-hero { padding-top: 72px; padding-bottom: 56px; }
+.v3-hero h1 { font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 700; margin: 0 0 20px; max-width: 760px; }
+.v3-lead { font-size: 20px; line-height: 1.5; color: var(--muted); max-width: 680px; margin: 0 0 28px; }
+.v3-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+.v3 .btn.ghost { background: transparent; color: var(--keel); border: 1px solid var(--keel); }
+.v3-section { padding: 56px 0; }
+.v3-section.alt { background: var(--wash); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.v3-roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.v3-role { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; }
+.v3-role b { display: block; font-weight: 600; margin-bottom: 2px; }
+.v3-role span:not(.n) { font-size: 14px; color: var(--muted); }
+.v3-role .n { flex: none; width: 28px; height: 28px; border-radius: 8px; background: var(--water); color: var(--keel); font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+.v3-starters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1080px) { .v3-starters { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .v3-starters { grid-template-columns: 1fr; } }
+.v3-st { background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 8px; min-height: 150px; color: var(--ink); text-decoration: none; }
+.v3-st:hover { border-color: var(--keel); }
+.v3-st b { font-size: 17px; font-weight: 600; line-height: 1.3; }
+.v3-st p { margin: 0; font-size: 14px; color: var(--muted); flex: 1; }
+.v3-st .q { font-size: 12px; color: var(--quiet); }
+.v3-believe { padding: 64px 0; }
+.v3-believe .big { font-size: 30px; line-height: 1.3; letter-spacing: -0.02em; font-weight: 600; max-width: 820px; margin: 0 0 28px; }
+.v3-believe .big em { font-style: normal; color: var(--keel); }
+.v3-beliefs, .v3-feel { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+.v3-beliefs div { border-top: 2px solid var(--keel); padding-top: 12px; }
+.v3-beliefs b, .v3-feel b { display: block; font-weight: 600; margin-bottom: 4px; }
+.v3-beliefs span, .v3-feel span { font-size: 15px; color: var(--muted); }
+.v3-feel { margin-top: 28px; }
+.v3-feel div { background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 20px; }
+.v3-waterline { height: 0; border-top: 2px solid var(--keel); position: relative; }
+.v3-waterline span { position: absolute; right: 20px; top: -10px; background: var(--paper); padding: 0 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--keel); }
+.v3-below { background: var(--below); color: var(--rev); padding: 64px 0 72px; }
+.v3-below .v3-label { color: var(--rev-accent); }
+.v3-below h2 { color: var(--rev); }
+.v3-below .v3-sub { color: var(--rev2); }
+.v3-nevers { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 40px; }
+.v3-nevers .never { border-top: 1px solid rgba(238, 243, 240, 0.18); padding-top: 14px; }
+.v3-nevers b { display: block; font-size: 19px; font-weight: 600; margin-bottom: 6px; color: var(--rev); }
+.v3-nevers span { font-size: 15px; color: var(--rev2); }
+.v3-see { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 760px) { .v3-see, .v3-ref { grid-template-columns: 1fr !important; } .v3-hero h1 { font-size: 32px; } .v3-lead { font-size: 18px; } .v3-believe .big { font-size: 24px; } }
+.v3-see div { background: rgba(238, 243, 240, 0.06); border: 1px solid rgba(238, 243, 240, 0.14); border-radius: 12px; padding: 20px; }
+.v3-see b { display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rev-accent); margin-bottom: 10px; }
+.v3-see ul { margin: 0; padding-left: 18px; color: var(--rev2); font-size: 15px; }
+.v3-see li { margin: 4px 0; }
+.v3-proof { margin-top: 28px; font-size: 15px; color: var(--rev2); }
+.v3-proof a { color: var(--rev-accent); border-bottom: 1px solid rgba(111, 183, 154, 0.5); text-decoration: none; }
+.v3-ref { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.v3-ref .card { background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 22px; }
+.v3-ref h3 { margin: 0 0 4px; font-size: 19px; font-weight: 600; }
+.v3-ref h3 a { color: var(--ink); text-decoration: none; }
+.v3-ref .date { font-size: 13px; color: var(--quiet); margin: 0 0 12px; }
+.v3-ref .row { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 14px; }
+.v3-ref .row span:first-child { color: var(--quiet); flex: none; max-width: 40%; }
+.v3-ref .row span:last-child { font-weight: 500; text-align: right; }
+.v3-ref .more { display: inline-block; margin-top: 10px; font-size: 14px; color: var(--keel); }
+.v3-glyphrow { display: flex; gap: 28px; align-items: center; margin-top: 40px; flex-wrap: wrap; }
+.v3-glyphrow p { margin: 0; max-width: 520px; font-size: 15px; color: var(--quiet); }
+/* On any dark or colored ground the glyph sits in a white rounded tile, radius 22% of the side (brand). */
+@media (prefers-color-scheme: dark) { .site-header .glyph, .v3-glyphrow .glyph { background: #ffffff; border-radius: 22%; padding: 3px; } }
+main.v3 { max-width: none; padding: 0; }
+.v3 h2 { border-top: 0; padding-top: 0; margin-top: 0; }
+.v3 h1 { margin-top: 0; }
+.v3 .v3-hero.wrap { padding: 72px 20px 56px; }
+.v3 .v3-ref #changed { padding: 22px; }
+@media (max-width: 760px) { .v3 .v3-hero.wrap { padding: 48px 20px 40px; } }
