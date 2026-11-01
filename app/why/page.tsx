@@ -77,7 +77,7 @@ export default function Why() {
             <p className="eyebrow">Tools</p>
             <h3>Make it work better for you</h3>
             <p>
-              Turn a conversation where you corrected it three times into a keep it reads every time (a keep is a file your AI reads before it works for you: a standing order you own. Claude calls them skills). Run a{" "}
+              Turn a conversation where you corrected it three times into a keep it reads every time (a keep is a file your AI reads before it works for you: a standing order you own. you take it from Keelsound and add it to Claude in a few clicks). Run a{" "}
               <a href="/check">check on a draft</a> before anything goes out. <a href="/grader">Grade your work</a> in your own
               AI and keep your sounding: the depth check you take yourself, counts of what&apos;s current, what&apos;s due, what passed.
             </p>

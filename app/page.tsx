@@ -88,7 +88,7 @@ export default function Home() {
           <p className="v3-label">Starter Keeps</p>
           <h2>Eight keeps, already written. Three answers make one yours.</h2>
           <p className="v3-sub">
-            A keep is a file your AI reads before it works for you: a standing order you own. Claude calls them skills. These eight are written and tested. Answer three questions, download the
+            A keep is a file your AI reads before it works for you: a standing order you own. You take it from Keelsound and add it to Claude in a few clicks. These eight are written and tested. Answer three questions, download the
             file, drop it into Claude. Every correction you&apos;d otherwise repeat goes into the file, and it never gets worse.
           </p>
           <div className="v3-starters">

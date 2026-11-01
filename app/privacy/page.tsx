@@ -15,7 +15,7 @@ export default function Privacy() {
       <div className="flow" aria-label="How data moves">
         <div className="box">
           <strong>Your vault: this browser and your folder</strong>
-          <span>Starter answers, worksheet answers, keeps (files your AI reads before it works for you; Claude calls them skills), drafts you check, what you type on a page</span>
+          <span>Starter answers, worksheet answers, keeps (files your AI reads before it works for you; you take it from Keelsound and add it to Claude in a few clicks), drafts you check, what you type on a page</span>
           <em>Stays here</em>
         </div>
         <div className="arrow" aria-hidden="true">→</div>

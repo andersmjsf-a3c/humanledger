@@ -158,7 +158,7 @@ export function SkillBuilder({ t }: { t: SkillTemplate }) {
       </div>
       {t.kind === "skill" && (
         <p className="fineprint">
-          The .zip is ready to upload in Claude under Customize &gt; Skills (a keep is a file your AI reads before it works for you: a standing order you own. Claude calls them skills). Worksheet 0.5 has the steps. No upload? Paste the file at the top of a
+          The .zip is ready to upload in Claude under Customize &gt; Skills (a keep is a file your AI reads before it works for you: a standing order you own. you take it from Keelsound and add it to Claude in a few clicks). Worksheet 0.5 has the steps. No upload? Paste the file at the top of a
           conversation; that works everywhere.
         </p>
       )}

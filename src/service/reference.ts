@@ -26,7 +26,7 @@ export const whereIsChecked = (w: Where = WHERE) => !!w.lastChecked && w.rows.le
 // The homepage panel's five rows (Oct 26 mockup), in the shortest form: the first sentence.
 export const HOME_ROWS: { id: string; label: string }[] = [
   { id: "memory-toggle", label: "Turn memory on or off" },
-  { id: "skills-upload", label: "Upload a skill" },
+  { id: "skills-upload", label: "Add a keep to Claude" },
   { id: "web-search", label: "Web search toggle" },
   { id: "model-selector", label: "Which model you're talking to" },
   { id: "retired-cowork", label: "Names that no longer appear" },

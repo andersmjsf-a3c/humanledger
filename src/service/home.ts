@@ -86,7 +86,7 @@ export const MINUTES: Record<string, number> = {
 // from the dated JSON, so they change when the page is re-checked. The full page has every row.
 const FEATURED: { id: string; label: string }[] = [
   { id: "memory-toggle", label: "Memory" },
-  { id: "skills-upload", label: "Upload a skill" },
+  { id: "skills-upload", label: "Add a keep to Claude" },
   { id: "model-selector", label: "Which model you're on" },
   { id: "retired-cowork", label: "Names that no longer appear" },
   { id: "duet", label: "A new name you may meet" },

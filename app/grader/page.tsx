@@ -7,7 +7,7 @@ export default function Grader() {
     <main>
       <h1>Grade your work</h1>
       <p className="lede">
-        The grading keep runs in your own Claude, next to your files (a keep is a file your AI reads before it works for you: a standing order you own. Claude calls them skills). It checks a piece of work against your rules, gives you
+        The grading keep runs in your own Claude, next to your files (a keep is a file your AI reads before it works for you: a standing order you own. you take it from Keelsound and add it to Claude in a few clicks). It checks a piece of work against your rules, gives you
         the full report, and makes your sounding (the depth check you take yourself: counts of what&apos;s current, what&apos;s due, what passed). Your work never comes here. Only the sounding can, and only when you send it.
       </p>
 
@@ -17,8 +17,8 @@ export default function Grader() {
       <ol className="steps">
         <li>In Claude, add the zip under Customize &gt; Skills. Once.</li>
         <li>
-          In a conversation with your draft and your files, say <em>grade this</em>. To re-test a keep, say <em>re-test my voice
-          skill</em> (Claude&apos;s word for it).
+          In a conversation with your draft and your files, say <em>grade this</em>. To re-test a keep, say <em>re-test my writing
+          voice</em>.
         </li>
         <li>You get the full report: which lines tripped which of your rules, which claims had no source. That stays in Claude.</li>
         <li>
