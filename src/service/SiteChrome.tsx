@@ -15,7 +15,7 @@ export function SiteHeader() {
       </a>
       <nav aria-label="Main">
         <AccountNav part="lead" />
-        <a href="/#starters">Starter Skills</a>
+        <a href="/#starters">Starter Keeps</a>
         <a href="/glossary">Glossary</a>
         <a href="/where-things-live">Where things live</a>
         <a href="/what-changed">What changed</a>

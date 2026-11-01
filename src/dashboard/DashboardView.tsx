@@ -12,8 +12,8 @@ const BUILD = [
 // "Claude updates your files" is held: the connector is read-only and can't open the vault (spec part 3).
 const ADVANCED = [
   ["Agents with a boundary", "A job, a name, a schedule, and a line it can't cross. Starts with one that only reads and reports."],
-  ["Re-tests after every release", "When the model changes, your top skills run again on a known task and you see what drifted."],
-  ["Your team's sounding", "Who runs the checks, whose skills are stale, who passes the three-minute test. Counts, never content."],
+  ["Re-tests after every release", "When the model changes, your top keeps run again on a known task and you see what drifted."],
+  ["Your team's sounding", "Who runs the checks, whose keeps are stale, who passes the three-minute test. Counts, never content."],
 ];
 
 function Placeholder({ title, line }: { title: string; line: string }) {
@@ -87,7 +87,7 @@ export function DashboardView({ d, onConfirmMemory }: { d: Dashboard; onConfirmM
         </div>
         <div className={`stat ${top.skillsToRetest > 0 ? "warn" : ""}`}>
           <strong>{top.skillsToRetest}</strong>
-          <span>skills to re-test{top.lastRelease ? ` since the ${new Date(`${top.lastRelease.date}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })} release` : ""}</span>
+          <span>keeps to re-test{top.lastRelease ? ` since the ${new Date(`${top.lastRelease.date}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })} release` : ""}</span>
         </div>
       </section>
 
@@ -95,8 +95,8 @@ export function DashboardView({ d, onConfirmMemory }: { d: Dashboard; onConfirmM
         <div className="wrap">
           <div className="split-head">
             <div>
-              <h2 className="section-title">Starter Skills</h2>
-              <p className="section-sub">Eight skills we wrote, made yours with three answers each. Live now.</p>
+              <h2 className="section-title">Starter Keeps</h2>
+              <p className="section-sub">Eight keeps we wrote, made yours with three answers each. Live now.</p>
             </div>
             <p className="legend">
               <span><i className="dot dot-connected" /> Connected</span>
@@ -114,7 +114,7 @@ export function DashboardView({ d, onConfirmMemory }: { d: Dashboard; onConfirmM
 
           <div className="tier">
             <h2 className="section-title">
-              Build Skills <span className="soon-badge">Coming soon</span>
+              Build Keeps <span className="soon-badge">Coming soon</span>
             </h2>
             <p className="section-sub">Bigger jobs, built on your starters. Each one reads your voice, your company, and your fact pass before it starts.</p>
             <div className="caps">
@@ -126,7 +126,7 @@ export function DashboardView({ d, onConfirmMemory }: { d: Dashboard; onConfirmM
 
           <div className="tier">
             <h2 className="section-title">
-              Advanced Skills <span className="soon-badge">Coming soon</span>
+              Advanced Keeps <span className="soon-badge">Coming soon</span>
             </h2>
             <p className="section-sub">For when your files are doing real work and you want them watched, tested, and shared.</p>
             <div className="caps">

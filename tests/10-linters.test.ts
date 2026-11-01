@@ -65,10 +65,10 @@ describe("voice linter: the reader's own rules, nobody else's", () => {
   it("turns never-lines into phrases and patterns, and names where each rule came from", () => {
     const hard = by("hard").map((f) => [f.label, f.source]);
     expect(hard).toEqual(expect.arrayContaining([
-      ['"leverage" x1 (your rule: leverage)', "Writing-voice skill · Words I never use"],
-      ['"delve" x2 (your rule: delve)', "Writing-voice skill · Words I never use"],
-      ["em dashes x1 (your rule: No em dashes.)", "Writing-voice skill · Rules"],
-      ["exclamation points x1 (your rule: No exclamation points.)", "Writing-voice skill · Rules"],
+      ['"leverage" x1 (your rule: leverage)', "Writing-voice keep · Words I never use"],
+      ['"delve" x2 (your rule: delve)', "Writing-voice keep · Words I never use"],
+      ["em dashes x1 (your rule: No em dashes.)", "Writing-voice keep · Rules"],
+      ["exclamation points x1 (your rule: No exclamation points.)", "Writing-voice keep · Rules"],
       ['"circle back" x1 (your rule: Never say "circle back")', "A3 · Never say"],
       ['"Great question" x1 (your rule: never open with "Great question")', "A4 · Corrections log · row 1"],
     ]));

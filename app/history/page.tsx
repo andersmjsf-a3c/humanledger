@@ -7,7 +7,7 @@ import { WORKSHEETS } from "@/worksheets";
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Your history" };
 
-const KIND_TITLE: Record<string, string> = { deliverable: "Draft checks and graded work", skill_retest: "Skill re-tests" };
+const KIND_TITLE: Record<string, string> = { deliverable: "Draft checks and graded work", skill_retest: "Keep re-tests" };
 
 export default async function History() {
   const userId = await userIdForSession((await cookies()).get(SESSION_COOKIE)?.value);

@@ -14,6 +14,7 @@ export default async function YourAIPage() {
       <section className="wrap dash-head">
         <h1>Your AI</h1>
         <p className="section-sub">What you&apos;ve built, what&apos;s current, what to do next.</p>
+        <p className="meta">A keep is a file your AI reads before it works for you: a standing order you own. Claude calls them skills.</p>
         <p className="meta">
           <a href="/history">Soundings you&apos;ve sent</a> · <a href="/privacy">What we can see</a>
         </p>

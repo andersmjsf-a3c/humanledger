@@ -63,7 +63,7 @@ export function Review() {
   }
 
   if (state.kind === "loading") return <p>Reading the sounding in this link…</p>;
-  if (state.kind === "none") return <p>No sounding here. Soundings come from finishing a worksheet, the draft checker, or your grading skill.</p>;
+  if (state.kind === "none") return <p>No sounding here. Soundings come from finishing a worksheet, the draft checker, or the grading keep you run in Claude.</p>;
   if (state.kind === "invalid")
     return (
       <>

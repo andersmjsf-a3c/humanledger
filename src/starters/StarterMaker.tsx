@@ -175,7 +175,8 @@ export function StarterMaker({ s }: { s: Starter }) {
   return (
     <div className="starter-file">
       <p className="lede">
-        Here&apos;s your {memory ? "paragraph" : "skill"}. The <span className="yours">green</span> parts are yours; everything else is ready as written.
+        Here&apos;s your {memory ? "paragraph" : "keep"}. The <span className="yours">green</span> parts are yours; everything else is ready as written.
+        {!memory && <span className="meta"> A keep is a file your AI reads before it works for you: a standing order you own. Claude calls them skills.</span>}
       </p>
       {memory && (
         <div className="memory-line">
@@ -216,7 +217,7 @@ export function StarterMaker({ s }: { s: Starter }) {
           </button>
         </p>
       )}
-      <pre className="skillfile" aria-label={memory ? "Your about-me file" : "Your skill file"}>
+      <pre className="skillfile" aria-label={memory ? "Your about-me file" : "Your keep file"}>
         {fillParts(s, answers).map((p, i) => ("text" in p ? <span key={i}>{p.text}</span> : <mark key={i} className="yours">{p.answer}</mark>))}
       </pre>
       <p className="fineprint">
