@@ -37,13 +37,13 @@ describe("homepage v3", () => {
   });
 });
 
-// Mark, Oct 31: the unit is a keep. "Skill" may appear in copy only in the gloss ("Claude calls them
-// skills"), in upload steps ("Customize > Skills"), in what you type to Claude, and in file names.
+// Mark, Nov 1: the unit is a keep, never called a skill or equated with one. "Skill" may appear in
+// copy only inside the literal path Customize > Skills (what the button says) and in file names.
 describe("the unit is a keep", () => {
   const walk = (dir: string): string[] =>
     readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(`${dir}/${e.name}`) : e.name.endsWith(".tsx") ? [`${dir}/${e.name}`] : []));
   const CODE = /import |className=|href=|\/skills|\.skill\b|skill:|SKILL|kind ===|"skill"|skill_|SkillList|SkillBuilder|skillfile|templateById|function Skills\(|"\d-[\w-]*skill"|^\s*(\/\/|\*|\{\/\*)/;
-  const ALLOWED = /Claude calls them skills|Customize &gt; Skills|Customize > Skills|re-test my voice|Claude&apos;s word|Download SKILL\.md/;
+  const ALLOWED = /Customize &gt; Skills|Customize > Skills|Download SKILL\.md/;
 
   it("no stray 'skill' in what a person reads", () => {
     const stray: string[] = [];
@@ -53,5 +53,13 @@ describe("the unit is a keep", () => {
       });
     }
     expect(stray).toEqual([]);
+  });
+
+  it("the gloss is an action, never an identity", () => {
+    for (const f of [...walk("app"), ...walk("src").filter((x) => !x.includes("generated"))]) {
+      const text = readFileSync(f, "utf8");
+      expect(/calls them skills|skill by another name|Claude&apos;s word/i.test(text), f).toBe(false);
+    }
+    expect(readFileSync("app/page.tsx", "utf8")).toContain("You take it from Keelsound and add it to Claude in a few clicks.");
   });
 });

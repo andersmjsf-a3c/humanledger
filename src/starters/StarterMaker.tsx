@@ -176,7 +176,7 @@ export function StarterMaker({ s }: { s: Starter }) {
     <div className="starter-file">
       <p className="lede">
         Here&apos;s your {memory ? "paragraph" : "keep"}. The <span className="yours">green</span> parts are yours; everything else is ready as written.
-        {!memory && <span className="meta"> A keep is a file your AI reads before it works for you: a standing order you own. Claude calls them skills.</span>}
+        {!memory && <span className="meta"> A keep is a file your AI reads before it works for you: a standing order you own. You take it from Keelsound and add it to Claude in a few clicks.</span>}
       </p>
       {memory && (
         <div className="memory-line">
