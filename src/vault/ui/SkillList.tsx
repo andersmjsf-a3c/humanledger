@@ -31,7 +31,7 @@ export function SkillList() {
   return (
     <>
       <FolderBar vault={vault} />
-      <h2>The five starter skills</h2>
+      <h2>The five starter keeps</h2>
       <ol className="worksheets">{STARTER_IDS.map(row)}</ol>
       <h2>More templates</h2>
       <ol className="worksheets">{TEMPLATES.filter((t) => !STARTER_IDS.includes(t.id)).map((t) => row(t.id))}</ol>

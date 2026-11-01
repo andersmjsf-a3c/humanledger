@@ -90,7 +90,7 @@ export function SkillBuilder({ t }: { t: SkillTemplate }) {
   return (
     <article className="worksheet skillbuilder">
       <p className="crumb">
-        <a href="/skills">Skills</a> · {t.kind === "agent" ? "Agent job description" : "Starter skill"}
+        <a href="/skills">Keeps</a> · {t.kind === "agent" ? "Agent job description" : "Starter keep"}
       </p>
       <p className="lede">
         Fill in the boxes. Anything you leave blank keeps its [bracket], so you can see what's left. Everything stays on this
@@ -158,7 +158,7 @@ export function SkillBuilder({ t }: { t: SkillTemplate }) {
       </div>
       {t.kind === "skill" && (
         <p className="fineprint">
-          The .zip is ready to upload as a skill. Worksheet 0.5 has the steps. No upload? Paste the file at the top of a
+          The .zip is ready to upload in Claude under Customize &gt; Skills (a keep is a file your AI reads before it works for you: a standing order you own. Claude calls them skills). Worksheet 0.5 has the steps. No upload? Paste the file at the top of a
           conversation; that works everywhere.
         </p>
       )}

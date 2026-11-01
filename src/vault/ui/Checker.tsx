@@ -94,7 +94,7 @@ export function Checker() {
           {ran.rules === 0 ? (
             <p className="clean">
               You haven't written any rules yet, so there's nothing of yours to check against. Start with{" "}
-              <a href="/workbook/A3">A3: How you want it to talk to you</a>, then your <a href="/skills/2-writing-voice">writing-voice skill</a>.
+              <a href="/workbook/A3">A3: How you want it to talk to you</a>, then your <a href="/skills/2-writing-voice">writing-voice keep</a>.
             </p>
           ) : (
             <>

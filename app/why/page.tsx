@@ -69,7 +69,7 @@ export default function Why() {
             <p className="eyebrow">Organize</p>
             <h3>One place for what you&apos;ve learned</h3>
             <p>
-              Your rules, your voice, your skills, your corrections, kept as files you own, versioned, and ready to load into your
+              Your rules, your voice, your keeps, your corrections, kept as files you own, versioned, and ready to load into your
               AI. The service never reads them. It keeps track of how they&apos;re doing and tells you when one needs a re-test.
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function Why() {
             <p className="eyebrow">Tools</p>
             <h3>Make it work better for you</h3>
             <p>
-              Turn a conversation where you corrected it three times into a skill it reads every time. Run a{" "}
+              Turn a conversation where you corrected it three times into a keep it reads every time (a keep is a file your AI reads before it works for you: a standing order you own. Claude calls them skills). Run a{" "}
               <a href="/check">check on a draft</a> before anything goes out. <a href="/grader">Grade your work</a> in your own
               AI and keep your sounding: the depth check you take yourself, counts of what&apos;s current, what&apos;s due, what passed.
             </p>

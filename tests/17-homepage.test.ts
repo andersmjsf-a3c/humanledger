@@ -1,7 +1,7 @@
 // Homepage v3 (Oct 31 2026): reference cards come from the dated JSON, and until the encrypted vault
 // ships the page makes none of the claims that describe it.
 import { describe, it, expect } from "vitest";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { BELOW, CHANGED_CARD, EVERYTHING_YOURS, VAULT_LIVE, WHERE_CARD, shortWhere } from "@/service/home";
 import { WHERE, CHANGES } from "@/service/reference";
 
@@ -34,5 +34,24 @@ describe("homepage v3", () => {
     const copy = page.replace(/\/\/.*$/gm, "").replace(/\{\/\*[\s\S]*?\*\/\}/g, "");
     expect(copy).not.toMatch(/[—–]/);
     expect(copy).not.toMatch(/\b(scorecard|dashboard|ledger|Humanledger|listen|hear)\b/i);
+  });
+});
+
+// Mark, Oct 31: the unit is a keep. "Skill" may appear in copy only in the gloss ("Claude calls them
+// skills"), in upload steps ("Customize > Skills"), in what you type to Claude, and in file names.
+describe("the unit is a keep", () => {
+  const walk = (dir: string): string[] =>
+    readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(`${dir}/${e.name}`) : e.name.endsWith(".tsx") ? [`${dir}/${e.name}`] : []));
+  const CODE = /import |className=|href=|\/skills|\.skill\b|skill:|SKILL|kind ===|"skill"|skill_|SkillList|SkillBuilder|skillfile|templateById|function Skills\(|"\d-[\w-]*skill"|^\s*(\/\/|\*|\{\/\*)/;
+  const ALLOWED = /Claude calls them skills|Customize &gt; Skills|Customize > Skills|re-test my voice|Claude&apos;s word|Download SKILL\.md/;
+
+  it("no stray 'skill' in what a person reads", () => {
+    const stray: string[] = [];
+    for (const f of [...walk("app"), ...walk("src").filter((x) => !x.includes("generated"))]) {
+      readFileSync(f, "utf8").split("\n").forEach((line, i) => {
+        if (/\bskills?\b/i.test(line) && !CODE.test(line) && !ALLOWED.test(line)) stray.push(`${f}:${i + 1}: ${line.trim()}`);
+      });
+    }
+    expect(stray).toEqual([]);
   });
 });

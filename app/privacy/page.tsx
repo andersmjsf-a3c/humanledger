@@ -15,13 +15,13 @@ export default function Privacy() {
       <div className="flow" aria-label="How data moves">
         <div className="box">
           <strong>Your vault: this browser and your folder</strong>
-          <span>Starter answers, worksheet answers, skills, drafts you check, what you type on a page</span>
+          <span>Starter answers, worksheet answers, keeps (files your AI reads before it works for you; Claude calls them skills), drafts you check, what you type on a page</span>
           <em>Stays here</em>
         </div>
         <div className="arrow" aria-hidden="true">→</div>
         <div className="box">
           <strong>Your own AI</strong>
-          <span>The grading skill reads your work there and writes your sounding</span>
+          <span>The grading keep reads your work there and writes your sounding</span>
           <em>Stays there</em>
         </div>
         <div className="arrow" aria-hidden="true">→</div>
@@ -58,7 +58,7 @@ export default function Privacy() {
           </tr>
           <tr>
             <td>Model releases</td>
-            <td>Public dates, so we can tell you when a skill is due for a re-test.</td>
+            <td>Public dates, so we can tell you when a keep is due for a re-test.</td>
           </tr>
           <tr>
             <td>Our own agents&apos; receipts</td>
@@ -83,8 +83,8 @@ export default function Privacy() {
 
       <h2>Your sounding</h2>
       <p>
-        Before anything is sent you see every line, in plain words and as the exact data, and you can hold any line back. Skills are
-        recorded by kind (voice, brand, research), never by name, because a name can give away a client. The grading skill runs in
+        Before anything is sent you see every line, in plain words and as the exact data, and you can hold any line back. Keeps are
+        recorded by kind (voice, brand, research), never by name, because a name can give away a client. The grading keep runs in
         your own AI and can&apos;t send anything itself.
       </p>
 

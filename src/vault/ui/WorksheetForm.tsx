@@ -142,7 +142,7 @@ export function WorksheetForm({ ws }: { ws: Worksheet }) {
 
       {SKILL_BUILDER[ws.id] && (
         <p className="meta">
-          Rather fill boxes and download the file? <a href={`/skills/${SKILL_BUILDER[ws.id]}`}>The skill builder</a> writes the same skill
+          Rather fill boxes and download the file? <a href={`/skills/${SKILL_BUILDER[ws.id]}`}>The keep builder</a> writes the same keep
           for you.
         </p>
       )}

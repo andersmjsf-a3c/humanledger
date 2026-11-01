@@ -35,7 +35,7 @@ const FEEL = [
   ["Everything is yours.", EVERYTHING_YOURS],
   [
     "The next release isn't a threat.",
-    "When the model changes, your rules don't. Your sounding tells you which skills to re-test, and the file is still yours in whatever you're talking to next year.",
+    "When the model changes, your rules don't. Your sounding tells you which keeps to re-test, and the file is still yours in whatever you're talking to next year.",
   ],
 ];
 
@@ -48,7 +48,7 @@ export default function Home() {
         <h1>AI changes under you every few weeks. {PRODUCT_NAME} is the part that doesn&apos;t.</h1>
         <p className="v3-lead">
           The model gets replaced, the settings move, the names change. What you know about your own work shouldn&apos;t go with them.{" "}
-          {PRODUCT_NAME} gives you skills you can use today, keeps the files you make in a vault only you can open, and tells you
+          {PRODUCT_NAME} gives you keeps you can use today, keeps the files you make in a vault only you can open, and tells you
           what&apos;s current and what to fix next. You lead.
         </p>
         <div className="v3-buttons">
@@ -85,10 +85,10 @@ export default function Home() {
       {/* The starters: the existing eight, each to its three-question page */}
       <section id="starters" className="v3-section">
         <div className="wrap">
-          <p className="v3-label">Starter Skills</p>
-          <h2>Eight skills, already written. Three answers make one yours.</h2>
+          <p className="v3-label">Starter Keeps</p>
+          <h2>Eight keeps, already written. Three answers make one yours.</h2>
           <p className="v3-sub">
-            A skill is a file your AI reads before it works for you. These are written and tested. Answer three questions, download the
+            A keep is a file your AI reads before it works for you: a standing order you own. Claude calls them skills. These eight are written and tested. Answer three questions, download the
             file, drop it into Claude. Every correction you&apos;d otherwise repeat goes into the file, and it never gets worse.
           </p>
           <div className="v3-starters">
@@ -103,7 +103,7 @@ export default function Home() {
             ))}
           </div>
           <p className="v3-quiet">
-            Build Skills (brand, go-to-market, presentations, proposals) and Advanced Skills (agents with a job, a boundary, and a log) are
+            Build Keeps (brand, go-to-market, presentations, proposals) and Advanced Keeps (agents with a job, a boundary, and a log) are
             coming. The starters are free and stay free.
           </p>
         </div>

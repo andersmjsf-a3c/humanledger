@@ -36,7 +36,7 @@ export default async function StartPage({ params }: { params: Promise<{ id: stri
         ) : (
           <p>
             Download the ZIP, then in Claude open Customize &gt; Skills and add it. After that, name the job in any conversation and
-            it uses the skill.
+            Claude uses it.
           </p>
         )}
         {/* The starter's own screens stay in view; the general how-to screens wait behind a toggle. */}

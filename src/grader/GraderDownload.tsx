@@ -15,9 +15,9 @@ export function GraderDownload() {
           setDone(true);
         }}
       >
-        Download the grading skill ({GRADER_VERSION})
+        Download the grading keep ({GRADER_VERSION})
       </button>
-      {done && <span className="saved">Downloaded. Add the zip to Claude as a skill.</span>}
+      {done && <span className="saved">Downloaded. In Claude, add the zip under Customize &gt; Skills.</span>}
     </div>
   );
 }

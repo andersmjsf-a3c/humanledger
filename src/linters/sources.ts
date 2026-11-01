@@ -3,8 +3,8 @@
 import type { RuleSource } from "./voice";
 
 export const RULE_SOURCES: { record: string; keyPrefix: string; source: string; neverList?: boolean; correction?: boolean }[] = [
-  { record: "skill:2-writing-voice", keyPrefix: "words-and-phrases-i-never-use.", source: "Writing-voice skill · Words I never use", neverList: true },
-  { record: "skill:2-writing-voice", keyPrefix: "rules.", source: "Writing-voice skill · Rules" },
+  { record: "skill:2-writing-voice", keyPrefix: "words-and-phrases-i-never-use.", source: "Writing-voice keep · Words I never use", neverList: true },
+  { record: "skill:2-writing-voice", keyPrefix: "rules.", source: "Writing-voice keep · Rules" },
   { record: "A3", keyPrefix: "never-say", source: "A3 · Never say", neverList: true },
   { record: "A3", keyPrefix: "punctuation-or-style", source: "A3 · Punctuation or style" },
   { record: "A3", keyPrefix: "format", source: "A3 · Format" },

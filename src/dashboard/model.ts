@@ -212,14 +212,14 @@ export function buildDashboard(input: DashboardInput): Dashboard {
     const due = capCards.filter((c) => c.rule === 1);
     const names = due.map((c) => c.cap.fileName).join(" and ");
     next = {
-      title: `${due.length === 1 ? "One skill hasn't" : `${due.length} skills haven't`} been re-tested since the ${short(lastRelease!.date)} release.`,
+      title: `${due.length === 1 ? "One keep hasn't" : `${due.length} keeps haven't`} been re-tested since the ${short(lastRelease!.date)} release.`,
       why: `Run ${names} on a task you've run before and compare. Five minutes each. Anything that drifted is a line to add to the file.`,
       action: { label: "Start the re-test", href: "/grader", primary: true },
     };
   } else if (best.rule === 2) {
     next = {
       title: `${upper(best.cap.fileName)} is in your vault, but Claude can't load it yet.`,
-      why: best.cap.key === "memory" ? "Paste your paragraph into Claude's memory once, then confirm here. After that it knows who you are in every conversation." : "Download it as a skill and add it to Claude once. After that you just name the job.",
+      why: best.cap.key === "memory" ? "Paste your paragraph into Claude's memory once, then confirm here. After that it knows who you are in every conversation." : "Download it and add it in Claude under Customize > Skills, once. After that you just name the job.",
       action: { ...best.action, primary: true },
     };
   } else if (best.rule === 3) {
